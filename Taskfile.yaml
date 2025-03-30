@@ -16,12 +16,13 @@ tasks:
       - python3 -m venv .venv --prompt="ACTIVE_VENV_DJANGO_CAPSTONE"
       - source {{.TASKFILE_DIR}}/.venv/bin/activate
     internal: true
+  
   develop:
     desc: Starts the Django Application, and background workers in a debug state
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
     cmds:
       - echo "Completing Pre-Start Environment Check For Development..."
-      - doppler run  -- python -m gunicorn -t 30 -w 3 --timeout 120 --worker-class=sync core.wsgi:application --bind 127.0.0.1:{{.CLI_ARGS}} --reload
+      - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- django-admin runserver 
     interactive: false
     silent: false
 
@@ -52,7 +53,7 @@ tasks:
 
   db_sync:
     desc: Make and run migrations
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
     cmds:
       - doppler run --  python run/manage.py makemigrations
       - doppler run --  python run/manage.py migrate
@@ -66,14 +67,14 @@ tasks:
         - PATH_TO_DB_ROOT_CERT
 
   collect:
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
 
     desc: Collect static files in to single directory for production
     cmds:
       - doppler run --  python run/manage.py collectstatic --no-input
 
   test:
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
     desc: Run tests
     cmds:
       - doppler run --  python run/manage.py test applications.API
@@ -84,7 +85,7 @@ tasks:
 
   run:
     desc: Starts a Gunicorn Based Development Server that Reloads on Changes
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
 
     cmds:
       - doppler run -- python run/manage.py runserver #--workers=2 --threads=2 core.wsgi:application -b :{{or .CLI_ARGS 8000}}
@@ -92,7 +93,7 @@ tasks:
 
 
   start:
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
 
     desc: Command to Start Production Level Services including Install requirements, apply migrations, then start development server
     cmds:
@@ -107,7 +108,7 @@ tasks:
       - doppler run -- python -m gunicorn --workers=2 --threads=2 core.wsgi:application --bind 0.0.0.0:{{or .CLI_ARGS 8080}} --reload --sync
 
   schema-check:
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
 
     desc: Check Models and Serializers for schema compliance with OpenAPI .0 Standards and fail on warnings
     cmds:
@@ -116,7 +117,7 @@ tasks:
 
   schema:
     deps: [schema-check]
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
 
     desc: Generate OpenAPI 3.0 schema.yaml file from models and serializers
     cmds:
@@ -124,13 +125,13 @@ tasks:
 
   build-image:
     desc: Build Docker Image
-    dir: {{ .TASKFILE_DIR }}/.deploy
+    dir: "{{ .TASKFILE_DIR }}/.deploy"
     cmds:
       - docker build buildx --platform --push linux/amd64,linux/arm64  --env DOPPLER_TOKEN=$DOPPLER_TOKEN -t capstone:latest .
 
   lint:
     desc: Run linters
-    dir: {{ .TASKFILE_DIR }}
+    dir: "{{ .TASKFILE_DIR }}"
     cmds:
       - python -m black .
       - python -m isort --profile black .
