@@ -79,7 +79,7 @@ class Grading(Base):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
-        "resturant`",
+        "resturant",
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
