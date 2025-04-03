@@ -25,7 +25,7 @@ class Base(Configuration):
     TEMPLATES = [
         {
             "BACKEND": "django.template.backends.django.DjangoTemplates",
-            "DIRS": [],
+            "DIRS": [f'{BASE_DIR}/templates'],
             "APP_DIRS": True,
             "OPTIONS": {
                 "context_processors": [
@@ -79,7 +79,7 @@ class Grading(Base):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
-        "resturant",
+        "resturant`",
         "django_prometheus",
         "drf_redesign",
         "rest_framework",

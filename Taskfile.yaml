@@ -22,7 +22,7 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
       - echo "Completing Pre-Start Environment Check For Development..."
-      - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- django-admin runserver 
+      - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver 
     interactive: false
     silent: false
 
