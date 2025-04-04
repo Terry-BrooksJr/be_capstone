@@ -25,7 +25,7 @@ class Base(Configuration):
     TEMPLATES = [
         {
             "BACKEND": "django.template.backends.django.DjangoTemplates",
-            "DIRS": [f'{BASE_DIR}/templates'],
+            "DIRS": [f"{BASE_DIR}/templates"],
             "APP_DIRS": True,
             "OPTIONS": {
                 "context_processors": [
@@ -67,6 +67,35 @@ class Base(Configuration):
             },
         }
     }
+    REST_FRAMEWORK = {
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+        "DEFAULT_RENDERER_CLASSES": [
+            "rest_framework.renderers.JSONRenderer",
+            "rest_framework.renderers.BrowsableAPIRenderer",
+        ],
+        "DATE_FORMAT": "%m-%d-%Y",
+        "TIME_FORMAT": "%I:%M %p",
+        "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+        "PAGE_SIZE": 10,
+        "DEFAULT_THROTTLE_CLASSES": [
+            "rest_framework.throttling.AnonRateThrottle",
+            "rest_framework.throttling.UserRateThrottle",
+        ],
+        "DEFAULT_THROTTLE_RATES": {"anon": "5/minute", "user": "15/minute"},
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+                'rest_framework.authentication.TokenAuthentication',
+
+    ]
+    
+    }
+    SPECTACULAR_SETTINGS = {
+        "TITLE": "Little Lemon Menu and Booking API",
+        "DESCRIPTION": "",
+        "VERSION": "1.0.0",
+      'SWAGGER_UI_DIST': 'SIDECAR',
+    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
+    'REDOC_DIST': 'SIDECAR',
+    }
 
 
 class Grading(Base):
@@ -83,6 +112,9 @@ class Grading(Base):
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
+        'drf_spectacular',
+        "drf_spectacular_sidecar",
+        "djoser"
     ]
 
     MIDDLEWARE = [
@@ -113,6 +145,10 @@ class Development(Base):
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
+            'rest_framework.authtoken',
+        'drf_spectacular',
+        "drf_spectacular_sidecar",
+        "djoser"
     ]
 
     MIDDLEWARE = [
