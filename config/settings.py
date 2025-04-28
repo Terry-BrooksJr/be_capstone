@@ -21,11 +21,16 @@ class Base(Configuration):
     LANGUAGE_CODE = "en-us"
     TIME_ZONE = "UTC"
     USE_I18N = True
+    FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
     USE_TZ = True
+
     TEMPLATES = [
         {
             "BACKEND": "django.template.backends.django.DjangoTemplates",
-            "DIRS": [f"{BASE_DIR}/templates"],
+            "DIRS": [
+                f"{BASE_DIR}/templates",
+                "/Users/terry-brooks./Github/be_capstone-1/.venv/lib/python3.13/site-packages/django/forms/templates",
+            ],
             "APP_DIRS": True,
             "OPTIONS": {
                 "context_processors": [
@@ -37,6 +42,8 @@ class Base(Configuration):
             },
         },
     ]
+    CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+    CRISPY_TEMPLATE_PACK = "bootstrap5"
     AUTH_PASSWORD_VALIDATORS = [
         {
             "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -74,6 +81,9 @@ class Base(Configuration):
             "rest_framework.renderers.BrowsableAPIRenderer",
         ],
         "DATE_FORMAT": "%m-%d-%Y",
+        "DEFAULT_PERMISSION_CLASSES": [
+            "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+        ],
         "TIME_FORMAT": "%I:%M %p",
         "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
         "PAGE_SIZE": 10,
@@ -81,26 +91,39 @@ class Base(Configuration):
             "rest_framework.throttling.AnonRateThrottle",
             "rest_framework.throttling.UserRateThrottle",
         ],
-        "DEFAULT_THROTTLE_RATES": {"anon": "5/minute", "user": "15/minute"},
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-                'rest_framework.authentication.TokenAuthentication',
-
-    ]
-    
+        "DEFAULT_THROTTLE_RATES": {"anon": "20/minute", "user": "30/minute"},
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.TokenAuthentication",
+        ],
     }
     SPECTACULAR_SETTINGS = {
         "TITLE": "Little Lemon Menu and Booking API",
         "DESCRIPTION": "",
         "VERSION": "1.0.0",
-      'SWAGGER_UI_DIST': 'SIDECAR',
-    'SWAGGER_UI_FAVICON_HREF': 'SIDECAR',
-    'REDOC_DIST': 'SIDECAR',
+        # "SWAGGER_UI_DIST": "SIDECAR",
+        # "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
+        # "REDOC_DIST": "SIDECAR",
+        "SECURITY": [
+            {"TokenAuth": []},
+        ],
+        "AUTHENTICATION_SCHEMES": {
+            "TokenAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "Authorization",
+                "description": 'API Token passed via the Authorization header. Example: "Authorization: Token {token}"',
+            },
+        },
     }
 
 
 class Grading(Base):
     DEBUG = False
     ALLOWED_HOSTS = ["little-lemon.xyz"]
+    CSRF_TRUSTED_ORIGINST = (
+        ["https://localhost", "http://localhost", "https://little-lemon.xyz"],
+    )
+
     INSTALLED_APPS = [
         "django.contrib.admin",
         "django.contrib.auth",
@@ -108,13 +131,16 @@ class Grading(Base):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
-        "resturant",
+        "applications.resturant",  # Add this line
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
-        'drf_spectacular',
+        "django_filters",
+        "crispy_forms",
+        "crispy_bootstrap5",
+        "drf_spectacular",
         "drf_spectacular_sidecar",
-        "djoser"
+        "djoser",
     ]
 
     MIDDLEWARE = [
@@ -133,6 +159,8 @@ class Grading(Base):
 class Development(Base):
     DEBUG = True
     ALLOWED_HOSTS = ["*"]
+    CSRF_TRUSTED_ORIGINST = (["https://localhost ", "http://localhost"],)
+
     INSTALLED_APPS = [
         "django.contrib.admin",
         "django.contrib.auth",
@@ -140,15 +168,18 @@ class Development(Base):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
+        "crispy_forms",
+        "crispy_bootstrap5",
+        "django_filters",
         "debug_toolbar",
-        "resturant",
+        "applications.resturant",
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
-            'rest_framework.authtoken',
-        'drf_spectacular',
+        "rest_framework.authtoken",
+        "drf_spectacular",
         "drf_spectacular_sidecar",
-        "djoser"
+        "djoser",
     ]
 
     MIDDLEWARE = [

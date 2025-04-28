@@ -76,7 +76,7 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
     desc: Run tests
     cmds:
-      - doppler run --  python run/manage.py test applications.API
+      - doppler run --  python run/manage.py test applications.resturant.tests
     requires:
       vars:
         - DOPPLER_TOKEN
@@ -135,3 +135,11 @@ tasks:
       - python -m black .
       - python -m isort --profile black .
       - python -m autoflake --remove-all-unused-imports --recursive --remove-unused-variables --in-place .
+
+  django:
+    desc: Run Django Management Commands
+    dir: "{{ .TASKFILE_DIR }}"
+    cmds:
+      - doppler run -- python run/manage.py {{.CLI_ARGS}}
+    silent: false
+    interactive: true
