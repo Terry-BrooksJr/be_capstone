@@ -19,14 +19,15 @@ import applications.resturant
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import include, path, re_path
-from applications.resturant.endpoints import Index
+from applications.resturant.endpoints import Index, AuthToken
 from config.asgi import application
+
 urlpatterns = [
     re_path(r"^$", Index.as_view(), name="index"),
     path("admin/", admin.site.urls),
     path("restaurant/", include("resturant.urls")),
     path("", include("django_prometheus.urls")),
-    path("api-auth/", include("rest_framework.urls")),
-    re_path(r"^auth/", include("djoser.urls")),
-    re_path(r"^auth/", include("djoser.urls.authtoken")),
+path('auth/', include('djoser.urls')),
+path('auth/', include('djoser.urls.authtoken')),
+path('api-token-auth/', AuthToken.as_view()),
 ] + debug_toolbar_urls()

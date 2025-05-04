@@ -19,6 +19,6 @@ class CustomRangeWidget(RangeWidget):
                                         'data-cur_max':cur_max})
         base_id = ctx['widget']['attrs']['id']
         for swx, subwidget in enumerate(ctx['widget']['subwidgets']):
-            subwidget['attrs']['id'] = base_id + "_" + self.suffixes[swx]
-        ctx['widget']['value_text'] = "{} - {}".format(cur_min,cur_max)
+            subwidget['attrs']['id'] = f"{base_id}_{self.suffixes[swx]}"
+        ctx['widget']['value_text'] = f"{cur_min} - {cur_max}"
         return ctx

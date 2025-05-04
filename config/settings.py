@@ -94,15 +94,19 @@ class Base(Configuration):
         "DEFAULT_THROTTLE_RATES": {"anon": "20/minute", "user": "30/minute"},
         "DEFAULT_AUTHENTICATION_CLASSES": [
             "rest_framework.authentication.TokenAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
         ],
     }
+  
+    DJOSER={"USER_ID_FIELD":"username"}
     SPECTACULAR_SETTINGS = {
         "TITLE": "Little Lemon Menu and Booking API",
         "DESCRIPTION": "",
         "VERSION": "1.0.0",
-        # "SWAGGER_UI_DIST": "SIDECAR",
-        # "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
-        # "REDOC_DIST": "SIDECAR",
+        "SWAGGER_UI_DIST": "SIDECAR",
+        "SWAGGER_UI_FAVICON_HREF": "SIDECAR"
+,
+        "REDOC_DIST": "SIDECAR",
         "SECURITY": [
             {"TokenAuth": []},
         ],
@@ -135,12 +139,14 @@ class Grading(Base):
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
+        "rest_framework.authtoken",
         "django_filters",
         "crispy_forms",
         "crispy_bootstrap5",
         "drf_spectacular",
         "drf_spectacular_sidecar",
         "djoser",
+        
     ]
 
     MIDDLEWARE = [

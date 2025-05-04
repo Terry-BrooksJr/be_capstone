@@ -11,13 +11,17 @@ from drf_spectacular.utils import (
 from rest_framework import status
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
-from resturant.serializers import BookingSerializer, MenuSerializer, UserSerializer
+from resturant.serializers.core import BookingSerializer, MenuSerializer, UserSerializer
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
 
 from applications.resturant.filters import BookingFilter, ProductFilter
 from applications.resturant.models import Booking, Menu
-
+from applications.resturant.serializers.auth import AuthRequestSerializer
 
 class Index(TemplateView):
     """A view for rendering the index template.
@@ -26,6 +30,52 @@ class Index(TemplateView):
     """
 
     template_name = "index.html"
+
+
+class AuthToken(ObtainAuthToken):
+    """A custom view for handling user authentication and token generation."""
+    @extend_schema(
+        summary="User Authentication",
+        description="Authenticate a user and generate an authentication token.",
+        tags=["Tokens"],
+        request=AuthRequestSerializer,
+        responses=UserSerializer,
+        examples=[
+            OpenApiExample(
+                name="Successful Authentication",
+                description="Valid credentials",
+                value={"username": "john_doe", "password": "password123"},
+                request_only=True,
+            ),
+            OpenApiExample(
+                name="Invalid Login Attempt",
+                description="Incorrect username or password",
+                value={"username": "wrong_user", "password": "wrong_pass"},
+                request_only=True,
+            ),
+            OpenApiExample(
+                name="Successful Response",
+                description="Token returned after successful login",
+                value={
+                    "token": "abcdef123456",
+                    "user_id": 1,
+                    "email": "john.doe@example.com"
+                },
+                response_only=True,
+            ),
+        ],
+    )
+    def post(self, request, *args, **kwargs):
+        serializer = self.serializer_class(
+            data=request.data, context={"request": request}
+        )
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data.get("user")
+        if user is None:
+            from rest_framework.exceptions import AuthenticationFailed
+            raise AuthenticationFailed("User not found in validated data")
+        token, created = Token.objects.get_or_create(user=user)
+        return Response({"token": token.key, "user_id": user.pk, "email": user.email})
 
 
 @extend_schema_view(
@@ -109,7 +159,6 @@ class Index(TemplateView):
         request=BookingSerializer,
         tags=["Reservations"],
         parameters=[
-
             OpenApiParameter(
                 name="name",
                 type=OpenApiTypes.STR,
@@ -118,7 +167,7 @@ class Index(TemplateView):
                 description="Name of the person making the booking",
                 examples=[OpenApiExample(name="Standard Booking ID", value="John Doe")],
             ),
-                OpenApiParameter(
+            OpenApiParameter(
                 name="no_of_guests",
                 type=OpenApiTypes.INT,
                 location="path",
@@ -126,25 +175,26 @@ class Index(TemplateView):
                 description="Number of guests in the party",
                 examples=[OpenApiExample(name="Standard Booking ID", value="123")],
             ),
-                OpenApiParameter(
+            OpenApiParameter(
                 name="date",
                 type=OpenApiTypes.DATE,
                 location="path",
                 required=True,
                 description="Date of the booking",
-                examples=[OpenApiExample(name="Standard Booking ID", value="01-01-1970")],
+                examples=[
+                    OpenApiExample(name="Standard Booking ID", value="01-01-1970")
+                ],
             ),
-                OpenApiParameter(
+            OpenApiParameter(
                 name="time",
                 type=OpenApiTypes.TIME,
                 location="path",
                 required=True,
                 description="Time of the booking",
                 examples=[OpenApiExample(name="Standard Booking ID", value="3:45 PM")],
-            )
+            ),
         ],
-    
-        auth=["TokenAuth"],
+        # auth=["TokenAuth"],
         responses=BookingSerializer,
         examples=[
             OpenApiExample(
@@ -177,7 +227,7 @@ class Index(TemplateView):
     update=extend_schema(
         summary="Update a Booking",
         description="Update an existing booking. Authentication Token REQUIRED.",
-        auth=["TokenAuth"],
+        # auth=["TokenAuth"],
         tags=["Reservations"],
         responses=BookingSerializer,
         examples=[
@@ -223,7 +273,7 @@ class Index(TemplateView):
     partial_update=extend_schema(
         summary="Partially Update a Booking",
         description="Update partial fields of a booking. Authentication Token REQUIRED.",
-        auth=["TokenAuth"],
+        # auth=["TokenAuth"],
         tags=["Reservations"],
         responses=BookingSerializer,
         examples=[
@@ -244,7 +294,7 @@ class Index(TemplateView):
         summary="Delete a Booking",
         description="Delete a booking entry. Authentication Token REQUIRED.",
         tags=["Reservations"],
-        auth=["TokenAuth"],
+        # auth=["TokenAuth"],
         responses=BookingSerializer,
         examples=[
             OpenApiExample(
@@ -266,10 +316,11 @@ class BookingsViewset(ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     lookup_field = "booking_id"
-    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filter_backends = [DjangoFilterBackend]
     search_fields = ["name"]
     filterset_class = BookingFilter
     ordering_fields = ["date", "no_of_guests"]
+    permission_classes = [IsAuthenticated]
 
 
 @extend_schema_view(
@@ -349,6 +400,7 @@ class BookingsViewset(ModelViewSet):
         summary="Create a Menu Item",
         description="Create a new menu item entry. All fields are required in the request payload.",
         request=MenuSerializer,
+        tags=["Menu"],
         auth=None,
         responses=MenuSerializer,
         examples=[
@@ -368,14 +420,18 @@ class BookingsViewset(ModelViewSet):
     ),
     update=extend_schema(
         summary="Update a Menu Item",
+        tags=["Menu"],
         description="Update all details of an existing menu item.",
     ),
     partial_update=extend_schema(
         summary="Partial Update of a Menu Item",
+        tags=["Menu"],
+
         description="Update one or more fields of an existing menu item.",
     ),
     destroy=extend_schema(
-        summary="Delete a Menu Item", description="Remove a menu item from the system."
+        summary="Delete a Menu Item", description="Remove a menu item from the system.",
+        tags=["Menu"],
     ),
 )
 class MenuViewset(ModelViewSet):
@@ -387,10 +443,10 @@ class MenuViewset(ModelViewSet):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
     lookup_field = "item_id"
-    filter_backends = [DjangoFilterBackend, SearchFilter]
+    filter_backends = [DjangoFilterBackend]
     search_fields = ["title"]
     filterset_class = ProductFilter
-
+    permission_classes = [IsAuthenticated]  
 
 class UserViewSet(ModelViewSet):
     queryset = User.objects.all()

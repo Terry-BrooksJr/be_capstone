@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from django.test import TestCase
-from resturant.serializers import BookingSerializer
+from resturant.serializers.core import BookingSerializer
 
 from applications.resturant.models import Booking
 
