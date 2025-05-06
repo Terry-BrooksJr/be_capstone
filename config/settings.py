@@ -22,7 +22,7 @@ class Base(Configuration):
     TIME_ZONE = "UTC"
     USE_I18N = True
     FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
-    USE_TZ = True
+    USE_TZ = False
 
     TEMPLATES = [
         {

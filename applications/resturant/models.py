@@ -7,7 +7,7 @@ class Booking(Model):
         verbose_name="Guest Name", max_length=255, null=False, blank=False
     )
     no_of_guests = fields.PositiveSmallIntegerField(
-        verbose_name="Party Size", blank=False, null=True
+        verbose_name="Party Size", blank=False, null=False
     )
     date = fields.DateTimeField(verbose_name="Date of Booking")
     def __str__(self):

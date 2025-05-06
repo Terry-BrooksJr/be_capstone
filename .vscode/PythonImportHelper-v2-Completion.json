@@ -17,6 +17,14 @@
         "documentation": {}
     },
     {
+        "label": "M",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
         "label": "BaseCommand",
         "importPath": "django.core.management.base",
         "description": "django.core.management.base",
@@ -137,14 +145,6 @@
         "documentation": {}
     },
     {
-        "label": "serializers",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
         "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -153,11 +153,51 @@
         "documentation": {}
     },
     {
-        "label": "UserSerializer",
+        "label": "CustomUserSerializer",
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
         "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "MenuSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "BookingRequestSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "BookingResponseSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "BookingSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "label",
+        "importPath": "cProfile",
+        "description": "cProfile",
+        "isExtraImport": true,
+        "detail": "cProfile",
         "documentation": {}
     },
     {
@@ -193,11 +233,11 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "model_to_dict",
+        "importPath": "django.forms",
+        "description": "django.forms",
         "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "django.forms",
         "documentation": {}
     },
     {
@@ -257,27 +297,11 @@
         "documentation": {}
     },
     {
-        "label": "OpenApiExample",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
+        "label": "UniqueTogetherValidator",
+        "importPath": "rest_framework.validators",
+        "description": "rest_framework.validators",
         "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
-        "documentation": {}
-    },
-    {
-        "label": "extend_schema_field",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
-        "documentation": {}
-    },
-    {
-        "label": "extend_schema_serializer",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
+        "detail": "rest_framework.validators",
         "documentation": {}
     },
     {
@@ -354,22 +378,6 @@
     },
     {
         "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
         "importPath": "applications.resturant.models",
         "description": "applications.resturant.models",
         "isExtraImport": true,
@@ -401,11 +409,11 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
+        "label": "logger",
+        "importPath": "loguru ",
+        "description": "loguru ",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
+        "detail": "loguru ",
         "documentation": {}
     },
     {
@@ -490,35 +498,11 @@
         "documentation": {}
     },
     {
-        "label": "BookingSerializer",
-        "importPath": "resturant.serializers.core",
-        "description": "resturant.serializers.core",
+        "label": "reverse_action",
+        "importPath": "rest_framework.viewsets",
+        "description": "rest_framework.viewsets",
         "isExtraImport": true,
-        "detail": "resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "MenuSerializer",
-        "importPath": "resturant.serializers.core",
-        "description": "resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "UserSerializer",
-        "importPath": "resturant.serializers.core",
-        "description": "resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "BookingSerializer",
-        "importPath": "resturant.serializers.core",
-        "description": "resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "resturant.serializers.core",
+        "detail": "rest_framework.viewsets",
         "documentation": {}
     },
     {
@@ -578,6 +562,14 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "BookingFilter",
         "importPath": "applications.resturant.filters",
         "description": "applications.resturant.filters",
@@ -595,6 +587,14 @@
     },
     {
         "label": "AuthRequestSerializer",
+        "importPath": "applications.resturant.serializers.auth",
+        "description": "applications.resturant.serializers.auth",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "AuthResponseSerializer",
         "importPath": "applications.resturant.serializers.auth",
         "description": "applications.resturant.serializers.auth",
         "isExtraImport": true,
@@ -786,6 +786,30 @@
         "documentation": {}
     },
     {
+        "label": "BookingSerializer",
+        "importPath": "resturant.serializers.core",
+        "description": "resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "APIClient",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -823,6 +847,14 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
         "documentation": {}
     },
     {
@@ -1031,7 +1063,7 @@
         "kind": 6,
         "importPath": "applications.resturant.serializers.auth",
         "description": "applications.resturant.serializers.auth",
-        "peekOfCode": "class AuthRequestSerializer(serializers.Serializer):\n    username = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\nclass AuthResponseSerializer(serializers.Serializer):\n    token = serializers.CharField(required=True)\n    user = UserSerializer(required=True)\n    email = serializers.EmailField(required=True)",
+        "peekOfCode": "class AuthRequestSerializer(serializers.Serializer):\n    username = serializers.CharField(required=True)\n    password = serializers.CharField(required=True)\nclass AuthResponseSerializer(serializers.Serializer):\n    token = serializers.CharField(required=True)\n    user = CustomUserSerializer(required=True)\n    email = serializers.EmailField(required=True)",
         "detail": "applications.resturant.serializers.auth",
         "documentation": {}
     },
@@ -1040,16 +1072,16 @@
         "kind": 6,
         "importPath": "applications.resturant.serializers.auth",
         "description": "applications.resturant.serializers.auth",
-        "peekOfCode": "class AuthResponseSerializer(serializers.Serializer):\n    token = serializers.CharField(required=True)\n    user = UserSerializer(required=True)\n    email = serializers.EmailField(required=True)",
+        "peekOfCode": "class AuthResponseSerializer(serializers.Serializer):\n    token = serializers.CharField(required=True)\n    user = CustomUserSerializer(required=True)\n    email = serializers.EmailField(required=True)",
         "detail": "applications.resturant.serializers.auth",
         "documentation": {}
     },
     {
-        "label": "UserSerializer",
+        "label": "CustomUserSerializer",
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    def __getitem__(self, key):\n        return super().__getitem__(key)\n    class Meta:\n        model = User\n        fields = ['url', 'username', 'email', 'groups']\n@extend_schema_serializer(\n    examples=[\n        OpenApiExample(\n            \"Successful Menu POST Example\",",
+        "peekOfCode": "class CustomUserSerializer(serializers.ModelSerializer):\n    def __getitem__(self, key):\n        return super().__getitem__(key)\n    class Meta:\n        model = User\n        fields = ['url', 'username', 'email', 'groups']\n@extend_schema_serializer(\n    examples=[\n        OpenApiExample(\n            \"Successful Menu POST Example\",",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1063,11 +1095,38 @@
         "documentation": {}
     },
     {
+        "label": "BookingRequestSerializer",
+        "kind": 6,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "class BookingRequestSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects used in requests.\n    Serializes and deserializes booking data, handling date and time formatting.\n    \"\"\"\n    name = serializers.CharField(\n        max_length=255,\n        min_length=5,\n        allow_null=False,\n        help_text=\"Name of the person making the booking (minimum 5 characters)\",\n    ),",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
         "label": "BookingSerializer",
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class BookingSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\n    Serializes and deserializes booking data, handling date and time formatting.\n    \"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        max_length=255,\n        min_length=5,",
+        "peekOfCode": "class BookingSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,\n        min_length=5,\n        allow_null=False,",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "BookingResponseSerializer",
+        "kind": 6,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "class BookingResponseSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\n    Serializes and deserializes booking data, handling date and time formatting.\n    \"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "validate_date_in_future",
+        "kind": 2,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "def validate_date_in_future(value):\n        \"\"\"Check if the booking date is in the future.\n        Args:\n            booking_date (datetime): The date of the booking\n        Returns:\n            bool: True if the booking date is in the future, False otherwise\n        \"\"\"\n        if not value > datetime.now():\n            raise serializers.ValidationError(\"Booking date must be in the future.\")\nclass CustomUserSerializer(serializers.ModelSerializer):",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1094,7 +1153,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",\n        tags=[\"Tokens\"],\n        request=AuthRequestSerializer,\n        responses=UserSerializer,\n        examples=[\n            OpenApiExample(",
+        "peekOfCode": "class AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",\n        tags=[\"Tokens\"],\n        request=AuthRequestSerializer,\n        responses=AuthResponseSerializer,\n        examples=[\n            OpenApiExample(",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1113,15 +1172,6 @@
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
         "peekOfCode": "class MenuViewset(ModelViewSet):\n    \"\"\"ViewSet for managing Menu items.\n    Provides endpoints for listing, retrieving, creating, updating, and deleting menu items.\n    \"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter",
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "UserViewSet",
-        "kind": 6,
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "peekOfCode": "class UserViewSet(ModelViewSet):\n    queryset = User.objects.all()\n    serializer_class = UserSerializer\n    permission_classes = [IsAuthenticated]",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1166,7 +1216,7 @@
         "kind": 6,
         "importPath": "applications.resturant.models",
         "description": "applications.resturant.models",
-        "peekOfCode": "class Booking(Model):\n    booking_id = fields.SmallAutoField(verbose_name=\"Booking ID\", primary_key=True)\n    name = fields.CharField(\n        verbose_name=\"Guest Name\", max_length=255, null=False, blank=False\n    )\n    no_of_guests = fields.PositiveSmallIntegerField(\n        verbose_name=\"Party Size\", blank=False, null=True\n    )\n    date = fields.DateTimeField(verbose_name=\"Date of Booking\")\n    def __str__(self):",
+        "peekOfCode": "class Booking(Model):\n    booking_id = fields.SmallAutoField(verbose_name=\"Booking ID\", primary_key=True)\n    name = fields.CharField(\n        verbose_name=\"Guest Name\", max_length=255, null=False, blank=False\n    )\n    no_of_guests = fields.PositiveSmallIntegerField(\n        verbose_name=\"Party Size\", blank=False, null=False\n    )\n    date = fields.DateTimeField(verbose_name=\"Date of Booking\")\n    def __str__(self):",
         "detail": "applications.resturant.models",
         "documentation": {}
     },
@@ -1189,38 +1239,20 @@
         "documentation": {}
     },
     {
-        "label": "UserSerializer",
-        "kind": 6,
-        "importPath": "applications.resturant.serializers",
-        "description": "applications.resturant.serializers",
-        "peekOfCode": "class UserSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = User\n        fields = ['url', 'username', 'email', 'groups']\n@extend_schema_serializer(\n    examples=[\n        OpenApiExample(\n            \"Successful Menu POST Example\",\n            value={\n                \"title\": \"Greek Salad\",",
-        "detail": "applications.resturant.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "MenuSerializer",
-        "kind": 6,
-        "importPath": "applications.resturant.serializers",
-        "description": "applications.resturant.serializers",
-        "peekOfCode": "class MenuSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Menu objects.\n    Serializes and deserializes menu item data.\n    \"\"\"\n    item_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the menu item\"\n    )\n    title = serializers.CharField(max_length=255, help_text=\"Name of the menu item\")\n    price = serializers.DecimalField(\n        max_digits=6, decimal_places=2, help_text=\"Price of the menu item in USD\"",
-        "detail": "applications.resturant.serializers",
-        "documentation": {}
-    },
-    {
-        "label": "BookingSerializer",
-        "kind": 6,
-        "importPath": "applications.resturant.serializers",
-        "description": "applications.resturant.serializers",
-        "peekOfCode": "class BookingSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\n    Serializes and deserializes booking data, handling date and time formatting.\n    \"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        max_length=255,\n        min_length=5,",
-        "detail": "applications.resturant.serializers",
-        "documentation": {}
-    },
-    {
         "label": "BookingSerializerRepresentationTest",
         "kind": 6,
         "importPath": "applications.resturant.tests",
         "description": "applications.resturant.tests",
         "peekOfCode": "class BookingSerializerRepresentationTest(TestCase):\n    def test_to_representation_formats_date_and_time(self):\n        # Arrange\n        booking = Booking.objects.create(\n            name=\"John Doe\", no_of_guests=4, date=datetime(2024, 5, 10, 18, 30)\n        )\n        # Act\n        serializer = BookingSerializer(booking)\n        data = serializer.data\n        # Assert",
+        "detail": "applications.resturant.tests",
+        "documentation": {}
+    },
+    {
+        "label": "BookingViewSetTests",
+        "kind": 6,
+        "importPath": "applications.resturant.tests",
+        "description": "applications.resturant.tests",
+        "peekOfCode": "class BookingViewSetTests(TestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.booking_list_url = reverse(\"booking-list\")\n    @classmethod\n    def setUpTestData(cls):\n        cls.booking1 = Booking.objects.create(booking_id=52, name=\"John Doe\", no_of_guests=2, date=\"2024-05-03T08:00\")\n        cls.booking2 = Booking.objects.create(name=\"Jane Doe\", no_of_guests=4, date=\"2024-06-10T19:30\")\n    def test_create_booking_valid_and_invalid_cases(self):\n        \"\"\"Test creating bookings with various valid, edge, and invalid data\"\"\"",
         "detail": "applications.resturant.tests",
         "documentation": {}
     },
@@ -1265,7 +1297,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"\n    USE_TZ = True",
+        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"\n    USE_TZ = False",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1301,7 +1333,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\npath('auth/', include('djoser.urls')),\npath('auth/', include('djoser.urls.authtoken'))\n] + debug_toolbar_urls()",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\npath('auth/', include('djoser.urls')),\npath('auth/', include('djoser.urls.authtoken')),\npath('api-token-auth/', AuthToken.as_view()),\n] + debug_toolbar_urls()",
         "detail": "config.urls",
         "documentation": {}
     },

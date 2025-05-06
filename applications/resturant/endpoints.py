@@ -1,4 +1,4 @@
-# Create your views here.
+
 from django.views.generic import TemplateView
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
@@ -11,17 +11,17 @@ from drf_spectacular.utils import (
 from rest_framework import status
 from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
-from resturant.serializers.core import BookingSerializer, MenuSerializer, UserSerializer
+from applications.resturant.serializers.core import MenuSerializer, BookingRequestSerializer, BookingResponseSerializer, BookingSerializer
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-
+from django.http import HttpResponse
 from applications.resturant.filters import BookingFilter, ProductFilter
 from applications.resturant.models import Booking, Menu
-from applications.resturant.serializers.auth import AuthRequestSerializer
+from applications.resturant.serializers.auth import AuthRequestSerializer, AuthResponseSerializer
 
 class Index(TemplateView):
     """A view for rendering the index template.
@@ -39,7 +39,7 @@ class AuthToken(ObtainAuthToken):
         description="Authenticate a user and generate an authentication token.",
         tags=["Tokens"],
         request=AuthRequestSerializer,
-        responses=UserSerializer,
+        responses=AuthResponseSerializer,
         examples=[
             OpenApiExample(
                 name="Successful Authentication",
@@ -86,7 +86,7 @@ class AuthToken(ObtainAuthToken):
         parameters=None,
         tags=["Reservations"],
         filters=True,
-        responses=BookingSerializer,
+        responses=BookingResponseSerializer,
         examples=[
             OpenApiExample(
                 name="Successful GET request",
@@ -116,7 +116,8 @@ class AuthToken(ObtainAuthToken):
         auth=None,
         tags=["Reservations"],
         description="Get the details of a specific booking by its ID.",
-        responses=BookingSerializer,
+        responses=BookingResponseSerializer,
+        request=BookingResponseSerializer,
         filters=False,
         parameters=[
             OpenApiParameter(
@@ -158,44 +159,7 @@ class AuthToken(ObtainAuthToken):
         description="Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.",
         request=BookingSerializer,
         tags=["Reservations"],
-        parameters=[
-            OpenApiParameter(
-                name="name",
-                type=OpenApiTypes.STR,
-                location="path",
-                required=True,
-                description="Name of the person making the booking",
-                examples=[OpenApiExample(name="Standard Booking ID", value="John Doe")],
-            ),
-            OpenApiParameter(
-                name="no_of_guests",
-                type=OpenApiTypes.INT,
-                location="path",
-                required=True,
-                description="Number of guests in the party",
-                examples=[OpenApiExample(name="Standard Booking ID", value="123")],
-            ),
-            OpenApiParameter(
-                name="date",
-                type=OpenApiTypes.DATE,
-                location="path",
-                required=True,
-                description="Date of the booking",
-                examples=[
-                    OpenApiExample(name="Standard Booking ID", value="01-01-1970")
-                ],
-            ),
-            OpenApiParameter(
-                name="time",
-                type=OpenApiTypes.TIME,
-                location="path",
-                required=True,
-                description="Time of the booking",
-                examples=[OpenApiExample(name="Standard Booking ID", value="3:45 PM")],
-            ),
-        ],
         # auth=["TokenAuth"],
-        responses=BookingSerializer,
         examples=[
             OpenApiExample(
                 "Create Booking Example",
@@ -229,7 +193,7 @@ class AuthToken(ObtainAuthToken):
         description="Update an existing booking. Authentication Token REQUIRED.",
         # auth=["TokenAuth"],
         tags=["Reservations"],
-        responses=BookingSerializer,
+        responses=BookingResponseSerializer,
         examples=[
             OpenApiExample(
                 "Success  - Update Booking Example",
@@ -275,7 +239,7 @@ class AuthToken(ObtainAuthToken):
         description="Update partial fields of a booking. Authentication Token REQUIRED.",
         # auth=["TokenAuth"],
         tags=["Reservations"],
-        responses=BookingSerializer,
+        responses=BookingResponseSerializer,
         examples=[
             OpenApiExample(
                 "Partial Update Booking Example",
@@ -295,7 +259,7 @@ class AuthToken(ObtainAuthToken):
         description="Delete a booking entry. Authentication Token REQUIRED.",
         tags=["Reservations"],
         # auth=["TokenAuth"],
-        responses=BookingSerializer,
+        responses=BookingResponseSerializer,
         examples=[
             OpenApiExample(
                 "Delete Booking Example",
@@ -322,6 +286,19 @@ class BookingsViewset(ModelViewSet):
     ordering_fields = ["date", "no_of_guests"]
     permission_classes = [IsAuthenticated]
 
+    def create(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            serializer = self.get_serializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                serializer.data, status=status.HTTP_201_CREATED, headers=headers
+            )
+        return HTTPResponse(
+            {"message": "Authentication credentials were not provided."},
+            status=status.HTTP_401_UNAUTHORIZED,
+        )
 
 @extend_schema_view(
     list=extend_schema(
@@ -448,7 +425,3 @@ class MenuViewset(ModelViewSet):
     filterset_class = ProductFilter
     permission_classes = [IsAuthenticated]  
 
-class UserViewSet(ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated]
