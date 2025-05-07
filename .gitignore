@@ -280,3 +280,6 @@ pyrightconfig.json
 
 #Ignore vscode AI rules
 .github/copilot-instructions.md
+.vscode
+.task/checksum/freeze
+.vscode/PythonImportHelper-v2-Completion.json
