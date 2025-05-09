@@ -1,47 +1,49 @@
-name: General Test and Deploy
-on: 
-  push:
-jobs:
-  setup-virtualenv:
-    runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: ['3.10','3.11', '3.12']
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Fetch Env Vars from Doppler
-        uses: dopplerhq/secrets-fetch-action@v1.3.0
-        id: doppler
-        with:
-          doppler-token: ${{ secrets.DOPPLER_TOKEN }}
-      - name: Create SSL  Certificate
-        run: |
-          echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
-          export PATH_TO_DB_ROOT_CERT=$(pwd)/AIVEN_SSL.pem
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install Dependencies
-        run: |
-          pip install -r requirements/dev.txt
-      - uses: actions/cache@v4
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-      - name: Run Migrations
-        run: |
-              task db_sync
-      - name: Collect Static Files
-        run: |
-              task collect
-        
-      - name: Run Tests
-        run: |
-          python manage.py test
+---
+  name: General Test and Deploy
+  on:
+    push: {}
+  jobs:
+    setup-virtualenv:
+      runs-on: ubuntu-latest
+      strategy:
+        max-parallel: 4
+        matrix:
+          python-version:
+            - "3.10"
+            - "3.11"
+            - "3.12"
+      steps:
+        - name: Checkout Code
+          uses: actions/checkout@v3
+        - name: Fetch Env Vars from Doppler
+          uses: dopplerhq/secrets-fetch-action@v1.3.0
+          id: doppler
+          with:
+            doppler-token: ${{ secrets.DOPPLER_TOKEN }}
+        - name: Create SSL  Certificate
+          run: |
+            echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
+            export PATH_TO_DB_ROOT_CERT=$(pwd)/AIVEN_SSL.pem
+        - name: Set up Python ${{ matrix.python-version }}
+          uses: actions/setup-python@v5
+          with:
+            python-version: ${{ matrix.python-version }}
+        - name: Install Dependencies
+          run: |
+            pip install -r requirements/dev.txt
+        - uses: actions/cache@v4
+          with:
+            path: ~/.cache/pip
+            key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+            restore-keys: |
+              ${{ runner.os }}-pip-
+        - name: Run Migrations
+          run: |
+            task db_sync
+        - name: Collect Static Files
+          run: |
+            task collect
+        - name: Run Tests
+          run: |
+            python manage.py test
   
