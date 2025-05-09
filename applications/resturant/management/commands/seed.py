@@ -1,5 +1,4 @@
 import json
-from re import L
 
 from django.core.management.base import BaseCommand
 
@@ -30,10 +29,12 @@ def seed_menu():
     for item in menu:
         json.loads(item)
         menu_items_objects.append(
-            Menu(title=item.title, price=item.price, inventory=item.inventory))
+            Menu(title=item.title, price=item.price, inventory=item.inventory)
+        )
     Menu.objects.bulk_create(menu_items_objects)
     print("Menu seeded successfully!")
     return True
+
 
 def seed_all():
     """Seeds all tables with sample data."""
@@ -44,10 +45,12 @@ def seed_all():
         print("Failed to seed data!")
         return False
 
+
 class Command(BaseCommand):
     help = "Seeds the database with sample data"
-    requires_migrations_checks = True  
+    requires_migrations_checks = True
     output_transaction = True
+
     def handle(self, *args, **options):
         if options["no-bookings"]:
             seed_menu

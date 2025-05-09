@@ -10,9 +10,10 @@ class Booking(Model):
         verbose_name="Party Size", blank=False, null=False
     )
     date = fields.DateTimeField(verbose_name="Date of Booking")
+
     def __str__(self):
         return f"Booking ID: {self.booking_id}, Name: {self.name}, Date: {self.date}"
-        
+
     class Meta:
         app_label = "resturant"
         db_table = "bookings"
@@ -21,7 +22,7 @@ class Booking(Model):
         verbose_name_plural = "Bookings"
         managed = True
         indexes = [
-            Index(fields=["name"], name="idx_name"),      
+            Index(fields=["name"], name="idx_name"),
             Index(fields=["date"], name="idx_date"),
         ]
 
@@ -37,8 +38,10 @@ class Menu(Model):
     inventory = fields.PositiveSmallIntegerField(
         verbose_name="Number in Stock", blank=False, null=True
     )
+
     def __str__(self):
         return f"Menu Item ID: {self.item_id}, Title: {self.title}, Price: {self.price}, Inventory: {self.inventory}"
+
     class Meta:
         app_label = "resturant"
         db_table = "inventory"

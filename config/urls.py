@@ -15,19 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-import applications.resturant
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import include, path, re_path
-from applications.resturant.endpoints import Index, AuthToken
-from config.asgi import application
+
+from applications.resturant.endpoints import AuthToken, Index
 
 urlpatterns = [
     re_path(r"^$", Index.as_view(), name="index"),
     path("admin/", admin.site.urls),
     path("restaurant/", include("resturant.urls")),
     path("", include("django_prometheus.urls")),
-path('auth/', include('djoser.urls')),
-path('auth/', include('djoser.urls.authtoken')),
-path('api-token-auth/', AuthToken.as_view()),
+    path("auth/", include("djoser.urls")),
+    path("auth/", include("djoser.urls.authtoken")),
+    path("api-token-auth/", AuthToken.as_view()),
 ] + debug_toolbar_urls()

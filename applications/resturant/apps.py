@@ -1,4 +1,3 @@
-import applications.resturant
 from django.apps import AppConfig
 
 
@@ -7,4 +6,4 @@ class ResturantConfig(AppConfig):
     name = "applications.resturant"
 
     def ready(self):
-        import applications.resturant.schema
+        pass

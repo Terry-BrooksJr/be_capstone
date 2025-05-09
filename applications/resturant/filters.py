@@ -1,6 +1,8 @@
+from django_filters import (CharFilter, DateFilter, FilterSet, NumberFilter,
+                            TimeFilter)
 
-from django_filters import CharFilter, FilterSet, NumberFilter, DateFilter, TimeFilter
-from applications.resturant.forms import MenuFilterFormHelper, BookingFilterFormHelper   
+from applications.resturant.forms import (BookingFilterFormHelper,
+                                          MenuFilterFormHelper)
 from applications.resturant.models import Booking, Menu
 
 
@@ -36,6 +38,6 @@ class BookingFilter(FilterSet):
 
     class Meta:
         model = Booking
-        fields = ["date", "min_no_of_guests","max_no_of_guests", "name", "time"]
+        fields = ["date", "min_no_of_guests", "max_no_of_guests", "name", "time"]
         form = BookingFilterFormHelper
         exclude = ["booking_id"]
