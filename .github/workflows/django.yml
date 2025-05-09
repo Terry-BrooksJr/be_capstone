@@ -44,7 +44,10 @@
         - name: Run Migrations
           run: |
             task db_sync
+        - name: Install Doppler CLI
+          run: |
+            curl -LsSf https://cli.doppler.com/install.sh | sh
         - name: Run Tests
           run: |
-                task test
+                python
   
