@@ -60,9 +60,7 @@ tasks:
       - ./applications/*/migrations/*.py
     sources:
       - .applications/*/migrations/*.py
-    requires:
-      vars:
-        - DOPPLER_TOKEN
+    silent: false
 
   collect:
     dir: "{{ .TASKFILE_DIR }}"
@@ -76,10 +74,6 @@ tasks:
     desc: Run tests
     cmds:
       - doppler run --  python run/manage.py test applications.resturant.tests
-    requires:
-      vars:
-        - DOPPLER_TOKEN
-        - PATH_TO_DB_ROOT_CERT
 
   run:
     desc: Starts a Gunicorn Based Development Server that Reloads on Changes
