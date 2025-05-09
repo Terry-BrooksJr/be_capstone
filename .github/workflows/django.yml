@@ -1,12 +1,16 @@
 name: General Test and Deploy
 on: 
+name: General Test and Deploy
+on: 
   push:
 jobs:
+  setup-virtualenv:
   setup-virtualenv:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
+        python-version: ['3.10','3.11', '3.12']
         python-version: ['3.10','3.11', '3.12']
 
     steps:
