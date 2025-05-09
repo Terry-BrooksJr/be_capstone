@@ -44,9 +44,6 @@
         - name: Run Migrations
           run: |
             task db_sync
-        - name: Collect Static Files
-          run: |
-            task collect
         - name: Run Tests
           run: |
             python manage.py test
