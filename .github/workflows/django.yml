@@ -2,6 +2,7 @@
   name: General Test and Deploy
   on:
     push: {}
+    workflow_dispatch: {}
   jobs:
     setup-virtualenv:
       runs-on: ubuntu-latest
