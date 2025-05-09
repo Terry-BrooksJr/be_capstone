@@ -20,6 +20,8 @@
           id: doppler
           with:
             doppler-token: ${{ secrets.DOPPLER_TOKEN }}
+        - name: Setup Task
+          uses: Illbjorn/setup-task@0.1.0
         - name: Create SSL  Certificate
           run: |
             echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
