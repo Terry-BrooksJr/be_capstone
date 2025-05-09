@@ -38,7 +38,6 @@ tasks:
   freeze:
     desc: Pin current dependencies
     cmds:
-      - doppler run  -- poetry sync
       - doppler run  -- poetry export --without dev,test --without-hashes --without-urls > ./requirements/base.txt
       - doppler run  -- poetry export  --without-hashes --without-urls > ./requirements/dev.txt
     generates:
