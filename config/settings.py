@@ -17,6 +17,7 @@ class Base(Configuration):
     SECRET_KEY = enviornment_var["SECRET_KEY"]
     STATIC_URL = "static/"
     ROOT_URLCONF = "config.urls"
+    # APPEND_SLASH=False 
     WSGI_APPLICATION = "config.wsgi.application"
     LANGUAGE_CODE = "en-us"
     TIME_ZONE = "UTC"
@@ -97,15 +98,14 @@ class Base(Configuration):
             "rest_framework.authentication.SessionAuthentication",
         ],
     }
-  
-    DJOSER={"USER_ID_FIELD":"username"}
+
+    DJOSER = {"USER_ID_FIELD": "username"}
     SPECTACULAR_SETTINGS = {
         "TITLE": "Little Lemon Menu and Booking API",
         "DESCRIPTION": "",
         "VERSION": "1.0.0",
         "SWAGGER_UI_DIST": "SIDECAR",
-        "SWAGGER_UI_FAVICON_HREF": "SIDECAR"
-,
+        "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
         "REDOC_DIST": "SIDECAR",
         "SECURITY": [
             {"TokenAuth": []},
@@ -146,7 +146,6 @@ class Grading(Base):
         "drf_spectacular",
         "drf_spectacular_sidecar",
         "djoser",
-        
     ]
 
     MIDDLEWARE = [

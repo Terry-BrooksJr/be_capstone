@@ -1,4 +1,6 @@
 
+from typing import Union, Any
+from datetime import datetime
 from django.views.generic import TemplateView
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
@@ -9,19 +11,16 @@ from drf_spectacular.utils import (
     extend_schema_view,
 )
 from rest_framework import status
-from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
-from applications.resturant.serializers.core import MenuSerializer, BookingRequestSerializer, BookingResponseSerializer, BookingSerializer
-from django.contrib.auth.models import User
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
-from rest_framework.decorators import api_view, permission_classes
-from django.http import HttpResponse
+
 from applications.resturant.filters import BookingFilter, ProductFilter
 from applications.resturant.models import Booking, Menu
 from applications.resturant.serializers.auth import AuthRequestSerializer, AuthResponseSerializer
+from applications.resturant.serializers.core import MenuSerializer, BookingSerializer
 
 class Index(TemplateView):
     """A view for rendering the index template.
@@ -70,11 +69,16 @@ class AuthToken(ObtainAuthToken):
             data=request.data, context={"request": request}
         )
         serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data.get("user")
+        user = serializer.validated_data.get("user", None)
         if user is None:
             from rest_framework.exceptions import AuthenticationFailed
             raise AuthenticationFailed("User not found in validated data")
-        token, created = Token.objects.get_or_create(user=user)
+        token:Union[Token,Any] = None
+        created:bool = False 
+        token,created = Token.objects.get_or_create(user=user)
+        if created:
+            token.created = datetime.now()
+            token.save()
         return Response({"token": token.key, "user_id": user.pk, "email": user.email})
 
 
@@ -86,7 +90,7 @@ class AuthToken(ObtainAuthToken):
         parameters=None,
         tags=["Reservations"],
         filters=True,
-        responses=BookingResponseSerializer,
+        responses=BookingSerializer,
         examples=[
             OpenApiExample(
                 name="Successful GET request",
@@ -116,8 +120,8 @@ class AuthToken(ObtainAuthToken):
         auth=None,
         tags=["Reservations"],
         description="Get the details of a specific booking by its ID.",
-        responses=BookingResponseSerializer,
-        request=BookingResponseSerializer,
+        responses=BookingSerializer,
+        request=BookingSerializer,
         filters=False,
         parameters=[
             OpenApiParameter(
@@ -193,7 +197,7 @@ class AuthToken(ObtainAuthToken):
         description="Update an existing booking. Authentication Token REQUIRED.",
         # auth=["TokenAuth"],
         tags=["Reservations"],
-        responses=BookingResponseSerializer,
+        responses=BookingSerializer,
         examples=[
             OpenApiExample(
                 "Success  - Update Booking Example",
@@ -239,7 +243,7 @@ class AuthToken(ObtainAuthToken):
         description="Update partial fields of a booking. Authentication Token REQUIRED.",
         # auth=["TokenAuth"],
         tags=["Reservations"],
-        responses=BookingResponseSerializer,
+        responses=BookingSerializer,
         examples=[
             OpenApiExample(
                 "Partial Update Booking Example",
@@ -259,7 +263,7 @@ class AuthToken(ObtainAuthToken):
         description="Delete a booking entry. Authentication Token REQUIRED.",
         tags=["Reservations"],
         # auth=["TokenAuth"],
-        responses=BookingResponseSerializer,
+        responses=BookingSerializer,
         examples=[
             OpenApiExample(
                 "Delete Booking Example",
@@ -285,7 +289,7 @@ class BookingsViewset(ModelViewSet):
     filterset_class = BookingFilter
     ordering_fields = ["date", "no_of_guests"]
     permission_classes = [IsAuthenticated]
-
+    
     def create(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             serializer = self.get_serializer(data=request.data)
@@ -295,8 +299,8 @@ class BookingsViewset(ModelViewSet):
             return Response(
                 serializer.data, status=status.HTTP_201_CREATED, headers=headers
             )
-        return HTTPResponse(
-            {"message": "Authentication credentials were not provided."},
+        return Response(
+            data={"message": "Authentication credentials were not provided."},
             status=status.HTTP_401_UNAUTHORIZED,
         )
 

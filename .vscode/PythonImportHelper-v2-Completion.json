@@ -9,22 +9,6 @@
         "documentation": {}
     },
     {
-        "label": "L",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "M",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "BaseCommand",
         "importPath": "django.core.management.base",
         "description": "django.core.management.base",
@@ -65,6 +49,14 @@
         "documentation": {}
     },
     {
+        "label": "booking",
+        "importPath": "mock.data",
+        "description": "mock.data",
+        "isExtraImport": true,
+        "detail": "mock.data",
+        "documentation": {}
+    },
+    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -137,7 +129,39 @@
         "documentation": {}
     },
     {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "generics",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -169,7 +193,7 @@
         "documentation": {}
     },
     {
-        "label": "BookingRequestSerializer",
+        "label": "BookingSerializer",
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
@@ -177,7 +201,7 @@
         "documentation": {}
     },
     {
-        "label": "BookingResponseSerializer",
+        "label": "MenuSerializer",
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
@@ -193,26 +217,11 @@
         "documentation": {}
     },
     {
-        "label": "label",
-        "importPath": "cProfile",
-        "description": "cProfile",
-        "isExtraImport": true,
-        "detail": "cProfile",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
         "importPath": "datetime",
         "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "date",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
         "detail": "datetime",
         "documentation": {}
     },
@@ -230,6 +239,80 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -249,6 +332,14 @@
         "documentation": {}
     },
     {
+        "label": "extend_schema_serializer",
+        "importPath": "drf_spectacular.utils",
+        "description": "drf_spectacular.utils",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.utils",
+        "documentation": {}
+    },
+    {
         "label": "extend_schema_field",
         "importPath": "drf_spectacular.utils",
         "description": "drf_spectacular.utils",
@@ -257,7 +348,23 @@
         "documentation": {}
     },
     {
-        "label": "extend_schema_serializer",
+        "label": "OpenApiExample",
+        "importPath": "drf_spectacular.utils",
+        "description": "drf_spectacular.utils",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.utils",
+        "documentation": {}
+    },
+    {
+        "label": "OpenApiParameter",
+        "importPath": "drf_spectacular.utils",
+        "description": "drf_spectacular.utils",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.utils",
+        "documentation": {}
+    },
+    {
+        "label": "extend_schema",
         "importPath": "drf_spectacular.utils",
         "description": "drf_spectacular.utils",
         "isExtraImport": true,
@@ -297,180 +404,11 @@
         "documentation": {}
     },
     {
-        "label": "UniqueTogetherValidator",
-        "importPath": "rest_framework.validators",
-        "description": "rest_framework.validators",
+        "label": "OpenApiTypes",
+        "importPath": "drf_spectacular.types",
+        "description": "drf_spectacular.types",
         "isExtraImport": true,
-        "detail": "rest_framework.validators",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru ",
-        "description": "loguru ",
-        "isExtraImport": true,
-        "detail": "loguru ",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "applications.resturant",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "applications.resturant",
-        "description": "applications.resturant",
-        "detail": "applications.resturant",
-        "documentation": {}
-    },
-    {
-        "label": "endpoints",
-        "importPath": "applications.resturant",
-        "description": "applications.resturant",
-        "isExtraImport": true,
-        "detail": "applications.resturant",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
-        "documentation": {}
-    },
-    {
-        "label": "TemplateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DjangoFilterBackend",
-        "importPath": "django_filters.rest_framework",
-        "description": "django_filters.rest_framework",
-        "isExtraImport": true,
-        "detail": "django_filters.rest_framework",
+        "detail": "drf_spectacular.types",
         "documentation": {}
     },
     {
@@ -482,87 +420,23 @@
         "documentation": {}
     },
     {
-        "label": "SearchFilter",
-        "importPath": "rest_framework.filters",
-        "description": "rest_framework.filters",
+        "label": "OpenApiTypes",
+        "importPath": "drf_spectacular.types",
+        "description": "drf_spectacular.types",
         "isExtraImport": true,
-        "detail": "rest_framework.filters",
+        "detail": "drf_spectacular.types",
         "documentation": {}
     },
     {
-        "label": "ModelViewSet",
-        "importPath": "rest_framework.viewsets",
-        "description": "rest_framework.viewsets",
+        "label": "UniqueTogetherValidator",
+        "importPath": "rest_framework.validators",
+        "description": "rest_framework.validators",
         "isExtraImport": true,
-        "detail": "rest_framework.viewsets",
+        "detail": "rest_framework.validators",
         "documentation": {}
     },
     {
-        "label": "reverse_action",
-        "importPath": "rest_framework.viewsets",
-        "description": "rest_framework.viewsets",
-        "isExtraImport": true,
-        "detail": "rest_framework.viewsets",
-        "documentation": {}
-    },
-    {
-        "label": "AllowAny",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "IsAuthenticated",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "ObtainAuthToken",
-        "importPath": "rest_framework.authtoken.views",
-        "description": "rest_framework.authtoken.views",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.views",
-        "documentation": {}
-    },
-    {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "api_view",
-        "importPath": "rest_framework.decorators",
-        "description": "rest_framework.decorators",
-        "isExtraImport": true,
-        "detail": "rest_framework.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "permission_classes",
-        "importPath": "rest_framework.decorators",
-        "description": "rest_framework.decorators",
-        "isExtraImport": true,
-        "detail": "rest_framework.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "HttpResponse",
+        "label": "QueryDict",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -570,235 +444,147 @@
         "documentation": {}
     },
     {
-        "label": "BookingFilter",
-        "importPath": "applications.resturant.filters",
-        "description": "applications.resturant.filters",
+        "label": "QueryDict",
+        "importPath": "django.http",
+        "description": "django.http",
         "isExtraImport": true,
-        "detail": "applications.resturant.filters",
+        "detail": "django.http",
         "documentation": {}
     },
     {
-        "label": "ProductFilter",
-        "importPath": "applications.resturant.filters",
-        "description": "applications.resturant.filters",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "applications.resturant.filters",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "AuthRequestSerializer",
-        "importPath": "applications.resturant.serializers.auth",
-        "description": "applications.resturant.serializers.auth",
+        "label": "Menu",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "applications.resturant.serializers.auth",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "AuthResponseSerializer",
-        "importPath": "applications.resturant.serializers.auth",
-        "description": "applications.resturant.serializers.auth",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "applications.resturant.serializers.auth",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "CharFilter",
-        "importPath": "django_filters",
-        "description": "django_filters",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "django_filters",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "FilterSet",
-        "importPath": "django_filters",
-        "description": "django_filters",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "django_filters",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "NumberFilter",
-        "importPath": "django_filters",
-        "description": "django_filters",
+        "label": "Menu",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "django_filters",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "DateFilter",
-        "importPath": "django_filters",
-        "description": "django_filters",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "django_filters",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "TimeFilter",
-        "importPath": "django_filters",
-        "description": "django_filters",
+        "label": "Menu",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "django_filters",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "MenuFilterFormHelper",
-        "importPath": "applications.resturant.forms",
-        "description": "applications.resturant.forms",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "applications.resturant.forms",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "BookingFilterFormHelper",
-        "importPath": "applications.resturant.forms",
-        "description": "applications.resturant.forms",
+        "label": "Menu",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "applications.resturant.forms",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "FormHelper",
-        "importPath": "crispy_forms.helper",
-        "description": "crispy_forms.helper",
+        "label": "Booking",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "crispy_forms.helper",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "StrictButton",
-        "importPath": "crispy_forms.bootstrap",
-        "description": "crispy_forms.bootstrap",
+        "label": "Menu",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
         "isExtraImport": true,
-        "detail": "crispy_forms.bootstrap",
+        "detail": "applications.resturant.models",
         "documentation": {}
     },
     {
-        "label": "Field",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "crispy_forms.layout",
+        "detail": "loguru",
         "documentation": {}
     },
     {
-        "label": "Layout",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "crispy_forms.layout",
+        "detail": "loguru",
         "documentation": {}
     },
     {
-        "label": "Div",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "crispy_forms.layout",
+        "detail": "loguru",
         "documentation": {}
     },
     {
-        "label": "Column",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "crispy_forms.layout",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
-        "label": "Row",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
+        "label": "get_resolver",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "HTML",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
-        "isExtraImport": true,
-        "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "Submit",
-        "importPath": "crispy_forms.layout",
-        "description": "crispy_forms.layout",
-        "isExtraImport": true,
-        "detail": "crispy_forms.layout",
-        "documentation": {}
-    },
-    {
-        "label": "forms",
-        "importPath": "django",
-        "description": "django",
-        "isExtraImport": true,
-        "detail": "django",
-        "documentation": {}
-    },
-    {
-        "label": "RangeField",
-        "importPath": "django_filters.fields",
-        "description": "django_filters.fields",
-        "isExtraImport": true,
-        "detail": "django_filters.fields",
-        "documentation": {}
-    },
-    {
-        "label": "Index",
-        "importPath": "django.db.models",
-        "description": "django.db.models",
-        "isExtraImport": true,
-        "detail": "django.db.models",
-        "documentation": {}
-    },
-    {
-        "label": "Model",
-        "importPath": "django.db.models",
-        "description": "django.db.models",
-        "isExtraImport": true,
-        "detail": "django.db.models",
-        "documentation": {}
-    },
-    {
-        "label": "fields",
-        "importPath": "django.db.models",
-        "description": "django.db.models",
-        "isExtraImport": true,
-        "detail": "django.db.models",
-        "documentation": {}
-    },
-    {
-        "label": "OpenApiAuthenticationExtension",
-        "importPath": "drf_spectacular.extensions",
-        "description": "drf_spectacular.extensions",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.extensions",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "BookingSerializer",
-        "importPath": "resturant.serializers.core",
-        "description": "resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "APIClient",
-        "importPath": "rest_framework.test",
-        "description": "rest_framework.test",
-        "isExtraImport": true,
-        "detail": "rest_framework.test",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -850,11 +636,452 @@
         "documentation": {}
     },
     {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
+        "label": "APITestCase",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
         "isExtraImport": true,
-        "detail": "loguru",
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "APIClient",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "APIClient",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "test",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "test",
+        "description": "test",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "BookingSerializer",
+        "importPath": "resturant.serializers.core",
+        "description": "resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "DjangoFilterBackend",
+        "importPath": "django_filters.rest_framework",
+        "description": "django_filters.rest_framework",
+        "isExtraImport": true,
+        "detail": "django_filters.rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "DjangoFilterBackend",
+        "importPath": "django_filters.rest_framework",
+        "description": "django_filters.rest_framework",
+        "isExtraImport": true,
+        "detail": "django_filters.rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "ObtainAuthToken",
+        "importPath": "rest_framework.authtoken.views",
+        "description": "rest_framework.authtoken.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.views",
+        "documentation": {}
+    },
+    {
+        "label": "ObtainAuthToken",
+        "importPath": "rest_framework.authtoken.views",
+        "description": "rest_framework.authtoken.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.views",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "BookingFilter",
+        "importPath": "applications.resturant.filters",
+        "description": "applications.resturant.filters",
+        "isExtraImport": true,
+        "detail": "applications.resturant.filters",
+        "documentation": {}
+    },
+    {
+        "label": "ProductFilter",
+        "importPath": "applications.resturant.filters",
+        "description": "applications.resturant.filters",
+        "isExtraImport": true,
+        "detail": "applications.resturant.filters",
+        "documentation": {}
+    },
+    {
+        "label": "BookingFilter",
+        "importPath": "applications.resturant.filters",
+        "description": "applications.resturant.filters",
+        "isExtraImport": true,
+        "detail": "applications.resturant.filters",
+        "documentation": {}
+    },
+    {
+        "label": "ProductFilter",
+        "importPath": "applications.resturant.filters",
+        "description": "applications.resturant.filters",
+        "isExtraImport": true,
+        "detail": "applications.resturant.filters",
+        "documentation": {}
+    },
+    {
+        "label": "AuthRequestSerializer",
+        "importPath": "applications.resturant.serializers.auth",
+        "description": "applications.resturant.serializers.auth",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "AuthResponseSerializer",
+        "importPath": "applications.resturant.serializers.auth",
+        "description": "applications.resturant.serializers.auth",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "AuthRequestSerializer",
+        "importPath": "applications.resturant.serializers.auth",
+        "description": "applications.resturant.serializers.auth",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "AuthResponseSerializer",
+        "importPath": "applications.resturant.serializers.auth",
+        "description": "applications.resturant.serializers.auth",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.auth",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "importPath": "resturant.serializers",
+        "description": "resturant.serializers",
+        "isExtraImport": true,
+        "detail": "resturant.serializers",
+        "documentation": {}
+    },
+    {
+        "label": "ModelViewSet",
+        "importPath": "rest_framework.viewsets",
+        "description": "rest_framework.viewsets",
+        "isExtraImport": true,
+        "detail": "rest_framework.viewsets",
+        "documentation": {}
+    },
+    {
+        "label": "CharFilter",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "DateFilter",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "FilterSet",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "NumberFilter",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "TimeFilter",
+        "importPath": "django_filters",
+        "description": "django_filters",
+        "isExtraImport": true,
+        "detail": "django_filters",
+        "documentation": {}
+    },
+    {
+        "label": "BookingFilterFormHelper",
+        "importPath": "applications.resturant.forms",
+        "description": "applications.resturant.forms",
+        "isExtraImport": true,
+        "detail": "applications.resturant.forms",
+        "documentation": {}
+    },
+    {
+        "label": "MenuFilterFormHelper",
+        "importPath": "applications.resturant.forms",
+        "description": "applications.resturant.forms",
+        "isExtraImport": true,
+        "detail": "applications.resturant.forms",
+        "documentation": {}
+    },
+    {
+        "label": "FormHelper",
+        "importPath": "crispy_forms.helper",
+        "description": "crispy_forms.helper",
+        "isExtraImport": true,
+        "detail": "crispy_forms.helper",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Layout",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Row",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "Submit",
+        "importPath": "crispy_forms.layout",
+        "description": "crispy_forms.layout",
+        "isExtraImport": true,
+        "detail": "crispy_forms.layout",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "Index",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "Model",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "django.db.models",
+        "description": "django.db.models",
+        "isExtraImport": true,
+        "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "OpenApiAuthenticationExtension",
+        "importPath": "drf_spectacular.extensions",
+        "description": "drf_spectacular.extensions",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.extensions",
+        "documentation": {}
+    },
+    {
+        "label": "build_bearer_security_scheme_object",
+        "importPath": "drf_spectacular.plumbing",
+        "description": "drf_spectacular.plumbing",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.plumbing",
         "documentation": {}
     },
     {
@@ -887,6 +1114,22 @@
         "description": "rest_framework.routers",
         "isExtraImport": true,
         "detail": "rest_framework.routers",
+        "documentation": {}
+    },
+    {
+        "label": "endpoints",
+        "importPath": "applications.resturant",
+        "description": "applications.resturant",
+        "isExtraImport": true,
+        "detail": "applications.resturant",
+        "documentation": {}
+    },
+    {
+        "label": "cbv_endpoints",
+        "importPath": "applications.resturant",
+        "description": "applications.resturant",
+        "isExtraImport": true,
+        "detail": "applications.resturant",
         "documentation": {}
     },
     {
@@ -955,14 +1198,6 @@
         "documentation": {}
     },
     {
-        "label": "Index",
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "isExtraImport": true,
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
         "label": "AuthToken",
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
@@ -971,11 +1206,11 @@
         "documentation": {}
     },
     {
-        "label": "application",
-        "importPath": "config.asgi",
-        "description": "config.asgi",
+        "label": "Index",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "isExtraImport": true,
-        "detail": "config.asgi",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
@@ -1000,7 +1235,7 @@
         "kind": 6,
         "importPath": "applications.resturant.management.commands.seed",
         "description": "applications.resturant.management.commands.seed",
-        "peekOfCode": "class Command(BaseCommand):\n    help = \"Seeds the database with sample data\"\n    requires_migrations_checks = True  \n    output_transaction = True\n    def handle(self, *args, **options):\n        if options[\"no-bookings\"]:\n            seed_menu\n        elif options[\"no-menu\"]:\n            seed_bookings()\n        else:",
+        "peekOfCode": "class Command(BaseCommand):\n    help = \"Seeds the database with sample data\"\n    requires_migrations_checks = True\n    output_transaction = True\n    def handle(self, *args, **options):\n        if options[\"no-bookings\"]:\n            seed_menu\n        elif options[\"no-menu\"]:\n            seed_bookings()\n        else:",
         "detail": "applications.resturant.management.commands.seed",
         "documentation": {}
     },
@@ -1018,7 +1253,7 @@
         "kind": 2,
         "importPath": "applications.resturant.management.commands.seed",
         "description": "applications.resturant.management.commands.seed",
-        "peekOfCode": "def seed_menu():\n    \"\"\"Seeds the Menu table with sample data.\"\"\"\n    menu_items_objects = []\n    for item in menu:\n        json.loads(item)\n        menu_items_objects.append(\n            Menu(title=item.title, price=item.price, inventory=item.inventory))\n    Menu.objects.bulk_create(menu_items_objects)\n    print(\"Menu seeded successfully!\")\n    return True",
+        "peekOfCode": "def seed_menu():\n    \"\"\"Seeds the Menu table with sample data.\"\"\"\n    menu_items_objects = []\n    for item in menu:\n        json.loads(item)\n        menu_items_objects.append(\n            Menu(title=item.title, price=item.price, inventory=item.inventory)\n        )\n    Menu.objects.bulk_create(menu_items_objects)\n    print(\"Menu seeded successfully!\")",
         "detail": "applications.resturant.management.commands.seed",
         "documentation": {}
     },
@@ -1077,11 +1312,20 @@
         "documentation": {}
     },
     {
+        "label": "DateTimeParsingMixin",
+        "kind": 6,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "class DateTimeParsingMixin:\n    def parse_datetime_fields(self, data, request):\n        \"\"\"Returns the time portion of the date field in a human-readable 12-hour format.\n        Formats the time from the Booking object's date field as a string with AM/PM.\n        Args:\n            obj: The Booking instance containing the date field.\n        Returns:\n            str: Time in 12-hour format with AM/PM (e.g., '07:30 PM').\n        \"\"\"\n        logger.debug(f\"Raw data before datetime parsing: {data}\")",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
         "label": "CustomUserSerializer",
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class CustomUserSerializer(serializers.ModelSerializer):\n    def __getitem__(self, key):\n        return super().__getitem__(key)\n    class Meta:\n        model = User\n        fields = ['url', 'username', 'email', 'groups']\n@extend_schema_serializer(\n    examples=[\n        OpenApiExample(\n            \"Successful Menu POST Example\",",
+        "peekOfCode": "class CustomUserSerializer(serializers.ModelSerializer):\n    def __getitem__(self, key):\n        return super().__getitem__(key)\n    class Meta:\n        model = User\n        fields = [\"url\", \"username\", \"email\", \"groups\"]\n@extend_schema_serializer(\n    examples=[\n        OpenApiExample(\n            \"Successful Menu POST Example\",",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1095,29 +1339,11 @@
         "documentation": {}
     },
     {
-        "label": "BookingRequestSerializer",
-        "kind": 6,
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class BookingRequestSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects used in requests.\n    Serializes and deserializes booking data, handling date and time formatting.\n    \"\"\"\n    name = serializers.CharField(\n        max_length=255,\n        min_length=5,\n        allow_null=False,\n        help_text=\"Name of the person making the booking (minimum 5 characters)\",\n    ),",
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
         "label": "BookingSerializer",
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class BookingSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,\n        min_length=5,\n        allow_null=False,",
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "BookingResponseSerializer",
-        "kind": 6,
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class BookingResponseSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\n    Serializes and deserializes booking data, handling date and time formatting.\n    \"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,",
+        "peekOfCode": "class BookingSerializer(DateTimeParsingMixin,serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,\n        min_length=5,\n        allow_null=False,",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1126,8 +1352,26 @@
         "kind": 2,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "def validate_date_in_future(value):\n        \"\"\"Check if the booking date is in the future.\n        Args:\n            booking_date (datetime): The date of the booking\n        Returns:\n            bool: True if the booking date is in the future, False otherwise\n        \"\"\"\n        if not value > datetime.now():\n            raise serializers.ValidationError(\"Booking date must be in the future.\")\nclass CustomUserSerializer(serializers.ModelSerializer):",
+        "peekOfCode": "def validate_date_in_future(value):\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > datetime.now():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\nfrom datetime import datetime, time as TimeType",
         "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "BookingsViewsetTestCase",
+        "kind": 6,
+        "importPath": "applications.resturant.tests.test_booking_endponts",
+        "description": "applications.resturant.tests.test_booking_endponts",
+        "peekOfCode": "class BookingsViewsetTestCase(APITestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(username='testuser', password='testpassword')\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f'Token {self.test_token.key}')\n        self.list_url = reverse('bookings-list')\n        self.valid_booking_data = {\n            \"name\": \"Alice Smith\",\n            \"no_of_guests\": 2,",
+        "detail": "applications.resturant.tests.test_booking_endponts",
+        "documentation": {}
+    },
+    {
+        "label": "BookingSerializerRepresentationTest",
+        "kind": 6,
+        "importPath": "applications.resturant.tests.test_serialiazers",
+        "description": "applications.resturant.tests.test_serialiazers",
+        "peekOfCode": "class BookingSerializerRepresentationTest(TestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(username='testuser', password='testpassword')\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f'Token {self.test_token.key}')\n        self.booking =  Booking.objects.create(\n            name=\"John Doe\", no_of_guests=4, date=datetime.datetime(2024, 5, 10, 18, 30)\n        )\n    def test_to_representation_formats_date_and_time(self):",
+        "detail": "applications.resturant.tests.test_serialiazers",
         "documentation": {}
     },
     {
@@ -1135,8 +1379,116 @@
         "kind": 6,
         "importPath": "applications.resturant.apps",
         "description": "applications.resturant.apps",
-        "peekOfCode": "class ResturantConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"applications.resturant\"\n    def ready(self):\n        import applications.resturant.schema",
+        "peekOfCode": "class ResturantConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"applications.resturant\"\n    def ready(self):\n        pass",
         "detail": "applications.resturant.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Index",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class Index(TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    template_name = \"index.html\"\nclass AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "AuthToken",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",\n        tags=[\"Tokens\"],\n        request=AuthRequestSerializer,\n        responses=AuthResponseSerializer,\n        examples=[\n            OpenApiExample(",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "BookingListView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class BookingListView(generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]\n@extend_schema(",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "BookingCreateView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class BookingCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    permission_classes = [IsAuthenticated]\n    @extend_schema(\n        summary=\"Create a Booking\",\n        description=\"Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.\",\n        request=BookingSerializer,\n        tags=[\"Reservations\"],",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "BookingView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class BookingView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific booking.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    permission_classes = [IsAuthenticated]\n    def get_serializer_context(self):\n        context = super().get_serializer_context()\n        context['request'] = self.request\n        return context",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuListView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuListView(generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Create a Menu Item\",",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuCreateView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Retrieve Specific Menu Item By ID\",\n    auth=None,\n    tags=[\"Menu\"],\n    description=\"Get the details of a specific menu item by its ID.\",",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuDetailView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuDetailView(generics.RetrieveAPIView):\n    \"\"\"Provides endpoint for retrieving a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Update a Menu Item\",\n    tags=[\"Menu\"],\n    description=\"Update all details of an existing menu item.\",",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuUpdateView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuUpdateView(generics.UpdateAPIView):\n    \"\"\"Provides endpoint for updating a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Partial Update of a Menu Item\",\n    tags=[\"Menu\"],\n    description=\"Update one or more fields of an existing menu item.\",",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuPartialUpdateView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuPartialUpdateView(generics.UpdateAPIView):\n    \"\"\"Provides endpoint for partially updating a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Delete a Menu Item\", \n    description=\"Remove a menu item from the system.\",\n    tags=[\"Menu\"],",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuDeleteView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuDeleteView(generics.DestroyAPIView):\n    \"\"\"Provides endpoint for deleting a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()",
+        "detail": "applications.resturant.cbv_endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "MenuView",
+        "kind": 6,
+        "importPath": "applications.resturant.cbv_endpoints",
+        "description": "applications.resturant.cbv_endpoints",
+        "peekOfCode": "class MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]",
+        "detail": "applications.resturant.cbv_endpoints",
         "documentation": {}
     },
     {
@@ -1207,7 +1559,7 @@
         "kind": 6,
         "importPath": "applications.resturant.forms",
         "description": "applications.resturant.forms",
-        "peekOfCode": "class BookingFilterFormHelper(forms.Form):\n    date = forms.DateField(\n        required=False,\n        widget=forms.DateInput(attrs={\"type\": \"date\", \"class\": \"form-control\"})\n    )\n    time = forms.TimeField(\n        required=False,\n        widget=forms.TimeInput(attrs={\"type\": \"time\", \"class\": \"form-control\"})\n    )\n    def __init__(self, *args, **kwargs):",
+        "peekOfCode": "class BookingFilterFormHelper(forms.Form):\n    date = forms.DateField(\n        required=False,\n        widget=forms.DateInput(attrs={\"type\": \"date\", \"class\": \"form-control\"}),\n    )\n    time = forms.TimeField(\n        required=False,\n        widget=forms.TimeInput(attrs={\"type\": \"time\", \"class\": \"form-control\"}),\n    )\n    def __init__(self, *args, **kwargs):",
         "detail": "applications.resturant.forms",
         "documentation": {}
     },
@@ -1234,26 +1586,8 @@
         "kind": 6,
         "importPath": "applications.resturant.schema",
         "description": "applications.resturant.schema",
-        "peekOfCode": "class DjsoerAuthenticationScheme(OpenApiAuthenticationExtension):\n    target_class = 'my_app.MyAuthentication'  # full import path OR class ref\n    name = 'TokenAuth'  # name used in the schema\n    def get_security_definition(self, auto_schema):\n        return {\n            'type': 'apiKey',\n            'in': 'header',\n            'name': 'api_key',\n        }",
+        "peekOfCode": "class DjsoerAuthenticationScheme(OpenApiAuthenticationExtension):\n    target_class = \"my_app.MyAuthentication\"  # full import path OR class ref\n    name = \"TokenAuth\"  # name used in the schema\n    def get_security_definition(self, auto_schema):\n        return build_bearer_security_scheme_object(\n            header_name='Authorization',\n            token_prefix=self.target.keyword,\n        )",
         "detail": "applications.resturant.schema",
-        "documentation": {}
-    },
-    {
-        "label": "BookingSerializerRepresentationTest",
-        "kind": 6,
-        "importPath": "applications.resturant.tests",
-        "description": "applications.resturant.tests",
-        "peekOfCode": "class BookingSerializerRepresentationTest(TestCase):\n    def test_to_representation_formats_date_and_time(self):\n        # Arrange\n        booking = Booking.objects.create(\n            name=\"John Doe\", no_of_guests=4, date=datetime(2024, 5, 10, 18, 30)\n        )\n        # Act\n        serializer = BookingSerializer(booking)\n        data = serializer.data\n        # Assert",
-        "detail": "applications.resturant.tests",
-        "documentation": {}
-    },
-    {
-        "label": "BookingViewSetTests",
-        "kind": 6,
-        "importPath": "applications.resturant.tests",
-        "description": "applications.resturant.tests",
-        "peekOfCode": "class BookingViewSetTests(TestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.booking_list_url = reverse(\"booking-list\")\n    @classmethod\n    def setUpTestData(cls):\n        cls.booking1 = Booking.objects.create(booking_id=52, name=\"John Doe\", no_of_guests=2, date=\"2024-05-03T08:00\")\n        cls.booking2 = Booking.objects.create(name=\"Jane Doe\", no_of_guests=4, date=\"2024-06-10T19:30\")\n    def test_create_booking_valid_and_invalid_cases(self):\n        \"\"\"Test creating bookings with various valid, edge, and invalid data\"\"\"",
-        "detail": "applications.resturant.tests",
         "documentation": {}
     },
     {
@@ -1261,7 +1595,7 @@
         "kind": 5,
         "importPath": "applications.resturant.urls",
         "description": "applications.resturant.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r\"bookings\", endpoints.BookingsViewset)\nrouter.register(r\"menu\", endpoints.MenuViewset)\nurlpatterns = [\n    path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n]",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r\"bookings\", endpoints.BookingsViewset, basename=\"bookings\")\nrouter.register(r\"menu\", endpoints.MenuViewset, basename=\"menu\")\nurlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    path('bookings/', cbv_endpoints.BookingListView.as_view(), name='bookings-list'),\n    path('bookings/create', cbv_endpoints.BookingCreateView.as_view(), name='bookings-create'),  ",
         "detail": "applications.resturant.urls",
         "documentation": {}
     },
@@ -1270,7 +1604,7 @@
         "kind": 5,
         "importPath": "applications.resturant.urls",
         "description": "applications.resturant.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    path('bookings/', cbv_endpoints.BookingListView.as_view(), name='bookings-list'),\n    path('bookings/create', cbv_endpoints.BookingCreateView.as_view(), name='bookings-create'),  \n    path('bookings/<int:booking_id>/', cbv_endpoints.BookingView.as_view(), name='bookings-detail'), \n]",
         "detail": "applications.resturant.urls",
         "documentation": {}
     },
@@ -1279,7 +1613,7 @@
         "kind": 6,
         "importPath": "applications.resturant.widgets",
         "description": "applications.resturant.widgets",
-        "peekOfCode": "class CustomRangeWidget(RangeWidget):\n    template_name = 'forms/widgets/range-slider.html'\n    def __init__(self, attrs=None):\n        widgets = (HiddenInput(), HiddenInput())\n        super(RangeWidget, self).__init__(widgets, attrs)\n    def get_context(self, name, value, attrs):\n        ctx = super().get_context(name, value, attrs)\n        cur_min, cur_max = value\n        if cur_min is None:\n            cur_min = ctx['widget']['attrs']['data-range_min']",
+        "peekOfCode": "class CustomRangeWidget(RangeWidget):\n    template_name = \"forms/widgets/range-slider.html\"\n    def __init__(self, attrs=None):\n        widgets = (HiddenInput(), HiddenInput())\n        super(RangeWidget, self).__init__(widgets, attrs)\n    def get_context(self, name, value, attrs):\n        ctx = super().get_context(name, value, attrs)\n        cur_min, cur_max = value\n        if cur_min is None:\n            cur_min = ctx[\"widget\"][\"attrs\"][\"data-range_min\"]",
         "detail": "applications.resturant.widgets",
         "documentation": {}
     },
@@ -1297,7 +1631,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"\n    USE_TZ = False",
+        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False \n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1324,7 +1658,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False \n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1333,7 +1667,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\npath('auth/', include('djoser.urls')),\npath('auth/', include('djoser.urls.authtoken')),\npath('api-token-auth/', AuthToken.as_view()),\n] + debug_toolbar_urls()",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    path(\"api-token-auth/\", AuthToken.as_view()),\n] + debug_toolbar_urls()",
         "detail": "config.urls",
         "documentation": {}
     },
