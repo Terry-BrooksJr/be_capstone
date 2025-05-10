@@ -1,16 +1,20 @@
-from datetime import datetime
 import datetime as DT
-import re
-import time
+from datetime import datetime
+
 from django.contrib.auth.models import User
-from django.forms import model_to_dict
-from drf_spectacular.utils import OpenApiExample, extend_schema_serializer, extend_schema_field
+from django.http import QueryDict
 from drf_spectacular.types import OpenApiTypes
+from drf_spectacular.utils import (
+    OpenApiExample,
+    extend_schema_field,
+    extend_schema_serializer,
+)
+from loguru import logger
 from rest_framework import serializers, status
 from rest_framework.validators import UniqueTogetherValidator
-from django.http import QueryDict
+
 from applications.resturant.models import Booking, Menu
-from loguru import logger
+
 
 def validate_date_in_future(value):
     """Check if the booking date is in the future.
@@ -21,14 +25,18 @@ def validate_date_in_future(value):
     Returns:
         bool: True if the booking date is in the future, False otherwise
     """
-    
+
     if not value > datetime.now():
         raise serializers.ValidationError("Booking date must be in the future.")
-from datetime import datetime, time as TimeType
+
+
 import datetime as DT
-from rest_framework import serializers
+from datetime import datetime
+
 from django.http import QueryDict
 from loguru import logger
+from rest_framework import serializers
+
 
 class DateTimeParsingMixin:
     def parse_datetime_fields(self, data, request):
@@ -46,13 +54,20 @@ class DateTimeParsingMixin:
 
         if isinstance(data, QueryDict):
             data = data.dict()
-            data["time"] =  datetime.strptime(data["date"], "%Y-%m-%dT%H:%M").time().strftime("%I:%M %p")
+            data["time"] = (
+                datetime.strptime(data["date"], "%Y-%m-%dT%H:%M")
+                .time()
+                .strftime("%I:%M %p")
+            )
 
-        
         date_str = data.get("date")
         time_str = data.get("time")
-        if request is not None and (request.method != "PATCH" and (not date_str or not time_str)):
-            raise serializers.ValidationError({"date/time": "Both date and time are required."})
+        if request is not None and (
+            request.method != "PATCH" and (not date_str or not time_str)
+        ):
+            raise serializers.ValidationError(
+                {"date/time": "Both date and time are required."}
+            )
 
         # Handle multiple time formats
         try:
@@ -80,7 +95,9 @@ class DateTimeParsingMixin:
                     parsed_date = datetime.strptime(date_str, "%Y-%m-%dT%H:%M")
                 except Exception as e:
                     raise serializers.ValidationError(
-                        {"date": "Date must be in format 'MM-DD-YYYY' or 'YYYY-MM-DDTHH:MM'"}
+                        {
+                            "date": "Date must be in format 'MM-DD-YYYY' or 'YYYY-MM-DDTHH:MM'"
+                        }
                     ) from e
 
         if parsed_date < datetime.now():
@@ -93,6 +110,7 @@ class DateTimeParsingMixin:
         data.pop("time", None)
         data.pop("csrfmiddlewaretoken", None)
         return data
+
 
 class CustomUserSerializer(serializers.ModelSerializer):
 
@@ -198,7 +216,7 @@ class MenuSerializer(serializers.ModelSerializer):
 #         initial=datetime.now().strftime("%I:%M %p"),
 #         help_text="Time of the booking in 12-hour format (e.g., '07:30 PM')",
 #     )
-    
+
 #     def get_date(self, obj):
 #         """Formats the date portion of the date field into a human-readable date."""
 #         return obj.date.strftime("%m-%d-%Y")
@@ -219,7 +237,7 @@ class MenuSerializer(serializers.ModelSerializer):
 #         fields = ("name", "no_of_guests", "date", "time")
 
 
-class BookingSerializer(DateTimeParsingMixin,serializers.ModelSerializer):
+class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
     """Serializer for Booking objects."""
 
     booking_id = serializers.IntegerField(
@@ -261,6 +279,7 @@ class BookingSerializer(DateTimeParsingMixin,serializers.ModelSerializer):
                 message="A booking with this name for this date already exists.",
             )
         ]
+
     @extend_schema_field(OpenApiTypes.TIME)
     def get_time(self, obj):
         """Returns the time portion of the date field in a human-readable 12-hour format.
@@ -274,8 +293,6 @@ class BookingSerializer(DateTimeParsingMixin,serializers.ModelSerializer):
             str: Time in 12-hour format with AM/PM (e.g., '07:30 PM').
         """
         return obj.date.strftime("%I:%M %p")
-
-        
 
     def to_representation(self, instance):
         """Convert model instance to JSON serializable format.
@@ -308,18 +325,17 @@ class BookingSerializer(DateTimeParsingMixin,serializers.ModelSerializer):
         Returns:
             dict: The deserialized values
         """
-        request = self.context.get("request") 
+        request = self.context.get("request")
         if request is not None:
             logger.debug(f"Request: {request}")
             if (
                 request.method != "PATCH"
-                or 'date' in data.keys()
-                and 'time' in data.keys()
+                or "date" in data.keys()
+                and "time" in data.keys()
             ):
                 data = self.parse_datetime_fields(data, request)
                 logger.debug(f"Parsed data: {data}")
         return super().to_internal_value(data)
-        
 
 
 # class BookingResponseSerializer(serializers.ModelSerializer):

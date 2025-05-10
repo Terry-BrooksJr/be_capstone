@@ -1,8 +1,6 @@
-from django_filters import (CharFilter, DateFilter, FilterSet, NumberFilter,
-                            TimeFilter)
+from django_filters import CharFilter, DateFilter, FilterSet, NumberFilter, TimeFilter
 
-from applications.resturant.forms import (BookingFilterFormHelper,
-                                          MenuFilterFormHelper)
+from applications.resturant.forms import BookingFilterFormHelper, MenuFilterFormHelper
 from applications.resturant.models import Booking, Menu
 
 

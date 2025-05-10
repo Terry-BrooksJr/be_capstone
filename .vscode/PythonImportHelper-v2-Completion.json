@@ -49,14 +49,6 @@
         "documentation": {}
     },
     {
-        "label": "booking",
-        "importPath": "mock.data",
-        "description": "mock.data",
-        "isExtraImport": true,
-        "detail": "mock.data",
-        "documentation": {}
-    },
-    {
         "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
@@ -130,22 +122,6 @@
     },
     {
         "label": "serializers",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -177,6 +153,14 @@
         "documentation": {}
     },
     {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
         "label": "CustomUserSerializer",
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
@@ -185,14 +169,6 @@
         "documentation": {}
     },
     {
-        "label": "MenuSerializer",
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
         "label": "BookingSerializer",
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
@@ -217,6 +193,14 @@
         "documentation": {}
     },
     {
+        "label": "MenuSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "isExtraImport": true,
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
@@ -242,14 +226,6 @@
         "documentation": {}
     },
     {
-        "label": "time",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
@@ -271,24 +247,6 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
-        "label": "time",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "time",
-        "description": "time",
-        "detail": "time",
         "documentation": {}
     },
     {
@@ -316,11 +274,43 @@
         "documentation": {}
     },
     {
-        "label": "model_to_dict",
-        "importPath": "django.forms",
-        "description": "django.forms",
+        "label": "QueryDict",
+        "importPath": "django.http",
+        "description": "django.http",
         "isExtraImport": true,
-        "detail": "django.forms",
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "QueryDict",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "OpenApiTypes",
+        "importPath": "drf_spectacular.types",
+        "description": "drf_spectacular.types",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.types",
+        "documentation": {}
+    },
+    {
+        "label": "OpenApiTypes",
+        "importPath": "drf_spectacular.types",
+        "description": "drf_spectacular.types",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.types",
+        "documentation": {}
+    },
+    {
+        "label": "OpenApiTypes",
+        "importPath": "drf_spectacular.types",
+        "description": "drf_spectacular.types",
+        "isExtraImport": true,
+        "detail": "drf_spectacular.types",
         "documentation": {}
     },
     {
@@ -332,7 +322,7 @@
         "documentation": {}
     },
     {
-        "label": "extend_schema_serializer",
+        "label": "extend_schema_field",
         "importPath": "drf_spectacular.utils",
         "description": "drf_spectacular.utils",
         "isExtraImport": true,
@@ -340,7 +330,7 @@
         "documentation": {}
     },
     {
-        "label": "extend_schema_field",
+        "label": "extend_schema_serializer",
         "importPath": "drf_spectacular.utils",
         "description": "drf_spectacular.utils",
         "isExtraImport": true,
@@ -404,27 +394,27 @@
         "documentation": {}
     },
     {
-        "label": "OpenApiTypes",
-        "importPath": "drf_spectacular.types",
-        "description": "drf_spectacular.types",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "drf_spectacular.types",
+        "detail": "loguru",
         "documentation": {}
     },
     {
-        "label": "OpenApiTypes",
-        "importPath": "drf_spectacular.types",
-        "description": "drf_spectacular.types",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "drf_spectacular.types",
+        "detail": "loguru",
         "documentation": {}
     },
     {
-        "label": "OpenApiTypes",
-        "importPath": "drf_spectacular.types",
-        "description": "drf_spectacular.types",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "drf_spectacular.types",
+        "detail": "loguru",
         "documentation": {}
     },
     {
@@ -436,22 +426,6 @@
         "documentation": {}
     },
     {
-        "label": "QueryDict",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
-        "label": "QueryDict",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "Booking",
         "importPath": "applications.resturant.models",
         "description": "applications.resturant.models",
@@ -545,58 +519,10 @@
         "description": "applications.resturant.models",
         "isExtraImport": true,
         "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
         "documentation": {}
     },
     {
         "label": "reverse",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "get_resolver",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "reverse",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -605,6 +531,14 @@
     },
     {
         "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -636,6 +570,46 @@
         "documentation": {}
     },
     {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "Token",
+        "importPath": "rest_framework.authtoken.models",
+        "description": "rest_framework.authtoken.models",
+        "isExtraImport": true,
+        "detail": "rest_framework.authtoken.models",
+        "documentation": {}
+    },
+    {
+        "label": "APIClient",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
         "label": "APITestCase",
         "importPath": "rest_framework.test",
         "description": "rest_framework.test",
@@ -649,55 +623,6 @@
         "description": "rest_framework.test",
         "isExtraImport": true,
         "detail": "rest_framework.test",
-        "documentation": {}
-    },
-    {
-        "label": "APIClient",
-        "importPath": "rest_framework.test",
-        "description": "rest_framework.test",
-        "isExtraImport": true,
-        "detail": "rest_framework.test",
-        "documentation": {}
-    },
-    {
-        "label": "test",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "test",
-        "description": "test",
-        "detail": "test",
-        "documentation": {}
-    },
-    {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
-        "documentation": {}
-    },
-    {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
-        "documentation": {}
-    },
-    {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
-        "documentation": {}
-    },
-    {
-        "label": "Token",
-        "importPath": "rest_framework.authtoken.models",
-        "description": "rest_framework.authtoken.models",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.models",
         "documentation": {}
     },
     {
@@ -741,14 +666,6 @@
         "documentation": {}
     },
     {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "Any",
         "importPath": "typing",
         "description": "typing",
@@ -766,6 +683,14 @@
     },
     {
         "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -805,22 +730,6 @@
         "documentation": {}
     },
     {
-        "label": "IsAuthenticated",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "IsAuthenticated",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
         "label": "ObtainAuthToken",
         "importPath": "rest_framework.authtoken.views",
         "description": "rest_framework.authtoken.views",
@@ -834,6 +743,22 @@
         "description": "rest_framework.authtoken.views",
         "isExtraImport": true,
         "detail": "rest_framework.authtoken.views",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
         "documentation": {}
     },
     {
@@ -914,14 +839,6 @@
         "description": "applications.resturant.serializers.auth",
         "isExtraImport": true,
         "detail": "applications.resturant.serializers.auth",
-        "documentation": {}
-    },
-    {
-        "label": "auth",
-        "importPath": "resturant.serializers",
-        "description": "resturant.serializers",
-        "isExtraImport": true,
-        "detail": "resturant.serializers",
         "documentation": {}
     },
     {
@@ -1069,22 +986,6 @@
         "documentation": {}
     },
     {
-        "label": "OpenApiAuthenticationExtension",
-        "importPath": "drf_spectacular.extensions",
-        "description": "drf_spectacular.extensions",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.extensions",
-        "documentation": {}
-    },
-    {
-        "label": "build_bearer_security_scheme_object",
-        "importPath": "drf_spectacular.plumbing",
-        "description": "drf_spectacular.plumbing",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.plumbing",
-        "documentation": {}
-    },
-    {
         "label": "SpectacularAPIView",
         "importPath": "drf_spectacular.views",
         "description": "drf_spectacular.views",
@@ -1117,14 +1018,6 @@
         "documentation": {}
     },
     {
-        "label": "endpoints",
-        "importPath": "applications.resturant",
-        "description": "applications.resturant",
-        "isExtraImport": true,
-        "detail": "applications.resturant",
-        "documentation": {}
-    },
-    {
         "label": "cbv_endpoints",
         "importPath": "applications.resturant",
         "description": "applications.resturant",
@@ -1133,19 +1026,11 @@
         "documentation": {}
     },
     {
-        "label": "HiddenInput",
-        "importPath": "django.forms.widgets",
-        "description": "django.forms.widgets",
+        "label": "endpoints",
+        "importPath": "applications.resturant",
+        "description": "applications.resturant",
         "isExtraImport": true,
-        "detail": "django.forms.widgets",
-        "documentation": {}
-    },
-    {
-        "label": "RangeWidget",
-        "importPath": "django_filters.widgets",
-        "description": "django_filters.widgets",
-        "isExtraImport": true,
-        "detail": "django_filters.widgets",
+        "detail": "applications.resturant",
         "documentation": {}
     },
     {
@@ -1343,7 +1228,7 @@
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class BookingSerializer(DateTimeParsingMixin,serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,\n        min_length=5,\n        allow_null=False,",
+        "peekOfCode": "class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):\n    \"\"\"Serializer for Booking objects.\"\"\"\n    booking_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the booking\"\n    )\n    name = serializers.CharField(\n        label=\"Reservation Name\",\n        max_length=255,\n        min_length=5,\n        allow_null=False,",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1352,7 +1237,7 @@
         "kind": 2,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "def validate_date_in_future(value):\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > datetime.now():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\nfrom datetime import datetime, time as TimeType",
+        "peekOfCode": "def validate_date_in_future(value):\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > datetime.now():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\nimport datetime as DT",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1361,7 +1246,7 @@
         "kind": 6,
         "importPath": "applications.resturant.tests.test_booking_endponts",
         "description": "applications.resturant.tests.test_booking_endponts",
-        "peekOfCode": "class BookingsViewsetTestCase(APITestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(username='testuser', password='testpassword')\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f'Token {self.test_token.key}')\n        self.list_url = reverse('bookings-list')\n        self.valid_booking_data = {\n            \"name\": \"Alice Smith\",\n            \"no_of_guests\": 2,",
+        "peekOfCode": "class BookingsViewsetTestCase(APITestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(\n            username=\"testuser\", password=\"testpassword\"\n        )\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f\"Token {self.test_token.key}\")\n        self.list_url = reverse(\"bookings-list\")\n        self.valid_booking_data = {",
         "detail": "applications.resturant.tests.test_booking_endponts",
         "documentation": {}
     },
@@ -1370,7 +1255,7 @@
         "kind": 6,
         "importPath": "applications.resturant.tests.test_serialiazers",
         "description": "applications.resturant.tests.test_serialiazers",
-        "peekOfCode": "class BookingSerializerRepresentationTest(TestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(username='testuser', password='testpassword')\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f'Token {self.test_token.key}')\n        self.booking =  Booking.objects.create(\n            name=\"John Doe\", no_of_guests=4, date=datetime.datetime(2024, 5, 10, 18, 30)\n        )\n    def test_to_representation_formats_date_and_time(self):",
+        "peekOfCode": "class BookingSerializerRepresentationTest(TestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(\n            username=\"testuser\", password=\"testpassword\"\n        )\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f\"Token {self.test_token.key}\")\n        self.booking = Booking.objects.create(\n            name=\"John Doe\", no_of_guests=4, date=datetime.datetime(2024, 5, 10, 18, 30)",
         "detail": "applications.resturant.tests.test_serialiazers",
         "documentation": {}
     },
@@ -1424,7 +1309,7 @@
         "kind": 6,
         "importPath": "applications.resturant.cbv_endpoints",
         "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class BookingView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific booking.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    permission_classes = [IsAuthenticated]\n    def get_serializer_context(self):\n        context = super().get_serializer_context()\n        context['request'] = self.request\n        return context",
+        "peekOfCode": "class BookingView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific booking.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    permission_classes = [IsAuthenticated]\n    def get_serializer_context(self):\n        context = super().get_serializer_context()\n        context[\"request\"] = self.request\n        return context",
         "detail": "applications.resturant.cbv_endpoints",
         "documentation": {}
     },
@@ -1469,7 +1354,7 @@
         "kind": 6,
         "importPath": "applications.resturant.cbv_endpoints",
         "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuPartialUpdateView(generics.UpdateAPIView):\n    \"\"\"Provides endpoint for partially updating a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Delete a Menu Item\", \n    description=\"Remove a menu item from the system.\",\n    tags=[\"Menu\"],",
+        "peekOfCode": "class MenuPartialUpdateView(generics.UpdateAPIView):\n    \"\"\"Provides endpoint for partially updating a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Delete a Menu Item\",\n    description=\"Remove a menu item from the system.\",\n    tags=[\"Menu\"],",
         "detail": "applications.resturant.cbv_endpoints",
         "documentation": {}
     },
@@ -1582,20 +1467,11 @@
         "documentation": {}
     },
     {
-        "label": "DjsoerAuthenticationScheme",
-        "kind": 6,
-        "importPath": "applications.resturant.schema",
-        "description": "applications.resturant.schema",
-        "peekOfCode": "class DjsoerAuthenticationScheme(OpenApiAuthenticationExtension):\n    target_class = \"my_app.MyAuthentication\"  # full import path OR class ref\n    name = \"TokenAuth\"  # name used in the schema\n    def get_security_definition(self, auto_schema):\n        return build_bearer_security_scheme_object(\n            header_name='Authorization',\n            token_prefix=self.target.keyword,\n        )",
-        "detail": "applications.resturant.schema",
-        "documentation": {}
-    },
-    {
         "label": "router",
         "kind": 5,
         "importPath": "applications.resturant.urls",
         "description": "applications.resturant.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r\"bookings\", endpoints.BookingsViewset, basename=\"bookings\")\nrouter.register(r\"menu\", endpoints.MenuViewset, basename=\"menu\")\nurlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    path('bookings/', cbv_endpoints.BookingListView.as_view(), name='bookings-list'),\n    path('bookings/create', cbv_endpoints.BookingCreateView.as_view(), name='bookings-create'),  ",
+        "peekOfCode": "router = DefaultRouter()\nrouter.register(r\"bookings\", endpoints.BookingsViewset, basename=\"bookings\")\nrouter.register(r\"menu\", endpoints.MenuViewset, basename=\"menu\")\nurlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    re_path(r\"^bookings/?$\", cbv_endpoints.BookingListView.as_view(), name=\"bookings-list\"),\n    re_path(r\"^bookings/create/?$\", cbv_endpoints.BookingCreateView.as_view(), name=\"bookings-create\"),",
         "detail": "applications.resturant.urls",
         "documentation": {}
     },
@@ -1604,17 +1480,8 @@
         "kind": 5,
         "importPath": "applications.resturant.urls",
         "description": "applications.resturant.urls",
-        "peekOfCode": "urlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    path('bookings/', cbv_endpoints.BookingListView.as_view(), name='bookings-list'),\n    path('bookings/create', cbv_endpoints.BookingCreateView.as_view(), name='bookings-create'),  \n    path('bookings/<int:booking_id>/', cbv_endpoints.BookingView.as_view(), name='bookings-detail'), \n]",
+        "peekOfCode": "urlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    re_path(r\"^bookings/?$\", cbv_endpoints.BookingListView.as_view(), name=\"bookings-list\"),\n    re_path(r\"^bookings/create/?$\", cbv_endpoints.BookingCreateView.as_view(), name=\"bookings-create\"),\n    re_path(r\"^bookings/(?P<booking_id>\\d{1,5})/?$\", cbv_endpoints.BookingView.as_view(), name=\"bookings-detail\"),\n    re_path(r\"^menu/?$\", cbv_endpoints.MenuListView.as_view(), name=\"menu-list\"),\n    re_path(r\"^menu/(?P<pk>\\d{1,5})/?$\", cbv_endpoints.MenuView.as_view(), name=\"menu-detail\"),",
         "detail": "applications.resturant.urls",
-        "documentation": {}
-    },
-    {
-        "label": "CustomRangeWidget",
-        "kind": 6,
-        "importPath": "applications.resturant.widgets",
-        "description": "applications.resturant.widgets",
-        "peekOfCode": "class CustomRangeWidget(RangeWidget):\n    template_name = \"forms/widgets/range-slider.html\"\n    def __init__(self, attrs=None):\n        widgets = (HiddenInput(), HiddenInput())\n        super(RangeWidget, self).__init__(widgets, attrs)\n    def get_context(self, name, value, attrs):\n        ctx = super().get_context(name, value, attrs)\n        cur_min, cur_max = value\n        if cur_min is None:\n            cur_min = ctx[\"widget\"][\"attrs\"][\"data-range_min\"]",
-        "detail": "applications.resturant.widgets",
         "documentation": {}
     },
     {
@@ -1631,7 +1498,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False \n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"",
+        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1658,7 +1525,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False \n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
         "detail": "config.settings",
         "documentation": {}
     },

@@ -17,7 +17,7 @@ class Base(Configuration):
     SECRET_KEY = enviornment_var["SECRET_KEY"]
     STATIC_URL = "static/"
     ROOT_URLCONF = "config.urls"
-    # APPEND_SLASH=False 
+    # APPEND_SLASH=False
     WSGI_APPLICATION = "config.wsgi.application"
     LANGUAGE_CODE = "en-us"
     TIME_ZONE = "UTC"

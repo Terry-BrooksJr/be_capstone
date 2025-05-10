@@ -1,6 +1,6 @@
-
-from typing import Union, Any
 from datetime import datetime
+from typing import Any, Union
+
 from django.views.generic import TemplateView
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
@@ -11,16 +11,20 @@ from drf_spectacular.utils import (
     extend_schema_view,
 )
 from rest_framework import status
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
 
 from applications.resturant.filters import BookingFilter, ProductFilter
 from applications.resturant.models import Booking, Menu
-from applications.resturant.serializers.auth import AuthRequestSerializer, AuthResponseSerializer
-from applications.resturant.serializers.core import MenuSerializer, BookingSerializer
+from applications.resturant.serializers.auth import (
+    AuthRequestSerializer,
+    AuthResponseSerializer,
+)
+from applications.resturant.serializers.core import BookingSerializer, MenuSerializer
+
 
 class Index(TemplateView):
     """A view for rendering the index template.
@@ -33,6 +37,7 @@ class Index(TemplateView):
 
 class AuthToken(ObtainAuthToken):
     """A custom view for handling user authentication and token generation."""
+
     @extend_schema(
         summary="User Authentication",
         description="Authenticate a user and generate an authentication token.",
@@ -58,7 +63,7 @@ class AuthToken(ObtainAuthToken):
                 value={
                     "token": "abcdef123456",
                     "user_id": 1,
-                    "email": "john.doe@example.com"
+                    "email": "john.doe@example.com",
                 },
                 response_only=True,
             ),
@@ -72,10 +77,11 @@ class AuthToken(ObtainAuthToken):
         user = serializer.validated_data.get("user", None)
         if user is None:
             from rest_framework.exceptions import AuthenticationFailed
+
             raise AuthenticationFailed("User not found in validated data")
-        token:Union[Token,Any] = None
-        created:bool = False 
-        token,created = Token.objects.get_or_create(user=user)
+        token: Union[Token, Any] = None
+        created: bool = False
+        token, created = Token.objects.get_or_create(user=user)
         if created:
             token.created = datetime.now()
             token.save()
@@ -289,7 +295,7 @@ class BookingsViewset(ModelViewSet):
     filterset_class = BookingFilter
     ordering_fields = ["date", "no_of_guests"]
     permission_classes = [IsAuthenticated]
-    
+
     def create(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             serializer = self.get_serializer(data=request.data)
@@ -303,6 +309,7 @@ class BookingsViewset(ModelViewSet):
             data={"message": "Authentication credentials were not provided."},
             status=status.HTTP_401_UNAUTHORIZED,
         )
+
 
 @extend_schema_view(
     list=extend_schema(
@@ -407,11 +414,11 @@ class BookingsViewset(ModelViewSet):
     partial_update=extend_schema(
         summary="Partial Update of a Menu Item",
         tags=["Menu"],
-
         description="Update one or more fields of an existing menu item.",
     ),
     destroy=extend_schema(
-        summary="Delete a Menu Item", description="Remove a menu item from the system.",
+        summary="Delete a Menu Item",
+        description="Remove a menu item from the system.",
         tags=["Menu"],
     ),
 )
@@ -427,5 +434,4 @@ class MenuViewset(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     search_fields = ["title"]
     filterset_class = ProductFilter
-    permission_classes = [IsAuthenticated]  
-
+    permission_classes = [IsAuthenticated]
