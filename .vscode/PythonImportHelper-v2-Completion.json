@@ -121,7 +121,7 @@
         "documentation": {}
     },
     {
-        "label": "serializers",
+        "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -153,31 +153,7 @@
         "documentation": {}
     },
     {
-        "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
         "label": "CustomUserSerializer",
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "BookingSerializer",
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "MenuSerializer",
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
@@ -234,19 +210,11 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
         "isExtraImport": true,
-        "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
-        "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -282,19 +250,11 @@
         "documentation": {}
     },
     {
-        "label": "QueryDict",
-        "importPath": "django.http",
-        "description": "django.http",
+        "label": "now",
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
         "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
-        "label": "OpenApiTypes",
-        "importPath": "drf_spectacular.types",
-        "description": "drf_spectacular.types",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.types",
+        "detail": "django.utils.timezone",
         "documentation": {}
     },
     {
@@ -362,46 +322,6 @@
         "documentation": {}
     },
     {
-        "label": "OpenApiExample",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
-        "documentation": {}
-    },
-    {
-        "label": "OpenApiParameter",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
-        "documentation": {}
-    },
-    {
-        "label": "extend_schema",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
-        "documentation": {}
-    },
-    {
-        "label": "extend_schema_view",
-        "importPath": "drf_spectacular.utils",
-        "description": "drf_spectacular.utils",
-        "isExtraImport": true,
-        "detail": "drf_spectacular.utils",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
         "label": "logger",
         "importPath": "loguru",
         "description": "loguru",
@@ -450,6 +370,14 @@
         "documentation": {}
     },
     {
+        "label": "Menu",
+        "importPath": "applications.resturant.models",
+        "description": "applications.resturant.models",
+        "isExtraImport": true,
+        "detail": "applications.resturant.models",
+        "documentation": {}
+    },
+    {
         "label": "Booking",
         "importPath": "applications.resturant.models",
         "description": "applications.resturant.models",
@@ -506,19 +434,11 @@
         "documentation": {}
     },
     {
-        "label": "Booking",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "applications.resturant.models",
-        "documentation": {}
-    },
-    {
-        "label": "Menu",
-        "importPath": "applications.resturant.models",
-        "description": "applications.resturant.models",
-        "isExtraImport": true,
-        "detail": "applications.resturant.models",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -626,6 +546,22 @@
         "documentation": {}
     },
     {
+        "label": "APITestCase",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
+        "label": "APIClient",
+        "importPath": "rest_framework.test",
+        "description": "rest_framework.test",
+        "isExtraImport": true,
+        "detail": "rest_framework.test",
+        "documentation": {}
+    },
+    {
         "label": "TestCase",
         "importPath": "django.test",
         "description": "django.test",
@@ -682,43 +618,11 @@
         "documentation": {}
     },
     {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
         "label": "TemplateView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "TemplateView",
-        "importPath": "django.views.generic",
-        "description": "django.views.generic",
-        "isExtraImport": true,
-        "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "DjangoFilterBackend",
-        "importPath": "django_filters.rest_framework",
-        "description": "django_filters.rest_framework",
-        "isExtraImport": true,
-        "detail": "django_filters.rest_framework",
         "documentation": {}
     },
     {
@@ -738,22 +642,6 @@
         "documentation": {}
     },
     {
-        "label": "ObtainAuthToken",
-        "importPath": "rest_framework.authtoken.views",
-        "description": "rest_framework.authtoken.views",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.views",
-        "documentation": {}
-    },
-    {
-        "label": "IsAuthenticated",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
         "label": "IsAuthenticated",
         "importPath": "rest_framework.permissions",
         "description": "rest_framework.permissions",
@@ -767,30 +655,6 @@
         "description": "rest_framework.response",
         "isExtraImport": true,
         "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "BookingFilter",
-        "importPath": "applications.resturant.filters",
-        "description": "applications.resturant.filters",
-        "isExtraImport": true,
-        "detail": "applications.resturant.filters",
-        "documentation": {}
-    },
-    {
-        "label": "ProductFilter",
-        "importPath": "applications.resturant.filters",
-        "description": "applications.resturant.filters",
-        "isExtraImport": true,
-        "detail": "applications.resturant.filters",
         "documentation": {}
     },
     {
@@ -823,30 +687,6 @@
         "description": "applications.resturant.serializers.auth",
         "isExtraImport": true,
         "detail": "applications.resturant.serializers.auth",
-        "documentation": {}
-    },
-    {
-        "label": "AuthRequestSerializer",
-        "importPath": "applications.resturant.serializers.auth",
-        "description": "applications.resturant.serializers.auth",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.auth",
-        "documentation": {}
-    },
-    {
-        "label": "AuthResponseSerializer",
-        "importPath": "applications.resturant.serializers.auth",
-        "description": "applications.resturant.serializers.auth",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.auth",
-        "documentation": {}
-    },
-    {
-        "label": "ModelViewSet",
-        "importPath": "rest_framework.viewsets",
-        "description": "rest_framework.viewsets",
-        "isExtraImport": true,
-        "detail": "rest_framework.viewsets",
         "documentation": {}
     },
     {
@@ -1010,27 +850,11 @@
         "documentation": {}
     },
     {
-        "label": "DefaultRouter",
-        "importPath": "rest_framework.routers",
-        "description": "rest_framework.routers",
-        "isExtraImport": true,
-        "detail": "rest_framework.routers",
-        "documentation": {}
-    },
-    {
-        "label": "cbv_endpoints",
-        "importPath": "applications.resturant",
-        "description": "applications.resturant",
-        "isExtraImport": true,
-        "detail": "applications.resturant",
-        "documentation": {}
-    },
-    {
         "label": "endpoints",
-        "importPath": "applications.resturant",
-        "description": "applications.resturant",
+        "importPath": "resturant",
+        "description": "resturant",
         "isExtraImport": true,
-        "detail": "applications.resturant",
+        "detail": "resturant",
         "documentation": {}
     },
     {
@@ -1084,18 +908,18 @@
     },
     {
         "label": "AuthToken",
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
+        "importPath": "resturant.endpoints",
+        "description": "resturant.endpoints",
         "isExtraImport": true,
-        "detail": "applications.resturant.endpoints",
+        "detail": "resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "Index",
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
+        "importPath": "resturant.endpoints",
+        "description": "resturant.endpoints",
         "isExtraImport": true,
-        "detail": "applications.resturant.endpoints",
+        "detail": "resturant.endpoints",
         "documentation": {}
     },
     {
@@ -1201,7 +1025,7 @@
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class DateTimeParsingMixin:\n    def parse_datetime_fields(self, data, request):\n        \"\"\"Returns the time portion of the date field in a human-readable 12-hour format.\n        Formats the time from the Booking object's date field as a string with AM/PM.\n        Args:\n            obj: The Booking instance containing the date field.\n        Returns:\n            str: Time in 12-hour format with AM/PM (e.g., '07:30 PM').\n        \"\"\"\n        logger.debug(f\"Raw data before datetime parsing: {data}\")",
+        "peekOfCode": "class DateTimeParsingMixin:\n    def parse_datetime_fields(self, data, request):\n        \"\"\"Parses and validates date and time fields from input data.\n        Ensures date and time are present, valid, and in the future, then combines them into a datetime object.\n        Args:\n            data: The input data containing date and time fields.\n            request: The HTTP request object.\n        Returns:\n            dict: The updated data with a combined datetime object in the 'date' field.\n        Raises:",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1237,7 +1061,7 @@
         "kind": 2,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "def validate_date_in_future(value):\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > datetime.now():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\nimport datetime as DT",
+        "peekOfCode": "def validate_date_in_future(value):\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > datetime.now():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\nclass DateTimeParsingMixin:",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1248,6 +1072,15 @@
         "description": "applications.resturant.tests.test_booking_endponts",
         "peekOfCode": "class BookingsViewsetTestCase(APITestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(\n            username=\"testuser\", password=\"testpassword\"\n        )\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.client.credentials(HTTP_AUTHORIZATION=f\"Token {self.test_token.key}\")\n        self.list_url = reverse(\"bookings-list\")\n        self.valid_booking_data = {",
         "detail": "applications.resturant.tests.test_booking_endponts",
+        "documentation": {}
+    },
+    {
+        "label": "MenuViewsetTestCase",
+        "kind": 6,
+        "importPath": "applications.resturant.tests.test_menu_endpoints",
+        "description": "applications.resturant.tests.test_menu_endpoints",
+        "peekOfCode": "class MenuViewsetTestCase(APITestCase):\n    def setUp(self):\n        self.client = APIClient()\n        self.test_user = User.objects.create_user(\n            username=\"menu_testuser\", password=\"testpassword\"\n        )\n        self.test_token = Token.objects.create(user=self.test_user)\n        self.menu_list_url = reverse(\"menu-list\")\n        self.menu_create_url = reverse(\"menu-create\")\n        self.client.credentials(HTTP_AUTHORIZATION=f\"Token {self.test_token.key}\")",
+        "detail": "applications.resturant.tests.test_menu_endpoints",
         "documentation": {}
     },
     {
@@ -1271,144 +1104,72 @@
     {
         "label": "Index",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "peekOfCode": "class Index(TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    template_name = \"index.html\"\nclass AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",",
-        "detail": "applications.resturant.cbv_endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "AuthToken",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "peekOfCode": "class AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",\n        tags=[\"Tokens\"],\n        request=AuthRequestSerializer,\n        responses=AuthResponseSerializer,\n        examples=[\n            OpenApiExample(",
-        "detail": "applications.resturant.cbv_endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "BookingListView",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "peekOfCode": "class BookingListView(generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]\n@extend_schema(",
-        "detail": "applications.resturant.cbv_endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "BookingCreateView",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "peekOfCode": "class BookingCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    permission_classes = [IsAuthenticated]\n    @extend_schema(\n        summary=\"Create a Booking\",\n        description=\"Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.\",\n        request=BookingSerializer,\n        tags=[\"Reservations\"],",
-        "detail": "applications.resturant.cbv_endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "BookingView",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "peekOfCode": "class BookingView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific booking.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    permission_classes = [IsAuthenticated]\n    def get_serializer_context(self):\n        context = super().get_serializer_context()\n        context[\"request\"] = self.request\n        return context",
-        "detail": "applications.resturant.cbv_endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "MenuListView",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "peekOfCode": "class MenuListView(generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Create a Menu Item\",",
-        "detail": "applications.resturant.cbv_endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "MenuCreateView",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Retrieve Specific Menu Item By ID\",\n    auth=None,\n    tags=[\"Menu\"],\n    description=\"Get the details of a specific menu item by its ID.\",",
-        "detail": "applications.resturant.cbv_endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "MenuDetailView",
-        "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuDetailView(generics.RetrieveAPIView):\n    \"\"\"Provides endpoint for retrieving a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Update a Menu Item\",\n    tags=[\"Menu\"],\n    description=\"Update all details of an existing menu item.\",",
-        "detail": "applications.resturant.cbv_endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "MenuUpdateView",
-        "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuUpdateView(generics.UpdateAPIView):\n    \"\"\"Provides endpoint for updating a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Partial Update of a Menu Item\",\n    tags=[\"Menu\"],\n    description=\"Update one or more fields of an existing menu item.\",",
-        "detail": "applications.resturant.cbv_endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "MenuPartialUpdateView",
-        "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuPartialUpdateView(generics.UpdateAPIView):\n    \"\"\"Provides endpoint for partially updating a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Delete a Menu Item\",\n    description=\"Remove a menu item from the system.\",\n    tags=[\"Menu\"],",
-        "detail": "applications.resturant.cbv_endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "MenuDeleteView",
-        "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuDeleteView(generics.DestroyAPIView):\n    \"\"\"Provides endpoint for deleting a menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()",
-        "detail": "applications.resturant.cbv_endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
+        "peekOfCode": "class MenuCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "MenuView",
         "kind": 6,
-        "importPath": "applications.resturant.cbv_endpoints",
-        "description": "applications.resturant.cbv_endpoints",
-        "peekOfCode": "class MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    permission_classes = [IsAuthenticated]",
-        "detail": "applications.resturant.cbv_endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "Index",
-        "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class Index(TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    template_name = \"index.html\"\nclass AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",",
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "AuthToken",
-        "kind": 6,
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "peekOfCode": "class AuthToken(ObtainAuthToken):\n    \"\"\"A custom view for handling user authentication and token generation.\"\"\"\n    @extend_schema(\n        summary=\"User Authentication\",\n        description=\"Authenticate a user and generate an authentication token.\",\n        tags=[\"Tokens\"],\n        request=AuthRequestSerializer,\n        responses=AuthResponseSerializer,\n        examples=[\n            OpenApiExample(",
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "BookingsViewset",
-        "kind": 6,
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "peekOfCode": "class BookingsViewset(ModelViewSet):\n    \"\"\"Provides endpoints for listing, retrieving, creating, updating, and deleting bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]",
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "MenuViewset",
-        "kind": 6,
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuViewset(ModelViewSet):\n    \"\"\"ViewSet for managing Menu items.\n    Provides endpoints for listing, retrieving, creating, updating, and deleting menu items.\n    \"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter",
+        "peekOfCode": "class MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]\n    @extend_schema(",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1467,20 +1228,11 @@
         "documentation": {}
     },
     {
-        "label": "router",
-        "kind": 5,
-        "importPath": "applications.resturant.urls",
-        "description": "applications.resturant.urls",
-        "peekOfCode": "router = DefaultRouter()\nrouter.register(r\"bookings\", endpoints.BookingsViewset, basename=\"bookings\")\nrouter.register(r\"menu\", endpoints.MenuViewset, basename=\"menu\")\nurlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    re_path(r\"^bookings/?$\", cbv_endpoints.BookingListView.as_view(), name=\"bookings-list\"),\n    re_path(r\"^bookings/create/?$\", cbv_endpoints.BookingCreateView.as_view(), name=\"bookings-create\"),",
-        "detail": "applications.resturant.urls",
-        "documentation": {}
-    },
-    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "applications.resturant.urls",
         "description": "applications.resturant.urls",
-        "peekOfCode": "urlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    re_path(r\"^bookings/?$\", cbv_endpoints.BookingListView.as_view(), name=\"bookings-list\"),\n    re_path(r\"^bookings/create/?$\", cbv_endpoints.BookingCreateView.as_view(), name=\"bookings-create\"),\n    re_path(r\"^bookings/(?P<booking_id>\\d{1,5})/?$\", cbv_endpoints.BookingView.as_view(), name=\"bookings-detail\"),\n    re_path(r\"^menu/?$\", cbv_endpoints.MenuListView.as_view(), name=\"menu-list\"),\n    re_path(r\"^menu/(?P<pk>\\d{1,5})/?$\", cbv_endpoints.MenuView.as_view(), name=\"menu-detail\"),",
+        "peekOfCode": "urlpatterns = [\n    # path(\"\", include(router.urls)),\n    path(\"swagger/\", SpectacularSwaggerView.as_view(), name=\"swagger\"),\n    path(\"redoc/\", SpectacularRedocView.as_view(), name=\"redoc\"),\n    path(\"schema\", SpectacularAPIView.as_view(), name=\"schema\"),\n    re_path(r\"^bookings/?$\", endpoints.BookingListView.as_view(), name=\"bookings-list\"),\n    re_path(\n        r\"^bookings/create/?$\",\n        endpoints.BookingCreateView.as_view(),\n        name=\"bookings-create\",",
         "detail": "applications.resturant.urls",
         "documentation": {}
     },

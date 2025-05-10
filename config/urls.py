@@ -18,8 +18,7 @@ Including another URLconf
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.contrib import admin
 from django.urls import include, path, re_path
-
-from applications.resturant.endpoints import AuthToken, Index
+from resturant.endpoints import AuthToken, Index
 
 urlpatterns = [
     re_path(r"^$", Index.as_view(), name="index"),

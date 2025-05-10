@@ -102,14 +102,55 @@ class Base(Configuration):
     DJOSER = {"USER_ID_FIELD": "username"}
     SPECTACULAR_SETTINGS = {
         "TITLE": "Little Lemon Menu and Booking API",
-        "DESCRIPTION": "",
+        "CONTACT": {
+            "name": "Terry Brooks",
+            "url": "https://brooksjr.com",
+            "email": "terry.brooks@blackberry-py.dev",
+        },
+        "DESCRIPTION": """<img src="https://cdn.jsdelivr.net/gh/Terry-BrooksJr/be_capstone@4a8b3aefa77fcee2b21704b10f8b5facb865ea2e/applications/resturant/static/restaurant/img/logo.png" alt="Little Lemon Logo" width="200" height="100">
+
+<h2><strong>Welcome to the Little Lemon  Menu & Booking API, a RESTful API designed for inventory and reservation management.</strong></h2>
+<p>This API provides endpoints for managing menu items and booking reservations at the Little Lemon restaurant.</p>
+<p>With this API, you can:</p>
+<ul>
+`<li>View and manage menu items, including their titles, prices, and inventory.</li>
+<li>Create, retrieve, update, and delete bookings for restaurant reservations.</li>
+<li>Authenticate users and manage their sessions.</li>
+<li>Access   API documentation for easy integration and usage.</li>; 
+
+<aside style="        border: 2px solid #ccc; /* Light gray border */
+        padding: 10px;
+        margin: 1em 0; /* Add spacing around the callout */
+        background-color: #f9f9f9; /* Very light gray background */
+        border-radius: 4px;         border-color: #FF0000
+; /* Green for tip */
+ /* Rounded;
+        ">
+        <h3>Warning</h3>
+        <p>This project is developed as a final assignment for Meta's Backend Engineering Capstone Course on Coursera by Terry Brooks. You can find the <href="https://www.coursera.org/learn/back-end-developer-capstone/home/info" target="_blank">course on Coursera</href> and the project source code on GitHub.
+p>
+    </aside>
+
+> [!WARNING]
+> This project is open-source for learning purposes, but please respect Coursera’s academic honesty policy. Refer to the Coursera Honor Code for guidance.
+""",
         "VERSION": "1.0.0",
+        "LICENSE": {
+            "name": "MIT",
+            "url": "https://github.com/Terry-BrooksJr/be_capstone/blob/4ee1475031ed298a0d527b1ecfab0fc2136c1d9d/LICENSE",
+        },
+        "SCHEMA_PATH_PREFIX": "/restaurant",
         "SWAGGER_UI_DIST": "SIDECAR",
         "SWAGGER_UI_FAVICON_HREF": "SIDECAR",
         "REDOC_DIST": "SIDECAR",
         "SECURITY": [
             {"TokenAuth": []},
         ],
+        "SWAGGER_UI_SETTINGS": {
+            "deepLinking": True,
+            "persistAuthorization": True,
+            "displayOperationId": False,
+        },
         "AUTHENTICATION_SCHEMES": {
             "TokenAuth": {
                 "type": "apiKey",

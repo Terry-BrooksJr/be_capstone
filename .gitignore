@@ -1,4 +1,4 @@
-# Created by https://www.toptal.com/developers/gitignore/api/python,django,dbeaver
+x# Created by https://www.toptal.com/developers/gitignore/api/python,django,dbeaver
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,django,dbeaver
 
 ### DBeaver ###
@@ -283,3 +283,4 @@ pyrightconfig.json
 .vscode
 .task/checksum/freeze
 .vscode/PythonImportHelper-v2-Completion.json
+.task

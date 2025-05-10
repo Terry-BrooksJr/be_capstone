@@ -1,0 +1,1671 @@
+openapi: 3.0.3
+info:
+  title: Little Lemon Menu and Booking API
+  version: 1.0.0
+paths:
+  /api-token-auth/:
+    post:
+      operationId: api_token_auth_create
+      description: Authenticate a user and generate an authentication token.
+      summary: User Authentication
+      tags:
+      - Tokens
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+            examples:
+              SuccessfulAuthentication:
+                value:
+                  username: john_doe
+                  password: password123
+                summary: Successful Authentication
+                description: Valid credentials
+              InvalidLoginAttempt:
+                value:
+                  username: wrong_user
+                  password: wrong_pass
+                summary: Invalid Login Attempt
+                description: Incorrect username or password
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+              examples:
+                SuccessfulResponse:
+                  value:
+                    token: abcdef123456
+                    user_id: 1
+                    email: john.doe@example.com
+                  summary: Successful Response
+                  description: Token returned after successful login
+          description: ''
+  /auth/token/login/:
+    post:
+      operationId: auth_token_login_create
+      description: Use this endpoint to obtain user authentication token.
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TokenCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TokenCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TokenCreate'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TokenCreate'
+          description: ''
+  /auth/token/logout/:
+    post:
+      operationId: auth_token_logout_create
+      description: Use this endpoint to logout user (remove user authentication token).
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          description: No response body
+  /auth/users/:
+    get:
+      operationId: auth_users_list
+      parameters:
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedUserList'
+          description: ''
+    post:
+      operationId: auth_users_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UserCreate'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCreate'
+          description: ''
+  /auth/users/{username}/:
+    get:
+      operationId: auth_users_retrieve
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+        required: true
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: auth_users_update
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+        required: true
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    patch:
+      operationId: auth_users_partial_update
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+        required: true
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    delete:
+      operationId: auth_users_destroy
+      parameters:
+      - in: path
+        name: username
+        schema:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+        required: true
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /auth/users/activation/:
+    post:
+      operationId: auth_users_activation_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Activation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Activation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Activation'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activation'
+          description: ''
+  /auth/users/me/:
+    get:
+      operationId: auth_users_me_retrieve
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    put:
+      operationId: auth_users_me_update
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/User'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/User'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    patch:
+      operationId: auth_users_me_partial_update
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedUser'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+          description: ''
+    delete:
+      operationId: auth_users_me_destroy
+      tags:
+      - auth
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /auth/users/resend_activation/:
+    post:
+      operationId: auth_users_resend_activation_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendEmailReset'
+          description: ''
+  /auth/users/reset_password/:
+    post:
+      operationId: auth_users_reset_password_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendEmailReset'
+          description: ''
+  /auth/users/reset_password_confirm/:
+    post:
+      operationId: auth_users_reset_password_confirm_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PasswordResetConfirm'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PasswordResetConfirm'
+          description: ''
+  /auth/users/reset_username/:
+    post:
+      operationId: auth_users_reset_username_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SendEmailReset'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SendEmailReset'
+          description: ''
+  /auth/users/reset_username_confirm/:
+    post:
+      operationId: auth_users_reset_username_confirm_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsernameResetConfirm'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/UsernameResetConfirm'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/UsernameResetConfirm'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsernameResetConfirm'
+          description: ''
+  /auth/users/set_password/:
+    post:
+      operationId: auth_users_set_password_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetPassword'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SetPassword'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SetPassword'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetPassword'
+          description: ''
+  /auth/users/set_username/:
+    post:
+      operationId: auth_users_set_username_create
+      tags:
+      - auth
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SetUsername'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/SetUsername'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/SetUsername'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SetUsername'
+          description: ''
+  /restaurant/bookings/:
+    get:
+      operationId: restaurant_bookings_list
+      description: Retrieve a list of all Little Lemon Bookings in the system. Authentication
+        Token REQUIRED
+      summary: List All Current Bookings
+      parameters:
+      - in: query
+        name: date
+        schema:
+          type: string
+          format: date
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: max_no_of_guests
+        schema:
+          type: integer
+      - in: query
+        name: min_no_of_guests
+        schema:
+          type: integer
+      - in: query
+        name: name
+        schema:
+          type: string
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - in: query
+        name: time
+        schema:
+          type: string
+          format: time
+      tags:
+      - Reservations
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedBookingList'
+              examples:
+                SuccessfulGETRequest:
+                  value:
+                    count: 123
+                    next: http://api.example.org/accounts/?offset=400&limit=100
+                    previous: http://api.example.org/accounts/?offset=200&limit=100
+                    results:
+                    - - booking_id: 123
+                        name: Albus Dumbledore
+                        no_of_guests: 2
+                        date: 01-01-1970
+                        time: 3:45 PM
+                      - booking_id: 125
+                        name: Hermoine Granger
+                        no_of_guests: 8
+                        date: 01-02-1970
+                        time: 5:45 PM
+                  summary: Successful GET request
+                  description: Shows the expected payload and shape of resoruces when
+                    a successful GET request is made.
+          description: ''
+  /restaurant/bookings/{booking_id}/:
+    get:
+      operationId: restaurant_bookings_retrieve
+      description: Get the details of a specific booking by its ID.
+      summary: Retrieve Specific Booking By ID
+      parameters:
+      - in: path
+        name: booking_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifer
+        required: true
+        examples:
+          StandardBookingID:
+            value: '123'
+            summary: Standard Booking ID
+      tags:
+      - Reservations
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+              examples:
+                SuccessfulGETRequest:
+                  value:
+                  - booking_id: 123
+                    name: Tom Riddle
+                    no_of_guests: 2
+                    date: 01-01-1970
+                    time: 3:45 PM
+                  summary: Successful GET request
+                  description: Shows the expected payload and shape of resoruces when
+                    a successful GET request is made.
+          description: ''
+    put:
+      operationId: restaurant_bookings_update
+      description: Update an existing booking. Authentication Token REQUIRED.
+      summary: Update a Booking
+      parameters:
+      - in: path
+        name: booking_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifer
+        required: true
+        examples:
+          StandardBookingID:
+            value: '123'
+            summary: Standard Booking ID
+      tags:
+      - Reservations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Booking'
+            examples:
+              Success_-UpdateBookingExample:
+                value:
+                  name: Dolores Umbridge
+                  no_of_guests: 4
+                  date: '2025-04-03'
+                  time: 11:00AM
+                summary: Success  - Update Booking Example
+                description: Example request body for updating a booking
+              Fail-NotProvidingAllFieldExample:
+                value:
+                  name: Bellatrix Lestrange
+                  no_of_guests: 4
+                summary: Fail - Not Providing All Field Example
+                description: Unsuccessful Request Body for updating a booking
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Booking'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Booking'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+              examples:
+                UpdateBookingExample:
+                  value:
+                    name: Rubeus Hagrid
+                    no_of_guests: 4
+                    date: '2025-04-03T11:00:00Z'
+                  summary: Update Booking Example
+                  description: Example respose payload for updating a booking
+          description: ''
+    patch:
+      operationId: restaurant_bookings_partial_update
+      description: Update partial fields of a booking. Authentication Token REQUIRED.
+      summary: Partially Update a Booking
+      parameters:
+      - in: path
+        name: booking_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifer
+        required: true
+        examples:
+          StandardBookingID:
+            value: '123'
+            summary: Standard Booking ID
+      tags:
+      - Reservations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedBooking'
+            examples:
+              SuccessfulPartialUpdateBookingPATCHRequestBodyExample:
+                value:
+                  booking_id: 542
+                  name: Minerva McGonagall
+                  no_of_guests: 4
+                summary: Successful Partial Update Booking PATCH Request Body Example
+                description: Example request body for updating a booking
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedBooking'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedBooking'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+          description: ''
+    delete:
+      operationId: restaurant_bookings_destroy
+      description: Delete a booking entry. Authentication Token REQUIRED.
+      summary: Delete a Booking
+      parameters:
+      - in: path
+        name: booking_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifer
+        required: true
+        examples:
+          StandardBookingID:
+            value: '123'
+            summary: Standard Booking ID
+      tags:
+      - Reservations
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /restaurant/bookings/create/:
+    post:
+      operationId: restaurant_bookings_create_create
+      description: Create a new booking entry. All fields are required in the request
+        payload. Authentication Token REQUIRED.
+      summary: Create a Booking
+      tags:
+      - Reservations
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Booking'
+            examples:
+              CreateBookingExample:
+                value:
+                  name: Harry Potter
+                  no_of_guests: 4
+                  date: '2025-04-03'
+                  time: 11:00AM
+                summary: Create Booking Example
+                description: Example POST Body for creating a booking
+              InvalidBookingExample-Missing`date`Key:
+                value:
+                  name: Mad-Eye Moody
+                  no_of_guests: 4
+                  time: 11:00AM
+                summary: Invalid Booking Example - Missing `date` key
+                description: Example payload for creating an invalid booking
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Booking'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Booking'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Booking'
+              examples:
+                CreateBookingExample:
+                  value:
+                    name: Ronald Weasley
+                    no_of_guests: 4
+                    date: '2025-04-03T11:00:00Z'
+                  summary: Create Booking Example
+                  description: Example payload for creating a booking
+          description: ''
+  /restaurant/menu/:
+    get:
+      operationId: restaurant_menu_list
+      description: Retrieve a list of all Little Lemon Menu Items in the system.
+      summary: List All Menu Items
+      parameters:
+      - in: query
+        name: inventory
+        schema:
+          type: integer
+      - name: limit
+        required: false
+        in: query
+        description: Number of results to return per page.
+        schema:
+          type: integer
+      - in: query
+        name: max_price
+        schema:
+          type: number
+      - in: query
+        name: min_price
+        schema:
+          type: number
+      - name: offset
+        required: false
+        in: query
+        description: The initial index from which to return the results.
+        schema:
+          type: integer
+      - in: query
+        name: title
+        schema:
+          type: string
+      tags:
+      - Menu
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedMenuList'
+              examples:
+                SuccessfulGETRequest:
+                  value:
+                    count: 123
+                    next: http://api.example.org/accounts/?offset=400&limit=100
+                    previous: http://api.example.org/accounts/?offset=200&limit=100
+                    results:
+                    - - item_id: 1
+                        title: Greek Salad
+                        price: 12.99
+                        inventory: 100
+                        category: Appetizer
+                      - item_id: 2
+                        title: Grilled Fish
+                        price: 21.99
+                        inventory: 50
+                        category: Main
+                  summary: Successful GET request
+                  description: Shows the expected payload and shape of resources when
+                    a successful GET request is made.
+          description: ''
+  /restaurant/menu/{item_id}/:
+    get:
+      operationId: restaurant_menu_retrieve
+      description: Get the details of a specific menu item by its ID.
+      summary: Retrieve Specific Menu Item By ID
+      parameters:
+      - in: path
+        name: item_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifier
+        required: true
+        examples:
+          StandardItemID:
+            value: '1'
+            summary: Standard Item ID
+      tags:
+      - Menu
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Menu'
+              examples:
+                SuccessfulGETRequest:
+                  value:
+                    item_id: 1
+                    title: Greek Salad
+                    price: 12.99
+                    inventory: 100
+                    category: Appetizer
+                  summary: Successful GET request
+                  description: Shows the expected payload and shape of resources when
+                    a successful GET request is made.
+          description: ''
+    put:
+      operationId: restaurant_menu_update
+      description: Update all details of an existing menu item.
+      summary: Update a Menu Item
+      parameters:
+      - in: path
+        name: item_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifier
+        required: true
+        examples:
+          StandardItemID:
+            value: '1'
+            summary: Standard Item ID
+      tags:
+      - Menu
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+            examples:
+              SuccessfulPUTRequest:
+                value:
+                  title: Greek Salad
+                  price: 12.99
+                  inventory: 100
+                summary: Successful PUT request
+                description: Shows the expected payload and shape of resources when
+                  a successful PUT request is made.
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Menu'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Menu'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Menu'
+          description: ''
+    patch:
+      operationId: restaurant_menu_partial_update
+      description: Update one or more fields of an existing menu item.
+      summary: Partial Update of a Menu Item
+      parameters:
+      - in: path
+        name: item_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifier
+        required: true
+        examples:
+          StandardItemID:
+            value: '1'
+            summary: Standard Item ID
+      tags:
+      - Menu
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMenu'
+            examples:
+              SuccessfulPATCHRequest:
+                value:
+                  price: 5.99
+                  inventory: 100
+                summary: Successful PATCH request
+                description: Shows the expected payload and shape of resources when
+                  a successful PATCH request is made.
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMenu'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMenu'
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Menu'
+          description: ''
+    delete:
+      operationId: restaurant_menu_destroy
+      description: Remove a menu item from the system.
+      summary: Delete a Menu Item
+      parameters:
+      - in: path
+        name: item_id
+        schema:
+          type: integer
+        description: Unique Numeric Identifier
+        required: true
+        examples:
+          StandardItemID:
+            value: '1'
+            summary: Standard Item ID
+      tags:
+      - restaurant
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '204':
+          description: No response body
+  /restaurant/menu/create/:
+    post:
+      operationId: restaurant_menu_create_create
+      description: Create a new menu item entry. All fields are required in the request
+        payload.
+      summary: Create a Menu Item
+      tags:
+      - Menu
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Menu'
+            examples:
+              CreateMenuItemExample:
+                value:
+                  title: Baklava
+                  price: 8.99
+                  inventory: 25
+                  category: Dessert
+                summary: Create Menu Item Example
+                description: Example payload for creating a menu item
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Menu'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Menu'
+        required: true
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Menu'
+              examples:
+                CreateMenuItemExample:
+                  value:
+                    title: Baklava
+                    price: 8.99
+                    inventory: 25
+                    category: Dessert
+                  summary: Create Menu Item Example
+                  description: Example payload for creating a menu item
+          description: ''
+  /restaurant/schema:
+    get:
+      operationId: restaurant_schema_retrieve
+      description: |-
+        OpenApi3 schema for this API. Format can be selected via content negotiation.
+
+        - YAML: application/vnd.oai.openapi
+        - JSON: application/vnd.oai.openapi+json
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - json
+          - yaml
+      - in: query
+        name: lang
+        schema:
+          type: string
+          enum:
+          - af
+          - ar
+          - ar-dz
+          - ast
+          - az
+          - be
+          - bg
+          - bn
+          - br
+          - bs
+          - ca
+          - ckb
+          - cs
+          - cy
+          - da
+          - de
+          - dsb
+          - el
+          - en
+          - en-au
+          - en-gb
+          - eo
+          - es
+          - es-ar
+          - es-co
+          - es-mx
+          - es-ni
+          - es-ve
+          - et
+          - eu
+          - fa
+          - fi
+          - fr
+          - fy
+          - ga
+          - gd
+          - gl
+          - he
+          - hi
+          - hr
+          - hsb
+          - hu
+          - hy
+          - ia
+          - id
+          - ig
+          - io
+          - is
+          - it
+          - ja
+          - ka
+          - kab
+          - kk
+          - km
+          - kn
+          - ko
+          - ky
+          - lb
+          - lt
+          - lv
+          - mk
+          - ml
+          - mn
+          - mr
+          - ms
+          - my
+          - nb
+          - ne
+          - nl
+          - nn
+          - os
+          - pa
+          - pl
+          - pt
+          - pt-br
+          - ro
+          - ru
+          - sk
+          - sl
+          - sq
+          - sr
+          - sr-latn
+          - sv
+          - sw
+          - ta
+          - te
+          - tg
+          - th
+          - tk
+          - tr
+          - tt
+          - udm
+          - ug
+          - uk
+          - ur
+          - uz
+          - vi
+          - zh-hans
+          - zh-hant
+      tags:
+      - restaurant
+      security:
+      - tokenAuth: []
+      - cookieAuth: []
+      - TokenAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/vnd.oai.openapi:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/yaml:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/vnd.oai.openapi+json:
+              schema:
+                type: object
+                additionalProperties: {}
+            application/json:
+              schema:
+                type: object
+                additionalProperties: {}
+          description: ''
+components:
+  schemas:
+    Activation:
+      type: object
+      properties:
+        uid:
+          type: string
+        token:
+          type: string
+      required:
+      - token
+      - uid
+    AuthRequest:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+      required:
+      - password
+      - username
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        user:
+          $ref: '#/components/schemas/CustomUser'
+        email:
+          type: string
+          format: email
+      required:
+      - email
+      - token
+      - user
+    Booking:
+      type: object
+      description: Serializer for Booking objects.
+      properties:
+        booking_id:
+          type: integer
+          readOnly: true
+          description: Unique identifier for the booking
+        name:
+          type: string
+          title: Reservation Name
+          description: Name of the person making the booking (minimum 5 characters)
+          maxLength: 255
+          minLength: 5
+        no_of_guests:
+          type: integer
+          maximum: 25
+          minimum: 1
+          title: Number of Guests
+          description: Number of guests in the booking (between 1 and 25)
+        date:
+          type: string
+          format: date-time
+          title: Booking Date
+          description: Date of the booking in YYYY-MM-DD format
+        time:
+          type: string
+          format: time
+          description: Time of the booking in 12-hour format (e.g., '07:30 PM')
+      required:
+      - booking_id
+      - date
+      - name
+      - no_of_guests
+      - time
+    CustomUser:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        groups:
+          type: array
+          items:
+            type: integer
+          description: The groups this user belongs to. A user will get all permissions
+            granted to each of their groups.
+      required:
+      - url
+      - username
+    Menu:
+      type: object
+      description: |-
+        Serializer for Menu objects.
+
+        Serializes and deserializes menu item data.
+      properties:
+        item_id:
+          type: integer
+          readOnly: true
+          description: Unique identifier for the menu item
+        title:
+          type: string
+          description: Name of the menu item
+          maxLength: 255
+        price:
+          type: number
+          format: float
+          description: Price of the menu item in USD
+        inventory:
+          type: integer
+          description: Current available quantity of the item
+      required:
+      - inventory
+      - item_id
+      - price
+      - title
+    PaginatedBookingList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Booking'
+    PaginatedMenuList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Menu'
+    PaginatedUserList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=400&limit=100
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?offset=200&limit=100
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+    PasswordResetConfirm:
+      type: object
+      properties:
+        uid:
+          type: string
+        token:
+          type: string
+        new_password:
+          type: string
+      required:
+      - new_password
+      - token
+      - uid
+    PatchedBooking:
+      type: object
+      description: Serializer for Booking objects.
+      properties:
+        booking_id:
+          type: integer
+          readOnly: true
+          description: Unique identifier for the booking
+        name:
+          type: string
+          title: Reservation Name
+          description: Name of the person making the booking (minimum 5 characters)
+          maxLength: 255
+          minLength: 5
+        no_of_guests:
+          type: integer
+          maximum: 25
+          minimum: 1
+          title: Number of Guests
+          description: Number of guests in the booking (between 1 and 25)
+        date:
+          type: string
+          format: date-time
+          title: Booking Date
+          description: Date of the booking in YYYY-MM-DD format
+        time:
+          type: string
+          format: time
+          description: Time of the booking in 12-hour format (e.g., '07:30 PM')
+          readOnly: true
+    PatchedMenu:
+      type: object
+      description: |-
+        Serializer for Menu objects.
+
+        Serializes and deserializes menu item data.
+      properties:
+        item_id:
+          type: integer
+          readOnly: true
+          description: Unique identifier for the menu item
+        title:
+          type: string
+          description: Name of the menu item
+          maxLength: 255
+        price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,4}(?:\.\d{0,2})?$
+          description: Price of the menu item in USD
+        inventory:
+          type: integer
+          description: Current available quantity of the item
+    PatchedUser:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        username:
+          type: string
+          readOnly: true
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+    SendEmailReset:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+      required:
+      - email
+    SetPassword:
+      type: object
+      properties:
+        new_password:
+          type: string
+        current_password:
+          type: string
+      required:
+      - current_password
+      - new_password
+    SetUsername:
+      type: object
+      properties:
+        current_password:
+          type: string
+        new_username:
+          type: string
+          title: Username
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+      required:
+      - current_password
+      - new_username
+    TokenCreate:
+      type: object
+      properties:
+        password:
+          type: string
+        username:
+          type: string
+    User:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        username:
+          type: string
+          readOnly: true
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+      required:
+      - username
+    UserCreate:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          title: Email address
+          maxLength: 254
+        username:
+          type: string
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+        password:
+          type: string
+          writeOnly: true
+      required:
+      - password
+      - username
+    UsernameResetConfirm:
+      type: object
+      properties:
+        new_username:
+          type: string
+          title: Username
+          description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+            only.
+          pattern: ^[\w.@+-]+$
+          maxLength: 150
+      required:
+      - new_username
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+    tokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: Token-based authentication with required prefix "Token"

@@ -3,12 +3,10 @@ from datetime import datetime
 
 from django.contrib.auth.models import User
 from django.http import QueryDict
+from django.utils.timezone import now as TIMEZONE_AWARE_NOW
 from drf_spectacular.types import OpenApiTypes
-from drf_spectacular.utils import (
-    OpenApiExample,
-    extend_schema_field,
-    extend_schema_serializer,
-)
+from drf_spectacular.utils import (OpenApiExample, extend_schema_field,
+                                   extend_schema_serializer)
 from loguru import logger
 from rest_framework import serializers, status
 from rest_framework.validators import UniqueTogetherValidator
@@ -25,40 +23,30 @@ def validate_date_in_future(value):
     Returns:
         bool: True if the booking date is in the future, False otherwise
     """
-
     if not value > datetime.now():
         raise serializers.ValidationError("Booking date must be in the future.")
 
 
-import datetime as DT
-from datetime import datetime
-
-from django.http import QueryDict
-from loguru import logger
-from rest_framework import serializers
-
-
 class DateTimeParsingMixin:
     def parse_datetime_fields(self, data, request):
-        """Returns the time portion of the date field in a human-readable 12-hour format.
+        """Parses and validates date and time fields from input data.
 
-        Formats the time from the Booking object's date field as a string with AM/PM.
+        Ensures date and time are present, valid, and in the future, then combines them into a datetime object.
 
         Args:
-            obj: The Booking instance containing the date field.
+            data: The input data containing date and time fields.
+            request: The HTTP request object.
 
         Returns:
-            str: Time in 12-hour format with AM/PM (e.g., '07:30 PM').
+            dict: The updated data with a combined datetime object in the 'date' field.
+
+        Raises:
+            serializers.ValidationError: If date or time are missing or invalid.
         """
         logger.debug(f"Raw data before datetime parsing: {data}")
 
         if isinstance(data, QueryDict):
-            data = data.dict()
-            data["time"] = (
-                datetime.strptime(data["date"], "%Y-%m-%dT%H:%M")
-                .time()
-                .strftime("%I:%M %p")
-            )
+            data = self._parse_querydict(data)
 
         date_str = data.get("date")
         time_str = data.get("time")
@@ -69,47 +57,102 @@ class DateTimeParsingMixin:
                 {"date/time": "Both date and time are required."}
             )
 
-        # Handle multiple time formats
+        parsed_time = self._parse_time(time_str)
+        parsed_date = self._parse_date(date_str)
+
+        if parsed_date < TIMEZONE_AWARE_NOW():
+            raise serializers.ValidationError({"date": "Date must be in the future."})
+
+        combined = datetime.combine(parsed_date, parsed_time)
+        logger.debug(f"Parsed combined datetime: {combined}")
+
+        # Check if the serializer expects a date or datetime for the 'date' field
+        date_field = self.fields.get("date", None)
+        if date_field is not None and hasattr(date_field, "to_internal_value"):
+            from rest_framework import serializers as drf_serializers
+
+            if isinstance(date_field, drf_serializers.DateField):
+                # If the field expects a date, store only the date part
+                data["date"] = combined.date()
+            elif isinstance(date_field, drf_serializers.DateTimeField):
+                # If the field expects a datetime, store the full datetime
+                data["date"] = combined
+            else:
+                raise serializers.ValidationError(
+                    {"date": "Unsupported field type for 'date'."}
+                )
+        else:
+            # Fallback: store the full datetime, but this may cause issues if the field expects a date
+            data["date"] = combined
+
+        data.pop("time", None)
+        data.pop("csrfmiddlewaretoken", None)
+        return data
+
+    def _parse_querydict(self, data):
+        """Converts a QueryDict to a standard dict and formats the time field.
+
+        Extracts and formats the time from the date field in the QueryDict.
+
+        Args:
+            data: The QueryDict containing date and time information.
+
+        Returns:
+            dict: A standard dictionary with a formatted 'time' field.
+        """
+        data = data.dict()
+        data["time"] = (
+            datetime.strptime(data["date"], "%Y-%m-%dT%H:%M")
+            .time()
+            .strftime("%I:%M %p")
+        )
+        return data
+
+    def _parse_time(self, time_str):
+        """Parses a time string into a time object.
+
+        Converts a string in 12-hour format with AM/PM into a Python time object. Raises a validation error if the format is invalid.
+
+        Args:
+            time_str: The time string to parse.
+
+        Returns:
+            datetime.time: The parsed time object.
+
+        Raises:
+            serializers.ValidationError: If the time string is not in a valid format.
+        """
         try:
-            parsed_time = (
+            return (
                 time_str.time()
                 if isinstance(time_str, DT.datetime)
                 else DT.datetime.strptime(time_str, "%I:%M %p").time()
             )
         except (ValueError, TypeError):
             try:
-                parsed_time = datetime.strptime(time_str, "%I:%M%p").time()
+                return datetime.strptime(time_str, "%I:%M%p").time()
             except Exception as e:
                 raise serializers.ValidationError(
                     {"time": "Time must be in the format 'HH:MM AM/PM'."}
                 ) from e
 
-        # Handle multiple date formats
+    def _parse_date(self, date_str):
         if isinstance(date_str, DT.date):
-            parsed_date = date_str
-        else:
+            return date_str
+        try:
+            return (datetime.strptime(date_str, "%m-%d-%Y"),)
+        except (ValueError, TypeError):
             try:
-                parsed_date = datetime.strptime(date_str, "%m-%d-%Y")
-            except Exception:
+                return datetime.strptime(date_str, "%Y-%m-%dT%H:%M")
+            except (ValueError, TypeError):
                 try:
-                    parsed_date = datetime.strptime(date_str, "%Y-%m-%dT%H:%M")
+                    return datetime.strptime(date_str, "%Y-%m-%d")
                 except Exception as e:
                     raise serializers.ValidationError(
                         {
                             "date": "Date must be in format 'MM-DD-YYYY' or 'YYYY-MM-DDTHH:MM'"
                         }
                     ) from e
-
-        if parsed_date < datetime.now():
-            raise serializers.ValidationError({"date": "Date must be in the future."})
-
-        combined = datetime.combine(parsed_date, parsed_time)
-        logger.debug(f"Parsed combined datetime: {combined}")
-
-        data["date"] = combined
-        data.pop("time", None)
-        data.pop("csrfmiddlewaretoken", None)
-        return data
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
