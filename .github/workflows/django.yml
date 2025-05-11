@@ -23,6 +23,8 @@
           id: doppler
           with:
             doppler-token: ${{ secrets.DOPPLER_TOKEN }}
+            doppler-config: "dev"
+            doppler-project: "little_lemon"
             inject-env-vars: true
         - name: Install Task
           uses: arduino/setup-task@v2
