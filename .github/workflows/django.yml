@@ -48,8 +48,9 @@
             task db_sync
         - name: Install Doppler CLI
           run: |
-            curl -LsSf https://cli.doppler.com/install.sh | sh
+            curl -LsSf https://cli.doppler.com/install.sh | sudo sh
         - name: Run Tests
           run: |
-                python
+                expport DJANGO_CONFIGURATION=Development && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
+                task test
   
