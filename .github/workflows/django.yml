@@ -51,6 +51,6 @@
             curl -LsSf https://cli.doppler.com/install.sh | sudo sh
         - name: Run Tests
           run: |
-                expport DJANGO_CONFIGURATION=Development && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
+                export DJANGO_CONFIGURATION=Development && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
                 task test
   
