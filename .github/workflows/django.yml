@@ -18,20 +18,20 @@
       steps:
         - name: Checkout Code
           uses: actions/checkout@v3
-        - name: Fetch Env Vars from Doppler
-          uses: dopplerhq/secrets-fetch-action@v1.3.0
-          id: doppler
-          with:
-            doppler-token: ${{ secrets.DOPPLER_TOKEN }}
-            doppler-config: "dev"
-            doppler-project: "little_lemon"
-            inject-env-vars: true
+
         - name: Install Task
           uses: arduino/setup-task@v2
         - name: Create SSL  Certificate
           run: |
-            echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
+            sudo echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
             export PATH_TO_DB_ROOT_CERT=$(pwd)/AIVEN_SSL.pem
+            export PYTHONPATH=$PYTHONPATH:$(pwd)/applications:$(pwd)/config:$(pwd)/run:$(pwd)/.venv/bin:$(pwd)/mock:
+            export DJANGO_SETTINGS_MODULE=config.settings
+            export DJANGO_CONFIGURATION=dev
+            export DOPPLER_PROJECT=little_lemon
+            export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }}
+
+
         - name: Set up Python ${{ matrix.python-version }}
           uses: actions/setup-python@v5
           with:
@@ -45,12 +45,18 @@
             key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
             restore-keys: |
               ${{ runner.os }}-pip-
+        - name: Fetch Env Vars from Doppler
+          uses: dopplerhq/secrets-fetch-action@v1.3.0
+          id: doppler
+          with:
+            doppler-token: ${{ secrets.DOPPLER_TOKEN }}
+            doppler-config: "dev"
+            doppler-project: "little_lemon"
+            inject-env-vars: true
         - name: Run Migrations
           run: |
             task db_sync
-        - name: Install Doppler CLI
-          run: |
-            curl -LsSf https://cli.doppler.com/install.sh | sudo sh
+
         - name: Run Tests
           run: |
                 export DJANGO_CONFIGURATION=Development && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
