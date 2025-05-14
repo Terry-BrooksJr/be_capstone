@@ -25,6 +25,8 @@ six = "^1.17.0"
 django-filter = "^25.1"
 crispy-bootstrap5 = "^2025.4"
 autoflake = "^2.3.1"
+django-storages = "^1.14.6"
+whitenoise = "^6.9.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -34,6 +36,9 @@ autoflake = "^2.3.1"
 django-debug-toolbar = "^5.1.0"
 astroid = "^3.3.9"
 doppler-env = "^0.3.1"
+pylint = "^3.3.7"
+pylint-django = "^2.6.1"
+kolo = "^2.40.0"
 
 [build-system]
 requires = ["poetry-core"]

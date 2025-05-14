@@ -1,0 +1,100 @@
+FROM ubuntu:24.04
+
+# Set noninteractive installation
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PATH="/app:${PATH}"
+ENV DOPPLER_TOKEN=""
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    curl \
+    git \
+    wget \
+    gnupg \
+    ca-certificates \
+    micro \
+    lsb-release \
+    software-properties-common \
+    pkg-config \
+    zlib1g-dev \
+    libssl-dev \
+    mysql-server \
+    default-libmysqlclient-dev \
+    libffi-dev \
+    libncurses5-dev \
+    libsqlite3-dev \
+    libbz2-dev \
+    liblzma-dev \
+    libreadline-dev \
+    rustc \
+    cargo \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+
+RUN curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | gpg --dearmor -o /usr/share/keyrings/doppler-archive-keyring.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/doppler-archive-keyring.gpg] https://packages.doppler.com/public/cli/deb/debian any-version main" | tee /etc/apt/sources.list.d/doppler-cli.list && \
+    apt-get update && \
+    apt-get -y install doppler \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+  
+
+# Install Python 3.13
+RUN cd /tmp && \
+    wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tgz && \
+    tar -xzf Python-3.13.0.tgz && \
+    cd Python-3.13.0 && \
+    ./configure --enable-optimizations && \
+    make -j $(nproc) && \
+    make altinstall && \
+    cd .. && \
+    rm -rf Python-3.13.0 Python-3.13.0.tgz
+
+
+# Create symbolic links for python and pip
+RUN ln -sf /usr/local/bin/python3.13 /usr/local/bin/python3 && \
+    ln -sf /usr/local/bin/python3.13 /usr/local/bin/python && \
+    ln -sf /usr/local/bin/pip3.13 /usr/local/bin/pip3 && \
+    ln -sf /usr/local/bin/pip3.13 /usr/local/bin/pip
+
+# Upgrade pip
+RUN pip3 install --upgrade pip
+
+# Install Task (https://taskfile.dev)
+RUN sh -c "$(curl -ssL https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+
+# Set MySQL flags directly rather than using pkg-config
+# Disable mysqlclient's use of pkg-config by setting dummy environment variables
+ENV MYSQLCLIENT_LDFLAGS=""
+ENV MYSQLCLIENT_CFLAGS=""
+
+# Install mysqlclient dependencies first and specify the flags directly
+RUN pip install wheel setuptools && \
+    pip install mysqlclient==2.2.7 --global-option=build_ext \
+    --global-option="-I/usr/include/mysql" \
+    --global-option="-L/usr/lib/aarch64-linux-gnu" \
+    --global-option="-lmysqlclient"
+# Create requirements.txt with all the specified libraries& Install Python dependencies
+RUN --mount=type=cache,target=/root/.cache/pip \
+    --mount=type=bind,source=requirements/base.txt,target=/tmp/base_requirements.txt \
+    --mount=type=bind,source=requirements/dev.txt,target=/tmp/dev_requirements.txt \
+    python -m pip install -r /tmp/dev_requirements.txt --no-cache-dir
+WORKDIR /app
+
+
+# Create a user and set up sudo access
+RUN useradd -m appuser && \
+    usermod -aG sudo appuser && \
+    echo "appuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Switch to the user
+USER appuser
+
+# Set entrypoint and command
+ENTRYPOINT ["/bin/bash"]

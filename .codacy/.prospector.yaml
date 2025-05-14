@@ -1,0 +1,32 @@
+output-format: json
+
+strictness: medium
+test-warnings: false
+doc-warnings: true
+member-warnings: false
+uses:
+ - django
+autodetect: true
+max-line-length: 300
+ignore-paths:
+  - docs
+
+ignore-patterns:
+  - .venv/*
+  - .*
+vulture:
+  run: false
+
+pylint:
+    load-plugins:
+      - pylint_django
+
+mypy:
+  run: true
+  options:
+    ignore-missing-imports: true
+    follow-imports: skip
+    disallow-any-generics: true
+    disallow-untyped-defs: true
+    implicit-optional: true
+    force-uppercase-builtins: true

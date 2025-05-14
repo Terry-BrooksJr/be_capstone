@@ -1,6 +1,9 @@
 from django.urls import path, re_path
-from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
-                                   SpectacularSwaggerView)
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 from resturant import endpoints
 
 urlpatterns = [

@@ -1,16 +1,392 @@
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Lemon Menu & Booking API</title>
+    <style>
+        :root {
+            --primary-color: #495E57;
+            --secondary-color: #F4CE14;
+            --accent-color: #EE9972;
+            --light-color: #EDEFEE;
+            --dark-color: #333333;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            margin: 0;
+            color: var(--secondary-color);
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: var(--primary-color);
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .warning {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-left: 5px solid #ffeeba;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        table thead tr {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: left;
+        }
+        
+        table th, table td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+        
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature {
+            flex: 1 1 300px;
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .methods {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            background-color: #e9ecef;
+        }
+        
+        .get { background-color: #d1ecf1; color: #0c5460; }
+        .post { background-color: #d4edda; color: #155724; }
+        .put { background-color: #fff3cd; color: #856404; }
+        .delete { background-color: #f8d7da; color: #721c24; }
+        .patch { background-color: #e2e3e5; color: #383d41; }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+        }
+        
+        /* API Links Styling */
+        .api-links {
+            padding-left: 20px;
+            list-style-type: square;
+        }
 
-<html>
-   <head>
-      <title>Capstone Project</title>
-      <link rel="stylesheet" href="{% static 'custom_slider.css' %}">
-            <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-   </head>
-   <body>
-      <h1 style="text-align:center;">Welcome To Little Lemon Restaurant</h1>
-      <img src="{% static 'restaurant/img/logo.png' %}">
-   </body>
+        .api-links li {
+            margin-bottom: 8px;
+        }
+
+        .api-links a {
+            color: var(--accent-color);
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        .api-links a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://cdn.jsdelivr.net/gh/Terry-BrooksJr/be_capstone@4a8b3aefa77fcee2b21704b10f8b5facb865ea2e/applications/resturant/static/restaurant/img/logo.png" alt="Little Lemon Logo" class="logo">
+        <h1>The Little Lemon Menu & Booking API</h1>
+    </header>
+
+    <div class="container">
+        <p>Welcome to the Little Lemon Menu & Booking API, a RESTful API designed for inventory and reservation management.</p>
+        <p>This project is developed as a final assignment for Meta's Backend Engineering Capstone Course on Coursera by Terry Brooks. You can find the <a href="https://www.coursera.org/learn/back-end-developer-capstone/home/info" target="_blank">course on Coursera</a> and the project source code on GitHub.</p>
+        
+        <div class="warning">
+            <strong>WARNING</strong>
+            <p>This project is open-source for learning purposes, but please respect Coursera's academic honesty policy. Refer to the Coursera Honor Code for guidance.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="table-of-contents">Table of Contents</h2>
+        <ul>
+            <li><a href="#overview">Overview</a>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                </ul>
+            </li>
+            <li><a href="#getting-started">Getting Started</a>
+                <ul>
+                    <li><a href="#testing-touring">Testing/Touring the Mock API</a></li>
+                    <li><a href="#routes">Routes To Test</a></li>
+                </ul>
+            </li>
+            <li><a href="#api-documentation">API Documentation</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2 id="overview">Overview</h2>
+        <p>The Little Lemon Menu & Booking API offers a collection of endpoints to manage user accounts, menu items, and reservations supports user registration, token-based authentication, and various managerial functions.</p>
+        
+        <h3 id="features">Features</h3>
+        <div class="features">
+            <div class="feature">
+                <h4>User Management</h4>
+                <p>Registration and authentication of consumers</p>
+            </div>
+            
+            <div class="feature">
+                <h4>Inventory Management</h4>
+                <p>CRUD operations on menu items</p>
+            </div>
+            
+            <div class="feature">
+                <h4>Reservation Management</h4>
+                <p>CRUD Operations on reservations</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="getting-started">Getting Started</h2>
+        
+        <h3 id="testing-touring">Testing/Touring the Mock API</h3>
+        <p>To explore the API without setting up a local environment, you can use the tour the API via:</p>
+        
+        <ul>
+            <li>
+                <h4><a href="https://www.postman.com/blackberry-py-dev/workspace/little-lemon-meta-apis-final-terry-brooks-jr" target="_blank">Postman</a></h4>
+                <p>Fully documented <a href="https://www.postman.com/" target="_blank">Postman</a> Workspace, that has helpful request automation scripting.</p>
+            </li>
+            
+            <li>
+                <h4><a href="restaurant/menu" target="_blank">DRF Browseable API UI</a></h4>
+                <p>The native browser based API interface provided by <a href="https://www.django-rest-framework.org/" target="_blank">Django Rest Framework</a>.</p>
+            </li>
+            
+            <li>
+                <h4><a href="{url 'swagger'}" target="_blank">Swagger UI</a></h4>
+                <p>Browser Based API interface using the <a href="https://swagger.io/" target="_blank">Swagger UI</a></p>
+            </li>
+            
+            <li>
+                <h4>BYOC Bring Your Own Client</h4>
+                <p>Any HTTP Client your heart desires using the <code>https://api.little-lemon.xyz</code> and the <a href="{url 'redoc'}" >Developer-friendly documentation viewer powered by ReDoc.</p></a>
+            </li>
+            <li>
+                <h4 k.ki=----------------==--k=i-k-=[[-=================-=--]]
+            </li>
+        </ul>
+        
+        <p><strong>Which ever Method Selected, The Getting Started Steps are the Same!</strong></p>
+        
+        <h3 id="routes">Routes To Test</h3>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Route</th>
+                        <th>Methods to Test</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="/auth/users">auth/users</a></td>
+                        <td><span class="methods post">POST</span></td>
+                        <td>Register a New User</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/auth/token/login">auth/token/login</a></td>
+                        <td><span class="methods post">POST</span></td>
+                        <td>Generate Auth Token (Needed For All Requests)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/restaurant/bookings/">restaurant/bookings/"</a></td>
+                        <td><span class="methods get">GET</span></td>
+                        <td>List of All Reservation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/restaurant/bookings/create">restaurant/bookings/create</td></a>
+                        <td><span class="methods post">POST</span></td>
+                        <td>Create A New Reservation</td>
+                    </tr>
+                    <tr>
+                        <td><a href="/restaurant/bookings/1">restaurant/bookings/&lt;Booking_ID&gt;</a></td>
+                        <td>
+                            <span class="methods get">GET</span>
+                            <span class="methods delete">DELETE</span>
+                            <span class="methods put">PUT</span>
+                            <span class="methods patch">PATCH</span>
+                        </td>
+                        <td>Full Retrieval, Updating, and Deletion of a Booking Resource. <em>Note: Mock IDs available from 1-60</em></td>
+                    </tr>
+                    <tr>
+                        <td><a href="/restaurant/menu">/restaurant/menu</a></td>
+                        <td><span class="methods get">GET</span></td>
+                        <td>List of All Menu Items</td>
+                    </tr>
+                    <tr>
+                       <td> <a href="/restaurant/menu/create">/restaurant/menu/create</a></td>
+                        <td><span class="methods post">POST</span></td>
+                        <td>Create New Menu </td>Item
+                    </tr>
+                    <tr>
+                        <td>/restaurant/menu/&lt;Item_ID&gt;</td>
+                        <td>
+                            <span class="methods get">GET</span>
+                            <span class="methods delete">DELETE</span>
+                            <span class="methods put">PUT</span>
+                            <span class="methods patch">PATCH</span>
+                        </td>
+                        <td>Full Retrieval, Updating, and Deletion of a Menu Item Resources. <em>Note: Mock IDs available from 1-177</em></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="api-documentation">API Documentation</h2>
+        <p>The API follows the OpenAPI 3.0 standard. 
+
+        <h3>Explore the Full API Schema</h3>
+        <ul class="api-links">
+            <li><a href="{% url 'schema' %}" target="_blank">View JSON Schema</a> – /li>
+            <li><a href="{% url 'swagger' %}" target="_blank">Swagger UI</a> – Interactive UI for endpoint testing.</li>
+            <li><a href="{% url 'redoc' %}" target="_blank">ReDoc UI</a> – Developer-friendly documentation viewer.</li>
+        </ul>
+        <h3 API Structure</h3>
+        <p>The API is organized into several categories, each serving a specific purpose. Here are the main route categories:</p>:</p>
+        <ul>
+            <li><a href="#auth">Auth</a> – User registration, authentication, and token management.</li>
+            <li><a href="#menu">Menu</a> – CRUD operations for menu items.</li>
+            <li><a href="#bookings">Bookings</a> – CRUD operations for reservations.</li>
+            <li><a href="#users">Users</a> – User management and profile operations.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Little Lemon Menu & Booking API - Meta Backend Engineering Capstone</p>
+    </footer>
+</body>
 </html>

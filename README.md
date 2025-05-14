@@ -1,5 +1,4 @@
-
-# The Little Lemon Menu & Booking API
+``# The Little Lemon Menu & Booking API
 
 ![Little Lemon Logo](https://cdn.jsdelivr.net/gh/Terry-BrooksJr/be_capstone@4a8b3aefa77fcee2b21704b10f8b5facb865ea2e/applications/resturant/static/restaurant/img/logo.png)
 
@@ -12,16 +11,15 @@ This project is developed as a final assignment for Meta's Backend Engineering C
 
 ## Table of Contents
 
-- [The Little Lemon Menu \& Booking API](#the-little-lemon-menu--booking-api)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-    - [Features](#features)
-  - [Getting Started](#getting-started)
-    - [Testing/Touring the Mock API](#testingtouring-the-mock-api)
-      - [_Which ever Method Selected, The Getting Started Steps are the Same_!](#which-ever-method-selected-the-getting-started-steps-are-the-same)
-      - [Routes To Test:](#routes-to-test)
-  - [API Documentation](#api-documentation)
-
+- [Table of Contents](#table-of-contents)
+- [Overview](#overview)
+  - [Features](#features)
+- [Getting Started](#getting-started)
+  - [Testing/Touring the Mock API](#testingtouring-the-mock-api)
+    - [_Which ever Method Selected, The Getting Started Steps are the Same_!](#which-ever-method-selected-the-getting-started-steps-are-the-same)
+    - [Routes To Test](#routes-to-test)
+- [API Documentation](#api-documentation)
+  - [Auth](#auth)
 
 ## Overview
 
@@ -29,9 +27,9 @@ The Little Lemon   Menu & Booking APII offers a collection of endpoints to manag
 
 ### Features
 
-- **User Management:** Registatation,authentication of consumers 
+- **User Management:** Registatation,authentication of consumers
 - **Inventory Management:** CRUD operations on menu items.
-- **Reservation Management:** CRUD Operations on reservations 
+- **Reservation Management:** CRUD Operations on reservations
 
 ## Getting Started
 
@@ -50,14 +48,23 @@ To explore the API without setting up a local environment, you can use the tour 
 
 #### _Which ever Method Selected, The Getting Started Steps are the Same_!
 
-#### Routes To Test: 
-- `/auth/users` - Register an accounts
-- `/auth/`
-- `/restaurant/bookings/`
-- `/restaurant/bookings/<random_interger>` _(Reservations IDs 1-62 Available)_
-- `/restaurant/menu/`
-- `/restaurant/menu/<random_interger>` _(Menu IDs 1 -145 Available)
-  
+#### Routes To Test
+
+| Route                               	| Methods to Test      	| Purpose                                                                                                	|
+|------------------------------------- :|----------------------:|--------------------------------------------------------------------------------------------------------:|
+| `/auth/users`                       	| POST                 	| Register a New User                                                                                    	|
+| `/auth/token/login`                 	| POST                 	| Generate Auth Token (Needed For All Requests)                                                          	|
+| `/restaurant/bookings/`             	| GET                  	| List of All Reservation                                                                                	|
+| `/restaurant/bookings/create`       	| POST                 	| Create A New Reservation                                                                               	|
+| `/restaurant/bookings/<Booking_ID>` 	| GET,DELETE,PUT,PATCH 	| Full Retrieval, Updating, and Deletion of a Booking Resource. _Note: Mock IDs available from 1-60_     	|
+| `/restaurant/menu`                  	| GET                  	| List of All Menu Items                                                                                 	|
+| `/restaurant/menu/create`           	| POST                 	| Create New Menu Item                                                                                   	|
+| `/restaurant/menu/<Item_ID>`        	| GET,DELETE,PUT,PATCH 	| Full Retrieval, Updating, and Deletion of a Menu Item Resources. _Note: Mock IDs available from 1-177_ 	|
+
 ## API Documentation
 
 The API follows the OpenAPI 3.0 standard. Here are the main route categories:
+
+### Auth
+
+This Category comprisede all the authent

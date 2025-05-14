@@ -24,6 +24,9 @@ class Base(Configuration):
     USE_I18N = True
     FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
     USE_TZ = False
+    INTERNAL_IPS = [
+    "127.0.0.1",
+]
 
     TEMPLATES = [
         {
@@ -227,8 +230,13 @@ class Development(Base):
         "drf_spectacular_sidecar",
         "djoser",
     ]
+    DEBUG_TOOLBAR_CONFIG = {
+        "RESULTS_CACHE_SIZE": 100,
+        "IS_RUNNING_TESTS": False,
+    }
 
     MIDDLEWARE = [
+        "kolo.middleware.KoloMiddleware",
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",

@@ -1,4 +1,5 @@
 from datetime import datetime
+import django.contrib.auth.models
 from typing import Any, Union
 
 from django.views.generic import TemplateView
@@ -14,12 +15,10 @@ from rest_framework.response import Response
 
 from applications.resturant.filters import BookingFilter, ProductFilter
 from applications.resturant.models import Booking, Menu
-from applications.resturant.serializers.auth import (AuthRequestSerializer,
-                                                     AuthResponseSerializer)
 from applications.resturant.serializers.core import (BookingSerializer,
                                                      MenuSerializer)
 
-
+from django.shortcuts import render
 class Index(TemplateView):
     """A view for rendering the index template.
 
@@ -28,62 +27,10 @@ class Index(TemplateView):
 
     template_name = "index.html"
 
-
-class AuthToken(ObtainAuthToken):
-    """A custom view for handling user authentication and token generation."""
-
-    @extend_schema(
-        summary="User Authentication",
-        description="Authenticate a user and generate an authentication token.",
-        tags=["Tokens"],
-        request=AuthRequestSerializer,
-        responses=AuthResponseSerializer,
-        examples=[
-            OpenApiExample(
-                name="Successful Authentication",
-                description="Valid credentials",
-                value={"username": "john_doe", "password": "password123"},
-                request_only=True,
-            ),
-            OpenApiExample(
-                name="Invalid Login Attempt",
-                description="Incorrect username or password",
-                value={"username": "wrong_user", "password": "wrong_pass"},
-                request_only=True,
-            ),
-            OpenApiExample(
-                name="Successful Response",
-                description="Token returned after successful login",
-                value={
-                    "token": "abcdef123456",
-                    "user_id": 1,
-                    "email": "john.doe@example.com",
-                },
-                response_only=True,
-            ),
-        ],
-    )
-    def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(
-            data=request.data, context={"request": request}
-        )
-        serializer.is_valid(raise_exception=True)
-        user = serializer.validated_data.get("user", None)
-        if user is None:
-            from rest_framework.exceptions import AuthenticationFailed
-
-            raise AuthenticationFailed("User not found in validated data")
-        token: Union[Token, Any] = None
-        created: bool = False
-        token, created = Token.objects.get_or_create(user=user)
-        if created:
-            token.created = datetime.now()
-            token.save()
-        return Response({"token": token.key, "user_id": user.pk, "email": user.email})
-
+def handler_page_not_found_404(request, exception):
+    return render(request, '404.html', status=404)
 
 # ----- BOOKING VIEWS -----
-
 
 @extend_schema(
     summary="List All Current Bookings",
@@ -238,6 +185,8 @@ class BookingView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     lookup_field = "booking_id"
+    primary_model = Booking
+    filter_backends = [DjangoFilterBackend]
     permission_classes = [IsAuthenticated]
 
     def get_serializer_context(self):
@@ -526,6 +475,7 @@ class MenuView(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
+    primary_model = Menu
     lookup_field = "item_id"
     filter_backends = [DjangoFilterBackend]
     search_fields = ["title"]

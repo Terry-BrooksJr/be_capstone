@@ -73,7 +73,8 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
     desc: Run tests
     cmds:
-      - doppler run --  python run/manage.py test applications.resturant.tests
+      - doppler run --  .venv/bin/python run/manage.py test applications.resturant.tests --failfast --keepdb
+    silent: false
 
   run:
     desc: Starts a Gunicorn Based Development Server that Reloads on Changes
