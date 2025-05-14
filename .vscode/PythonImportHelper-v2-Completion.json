@@ -1,11 +1,54 @@
 [
     {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "json",
         "description": "json",
         "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "jmespath",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "exceptions",
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "isExtraImport": true,
+        "detail": "jmespath",
         "documentation": {}
     },
     {
@@ -171,8 +214,7 @@
         "documentation": {}
     },
     {
-<<<<<<< HEAD
-        "label": "Union",
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -180,9 +222,7 @@
         "documentation": {}
     },
     {
-=======
->>>>>>> 2dec35a (feat: Add 404 error page and enhance index page layout)
-        "label": "Any",
+        "label": "Union",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -343,7 +383,6 @@
         "documentation": {}
     },
     {
-<<<<<<< HEAD
         "label": "logger",
         "importPath": "loguru",
         "description": "loguru",
@@ -352,8 +391,6 @@
         "documentation": {}
     },
     {
-=======
->>>>>>> 2dec35a (feat: Add 404 error page and enhance index page layout)
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -386,8 +423,7 @@
         "documentation": {}
     },
     {
-<<<<<<< HEAD
-        "label": "status",
+        "label": "generics",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -395,9 +431,7 @@
         "documentation": {}
     },
     {
-=======
->>>>>>> 2dec35a (feat: Add 404 error page and enhance index page layout)
-        "label": "generics",
+        "label": "status",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -677,98 +711,6 @@
         "documentation": {}
     },
     {
-<<<<<<< HEAD
-        "label": "hashlib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "hashlib",
-        "description": "hashlib",
-        "detail": "hashlib",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "cache",
-        "importPath": "django.core.cache",
-        "description": "django.core.cache",
-        "isExtraImport": true,
-        "detail": "django.core.cache",
-        "documentation": {}
-    },
-    {
-        "label": "post_delete",
-        "importPath": "django.db.models.signals",
-        "description": "django.db.models.signals",
-        "isExtraImport": true,
-        "detail": "django.db.models.signals",
-        "documentation": {}
-    },
-    {
-        "label": "post_save",
-        "importPath": "django.db.models.signals",
-        "description": "django.db.models.signals",
-        "isExtraImport": true,
-        "detail": "django.db.models.signals",
-        "documentation": {}
-    },
-    {
-        "label": "receiver",
-        "importPath": "django.dispatch",
-        "description": "django.dispatch",
-        "isExtraImport": true,
-        "detail": "django.dispatch",
-        "documentation": {}
-    },
-    {
-        "label": "JsonResponse",
-        "importPath": "django.http.response",
-        "description": "django.http.response",
-        "isExtraImport": true,
-        "detail": "django.http.response",
-        "documentation": {}
-    },
-    {
-        "label": "TemplateResponse",
-        "importPath": "django.template.response",
-        "description": "django.template.response",
-        "isExtraImport": true,
-        "detail": "django.template.response",
-        "documentation": {}
-    },
-    {
-        "label": "method_decorator",
-        "importPath": "django.utils.decorators",
-        "description": "django.utils.decorators",
-        "isExtraImport": true,
-        "detail": "django.utils.decorators",
-        "documentation": {}
-    },
-    {
-        "label": "cache_page",
-        "importPath": "django.views.decorators.cache",
-        "description": "django.views.decorators.cache",
-        "isExtraImport": true,
-        "detail": "django.views.decorators.cache",
-        "documentation": {}
-    },
-    {
-        "label": "never_cache",
-        "importPath": "django.views.decorators.cache",
-        "description": "django.views.decorators.cache",
-        "isExtraImport": true,
-        "detail": "django.views.decorators.cache",
-        "documentation": {}
-    },
-    {
-=======
->>>>>>> 2dec35a (feat: Add 404 error page and enhance index page layout)
         "label": "TemplateView",
         "importPath": "django.views.generic",
         "description": "django.views.generic",
@@ -782,38 +724,6 @@
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Response",
-        "importPath": "rest_framework.response",
-        "description": "rest_framework.response",
-        "isExtraImport": true,
-        "detail": "rest_framework.response",
-        "documentation": {}
-    },
-    {
-        "label": "Counter",
-        "importPath": "prometheus_client",
-        "description": "prometheus_client",
-        "isExtraImport": true,
-        "detail": "prometheus_client",
-        "documentation": {}
-    },
-    {
-        "label": "JsonResponseMixin",
-        "importPath": "django.views.generic.base",
-        "description": "django.views.generic.base",
-        "isExtraImport": true,
-        "detail": "django.views.generic.base",
         "documentation": {}
     },
     {
@@ -838,6 +748,22 @@
         "description": "rest_framework.permissions",
         "isExtraImport": true,
         "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
         "documentation": {}
     },
     {
@@ -1098,6 +1024,14 @@
         "documentation": {}
     },
     {
+        "label": "StaticStorage",
+        "importPath": "utils.backends",
+        "description": "utils.backends",
+        "isExtraImport": true,
+        "detail": "utils.backends",
+        "documentation": {}
+    },
+    {
         "label": "debug_toolbar_urls",
         "importPath": "debug_toolbar.toolbar",
         "description": "debug_toolbar.toolbar",
@@ -1130,12 +1064,133 @@
         "documentation": {}
     },
     {
-        "label": "sys",
+        "label": "S3Boto3Storage",
+        "importPath": "storages.backends.s3boto3",
+        "description": "storages.backends.s3boto3",
+        "isExtraImport": true,
+        "detail": "storages.backends.s3boto3",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "hashlib",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
+        "importPath": "hashlib",
+        "description": "hashlib",
+        "detail": "hashlib",
+        "documentation": {}
+    },
+    {
+        "label": "cache",
+        "importPath": "django.core.cache",
+        "description": "django.core.cache",
+        "isExtraImport": true,
+        "detail": "django.core.cache",
+        "documentation": {}
+    },
+    {
+        "label": "post_delete",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http.response",
+        "description": "django.http.response",
+        "isExtraImport": true,
+        "detail": "django.http.response",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateResponse",
+        "importPath": "django.template.response",
+        "description": "django.template.response",
+        "isExtraImport": true,
+        "detail": "django.template.response",
+        "documentation": {}
+    },
+    {
+        "label": "method_decorator",
+        "importPath": "django.utils.decorators",
+        "description": "django.utils.decorators",
+        "isExtraImport": true,
+        "detail": "django.utils.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "cache_page",
+        "importPath": "django.views.decorators.cache",
+        "description": "django.views.decorators.cache",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.cache",
+        "documentation": {}
+    },
+    {
+        "label": "never_cache",
+        "importPath": "django.views.decorators.cache",
+        "description": "django.views.decorators.cache",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.cache",
+        "documentation": {}
+    },
+    {
+        "label": "Counter",
+        "importPath": "prometheus_client",
+        "description": "prometheus_client",
+        "isExtraImport": true,
+        "detail": "prometheus_client",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponseMixin",
+        "importPath": "django.views.generic.base",
+        "description": "django.views.generic.base",
+        "isExtraImport": true,
+        "detail": "django.views.generic.base",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": ".venv.bin.jp",
+        "description": ".venv.bin.jp",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
+        "detail": ".venv.bin.jp",
         "documentation": {}
     },
     {
@@ -1274,60 +1329,6 @@
         "documentation": {}
     },
     {
-        "label": "DozensMetrics",
-        "kind": 6,
-        "importPath": "applications.resturant.cache",
-        "description": "applications.resturant.cache",
-        "peekOfCode": "class DozensMetrics:\n    \"\"\"Manages metrics tracking for the NHHC web application.\n    This class provides a comprehensive metrics tracking system for monitoring various application events and performance indicators.\n    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions, and document processing metrics.\n    Attributes:\n        NAMESPACE (str): The base namespace for all metrics in the web application.\n    \"\"\"\n    NAMESPACE = \"dozens\"\n    def __init__(self):\n        self.cached_queryset_hit = Counter(",
-        "detail": "applications.resturant.cache",
-        "documentation": {}
-    },
-    {
-        "label": "CachedTemplateView",
-        "kind": 6,
-        "importPath": "applications.resturant.cache",
-        "description": "applications.resturant.cache",
-        "peekOfCode": "class CachedTemplateView(TemplateView):\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(settings.CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):\n        return super(NeverCacheMixin, self).dispatch(*args, **kwargs)",
-        "detail": "applications.resturant.cache",
-        "documentation": {}
-    },
-    {
-        "label": "NeverCacheMixin",
-        "kind": 6,
-        "importPath": "applications.resturant.cache",
-        "description": "applications.resturant.cache",
-        "peekOfCode": "class NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):\n        return super(NeverCacheMixin, self).dispatch(*args, **kwargs)\nclass CachedResponseMixin:\n    \"\"\"Mixin class to provide caching functionality for API responses.\n    This mixin allows views to cache their responses based on user identity and query parameters,\n    improving performance by reducing the need for repeated database queries.\n    \"\"\"\n    def get_cache_key(self) -> str:",
-        "detail": "applications.resturant.cache",
-        "documentation": {}
-    },
-    {
-        "label": "CachedResponseMixin",
-        "kind": 6,
-        "importPath": "applications.resturant.cache",
-        "description": "applications.resturant.cache",
-        "peekOfCode": "class CachedResponseMixin:\n    \"\"\"Mixin class to provide caching functionality for API responses.\n    This mixin allows views to cache their responses based on user identity and query parameters,\n    improving performance by reducing the need for repeated database queries.\n    \"\"\"\n    def get_cache_key(self) -> str:\n        \"\"\"Generate a unique cache key based on the request and model information.\n        This method constructs a cache key that incorporates the user ID, query parameters,\n        and model names associated with the view.\n        Returns:",
-        "detail": "applications.resturant.cache",
-        "documentation": {}
-    },
-    {
-        "label": "invalidate_cache",
-        "kind": 2,
-        "importPath": "applications.resturant.cache",
-        "description": "applications.resturant.cache",
-        "peekOfCode": "def invalidate_cache(sender, **kwargs):\n    model_name = sender.__name__\n    logger.debug(f\"Signal Received For {model_name}\")\n    # Pattern to match cache keys that include the model name as namespace\n    cache_key_pattern = f\"{model_name}:*\"\n    logger.debug(f'Searching For Cache Key Pattern\" {cache_key_pattern}')\n    if cache_keys := cache.keys(cache_key_pattern):\n        cache.delete_many(cache_keys)\n        metrics.increment_cache(model=model_name, type=\"eviction\")\n        logger.info(f\"Cache invalidated for model: {model_name}\")",
-        "detail": "applications.resturant.cache",
-        "documentation": {}
-    },
-    {
-        "label": "metrics",
-        "kind": 5,
-        "importPath": "applications.resturant.cache",
-        "description": "applications.resturant.cache",
-        "peekOfCode": "metrics = DozensMetrics()\nclass CachedTemplateView(TemplateView):\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(settings.CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):",
-        "detail": "applications.resturant.cache",
-        "documentation": {}
-    },
-    {
         "label": "Index",
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
@@ -1387,15 +1388,6 @@
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
         "peekOfCode": "class MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    primary_model = Menu\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]",
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "handler_page_not_found_404",
-        "kind": 2,
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    return render(request, '404.html', status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(\n    summary=\"List All Current Bookings\",\n    description=\"Retrieve a list of all Little Lemon Bookings in the system. Authentication Token REQUIRED\",\n    parameters=None,\n    tags=[\"Reservations\"],\n    # auth=[\"authToken\"],\n    filters=True,",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1568,6 +1560,69 @@
         "description": "run.manage",
         "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"config.settings\")\n    os.environ.setdefault(\"DJANGO_CONFIGURATION\", \"Grading\")\n    from configurations.management import execute_from_command_line\n    try:\n        execute_from_command_line(sys.argv)\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"",
         "detail": "run.manage",
+        "documentation": {}
+    },
+    {
+        "label": "StaticStorage",
+        "kind": 6,
+        "importPath": "utils.backends",
+        "description": "utils.backends",
+        "peekOfCode": "class StaticStorage(S3Boto3Storage):\n    location =\"static\"\n    default_acl = \"public-read\"\n    file_overwrite = True",
+        "detail": "utils.backends",
+        "documentation": {}
+    },
+    {
+        "label": "DozensMetrics",
+        "kind": 6,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "class DozensMetrics:\n    \"\"\"Manages metrics tracking for the NHHC web application.\n    This class provides a comprehensive metrics tracking system for monitoring various application events and performance indicators.\n    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions, and document processing metrics.\n    Attributes:\n        NAMESPACE (str): The base namespace for all metrics in the web application.\n    \"\"\"\n    NAMESPACE = \"dozens\"\n    def __init__(self):\n        self.cached_queryset_hit = Counter(",
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "CachedTemplateView",
+        "kind": 6,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "class CachedTemplateView(TemplateView):\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(settings.CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):\n        return super(NeverCacheMixin, self).dispatch(*args, **kwargs)",
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "NeverCacheMixin",
+        "kind": 6,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "class NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):\n        return super(NeverCacheMixin, self).dispatch(*args, **kwargs)\nclass CachedResponseMixin:\n    \"\"\"Mixin class to provide caching functionality for API responses.\n    This mixin allows views to cache their responses based on user identity and query parameters,\n    improving performance by reducing the need for repeated database queries.\n    \"\"\"\n    def get_cache_key(self) -> str:",
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "CachedResponseMixin",
+        "kind": 6,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "class CachedResponseMixin:\n    \"\"\"Mixin class to provide caching functionality for API responses.\n    This mixin allows views to cache their responses based on user identity and query parameters,\n    improving performance by reducing the need for repeated database queries.\n    \"\"\"\n    def get_cache_key(self) -> str:\n        \"\"\"Generate a unique cache key based on the request and model information.\n        This method constructs a cache key that incorporates the user ID, query parameters,\n        and model names associated with the view.\n        Returns:",
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "invalidate_cache",
+        "kind": 2,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "def invalidate_cache(sender, **kwargs):\n    model_name = sender.__name__\n    logger.debug(f\"Signal Received For {model_name}\")\n    # Pattern to match cache keys that include the model name as namespace\n    cache_key_pattern = f\"{model_name}:*\"\n    logger.debug(f'Searching For Cache Key Pattern\" {cache_key_pattern}')\n    if cache_keys := cache.keys(cache_key_pattern):\n        cache.delete_many(cache_keys)\n        metrics.increment_cache(model=model_name, type=\"eviction\")\n        logger.info(f\"Cache invalidated for model: {model_name}\")",
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "metrics",
+        "kind": 5,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "metrics = DozensMetrics()\nclass CachedTemplateView(TemplateView):\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(settings.CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):",
+        "detail": "utils.cache",
         "documentation": {}
     }
 ]
