@@ -6,6 +6,8 @@ from django.core.cache import cache
 from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.http.response import JsonResponse
+from django.contrib.auth.models import User
+
 from django.template.response import TemplateResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page, never_cache
@@ -14,7 +16,7 @@ from loguru import logger
 from rest_framework import status
 from rest_framework.response import Response
 from prometheus_client import Counter
-from django.views.generic.base import JsonResponseMixin
+from rest_framework.authtoken.models import Token
 
 class DozensMetrics:
     """Manages metrics tracking for the NHHC web application.
@@ -101,13 +103,17 @@ class CachedResponseMixin:
         Raises:
             AttributeError: If the view does not have a 'primary_model' attribute.
         """
-        user_id = self.request.user.id if self.request.user.is_authenticated else "anon"
+        if apiKey := self.request.request.META['HTTP_AUTHORIZATION']:
+            user_id = Token.objects.get(key=apiKey).user.id
+        else:
+            user_id = "anonymous"
         query_params = self.request.GET.urlencode()
         query_params_hash = hashlib.md5(
             query_params.encode("utf-8"), usedforsecurity=False
         ).hexdigest()
 
-        # Get the model name(s) associated with the view
+        # Get the mo
+        # del name(s) associated with the view
         model_names = []
 
         # Add the primary model name

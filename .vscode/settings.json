@@ -1,4 +1,6 @@
 {
     "python.analysis.autoImportCompletions": true,
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+    "doppler.autocomplete.enable": true,
+    "doppler.hover.enable": true
 }

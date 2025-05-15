@@ -10,11 +10,8 @@ import os
 from pathlib import Path
 
 from configurations import Configuration
-from utils.backends import StaticStorage
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 
 
 class Base(Configuration):
@@ -29,11 +26,9 @@ class Base(Configuration):
     FORM_RENDERER = "django.forms.renderers.TemplatesSetting"
     USE_TZ = False
     INTERNAL_IPS = [
-    "127.0.0.1",
-]
-    STATICFILES_STORAGE = 'utils.backends.StaticStorage'
-
-    
+        "127.0.0.1",
+    ]
+    STATICFILES_STORAGE = "utils.backends.StaticStorage"
 
     TEMPLATES = [
         {
@@ -53,6 +48,17 @@ class Base(Configuration):
             },
         },
     ]
+
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": f"{os.environ["CACHE_CONNECTION_STRING"]}/{os.environ["CACHE_DB_NUMBER"]}",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            },
+        }
+    }
+
     CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
     CRISPY_TEMPLATE_PACK = "bootstrap5"
     AUTH_PASSWORD_VALIDATORS = [
@@ -70,38 +76,38 @@ class Base(Configuration):
         },
     ]
     # Set the required AWS credentials
-    STATICFILES_LOCATION = 'static'
-    STATICFILES_STORAGE = 'utils.backends.StaticStorage'    
+    STATICFILES_LOCATION = "static"
+    STATICFILES_STORAGE = "utils.backends.StaticStorage"
 
-    AWS_ACCESS_KEY_ID = os.environ['DO_SPACES_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['DO_SPACES_SECRET_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['DO_SPACE_NAME']
-    
-    AWS_S3_REGION_NAME = 'nyc3'  # e.g. us-west-2
-    AWS_S3_ENDPOINT_URL = f'https://{AWS_S3_REGION_NAME}.digitaloceanspaces.com'
+    AWS_ACCESS_KEY_ID = os.environ["DO_SPACES_KEY_ID"]
+    AWS_SECRET_ACCESS_KEY = os.environ["DO_SPACES_SECRET_KEY"]
+    AWS_STORAGE_BUCKET_NAME = os.environ["DO_SPACE_NAME"]
+
+    AWS_S3_REGION_NAME = "nyc3"  # e.g. us-west-2
+    AWS_S3_ENDPOINT_URL = f"https://{AWS_S3_REGION_NAME}.digitaloceanspaces.com"
     STATIC_URL = "/static/"
 
     STORAGES = {
-    "default": {
-        "BACKEND": "utils.backjends.StaticStorage",
-        "OPTIONS": {
-            "access_key": AWS_ACCESS_KEY_ID,
-            "secret_key": AWS_SECRET_ACCESS_KEY,
-            "bucket_name": AWS_STORAGE_BUCKET_NAME,
-            "endpoint_url": AWS_S3_ENDPOINT_URL,
-            "region_name": AWS_S3_REGION_NAME,
+        "default": {
+            "BACKEND": "utils.backjends.StaticStorage",
+            "OPTIONS": {
+                "access_key": AWS_ACCESS_KEY_ID,
+                "secret_key": AWS_SECRET_ACCESS_KEY,
+                "bucket_name": AWS_STORAGE_BUCKET_NAME,
+                "endpoint_url": AWS_S3_ENDPOINT_URL,
+                "region_name": AWS_S3_REGION_NAME,
+            },
         },
-    },
-    "staticfiles": {
-        "BACKEND": "utils.backends.StaticStorage",
-        "OPTIONS": {
-            "access_key": AWS_ACCESS_KEY_ID,
-            "secret_key": AWS_SECRET_ACCESS_KEY,
-            "bucket_name": AWS_STORAGE_BUCKET_NAME,
-            "endpoint_url": AWS_S3_ENDPOINT_URL,
-            "region_name": AWS_S3_REGION_NAME,
+        "staticfiles": {
+            "BACKEND": "utils.backends.StaticStorage",
+            "OPTIONS": {
+                "access_key": AWS_ACCESS_KEY_ID,
+                "secret_key": AWS_SECRET_ACCESS_KEY,
+                "bucket_name": AWS_STORAGE_BUCKET_NAME,
+                "endpoint_url": AWS_S3_ENDPOINT_URL,
+                "region_name": AWS_S3_REGION_NAME,
+            },
         },
-    },
     }
     DATABASES = {
         "default": {
@@ -142,6 +148,16 @@ class Base(Configuration):
             "rest_framework.authentication.SessionAuthentication",
         ],
     }
+   
+    BYTE_PATROLALLOWED_IPS = [
+    '127.0.0.1',
+    '69.255.206.86'
+    ]
+    BYTE_PATROLPROTECTED_PATHS = [
+    r'^/admin/.*$',    
+    r'^/checkup/?.*$'
+]
+    BYTE_PATROLCACHE_TIMEOUT = 9000 
 
     DJOSER = {"USER_ID_FIELD": "username"}
     SPECTACULAR_SETTINGS = {
@@ -227,14 +243,25 @@ class Grading(Base):
         "rest_framework.authtoken",
         "django_filters",
         "crispy_forms",
+        "health_check",  # required
+        "health_check.db",  # stock Django health checkers
+        "health_check.cache",
+        "health_check.storage",
         "crispy_bootstrap5",
         "drf_spectacular",
         "drf_spectacular_sidecar",
+        "health_check.contrib.redis",  # requires Redis broker
+        "health_check.contrib.s3boto3_storage",  # requires boto3 and S3BotoStorage backend
+        "health_check.contrib.psutil",
         "djoser",
+            "corsheaders",
+
+        "byte_patrol",
     ]
 
     MIDDLEWARE = [
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
+        "django.middleware.cache.UpdateCacheMiddleware",
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
@@ -242,6 +269,7 @@ class Grading(Base):
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
+        "django.middleware.cache.FetchFromCacheMiddleware",
         "django_prometheus.middleware.PrometheusAfterMiddleware",
     ]
 
@@ -263,13 +291,23 @@ class Development(Base):
         "django_filters",
         "debug_toolbar",
         "applications.resturant",
+            "corsheaders",
+
         "django_prometheus",
         "drf_redesign",
         "rest_framework",
         "rest_framework.authtoken",
         "drf_spectacular",
+        "health_check",  # required
+        "health_check.db",  # stock Django health checkers
+        "health_check.cache",
+        "health_check.storage",
+        "health_check.contrib.redis",  # requires Redis broker
+        "health_check.contrib.s3boto3_storage",  # requires boto3 and S3BotoStorage backend
+        "health_check.contrib.psutil",  # disk and memory utilization; requires psutil
         "drf_spectacular_sidecar",
         "djoser",
+        "byte_patrol",
     ]
     DEBUG_TOOLBAR_CONFIG = {
         "RESULTS_CACHE_SIZE": 100,
@@ -277,15 +315,18 @@ class Development(Base):
     }
 
     MIDDLEWARE = [
-        "kolo.middleware.KoloMiddleware",
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
+        "django.middleware.cache.UpdateCacheMiddleware",
         "django.middleware.security.SecurityMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
+            "corsheaders.middleware.CorsMiddleware",
+
         "django.middleware.common.CommonMiddleware",
         "django.middleware.csrf.CsrfViewMiddleware",
         "debug_toolbar.middleware.DebugToolbarMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
+        "django.middleware.cache.FetchFromCacheMiddleware",
         "django_prometheus.middleware.PrometheusAfterMiddleware",
     ]

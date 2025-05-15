@@ -6,6 +6,10 @@ from django import forms
 
 
 class MenuFilterFormHelper(forms.Form):
+    """Form helper for filtering menu items in the restaurant application.
+    
+    Provides a user-friendly interface for filtering menu items by price, inventory, and product name.
+    """
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -41,6 +45,10 @@ class MenuFilterFormHelper(forms.Form):
 
 
 class BookingFilterFormHelper(forms.Form):
+    """Form helper for filtering restaurant bookings.
+
+    Allows users to filter bookings by date, time, party size, and booking party name.
+    """
     date = forms.DateField(
         required=False,
         widget=forms.DateInput(attrs={"type": "date", "class": "form-control"}),

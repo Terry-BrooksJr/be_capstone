@@ -68,14 +68,29 @@
     a:hover {
       background-color: var(--primary-color);
     }
-    .multi-link{ m
+    .multi-link{ 
         background-color: #2A4759;
         color: white;
     }
-    .    .multi-link{ m
+    .multi-link:hover{ 
         background-color: #495E57;
     }
-    mult
+    .multi-link1{
+      background-color: #8A2D3B;
+      color: white;
+    }
+
+        .multi-link1:hover{
+      background-color:rgb(255, 78, 104);
+    }
+        .multi-link2{
+      background-color: #27548A;
+      color: white;
+    }
+
+        .multi-link2:hover{
+      background-color:rgb(4, 29, 60);
+\    }
     img {
       max-width: 200px;
       margin-bottom: 20px;
@@ -89,9 +104,9 @@
     <h2>Oops! Page Not Found</h2>
     <p>Sorry, the page you were looking for doesn't exist. Here are some that do:</p>
     <ul class="no-bullets-list" >
-      <li><a href="{% url 'swagger' %}">Swagger UI</a></li>
-      <li><a href="{% url 'redoc' %}">ReDoc</a></li>
-      <li><a href="/restaurant/menu">DRF Browseable API</a></li>
+      <li class="multi-link"><a href="{% url 'swagger' %}">Swagger UI</a></li>
+      <li class="multi-link1"><a href="{% url 'redoc' %}">ReDoc</a></li>
+      <li class="multi-link2"><a href="/restaurant/menu">DRF Browseable API</a></li>
     </ul>
     And if you want to go back to the homepage, click <a href="/">here</a>.
     <p>Or you can go back to the <a href="javascript:history.back()">previous page</a>.</p>

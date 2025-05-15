@@ -1,11 +1,9 @@
 import contextlib
 import datetime as DT
 from datetime import datetime
-from typing import Type, Union, Dict, Any
+from typing import  Union, Dict, Any
 
-from django.contrib.auth.models import User
 from django.http import QueryDict
-from django.utils.timezone import now as TIMEZONE_AWARE_NOW
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import (OpenApiExample, extend_schema_field,
                                    extend_schema_serializer)
@@ -15,8 +13,8 @@ from rest_framework.validators import UniqueTogetherValidator
 
 from applications.resturant.models import Booking, Menu
 from django.utils.timezone import now as TIMEZONE_AWARE_NOW
-
-def validate_date_in_future(value):
+from utils.cache import CachedResponseMixin
+def validate_date_in_future(value:DT.datetime) -> Union[None, serializers.ValidationError]:
     """Check if the booking date is in the future.
 
     Args:
@@ -25,10 +23,24 @@ def validate_date_in_future(value):
     Returns:
         bool: True if the booking date is in the future, False otherwise
     """
-    if not value > TIMEZONE_AWARE_NOW:
+    if not value > TIMEZONE_AWARE_NOW():
         raise serializers.ValidationError("Booking date must be in the future.")
 
 
+def party_size_validator(value:int) -> Union[None, serializers.ValidationError]:
+    """Check if the party size is within the allowed range.
+
+    Args:
+        value (int): The number of guests in the booking
+
+    Returns:
+        None
+        
+    Raises:
+        serializers.ValidationError: If the party size is not between 1 and 25
+    """
+    if not 1 <= value <= 25:
+        raise serializers.ValidationError("Party size must be between 1 and 25.")
 class DateTimeParsingMixin:
     def parse_datetime_fields(self, data, request):
         """Parses and validates date and time fields from input data.
@@ -48,7 +60,7 @@ class DateTimeParsingMixin:
         logger.debug(f"Raw data before datetime parsing: {data}")
 
         if isinstance(data, QueryDict):
-            data = self._parse_querydict(data)
+            data:Dict[str, Any] = self._parse_querydict(data)
 
         date_str = data.get("date")
         time_str = data.get("time")
@@ -61,24 +73,26 @@ class DateTimeParsingMixin:
 
         parsed_time = self._parse_time(time_str)
         parsed_date = self._parse_date(date_str)
+        logger.debug(f"Parsed date: {parsed_date}, {type(parsed_date)}")
+        logger.debug(f"Parsed time: {parsed_time}, {type(parsed_time)}")
+
 
 
 
         combined = datetime.combine(parsed_date, parsed_time)
         logger.debug(f"Parsed combined datetime: {combined}, {type(combined)}")
         logger.debug(f"Timezone-aware now: {TIMEZONE_AWARE_NOW()}, {type(TIMEZONE_AWARE_NOW())}")
-        with contextlib.suppress(TypeError):
-            if combined < TIMEZONE_AWARE_NOW():        
-                raise serializers.ValidationError({"date": "Date must be in the future."})
-        # Check if the serializer expects a date or datetime for the 'date' field
+        current_time = TIMEZONE_AWARE_NOW()
+        if  combined < current_time:        
+            raise serializers.ValidationError({"date": "Date must be in the future."})
+        # Check if the serializer aexpects a date or datetime for the 'date' field
         date_field = self.fields.get("date", None)
         if date_field is not None and hasattr(date_field, "to_internal_value"):
-            from rest_framework import serializers as drf_serializers
 
-            if isinstance(date_field, drf_serializers.DateField):
+            if isinstance(date_field, serializers.DateField):
                 # If the field expects a date, store only the date part
                 data["date"] = combined.date()
-            elif isinstance(date_field, drf_serializers.DateTimeField):
+            elif isinstance(date_field, serializers.DateTimeField):
                 # If the field expects a datetime, store the full datetime
                 data["date"] = combined
             else:
@@ -154,9 +168,10 @@ class DateTimeParsingMixin:
             serializers.ValidationError: If the date string is not in a valid format.
         """
         if isinstance(date_str, DT.date):
+            logger.debug(f"Date is already a date object: {date_str}")
             return date_str
         try:
-            return (datetime.strptime(date_str, "%m-%d-%Y").date(),)
+            return datetime.strptime(date_str, "%m-%d-%Y").date()
         except (ValueError, TypeError):
             try:
                 return datetime.strptime(date_str, "%Y-%m-%dT%H:%M").date()
@@ -237,6 +252,13 @@ class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
         min_value=1,
         max_value=25,
         help_text="Number of guests in the booking (between 1 and 25)",
+        validators=[
+            party_size_validator,
+        ],
+        error_messages={
+            "min_value": "Party size must be at least 1.",
+            "max_value": "Party size must not exceed 25.",
+        },
     )
     date = serializers.DateTimeField(
         label="Booking Date",
@@ -294,6 +316,7 @@ class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
         representation["time"] = instance.date.strftime("%I:%M %p")
         representation["date"] = instance.date.strftime("%m-%d-%Y")
         logger.debug(f"Representation Post-Processing: {representation}")
+        
         return representation
 
     def to_internal_value(self, data):

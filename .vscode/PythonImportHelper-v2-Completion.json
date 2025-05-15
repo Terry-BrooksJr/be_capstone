@@ -1,5 +1,318 @@
 [
     {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "TYPE_CHECKING",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "option",
+        "importPath": "cleo.helpers",
+        "description": "cleo.helpers",
+        "isExtraImport": true,
+        "detail": "cleo.helpers",
+        "documentation": {}
+    },
+    {
+        "label": "NormalizedName",
+        "importPath": "packaging.utils",
+        "description": "packaging.utils",
+        "isExtraImport": true,
+        "detail": "packaging.utils",
+        "documentation": {}
+    },
+    {
+        "label": "canonicalize_name",
+        "importPath": "packaging.utils",
+        "description": "packaging.utils",
+        "isExtraImport": true,
+        "detail": "packaging.utils",
+        "documentation": {}
+    },
+    {
+        "label": "canonicalize_name",
+        "importPath": "packaging.utils",
+        "description": "packaging.utils",
+        "isExtraImport": true,
+        "detail": "packaging.utils",
+        "documentation": {}
+    },
+    {
+        "label": "GroupCommand",
+        "importPath": "poetry.console.commands.group_command",
+        "description": "poetry.console.commands.group_command",
+        "isExtraImport": true,
+        "detail": "poetry.console.commands.group_command",
+        "documentation": {}
+    },
+    {
+        "label": "MAIN_GROUP",
+        "importPath": "poetry.core.packages.dependency_group",
+        "description": "poetry.core.packages.dependency_group",
+        "isExtraImport": true,
+        "detail": "poetry.core.packages.dependency_group",
+        "documentation": {}
+    },
+    {
+        "label": "MAIN_GROUP",
+        "importPath": "poetry.core.packages.dependency_group",
+        "description": "poetry.core.packages.dependency_group",
+        "isExtraImport": true,
+        "detail": "poetry.core.packages.dependency_group",
+        "documentation": {}
+    },
+    {
+        "label": "Exporter",
+        "importPath": "poetry_plugin_export.exporter",
+        "description": "poetry_plugin_export.exporter",
+        "isExtraImport": true,
+        "detail": "poetry_plugin_export.exporter",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "partialmethod",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "IO",
+        "importPath": "cleo.io.io",
+        "description": "cleo.io.io",
+        "isExtraImport": true,
+        "detail": "cleo.io.io",
+        "documentation": {}
+    },
+    {
+        "label": "create_nested_marker",
+        "importPath": "poetry.core.packages.utils.utils",
+        "description": "poetry.core.packages.utils.utils",
+        "isExtraImport": true,
+        "detail": "poetry.core.packages.utils.utils",
+        "documentation": {}
+    },
+    {
+        "label": "parse_marker",
+        "importPath": "poetry.core.version.markers",
+        "description": "poetry.core.version.markers",
+        "isExtraImport": true,
+        "detail": "poetry.core.version.markers",
+        "documentation": {}
+    },
+    {
+        "label": "AnyMarker",
+        "importPath": "poetry.core.version.markers",
+        "description": "poetry.core.version.markers",
+        "isExtraImport": true,
+        "detail": "poetry.core.version.markers",
+        "documentation": {}
+    },
+    {
+        "label": "SingleMarker",
+        "importPath": "poetry.core.version.markers",
+        "description": "poetry.core.version.markers",
+        "isExtraImport": true,
+        "detail": "poetry.core.version.markers",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPRepository",
+        "importPath": "poetry.repositories.http_repository",
+        "description": "poetry.repositories.http_repository",
+        "isExtraImport": true,
+        "detail": "poetry.repositories.http_repository",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_dependency_packages",
+        "importPath": "poetry_plugin_export.walker",
+        "description": "poetry_plugin_export.walker",
+        "isExtraImport": true,
+        "detail": "poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_dependency_packages2",
+        "importPath": "poetry_plugin_export.walker",
+        "description": "poetry_plugin_export.walker",
+        "isExtraImport": true,
+        "detail": "poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "ApplicationPlugin",
+        "importPath": "poetry.plugins.application_plugin",
+        "description": "poetry.plugins.application_plugin",
+        "isExtraImport": true,
+        "detail": "poetry.plugins.application_plugin",
+        "documentation": {}
+    },
+    {
+        "label": "ExportCommand",
+        "importPath": "poetry_plugin_export.command",
+        "description": "poetry_plugin_export.command",
+        "isExtraImport": true,
+        "detail": "poetry_plugin_export.command",
+        "documentation": {}
+    },
+    {
+        "label": "constraint_regions",
+        "importPath": "poetry.core.constraints.version.util",
+        "description": "poetry.core.constraints.version.util",
+        "isExtraImport": true,
+        "detail": "poetry.core.constraints.version.util",
+        "documentation": {}
+    },
+    {
+        "label": "DependencyPackage",
+        "importPath": "poetry.packages",
+        "description": "poetry.packages",
+        "isExtraImport": true,
+        "detail": "poetry.packages",
+        "documentation": {}
+    },
+    {
+        "label": "get_extra_package_names",
+        "importPath": "poetry.utils.extras",
+        "description": "poetry.utils.extras",
+        "isExtraImport": true,
+        "detail": "poetry.utils.extras",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -60,6 +373,354 @@
         "documentation": {}
     },
     {
+        "label": "BaseCommand",
+        "importPath": "django.core.management.base",
+        "description": "django.core.management.base",
+        "isExtraImport": true,
+        "detail": "django.core.management.base",
+        "documentation": {}
+    },
+    {
+        "label": "IPAllowList",
+        "importPath": "byte_patrol.models",
+        "description": "byte_patrol.models",
+        "isExtraImport": true,
+        "detail": "byte_patrol.models",
+        "documentation": {}
+    },
+    {
+        "label": "IPRestrictionMiddleware",
+        "importPath": "byte_patrol.middleware",
+        "description": "byte_patrol.middleware",
+        "isExtraImport": true,
+        "detail": "byte_patrol.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "django.core.validators",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.core.validators",
+        "description": "django.core.validators",
+        "detail": "django.core.validators",
+        "documentation": {}
+    },
+    {
+        "label": "validate_ipv46_address",
+        "importPath": "django.core.validators",
+        "description": "django.core.validators",
+        "isExtraImport": true,
+        "detail": "django.core.validators",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "ipaddress",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "ipaddress",
+        "description": "ipaddress",
+        "detail": "ipaddress",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "cache",
+        "importPath": "django.core.cache",
+        "description": "django.core.cache",
+        "isExtraImport": true,
+        "detail": "django.core.cache",
+        "documentation": {}
+    },
+    {
+        "label": "cache",
+        "importPath": "django.core.cache",
+        "description": "django.core.cache",
+        "isExtraImport": true,
+        "detail": "django.core.cache",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseForbidden",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "QueryDict",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "MiddlewareMixin",
+        "importPath": "django.utils.deprecation",
+        "description": "django.utils.deprecation",
+        "isExtraImport": true,
+        "detail": "django.utils.deprecation",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
+        "importPath": "django.core.exceptions",
+        "description": "django.core.exceptions",
+        "isExtraImport": true,
+        "detail": "django.core.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "table",
+        "importPath": "tomlkit",
+        "description": "tomlkit",
+        "isExtraImport": true,
+        "detail": "tomlkit",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_delete",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_delete",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "Booking",
         "importPath": "applications.models",
         "description": "applications.models",
@@ -89,54 +750,6 @@
         "description": "mock.data",
         "isExtraImport": true,
         "detail": "mock.data",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -179,127 +792,6 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
-        "documentation": {}
-    },
-    {
-        "label": "Type",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "QueryDict",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
-        "label": "now",
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "isExtraImport": true,
-        "detail": "django.utils.timezone",
-        "documentation": {}
-    },
-    {
-        "label": "now",
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "isExtraImport": true,
-        "detail": "django.utils.timezone",
         "documentation": {}
     },
     {
@@ -543,6 +1035,71 @@
         "documentation": {}
     },
     {
+        "label": "now",
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "isExtraImport": true,
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "CachedResponseMixin",
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "isExtraImport": true,
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "CachedResponseMixin",
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "isExtraImport": true,
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "django.contrib.auth.models",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
         "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -671,43 +1228,11 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
         "label": "BookingSerializer",
         "importPath": "resturant.serializers.core",
         "description": "resturant.serializers.core",
         "isExtraImport": true,
         "detail": "resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "admin",
-        "importPath": "django.contrib",
-        "description": "django.contrib",
-        "isExtraImport": true,
-        "detail": "django.contrib",
-        "documentation": {}
-    },
-    {
-        "label": "AppConfig",
-        "importPath": "django.apps",
-        "description": "django.apps",
-        "isExtraImport": true,
-        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -732,14 +1257,6 @@
         "description": "django_filters.rest_framework",
         "isExtraImport": true,
         "detail": "django_filters.rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "ObtainAuthToken",
-        "importPath": "rest_framework.authtoken.views",
-        "description": "rest_framework.authtoken.views",
-        "isExtraImport": true,
-        "detail": "rest_framework.authtoken.views",
         "documentation": {}
     },
     {
@@ -799,11 +1316,11 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "validate_date_in_future",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
     {
@@ -1008,27 +1525,11 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
         "label": "Configuration",
         "importPath": "configurations",
         "description": "configurations",
         "isExtraImport": true,
         "detail": "configurations",
-        "documentation": {}
-    },
-    {
-        "label": "StaticStorage",
-        "importPath": "utils.backends",
-        "description": "utils.backends",
-        "isExtraImport": true,
-        "detail": "utils.backends",
         "documentation": {}
     },
     {
@@ -1056,6 +1557,14 @@
         "documentation": {}
     },
     {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "configurations.wsgi",
         "description": "configurations.wsgi",
@@ -1072,60 +1581,12 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "hashlib",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "hashlib",
         "description": "hashlib",
         "detail": "hashlib",
-        "documentation": {}
-    },
-    {
-        "label": "cache",
-        "importPath": "django.core.cache",
-        "description": "django.core.cache",
-        "isExtraImport": true,
-        "detail": "django.core.cache",
-        "documentation": {}
-    },
-    {
-        "label": "post_delete",
-        "importPath": "django.db.models.signals",
-        "description": "django.db.models.signals",
-        "isExtraImport": true,
-        "detail": "django.db.models.signals",
-        "documentation": {}
-    },
-    {
-        "label": "post_save",
-        "importPath": "django.db.models.signals",
-        "description": "django.db.models.signals",
-        "isExtraImport": true,
-        "detail": "django.db.models.signals",
-        "documentation": {}
-    },
-    {
-        "label": "receiver",
-        "importPath": "django.dispatch",
-        "description": "django.dispatch",
-        "isExtraImport": true,
-        "detail": "django.dispatch",
         "documentation": {}
     },
     {
@@ -1177,11 +1638,93 @@
         "documentation": {}
     },
     {
-        "label": "JsonResponseMixin",
-        "importPath": "django.views.generic.base",
-        "description": "django.views.generic.base",
-        "isExtraImport": true,
-        "detail": "django.views.generic.base",
+        "label": "ExportCommand",
+        "kind": 6,
+        "importPath": ".poetry.plugins.poetry_plugin_export.command",
+        "description": ".poetry.plugins.poetry_plugin_export.command",
+        "peekOfCode": "class ExportCommand(GroupCommand):\n    name = \"export\"\n    description = \"Exports the lock file to alternative formats.\"\n    options = [  # noqa: RUF012\n        option(\n            \"format\",\n            \"f\",\n            \"Format to export to. Currently, only constraints.txt and\"\n            \" requirements.txt are supported.\",\n            flag=False,",
+        "detail": ".poetry.plugins.poetry_plugin_export.command",
+        "documentation": {}
+    },
+    {
+        "label": "Exporter",
+        "kind": 6,
+        "importPath": ".poetry.plugins.poetry_plugin_export.exporter",
+        "description": ".poetry.plugins.poetry_plugin_export.exporter",
+        "peekOfCode": "class Exporter:\n    \"\"\"\n    Exporter class to export a lock file to alternative formats.\n    \"\"\"\n    FORMAT_CONSTRAINTS_TXT = \"constraints.txt\"\n    FORMAT_REQUIREMENTS_TXT = \"requirements.txt\"\n    ALLOWED_HASH_ALGORITHMS = (\"sha256\", \"sha384\", \"sha512\")\n    EXPORT_METHODS: ClassVar[dict[str, str]] = {\n        FORMAT_CONSTRAINTS_TXT: \"_export_constraints_txt\",\n        FORMAT_REQUIREMENTS_TXT: \"_export_requirements_txt\",",
+        "detail": ".poetry.plugins.poetry_plugin_export.exporter",
+        "documentation": {}
+    },
+    {
+        "label": "ExportApplicationPlugin",
+        "kind": 6,
+        "importPath": ".poetry.plugins.poetry_plugin_export.plugins",
+        "description": ".poetry.plugins.poetry_plugin_export.plugins",
+        "peekOfCode": "class ExportApplicationPlugin(ApplicationPlugin):\n    @property\n    def commands(self) -> list[type[Command]]:\n        return [ExportCommand]\n    def activate(self, application: Application) -> None:\n        # Removing the existing export command to avoid an error\n        # until Poetry removes the export command\n        # and uses this plugin instead.\n        # If you're checking this code out to get inspiration\n        # for your own plugins: DON'T DO THIS!",
+        "detail": ".poetry.plugins.poetry_plugin_export.plugins",
+        "documentation": {}
+    },
+    {
+        "label": "DependencyWalkerError",
+        "kind": 6,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "class DependencyWalkerError(Exception):\n    pass",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "get_python_version_region_markers",
+        "kind": 2,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "def get_python_version_region_markers(packages: list[Package]) -> list[BaseMarker]:\n    markers = []\n    regions = constraint_regions([package.python_constraint for package in packages])\n    for region in regions:\n        marker: BaseMarker = AnyMarker()\n        if region.min is not None:\n            min_operator = \">=\" if region.include_min else \">\"\n            marker_name = (\n                \"python_full_version\" if region.min.precision > 2 else \"python_version\"\n            )",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_dependency_packages",
+        "kind": 2,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "def get_project_dependency_packages(\n    locker: Locker,\n    project_requires: list[Dependency],\n    root_package_name: NormalizedName,\n    project_python_marker: BaseMarker | None = None,\n    extras: Collection[NormalizedName] = (),\n) -> Iterator[DependencyPackage]:\n    # Apply the project python marker to all requirements.\n    if project_python_marker is not None:\n        marked_requires: list[Dependency] = []",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_dependencies",
+        "kind": 2,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "def get_project_dependencies(\n    project_requires: list[Dependency],\n    locked_packages: list[Package],\n    root_package_name: NormalizedName,\n) -> Iterable[tuple[Package, Dependency]]:\n    # group packages entries by name, this is required because requirement might use\n    # different constraints.\n    packages_by_name: dict[str, list[Package]] = {}\n    for pkg in locked_packages:\n        if pkg.name not in packages_by_name:",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "walk_dependencies",
+        "kind": 2,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "def walk_dependencies(\n    dependencies: list[Dependency],\n    packages_by_name: dict[str, list[Package]],\n    root_package_name: NormalizedName,\n) -> dict[Package, Dependency]:\n    nested_dependencies: dict[Package, Dependency] = {}\n    visited: set[tuple[Dependency, BaseMarker]] = set()\n    while dependencies:\n        requirement = dependencies.pop(0)\n        if (requirement, requirement.marker) in visited:",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "get_locked_package",
+        "kind": 2,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "def get_locked_package(\n    dependency: Dependency,\n    packages_by_name: dict[str, list[Package]],\n    decided: dict[Package, Dependency] | None = None,\n) -> Package | None:\n    \"\"\"\n    Internal helper to identify corresponding locked package using dependency\n    version constraints.\n    \"\"\"\n    decided = decided or {}",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
+        "documentation": {}
+    },
+    {
+        "label": "get_project_dependency_packages2",
+        "kind": 2,
+        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
+        "description": ".poetry.plugins.poetry_plugin_export.walker",
+        "peekOfCode": "def get_project_dependency_packages2(\n    locker: Locker,\n    project_python_marker: BaseMarker | None = None,\n    groups: Collection[str] = (),\n    extras: Collection[NormalizedName] = (),\n) -> Iterator[DependencyPackage]:\n    for package, info in locker.locked_packages().items():\n        if not info.groups.intersection(groups):\n            continue\n        marker = info.get_marker(groups)",
+        "detail": ".poetry.plugins.poetry_plugin_export.walker",
         "documentation": {}
     },
     {
@@ -1191,6 +1734,96 @@
         "description": ".venv.bin.jp",
         "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
         "detail": ".venv.bin.jp",
+        "documentation": {}
+    },
+    {
+        "label": "Command",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.management.commands.add_ip_to_allowlist",
+        "description": "applications.byte_patrol.management.commands.add_ip_to_allowlist",
+        "peekOfCode": "class Command(BaseCommand):\n    help = 'Add an IP address to the allow list'\n    def add_arguments(self, parser):\n        parser.add_argument('ip_address', type=str, help='IP address to add')\n        parser.add_argument('--description', type=str, help='Description for this IP')\n    def handle(self, *args, **options):\n        ip_address = options['ip_address']\n        description = options.get('description', '')\n        # Try to find existing entry\n        ip_entry, created = IPAllowList.objects.update_or_create(",
+        "detail": "applications.byte_patrol.management.commands.add_ip_to_allowlist",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.migrations.0001_initial",
+        "description": "applications.byte_patrol.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = []\n    operations = [\n        migrations.CreateModel(\n            name=\"IPAllowList\",\n            fields=[\n                (\n                    \"id\",\n                    models.BigAutoField(",
+        "detail": "applications.byte_patrol.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "IPAllowListAdmin",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.admin",
+        "description": "applications.byte_patrol.admin",
+        "peekOfCode": "class IPAllowListAdmin(admin.ModelAdmin):\n    list_display = ('ip_address', 'description', 'is_active', 'updated_at')\n    list_filter = ('is_active',)\n    search_fields = ('ip_address', 'description')\n    readonly_fields = ('created_at', 'updated_at')\n@admin.register(ProtectedPath)\nclass ProtectedPathAdmin(admin.ModelAdmin):\n    list_display = ('path_pattern', 'description', 'is_active', 'updated_at')\n    list_filter = ('is_active',)\n    search_fields = ('path_pattern', 'description')",
+        "detail": "applications.byte_patrol.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ProtectedPathAdmin",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.admin",
+        "description": "applications.byte_patrol.admin",
+        "peekOfCode": "class ProtectedPathAdmin(admin.ModelAdmin):\n    list_display = ('path_pattern', 'description', 'is_active', 'updated_at')\n    list_filter = ('is_active',)\n    search_fields = ('path_pattern', 'description')\n    readonly_fields = ('created_at', 'updated_at')",
+        "detail": "applications.byte_patrol.admin",
+        "documentation": {}
+    },
+    {
+        "label": "BytePatrolConfig",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.apps",
+        "description": "applications.byte_patrol.apps",
+        "peekOfCode": "class BytePatrolConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"byte_patrol\"\n    def ready(self):\n        # Import signal handlers\n        import byte_patrol.signals",
+        "detail": "applications.byte_patrol.apps",
+        "documentation": {}
+    },
+    {
+        "label": "IPRestrictionMiddleware",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.middleware",
+        "description": "applications.byte_patrol.middleware",
+        "peekOfCode": "class IPRestrictionMiddleware(MiddlewareMixin):\n    \"\"\"Middleware that restricts access to protected paths based on client IP address.\n    This middleware checks incoming requests against an allow list of IP addresses and protected URL patterns, denying access if the client's IP is not permitted.\n    \"\"\"\n    CACHE_KEY_ALLOWED_IPS = 'ip_restriction_allowed_ips'\n    CACHE_KEY_PROTECTED_PATHS = 'ip_restriction_protected_paths'\n    CACHE_TIMEOUT = getattr(settings, 'BYTE_PATROL_CACHE_TIMEOUT', 300)  # 5 minutes default\n    def __init__(self, get_response=None):\n        self.get_response = get_response\n        super().__init__(get_response)",
+        "detail": "applications.byte_patrol.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "applications.byte_patrol.middleware",
+        "description": "applications.byte_patrol.middleware",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nclass IPRestrictionMiddleware(MiddlewareMixin):\n    \"\"\"Middleware that restricts access to protected paths based on client IP address.\n    This middleware checks incoming requests against an allow list of IP addresses and protected URL patterns, denying access if the client's IP is not permitted.\n    \"\"\"\n    CACHE_KEY_ALLOWED_IPS = 'ip_restriction_allowed_ips'\n    CACHE_KEY_PROTECTED_PATHS = 'ip_restriction_protected_paths'\n    CACHE_TIMEOUT = getattr(settings, 'BYTE_PATROL_CACHE_TIMEOUT', 300)  # 5 minutes default\n    def __init__(self, get_response=None):\n        self.get_response = get_response",
+        "detail": "applications.byte_patrol.middleware",
+        "documentation": {}
+    },
+    {
+        "label": "IPAllowList",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.models",
+        "description": "applications.byte_patrol.models",
+        "peekOfCode": "class IPAllowList(models.Model):\n    \"\"\"Represents an IP address or CIDR block that is allowed access to protected resources.\n    This model stores individual IP addresses or CIDR notations, along with optional descriptions and activation status.\n    \"\"\"\n    ip_address = models.CharField(\n        max_length=50,\n        unique=True,\n        validators=[validate_ipv46_address],\n        help_text=\"IP address in IPv4 or IPv6 format\"\n    )",
+        "detail": "applications.byte_patrol.models",
+        "documentation": {}
+    },
+    {
+        "label": "ProtectedPath",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.models",
+        "description": "applications.byte_patrol.models",
+        "peekOfCode": "class ProtectedPath(models.Model):\n    \"\"\"Represents a URL pattern that is protected by IP restrictions.\n    This model defines URL patterns that require IP allow list checks, with optional descriptions and activation status.\n    \"\"\"\n    path_pattern = models.CharField(\n        max_length=255,\n        help_text=\"URL pattern to restrict (can use regex patterns)\"\n    )\n    description = models.CharField(\n        max_length=255,",
+        "detail": "applications.byte_patrol.models",
+        "documentation": {}
+    },
+    {
+        "label": "invalidate_ip_restriction_cache",
+        "kind": 2,
+        "importPath": "applications.byte_patrol.signals",
+        "description": "applications.byte_patrol.signals",
+        "peekOfCode": "def invalidate_ip_restriction_cache(sender, **kwargs):\n    \"\"\"\n    Invalidate the cache when IP allow list or protected paths are modified.\n    \"\"\"\n    IPRestrictionMiddleware().invalidate_cache()",
+        "detail": "applications.byte_patrol.signals",
         "documentation": {}
     },
     {
@@ -1257,6 +1890,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "applications.resturant.migrations.0004_alter_booking_no_of_guests",
+        "description": "applications.resturant.migrations.0004_alter_booking_no_of_guests",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"resturant\", \"0003_booking_idx_name_menu_idx_title_and_more\"),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name=\"booking\",\n            name=\"no_of_guests\",\n            field=models.PositiveSmallIntegerField(\n                default=0, verbose_name=\"Party Size\"",
+        "detail": "applications.resturant.migrations.0004_alter_booking_no_of_guests",
+        "documentation": {}
+    },
+    {
         "label": "DateTimeParsingMixin",
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
@@ -1288,7 +1930,16 @@
         "kind": 2,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "def validate_date_in_future(value):\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > TIMEZONE_AWARE_NOW:\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\nclass DateTimeParsingMixin:",
+        "peekOfCode": "def validate_date_in_future(value:DT.datetime) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > TIMEZONE_AWARE_NOW():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\ndef party_size_validator(value:int) -> Union[None, serializers.ValidationError]:",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "party_size_validator",
+        "kind": 2,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "def party_size_validator(value:int) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the party size is within the allowed range.\n    Args:\n        value (int): The number of guests in the booking\n    Returns:\n        None\n    Raises:\n        serializers.ValidationError: If the party size is not between 1 and 25\n    \"\"\"\n    if not 1 <= value <= 25:",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1333,7 +1984,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class Index(TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    template_name = \"index.html\"\ndef handler_page_not_found_404(request, exception):\n    return render(request, '404.html', status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(\n    summary=\"List All Current Bookings\",",
+        "peekOfCode": "class Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\ndef handler_page_not_found_404(request, exception):\n    return render(request, '404.html', status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1342,7 +1993,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class BookingListView(generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]\n@extend_schema(",
+        "peekOfCode": "class BookingListView(CachedResponseMixin, generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]\nclass BookingCreateView(CachedResponseMixin, generics.CreateAPIView):",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1351,7 +2002,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class BookingCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    permission_classes = [IsAuthenticated]\n    @extend_schema(\n        summary=\"Create a Booking\",\n        description=\"Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.\",\n        request=BookingSerializer,\n        tags=[\"Reservations\"],",
+        "peekOfCode": "class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    permission_classes = [IsAuthenticated]\n    @extend_schema(\n        summary=\"Create a Booking\",\n        description=\"Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.\",\n        request=BookingSerializer,\n        tags=[\"Reservations\"],",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1360,7 +2011,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class BookingView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific booking.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    primary_model = Booking\n    filter_backends = [DjangoFilterBackend]\n    permission_classes = [IsAuthenticated]\n    def get_serializer_context(self):\n        context = super().get_serializer_context()",
+        "peekOfCode": "class BookingView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific booking.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    lookup_field = \"booking_id\"\n    primary_model = Booking\n    filter_backends = [DjangoFilterBackend]\n    permission_classes = [IsAuthenticated]\n    def get_serializer_context(self):\n        context = super().get_serializer_context()",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1369,7 +2020,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuListView(generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Create a Menu Item\",",
+        "peekOfCode": "class MenuListView(CachedResponseMixin, generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Create a Menu Item\",",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1378,7 +2029,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuCreateView(generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer",
+        "peekOfCode": "class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(CachedResponseMixin,generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1387,7 +2038,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuView(generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    primary_model = Menu\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]",
+        "peekOfCode": "class MenuView(CachedResponseMixin,generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    primary_model = Menu\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1423,7 +2074,7 @@
         "kind": 6,
         "importPath": "applications.resturant.forms",
         "description": "applications.resturant.forms",
-        "peekOfCode": "class MenuFilterFormHelper(forms.Form):\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.helper = FormHelper(self)\n        self.helper.form_method = \"get\"\n        self.fields[\"min_price\"].label = \"Minimum Price\"\n        self.fields[\"max_price\"].label = \"Maximum Price\"\n        self.fields[\"inventory\"].label = \"Inventory\"\n        self.fields[\"title\"].label = \"Product Name\"\n        self.helper.layout = Layout(",
+        "peekOfCode": "class MenuFilterFormHelper(forms.Form):\n    \"\"\"Form helper for filtering menu items in the restaurant application.\n    Provides a user-friendly interface for filtering menu items by price, inventory, and product name.\n    \"\"\"\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.helper = FormHelper(self)\n        self.helper.form_method = \"get\"\n        self.fields[\"min_price\"].label = \"Minimum Price\"\n        self.fields[\"max_price\"].label = \"Maximum Price\"",
         "detail": "applications.resturant.forms",
         "documentation": {}
     },
@@ -1432,7 +2083,7 @@
         "kind": 6,
         "importPath": "applications.resturant.forms",
         "description": "applications.resturant.forms",
-        "peekOfCode": "class BookingFilterFormHelper(forms.Form):\n    date = forms.DateField(\n        required=False,\n        widget=forms.DateInput(attrs={\"type\": \"date\", \"class\": \"form-control\"}),\n    )\n    time = forms.TimeField(\n        required=False,\n        widget=forms.TimeInput(attrs={\"type\": \"time\", \"class\": \"form-control\"}),\n    )\n    def __init__(self, *args, **kwargs):",
+        "peekOfCode": "class BookingFilterFormHelper(forms.Form):\n    \"\"\"Form helper for filtering restaurant bookings.\n    Allows users to filter bookings by date, time, party size, and booking party name.\n    \"\"\"\n    date = forms.DateField(\n        required=False,\n        widget=forms.DateInput(attrs={\"type\": \"date\", \"class\": \"form-control\"}),\n    )\n    time = forms.TimeField(\n        required=False,",
         "detail": "applications.resturant.forms",
         "documentation": {}
     },
@@ -1513,7 +2164,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "handler404 = handler_page_not_found_404\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n] + debug_toolbar_urls()",
+        "peekOfCode": "handler404 = handler_page_not_found_404\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r'^checkup/', include('health_check.urls')),\n] + debug_toolbar_urls()",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -1522,7 +2173,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n] + debug_toolbar_urls()",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r'^checkup/', include('health_check.urls')),\n] + debug_toolbar_urls()\nif settings.DEBUG:",
         "detail": "config.urls",
         "documentation": {}
     },
