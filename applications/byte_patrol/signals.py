@@ -1,7 +1,9 @@
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
-from .models import IPAllowList, ProtectedPath
+
 from .middleware import IPRestrictionMiddleware
+from .models import IPAllowList, ProtectedPath
+
 
 @receiver([post_save, post_delete], sender=IPAllowList)
 @receiver([post_save, post_delete], sender=ProtectedPath)

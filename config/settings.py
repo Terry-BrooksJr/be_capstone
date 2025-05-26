@@ -28,6 +28,9 @@ class Base(Configuration):
     INTERNAL_IPS = [
         "127.0.0.1",
     ]
+    
+    CORS_ALLOW_ALL_ORIGINS = True
+    
     STATICFILES_STORAGE = "utils.backends.StaticStorage"
 
     TEMPLATES = [
@@ -263,6 +266,7 @@ class Grading(Base):
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
         "django.middleware.cache.UpdateCacheMiddleware",
         "django.middleware.security.SecurityMiddleware",
+
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
         "django.middleware.csrf.CsrfViewMiddleware",
@@ -318,6 +322,7 @@ class Development(Base):
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
         "django.middleware.cache.UpdateCacheMiddleware",
         "django.middleware.security.SecurityMiddleware",
+
         "django.contrib.sessions.middleware.SessionMiddleware",
             "corsheaders.middleware.CorsMiddleware",
 

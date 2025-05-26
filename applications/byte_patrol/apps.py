@@ -7,5 +7,4 @@ class BytePatrolConfig(AppConfig):
 
     def ready(self):
         # Import signal handlers
-        import byte_patrol.signals
-
+        pass

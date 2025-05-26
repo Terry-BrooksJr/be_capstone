@@ -1,35 +1,38 @@
-from datetime import datetime
-import django.contrib.auth.models
-from typing import Any, Union
 
+from django.shortcuts import render
 from django.views.generic import TemplateView
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
-from drf_spectacular.utils import (OpenApiExample, OpenApiParameter,
-                                   extend_schema)
+from drf_spectacular.utils import OpenApiExample, OpenApiParameter, extend_schema
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from applications.resturant.filters import BookingFilter, ProductFilter
 from applications.resturant.models import Booking, Menu
-from applications.resturant.serializers.core import (BookingSerializer, MenuSerializer,
-    validate_date_in_future)
-
-from django.shortcuts import render
+from applications.resturant.serializers.core import (
+    BookingSerializer,
+    MenuSerializer,
+)
 from utils.cache import CachedResponseMixin
+
+
 class Index(CachedResponseMixin, TemplateView):
     """A view for rendering the index template.
 
     This view simply renders the 'index.html' template.
     """
+
     primary_model = None
     template_name = "index.html"
 
+
 def handler_page_not_found_404(request, exception):
-    return render(request, '404.html', status=404)
+    return render(request, "404.html", status=404)
+
 
 # ----- BOOKING VIEWS -----
+
 
 @extend_schema(
     summary="List All Current Bookings",
@@ -88,8 +91,7 @@ class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):
         request=BookingSerializer,
         tags=["Reservations"],
         # auth=["TokenAuth"],
-                examples=[
-
+        examples=[
             OpenApiExample(
                 "Create Booking POST body Example",
                 description="Example POST Body  for creating a booking",
@@ -106,34 +108,39 @@ class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):
             OpenApiExample(
                 "Create Booking Response Payload Example",
                 description="Example payload for creating a booking",
-                value= {
-            "status": "booked",
-            "message": "We look forward to seeing your party of 7 on 05-11-2045 at 10:55 PM",
-            "details": {
-                "booking_id": 69,
-                "name": "Pacocha, Rhoda",
-                "no_of_guests": 7,
-                "date": "05-11-2045",
-                "time": "10:55 PM"
-            }
-                }
-                , request_only=False,
+                value={
+                    "status": "booked",
+                    "message": "We look forward to seeing your party of 7 on 05-11-2045 at 10:55 PM",
+                    "details": {
+                        "booking_id": 69,
+                        "name": "Pacocha, Rhoda",
+                        "no_of_guests": 7,
+                        "date": "05-11-2045",
+                        "time": "10:55 PM",
+                    },
+                },
+                request_only=False,
                 response_only=True,
-                
-            )
-            
-                ]
-               
-            )
+            ),
+        ],
+    )
     def create(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             return {
-                    "status": "booked" if "booking_id" in serializer.validated_data.keys() else "not booked",
-                    "message": f"We look forward to seeing your party of {serializer.validated_data["no_of_guests"]} on {representation["date"]} at {serializer.validated_data['time']}" if "booking_id" in serializer.validated_data.keys() else "Booking not created",
-                    "details": representation,
-                }
+                "status": (
+                    "booked"
+                    if "booking_id" in serializer.validated_data.keys()
+                    else "not booked"
+                ),
+                "message": (
+                    f"We look forward to seeing your party of {serializer.validated_data["no_of_guests"]} on {representation["date"]} at {serializer.validated_data['time']}"
+                    if "booking_id" in serializer.validated_data.keys()
+                    else "Booking not created"
+                ),
+                "details": representation,
+            }
         return Response(
             data={"message": "Authentication credentials were not provided."},
             status=status.HTTP_401_UNAUTHORIZED,
@@ -431,7 +438,7 @@ class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):
 
 
 # Combined view that supports multiple operations on a single endpoint
-class MenuView(CachedResponseMixin,generics.RetrieveUpdateDestroyAPIView):
+class MenuView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):
     """Provides endpoints for retrieving, updating, and deleting a specific menu item."""
 
     queryset = Menu.objects.all()

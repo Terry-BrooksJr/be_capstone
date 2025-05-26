@@ -55,5 +55,3 @@ class Menu(Model):
             Index(fields=["title"], name="idx_title"),
             Index(fields=["title", "inventory"], name="idx_title_inventory"),
         ]
-
-

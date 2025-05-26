@@ -1,20 +1,25 @@
-import contextlib
 import datetime as DT
 from datetime import datetime
-from typing import  Union, Dict, Any
+from typing import Any, Dict, Union
 
 from django.http import QueryDict
+from django.utils.timezone import now as TIMEZONE_AWARE_NOW
 from drf_spectacular.types import OpenApiTypes
-from drf_spectacular.utils import (OpenApiExample, extend_schema_field,
-                                   extend_schema_serializer)
+from drf_spectacular.utils import (
+    OpenApiExample,
+    extend_schema_field,
+    extend_schema_serializer,
+)
 from loguru import logger
 from rest_framework import serializers, status
 from rest_framework.validators import UniqueTogetherValidator
 
 from applications.resturant.models import Booking, Menu
-from django.utils.timezone import now as TIMEZONE_AWARE_NOW
-from utils.cache import CachedResponseMixin
-def validate_date_in_future(value:DT.datetime) -> Union[None, serializers.ValidationError]:
+
+
+def validate_date_in_future(
+    value: DT.datetime,
+) -> Union[None, serializers.ValidationError]:
     """Check if the booking date is in the future.
 
     Args:
@@ -27,7 +32,7 @@ def validate_date_in_future(value:DT.datetime) -> Union[None, serializers.Valida
         raise serializers.ValidationError("Booking date must be in the future.")
 
 
-def party_size_validator(value:int) -> Union[None, serializers.ValidationError]:
+def party_size_validator(value: int) -> Union[None, serializers.ValidationError]:
     """Check if the party size is within the allowed range.
 
     Args:
@@ -35,12 +40,14 @@ def party_size_validator(value:int) -> Union[None, serializers.ValidationError]:
 
     Returns:
         None
-        
+
     Raises:
         serializers.ValidationError: If the party size is not between 1 and 25
     """
     if not 1 <= value <= 25:
         raise serializers.ValidationError("Party size must be between 1 and 25.")
+
+
 class DateTimeParsingMixin:
     def parse_datetime_fields(self, data, request):
         """Parses and validates date and time fields from input data.
@@ -60,7 +67,7 @@ class DateTimeParsingMixin:
         logger.debug(f"Raw data before datetime parsing: {data}")
 
         if isinstance(data, QueryDict):
-            data:Dict[str, Any] = self._parse_querydict(data)
+            data: Dict[str, Any] = self._parse_querydict(data)
 
         date_str = data.get("date")
         time_str = data.get("time")
@@ -76,14 +83,13 @@ class DateTimeParsingMixin:
         logger.debug(f"Parsed date: {parsed_date}, {type(parsed_date)}")
         logger.debug(f"Parsed time: {parsed_time}, {type(parsed_time)}")
 
-
-
-
         combined = datetime.combine(parsed_date, parsed_time)
         logger.debug(f"Parsed combined datetime: {combined}, {type(combined)}")
-        logger.debug(f"Timezone-aware now: {TIMEZONE_AWARE_NOW()}, {type(TIMEZONE_AWARE_NOW())}")
+        logger.debug(
+            f"Timezone-aware now: {TIMEZONE_AWARE_NOW()}, {type(TIMEZONE_AWARE_NOW())}"
+        )
         current_time = TIMEZONE_AWARE_NOW()
-        if  combined < current_time:        
+        if combined < current_time:
             raise serializers.ValidationError({"date": "Date must be in the future."})
         # Check if the serializer aexpects a date or datetime for the 'date' field
         date_field = self.fields.get("date", None)
@@ -108,7 +114,7 @@ class DateTimeParsingMixin:
         return data
 
     def _parse_querydict(self, input_dict: QueryDict) -> dict:
-        """Converts a QueryDict to a standard dict and formats the time field. 
+        """Converts a QueryDict to a standard dict and formats the time field.
         Extracts and formats the time from the date field in the QueryDict.
 
         Args:
@@ -119,13 +125,13 @@ class DateTimeParsingMixin:
         """
         data = input_dict.dict()
         data["time"] = (
-            datetime.strptime(data["date"], "%Y-%m-%dT%H:%M") #noqa
+            datetime.strptime(data["date"], "%Y-%m-%dT%H:%M")  # noqa
             .time()
             .strftime("%I:%M %p")
         )
         return data
 
-    def _parse_time(self, time_str:str) -> DT.time:
+    def _parse_time(self, time_str: str) -> DT.time:
         """Parses a time string into a time object.
 
         Converts a string in 12-hour format with AM/PM into a Python time object. Raises a validation error if the format is invalid.
@@ -184,6 +190,7 @@ class DateTimeParsingMixin:
                             "date": "Date must be in format 'MM-DD-YYYY' or 'YYYY-MM-DDTHH:MM'"
                         }
                     ) from e
+
 
 @extend_schema_serializer(
     examples=[
@@ -272,7 +279,7 @@ class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
         initial=datetime.now().strftime("%I:%M %p"),
         help_text="Time of the booking in 12-hour format (e.g., '07:30 PM')",
     )
-     
+
     class Meta:
         model = Booking
         fields = ("booking_id", "name", "no_of_guests", "date", "time")
@@ -316,7 +323,7 @@ class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
         representation["time"] = instance.date.strftime("%I:%M %p")
         representation["date"] = instance.date.strftime("%m-%d-%Y")
         logger.debug(f"Representation Post-Processing: {representation}")
-        
+
         return representation
 
     def to_internal_value(self, data):
