@@ -80,7 +80,7 @@
         "documentation": {}
     },
     {
-        "label": "Union",
+        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -89,22 +89,6 @@
     },
     {
         "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -365,19 +349,11 @@
         "documentation": {}
     },
     {
-        "label": "BaseCommand",
-        "importPath": "django.core.management.base",
-        "description": "django.core.management.base",
+        "label": "IPRestrictionMiddleware",
+        "importPath": "byte_patrol.middleware",
+        "description": "byte_patrol.middleware",
         "isExtraImport": true,
-        "detail": "django.core.management.base",
-        "documentation": {}
-    },
-    {
-        "label": "BaseCommand",
-        "importPath": "django.core.management.base",
-        "description": "django.core.management.base",
-        "isExtraImport": true,
-        "detail": "django.core.management.base",
+        "detail": "byte_patrol.middleware",
         "documentation": {}
     },
     {
@@ -389,11 +365,19 @@
         "documentation": {}
     },
     {
-        "label": "IPRestrictionMiddleware",
-        "importPath": "byte_patrol.middleware",
-        "description": "byte_patrol.middleware",
+        "label": "BaseCommand",
+        "importPath": "django.core.management.base",
+        "description": "django.core.management.base",
         "isExtraImport": true,
-        "detail": "byte_patrol.middleware",
+        "detail": "django.core.management.base",
+        "documentation": {}
+    },
+    {
+        "label": "BaseCommand",
+        "importPath": "django.core.management.base",
+        "description": "django.core.management.base",
+        "isExtraImport": true,
+        "detail": "django.core.management.base",
         "documentation": {}
     },
     {
@@ -542,15 +526,6 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "ipaddress",
         "kind": 6,
         "isExtraImport": true,
@@ -560,43 +535,12 @@
         "documentation": {}
     },
     {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
+        "label": "re",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "loguru",
-        "description": "loguru",
-        "isExtraImport": true,
-        "detail": "loguru",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
         "documentation": {}
     },
     {
@@ -664,11 +608,35 @@
         "documentation": {}
     },
     {
-        "label": "attrgetter",
-        "importPath": "operator",
-        "description": "operator",
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
         "isExtraImport": true,
-        "detail": "operator",
+        "detail": "loguru",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
         "documentation": {}
     },
     {
@@ -680,15 +648,7 @@
         "documentation": {}
     },
     {
-        "label": "table",
-        "importPath": "tomlkit",
-        "description": "tomlkit",
-        "isExtraImport": true,
-        "detail": "tomlkit",
-        "documentation": {}
-    },
-    {
-        "label": "post_save",
+        "label": "post_delete",
         "importPath": "django.db.models.signals",
         "description": "django.db.models.signals",
         "isExtraImport": true,
@@ -696,7 +656,7 @@
         "documentation": {}
     },
     {
-        "label": "post_delete",
+        "label": "post_save",
         "importPath": "django.db.models.signals",
         "description": "django.db.models.signals",
         "isExtraImport": true,
@@ -733,22 +693,6 @@
         "description": "django.dispatch",
         "isExtraImport": true,
         "detail": "django.dispatch",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -784,15 +728,6 @@
         "documentation": {}
     },
     {
-        "label": "contextlib",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "contextlib",
-        "description": "contextlib",
-        "detail": "contextlib",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
@@ -818,11 +753,11 @@
         "documentation": {}
     },
     {
-        "label": "datetime",
-        "importPath": "datetime",
-        "description": "datetime",
+        "label": "now",
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
         "isExtraImport": true,
-        "detail": "datetime",
+        "detail": "django.utils.timezone",
         "documentation": {}
     },
     {
@@ -1042,47 +977,6 @@
         "documentation": {}
     },
     {
-        "label": "now",
-        "importPath": "django.utils.timezone",
-        "description": "django.utils.timezone",
-        "isExtraImport": true,
-        "detail": "django.utils.timezone",
-        "documentation": {}
-    },
-    {
-        "label": "CachedResponseMixin",
-        "importPath": "utils.cache",
-        "description": "utils.cache",
-        "isExtraImport": true,
-        "detail": "utils.cache",
-        "documentation": {}
-    },
-    {
-        "label": "CachedResponseMixin",
-        "importPath": "utils.cache",
-        "description": "utils.cache",
-        "isExtraImport": true,
-        "detail": "utils.cache",
-        "documentation": {}
-    },
-    {
-        "label": "django.contrib.auth.models",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
         "label": "User",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
@@ -1235,11 +1129,27 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "BookingSerializer",
         "importPath": "resturant.serializers.core",
         "description": "resturant.serializers.core",
         "isExtraImport": true,
         "detail": "resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
         "documentation": {}
     },
     {
@@ -1323,19 +1233,11 @@
         "documentation": {}
     },
     {
-        "label": "validate_date_in_future",
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
+        "label": "CachedResponseMixin",
+        "importPath": "utils.cache",
+        "description": "utils.cache",
         "isExtraImport": true,
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "utils.cache",
         "documentation": {}
     },
     {
@@ -1548,6 +1450,14 @@
         "documentation": {}
     },
     {
+        "label": "static",
+        "importPath": "django.conf.urls.static",
+        "description": "django.conf.urls.static",
+        "isExtraImport": true,
+        "detail": "django.conf.urls.static",
+        "documentation": {}
+    },
+    {
         "label": "Index",
         "importPath": "resturant.endpoints",
         "description": "resturant.endpoints",
@@ -1561,14 +1471,6 @@
         "description": "resturant.endpoints",
         "isExtraImport": true,
         "detail": "resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "static",
-        "importPath": "django.conf.urls.static",
-        "description": "django.conf.urls.static",
-        "isExtraImport": true,
-        "detail": "django.conf.urls.static",
         "documentation": {}
     },
     {
@@ -1748,7 +1650,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.management.commands.add_ip_to_allowlist",
         "description": "applications.byte_patrol.management.commands.add_ip_to_allowlist",
-        "peekOfCode": "class Command(BaseCommand):\n    help = 'Add an IP address to the allow list'\n    def add_arguments(self, parser):\n        parser.add_argument('ip_address', type=str, help='IP address to add')\n        parser.add_argument('--description', type=str, help='Description for this IP')\n    def handle(self, *args, **options):\n        ip_address = options['ip_address']\n        description = options.get('description', '')\n        # Try to find existing entry\n        ip_entry, created = IPAllowList.objects.update_or_create(",
+        "peekOfCode": "class Command(BaseCommand):\n    help = \"Add an IP address to the allow list\"\n    def add_arguments(self, parser):\n        parser.add_argument(\"ip_address\", type=str, help=\"IP address to add\")\n        parser.add_argument(\"--description\", type=str, help=\"Description for this IP\")\n    def handle(self, *args, **options):\n        ip_address = options[\"ip_address\"]\n        description = options.get(\"description\", \"\")\n        # Try to find existing entry\n        ip_entry, created = IPAllowList.objects.update_or_create(",
         "detail": "applications.byte_patrol.management.commands.add_ip_to_allowlist",
         "documentation": {}
     },
@@ -1766,7 +1668,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.admin",
         "description": "applications.byte_patrol.admin",
-        "peekOfCode": "class IPAllowListAdmin(admin.ModelAdmin):\n    list_display = ('ip_address', 'description', 'is_active', 'updated_at')\n    list_filter = ('is_active',)\n    search_fields = ('ip_address', 'description')\n    readonly_fields = ('created_at', 'updated_at')\n@admin.register(ProtectedPath)\nclass ProtectedPathAdmin(admin.ModelAdmin):\n    list_display = ('path_pattern', 'description', 'is_active', 'updated_at')\n    list_filter = ('is_active',)\n    search_fields = ('path_pattern', 'description')",
+        "peekOfCode": "class IPAllowListAdmin(admin.ModelAdmin):\n    list_display = (\"ip_address\", \"description\", \"is_active\", \"updated_at\")\n    list_filter = (\"is_active\",)\n    search_fields = (\"ip_address\", \"description\")\n    readonly_fields = (\"created_at\", \"updated_at\")\n@admin.register(ProtectedPath)\nclass ProtectedPathAdmin(admin.ModelAdmin):\n    list_display = (\"path_pattern\", \"description\", \"is_active\", \"updated_at\")\n    list_filter = (\"is_active\",)\n    search_fields = (\"path_pattern\", \"description\")",
         "detail": "applications.byte_patrol.admin",
         "documentation": {}
     },
@@ -1775,7 +1677,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.admin",
         "description": "applications.byte_patrol.admin",
-        "peekOfCode": "class ProtectedPathAdmin(admin.ModelAdmin):\n    list_display = ('path_pattern', 'description', 'is_active', 'updated_at')\n    list_filter = ('is_active',)\n    search_fields = ('path_pattern', 'description')\n    readonly_fields = ('created_at', 'updated_at')",
+        "peekOfCode": "class ProtectedPathAdmin(admin.ModelAdmin):\n    list_display = (\"path_pattern\", \"description\", \"is_active\", \"updated_at\")\n    list_filter = (\"is_active\",)\n    search_fields = (\"path_pattern\", \"description\")\n    readonly_fields = (\"created_at\", \"updated_at\")",
         "detail": "applications.byte_patrol.admin",
         "documentation": {}
     },
@@ -1784,7 +1686,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.apps",
         "description": "applications.byte_patrol.apps",
-        "peekOfCode": "class BytePatrolConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"byte_patrol\"\n    def ready(self):\n        # Import signal handlers\n        import byte_patrol.signals",
+        "peekOfCode": "class BytePatrolConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"byte_patrol\"\n    def ready(self):\n        # Import signal handlers\n        pass",
         "detail": "applications.byte_patrol.apps",
         "documentation": {}
     },
@@ -1793,7 +1695,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.middleware",
         "description": "applications.byte_patrol.middleware",
-        "peekOfCode": "class IPRestrictionMiddleware(MiddlewareMixin):\n    \"\"\"Middleware that restricts access to protected paths based on client IP address.\n    This middleware checks incoming requests against an allow list of IP addresses and protected URL patterns, denying access if the client's IP is not permitted.\n    \"\"\"\n    CACHE_KEY_ALLOWED_IPS = 'ip_restriction_allowed_ips'\n    CACHE_KEY_PROTECTED_PATHS = 'ip_restriction_protected_paths'\n    CACHE_TIMEOUT = getattr(settings, 'BYTE_PATROL_CACHE_TIMEOUT', 300)  # 5 minutes default\n    def __init__(self, get_response=None):\n        self.get_response = get_response\n        super().__init__(get_response)",
+        "peekOfCode": "class IPRestrictionMiddleware(MiddlewareMixin):\n    \"\"\"Middleware that restricts access to protected paths based on client IP address.\n    This middleware checks incoming requests against an allow list of IP addresses and protected URL patterns, denying access if the client's IP is not permitted.\n    \"\"\"\n    CACHE_KEY_ALLOWED_IPS = \"ip_restriction_allowed_ips\"\n    CACHE_KEY_PROTECTED_PATHS = \"ip_restriction_protected_paths\"\n    CACHE_TIMEOUT = getattr(\n        settings, \"BYTE_PATROL_CACHE_TIMEOUT\", 300\n    )  # 5 minutes default\n    def __init__(self, get_response=None):",
         "detail": "applications.byte_patrol.middleware",
         "documentation": {}
     },
@@ -1802,7 +1704,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.models",
         "description": "applications.byte_patrol.models",
-        "peekOfCode": "class IPAllowList(models.Model):\n    \"\"\"Represents an IP address or CIDR block that is allowed access to protected resources.\n    This model stores individual IP addresses or CIDR notations, along with optional descriptions and activation status.\n    \"\"\"\n    ip_address = models.CharField(\n        max_length=50,\n        unique=True,\n        validators=[validate_ipv46_address],\n        help_text=\"IP address in IPv4 or IPv6 format\"\n    )",
+        "peekOfCode": "class IPAllowList(models.Model):\n    \"\"\"Represents an IP address or CIDR block that is allowed access to protected resources.\n    This model stores individual IP addresses or CIDR notations, along with optional descriptions and activation status.\n    \"\"\"\n    ip_address = models.CharField(\n        max_length=50,\n        unique=True,\n        validators=[validate_ipv46_address],\n        help_text=\"IP address in IPv4 or IPv6 format\",\n    )",
         "detail": "applications.byte_patrol.models",
         "documentation": {}
     },
@@ -1811,7 +1713,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.models",
         "description": "applications.byte_patrol.models",
-        "peekOfCode": "class ProtectedPath(models.Model):\n    \"\"\"Represents a URL pattern that is protected by IP restrictions.\n    This model defines URL patterns that require IP allow list checks, with optional descriptions and activation status.\n    \"\"\"\n    path_pattern = models.CharField(\n        max_length=255,\n        help_text=\"URL pattern to restrict (can use regex patterns)\"\n    )\n    description = models.CharField(\n        max_length=255,",
+        "peekOfCode": "class ProtectedPath(models.Model):\n    \"\"\"Represents a URL pattern that is protected by IP restrictions.\n    This model defines URL patterns that require IP allow list checks, with optional descriptions and activation status.\n    \"\"\"\n    path_pattern = models.CharField(\n        max_length=255, help_text=\"URL pattern to restrict (can use regex patterns)\"\n    )\n    description = models.CharField(\n        max_length=255, blank=True, help_text=\"Description of what this path protects\"\n    )",
         "detail": "applications.byte_patrol.models",
         "documentation": {}
     },
@@ -1928,7 +1830,7 @@
         "kind": 2,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "def validate_date_in_future(value:DT.datetime) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > TIMEZONE_AWARE_NOW():\n        raise serializers.ValidationError(\"Booking date must be in the future.\")\ndef party_size_validator(value:int) -> Union[None, serializers.ValidationError]:",
+        "peekOfCode": "def validate_date_in_future(\n    value: DT.datetime,\n) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the booking date is in the future.\n    Args:\n        booking_date (datetime): The date of the booking\n    Returns:\n        bool: True if the booking date is in the future, False otherwise\n    \"\"\"\n    if not value > TIMEZONE_AWARE_NOW():",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1937,7 +1839,7 @@
         "kind": 2,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "def party_size_validator(value:int) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the party size is within the allowed range.\n    Args:\n        value (int): The number of guests in the booking\n    Returns:\n        None\n    Raises:\n        serializers.ValidationError: If the party size is not between 1 and 25\n    \"\"\"\n    if not 1 <= value <= 25:",
+        "peekOfCode": "def party_size_validator(value: int) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the party size is within the allowed range.\n    Args:\n        value (int): The number of guests in the booking\n    Returns:\n        None\n    Raises:\n        serializers.ValidationError: If the party size is not between 1 and 25\n    \"\"\"\n    if not 1 <= value <= 25:",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1982,7 +1884,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\ndef handler_page_not_found_404(request, exception):\n    return render(request, '404.html', status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(",
+        "peekOfCode": "class Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\ndef handler_page_not_found_404(request, exception):\n    return render(request, \"404.html\", status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -2027,7 +1929,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(CachedResponseMixin,generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer",
+        "peekOfCode": "class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -2036,7 +1938,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuView(CachedResponseMixin,generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    primary_model = Menu\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]",
+        "peekOfCode": "class MenuView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    primary_model = Menu\n    lookup_field = \"item_id\"\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -2045,7 +1947,7 @@
         "kind": 2,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    return render(request, '404.html', status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(\n    summary=\"List All Current Bookings\",\n    description=\"Retrieve a list of all Little Lemon Bookings in the system. Authentication Token REQUIRED\",\n    parameters=None,\n    tags=[\"Reservations\"],\n    # auth=[\"authToken\"],\n    filters=True,",
+        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    return render(request, \"404.html\", status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(\n    summary=\"List All Current Bookings\",\n    description=\"Retrieve a list of all Little Lemon Bookings in the system. Authentication Token REQUIRED\",\n    parameters=None,\n    tags=[\"Reservations\"],\n    # auth=[\"authToken\"],\n    filters=True,",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -2162,7 +2064,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "handler404 = handler_page_not_found_404\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r'^checkup/', include('health_check.urls')),\n] + debug_toolbar_urls()",
+        "peekOfCode": "handler404 = handler_page_not_found_404\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -2171,7 +2073,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r'^checkup/', include('health_check.urls')),\n] + debug_toolbar_urls()\nif settings.DEBUG:",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()\nif settings.DEBUG:",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -2216,7 +2118,7 @@
         "kind": 6,
         "importPath": "utils.backends",
         "description": "utils.backends",
-        "peekOfCode": "class StaticStorage(S3Boto3Storage):\n    location =\"static\"\n    default_acl = \"public-read\"\n    file_overwrite = True",
+        "peekOfCode": "class StaticStorage(S3Boto3Storage):\n    location = \"static\"\n    default_acl = \"public-read\"\n    file_overwrite = True",
         "detail": "utils.backends",
         "documentation": {}
     },
