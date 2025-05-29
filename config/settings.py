@@ -320,7 +320,7 @@ class Development(Base):
 
     MIDDLEWARE = [
         "django_prometheus.middleware.PrometheusBeforeMiddleware",
-        "django.middleware.cache.UpdateCacheMiddleware",
+        # "django.middleware.cache.UpdateCacheMiddleware",
         "django.middleware.security.SecurityMiddleware",
 
         "django.contrib.sessions.middleware.SessionMiddleware",
@@ -332,6 +332,6 @@ class Development(Base):
         "django.contrib.auth.middleware.AuthenticationMiddleware",
         "django.contrib.messages.middleware.MessageMiddleware",
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
-        "django.middleware.cache.FetchFromCacheMiddleware",
+        # "django.middleware.cache.FetchFromCacheMiddleware",
         "django_prometheus.middleware.PrometheusAfterMiddleware",
     ]

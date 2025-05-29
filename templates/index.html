@@ -312,22 +312,22 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="/auth/users">auth/users</a></td>
+                        <td><a href="{% url 'user-list' %}">auth/users/</a></td>
                         <td><span class="methods post">POST</span></td>
                         <td>Register a New User</td>
                     </tr>
                     <tr>
-                        <td><a href="/auth/token/login">auth/token/login</a></td>
+                        <td><a href="{% url 'login' %}">auth/token/login</a></td>
                         <td><span class="methods post">POST</span></td>
                         <td>Generate Auth Token (Needed For All Requests)</td>
                     </tr>
                     <tr>
-                        <td><a href="/restaurant/bookings/">restaurant/bookings/</a></td>
+                        <td><a href="{% url 'bookings-list' %}">restaurant/bookings/</a></td>
                         <td><span class="methods get">GET</span></td>
                         <td>List of All Reservation</td>
                     </tr>
                     <tr>
-                        <td><a href="/restaurant/bookings/create">restaurant/bookings/create</td></a>
+                        <td><a href="{% url 'bookings-create' %}">restaurant/bookings/create</td></a>
                         <td><span class="methods post">POST</span></td>
                         <td>Create A New Reservation</td>
                     </tr>
@@ -342,12 +342,12 @@
                         <td>Full Retrieval, Updating, and Deletion of a Booking Resource. <em>Note: Mock IDs available from 1-60</em></td>
                     </tr>
                     <tr>
-                        <td><a href="/restaurant/menu">/restaurant/menu</a></td>
+                        <td><a href="/restaurant/menu/">/restaurant/menu</a></td>
                         <td><span class="methods get">GET</span></td>
                         <td>List of All Menu Items</td>
                     </tr>
                     <tr>
-                       <td> <a href="/restaurant/menu/create">/restaurant/menu/create</a></td>
+                       <td> <a href="/restaurant/menu/create/">/restaurant/menu/create</a></td>
                         <td><span class="methods post">POST</span></td>
                         <td>Create New Menu </td>Item
                     </tr>
@@ -368,11 +368,11 @@
 
     <div class="container">
         <h2 id="api-documentation">API Documentation</h2>
-        <p>The API follows the OpenAPI 3.0 standard. 
+        <p>The API follows the  OpenAPI 3.0 standards, which is a powerful tool for designing, documenting, and developing APIs. It provides a standardized format for API specifications, which enables design-first development, automated documentation, code generation, and test automation.  </p>
 
         <h3>Explore the Full API Schema</h3>
         <ul class="api-links">
-            <li><a href="{% url 'schema' %}" target="_blank">View JSON Schema</a> – /li>
+            <li><a href="{% url 'schema' %}" target="_blank">View JSON Schema</a> </li>
             <li><a href="{% url 'swagger' %}" target="_blank">Swagger UI</a> – Interactive UI for endpoint testing.</li>
             <li><a href="{% url 'redoc' %}" target="_blank">ReDoc UI</a> – Developer-friendly documentation viewer.</li>
         </ul>
@@ -381,13 +381,53 @@
         <ul>
             <li><a href="#auth">Auth</a> – User registration, authentication, and token management.</li>
             <li><a href="#menu">Menu</a> – CRUD operations for menu items.</li>
+            <p>UML Class Diagram For or Menu Model</p>
+                <pre class="mermaid">
+                    classDiagram
+
+                      class Menu {
+                        +SmallAutoField item_id : Integer
+                        +CharField title : String
+                        +DecimalField price : Decimal
+                        +PositiveSmallIntegerField inventory : Integer
+                            }
+                                Menu : Meta
+                            Menu : - app_label = "resturant"
+                            Menu : - db_table = "inventory"
+                            Menu : - ordering = ["title"]
+                            Menu : - indexes = [price, price+inventory, title, title+inventory]
+
+                </pre>
             <li><a href="#bookings">Bookings</a> – CRUD operations for reservations.</li>
+            <p>UML Class Diagram For or Booking Model</p>
+            <pre class="mermaid">
+            classDiagram
+    class Booking {
+        +SmallAutoField booking_id
+        +CharField name
+        +PositiveSmallIntegerField no_of_guests
+        +DateTimeField date
+        +__str__(): str
+    }
+
+    Booking : Meta
+    Booking : - app_label = "resturant"
+    Booking : - db_table = "bookings"
+    Booking : - ordering = ["-date"]
+    Booking : - indexes = [name, date]
+
+</pre>
             <li><a href="#users">Users</a> – User management and profile operations.</li>
         </ul>
     </div>
 
     <footer>
         <p>Little Lemon Menu & Booking API - Meta Backend Engineering Capstone</p>
+        <p>Developed by <a href="https://github.com/terry-brooksjr">Terry A. Brooks, Jr. </a></p>
     </footer>
+     <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
 </body>
 </html>
