@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,6 +59,12 @@
             color: var(--primary-color);
         }
         
+        .explore-icon {
+            height: 60px;
+            width: auto;
+            display: inline-block;
+            
+        }
         a {
             color: var(--accent-color);
             text-decoration: none;
@@ -259,8 +266,8 @@
                 <p>CRUD operations on menu items</p>
             </div>
                         <div class="feature">
-                <h4>Preformence Optimizations and Monitoring</h4>
-                <p>While not requiree by the assignment. This API includes rate limits, key metrics monitoring and static assert compression and optimization.  </p>
+                <h4>Performance Optimizations and Monitoring</h4>
+                <p>While not required by the assignment. This API includes rate limits, key metrics monitoring and static asset compression and optimization.  </p>
             </div>
             <div class="feature">
                 <h4>Reservation Management</h4>
@@ -270,33 +277,32 @@
     </div>
 
     <div class="container">
-        <h2 id="getting-started">Getting Started</h2>
-        
+        <h2 id="getting-started">Getting Started & API Documentation</h2>
+        <p>The API follows the  OpenAPI 3.0 standards, which is a powerful tool for designing, documenting, and developing APIs. It provides a standardized format for API specifications, which enables design-first development, automated documentation, code generation, and test automation.  </p>
+
+
         <h3 id="testing-touring">Testing/Touring the Mock API</h3>
         <p>To explore the API without setting up a local environment, you can use the tour the API via:</p>
-        
-        <ul>
-            <li>
-                <h4><a href="https://www.postman.com/blackberry-py-dev/workspace/little-lemon-meta-apis-final-terry-brooks-jr" target="_blank">Postman</a></h4>
+        <div class="features">
+               <div class="feature">
+            <a href="{% url 'schema' %}" target="_blank"><h5>JSON Schema</h5><img class="explore-icon" src="{% static 'openapiv3-logo.png' %}"/></a> <p>View JSON Schema based on <a href="https://spec.openapis.org/oas/v3.1.0.html" target="_blank">Open API 3.1.0 Specs</a> and create your own client</p> 
+            </div>
+
+            <div class="feature"><a href="{% url 'swagger' %}" target="_blank"><h5>Swagger UI</h5><img class="explore-icon" src="{% static 'assets/swagger_logo.png' %}" alt="Swagger Icon" /></a><p>Interactive UI for endpoint testing. </p></div>
+            <div class="feature">
+                <a href="{% url 'redoc' %}" target="_blank"><h5>ReDoc UI</h5><img class="explore-icon" src="{% static 'assets/redoc_logo.png' %}" alt="Redoc Logo"></a><p>Developer-friendly documentation viewer.</p>
+</div>
+            <div class="feature">
+                <a href="https://www.postman.com/blackberry-py-dev/workspace/little-lemon-meta-apis-final-terry-brooks-jr" target="_blank"><h4>Postman</h4><img class="explore-icon"  src="https://static.cdnlogo.com/logos/p/20/postman.svg"></a>
                 <p>Fully documented <a href="https://www.postman.com/" target="_blank">Postman</a> Workspace, that has helpful request automation scripting.</p>
-            </li>
+            </div>
             
-            <li>
-                <h4><a href="restaurant/menu" target="_blank">DRF Browseable API UI</a></h4>
+            <div class="feature">
+                <h4><a href="restaurant/menu" target="_blank">DRF Browseable API UI</h4><img class="explore-icon"  src="{% static 'assets/Drf_lopo.png' %}"></a>
                 <p>The native browser based API interface provided by <a href="https://www.django-rest-framework.org/" target="_blank">Django Rest Framework</a>.</p>
-            </li>
+            </div>
             
-            <li>
-                <h4><a href="{url 'swagger'}" target="_blank">Swagger UI</a></h4>
-                <p>Browser Based API interface using the <a href="https://swagger.io/" target="_blank">Swagger UI</a></p>
-            </li>
-            
-            <li>
-                <h4>BYOC Bring Your Own Client</h4>
-                <p>Any HTTP Client your heart desires using the <code>https://api.little-lemon.xyz</code> and the <a href="{url 'redoc'}" >Developer-friendly documentation viewer powered by ReDoc.</p></a>
-            </li>
-    
-        </ul>
+        </div>
         
         <p><strong>Which ever Method Selected, The Getting Started Steps are the Same!</strong></p>
         
@@ -312,27 +318,27 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><a href="{% url 'user-list' %}">auth/users/</a></td>
+                        <td><a href="{% url 'user-list' %}" target="_blank">auth/users/</a></td>
                         <td><span class="methods post">POST</span></td>
                         <td>Register a New User</td>
                     </tr>
                     <tr>
-                        <td><a href="{% url 'login' %}">auth/token/login</a></td>
+                        <td><a href="{% url 'login' %}" target="_blank">auth/token/login</a></td>
                         <td><span class="methods post">POST</span></td>
                         <td>Generate Auth Token (Needed For All Requests)</td>
                     </tr>
                     <tr>
-                        <td><a href="{% url 'bookings-list' %}">restaurant/bookings/</a></td>
+                        <td><a href="{% url 'bookings-list' %}" target="_blank">restaurant/bookings/</a></td>
                         <td><span class="methods get">GET</span></td>
                         <td>List of All Reservation</td>
                     </tr>
                     <tr>
-                        <td><a href="{% url 'bookings-create' %}">restaurant/bookings/create</td></a>
+                        <td><a href="{% url 'bookings-create' %}" target="_blank">restaurant/bookings/create</td></a>
                         <td><span class="methods post">POST</span></td>
                         <td>Create A New Reservation</td>
                     </tr>
                     <tr>
-                        <td><a href="/restaurant/bookings/1">restaurant/bookings/&lt;Booking_ID&gt;</a></td>
+                        <td><a href="/restaurant/bookings/1" target="_blank">restaurant/bookings/&lt;Booking_ID&gt;</a></td>
                         <td>
                             <span class="methods get">GET</span>
                             <span class="methods delete">DELETE</span>
@@ -342,17 +348,17 @@
                         <td>Full Retrieval, Updating, and Deletion of a Booking Resource. <em>Note: Mock IDs available from 1-60</em></td>
                     </tr>
                     <tr>
-                        <td><a href="/restaurant/menu/">/restaurant/menu</a></td>
+                        <td><a href="/restaurant/menu/" target="_blank">/restaurant/menu</a></td>
                         <td><span class="methods get">GET</span></td>
                         <td>List of All Menu Items</td>
                     </tr>
                     <tr>
-                       <td> <a href="/restaurant/menu/create/">/restaurant/menu/create</a></td>
+                       <td> <a href="{% url 'menu-create' %}" target="_blank">/restaurant/menu/create</a></td>
                         <td><span class="methods post">POST</span></td>
                         <td>Create New Menu </td>Item
                     </tr>
                     <tr>
-                        <td><a href="/restaurant/menu/1">"/restaurant/menu/&lt;Item_ID&gt;</a></td>
+                        <td><a href="/restaurant/menu/1" target="_blank">"/restaurant/menu/&lt;Item_ID&gt;</a></td>
                         <td>
                             <span class="methods get">GET</span>
                             <span class="methods delete">DELETE</span>
@@ -367,17 +373,13 @@
     </div>
 
     <div class="container">
-        <h2 id="api-documentation">API Documentation</h2>
-        <p>The API follows the  OpenAPI 3.0 standards, which is a powerful tool for designing, documenting, and developing APIs. It provides a standardized format for API specifications, which enables design-first development, automated documentation, code generation, and test automation.  </p>
+  
 
         <h3>Explore the Full API Schema</h3>
-        <ul class="api-links">
-            <li><a href="{% url 'schema' %}" target="_blank">View JSON Schema</a> </li>
-            <li><a href="{% url 'swagger' %}" target="_blank">Swagger UI</a> – Interactive UI for endpoint testing.</li>
-            <li><a href="{% url 'redoc' %}" target="_blank">ReDoc UI</a> – Developer-friendly documentation viewer.</li>
-        </ul>
+        <div class="features">
+     
         <h3 API Structure</h3>
-        <p>The API is organized into several categories, each serving a specific purpose. Here are the main route categories:</p>:</p>
+        <p>The API is organized into several categories, each serving a specific purpose. Here are the main route categories:</p>
         <ul>
             <li><a href="#auth">Auth</a> – User registration, authentication, and token management.</li>
             <li><a href="#menu">Menu</a> – CRUD operations for menu items.</li>

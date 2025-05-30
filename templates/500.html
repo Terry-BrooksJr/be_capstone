@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404 - Page Not Found | Little Lemon API</title>
+  <title>500 - Server Error | Little Lemon API</title>
   <style>
     :root {
       --primary-color: #495E57;
@@ -46,14 +46,7 @@
       font-size: 1.2rem;
       color: var(--dark-color);
     }
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 20px 0;
-    }
-    .no-bullets-list li {
-      margin: 10px 0;
-    }
+
     a {
       display: inline-block;
       margin-top: 30px;
@@ -69,29 +62,7 @@
     a:hover {
       background-color: var(--primary-color);
     }
-    .multi-link{ 
-        background-color: #2A4759;
-        color: white;
-    }
-    .multi-link:hover{ 
-        background-color: #495E57;
-    }
-    .multi-link1{
-      background-color: #8A2D3B;
-      color: white;
-    }
 
-        .multi-link1:hover{
-      background-color:rgb(255, 78, 104);
-    }
-        .multi-link2{
-      background-color: #27548A;
-      color: white;
-    }
-
-        .multi-link2:hover{
-      background-color:rgb(4, 29, 60);
-\    }
     img {
       max-width: 200px;
       margin-bottom: 20px;
@@ -101,17 +72,10 @@
 <body>
   <div class="container">
     <img src="https://cdn.jsdelivr.net/gh/Terry-BrooksJr/be_capstone@4a8b3aefa77fcee2b21704b10f8b5facb865ea2e/applications/resturant/static/restaurant/img/logo.png" alt="Little Lemon Logo">
-    <h1>404</h1>
-    <h2>Oops! Page Not Found</h2>
-    <p>Sorry, the page you were looking for doesn't exist. Here are some that do:</p>
-    <ul class="no-bullets-list" >
-      <li><a class="multi-link" href="{% url 'swagger' %}">Swagger UI</a></li>
-      <li><a class="multi-link1" href="{% url 'redoc' %}">ReDoc</a></li>
-      <li ><a class="multi-link2" href="/restaurant/menu">DRF Browseable API</a></li>
-    </ul>
-    And if you want to go back to the homepage, click <a href="/">here</a>.
-    <p>Or you can go back to the <a href="javascript:history.back()">previous page</a>.</p>
-    <p>Or you can go back to the <a href="javascript:history.back()">previous page</a>.</p>
+    <h1>500</h1>
+    <h2>Yikes! Something went wrong</h2>
+    <p>Looks like the kitchen overheated. Our team has been notified and will fix it ASAP.</p>
+    <a href="{% url 'index' %}">Return to Homepage</a>
   </div>
 </body>
-</html>.
+</html>

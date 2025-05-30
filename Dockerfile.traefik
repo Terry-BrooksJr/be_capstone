@@ -1,0 +1,7 @@
+# Dockerfile.traefik
+
+FROM traefik:v2.11.25
+LABEL maintainer="Terry Brooks, Jr."
+LABEL VERSION="1.0.0"
+
+COPY ./traefik.toml ./etc/traefik/traefik.toml

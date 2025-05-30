@@ -1,302 +1,5 @@
 [
     {
-        "label": "annotations",
-        "importPath": "__future__",
-        "description": "__future__",
-        "isExtraImport": true,
-        "detail": "__future__",
-        "documentation": {}
-    },
-    {
-        "label": "annotations",
-        "importPath": "__future__",
-        "description": "__future__",
-        "isExtraImport": true,
-        "detail": "__future__",
-        "documentation": {}
-    },
-    {
-        "label": "annotations",
-        "importPath": "__future__",
-        "description": "__future__",
-        "isExtraImport": true,
-        "detail": "__future__",
-        "documentation": {}
-    },
-    {
-        "label": "annotations",
-        "importPath": "__future__",
-        "description": "__future__",
-        "isExtraImport": true,
-        "detail": "__future__",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "TYPE_CHECKING",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Dict",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "Union",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
-        "documentation": {}
-    },
-    {
-        "label": "option",
-        "importPath": "cleo.helpers",
-        "description": "cleo.helpers",
-        "isExtraImport": true,
-        "detail": "cleo.helpers",
-        "documentation": {}
-    },
-    {
-        "label": "NormalizedName",
-        "importPath": "packaging.utils",
-        "description": "packaging.utils",
-        "isExtraImport": true,
-        "detail": "packaging.utils",
-        "documentation": {}
-    },
-    {
-        "label": "canonicalize_name",
-        "importPath": "packaging.utils",
-        "description": "packaging.utils",
-        "isExtraImport": true,
-        "detail": "packaging.utils",
-        "documentation": {}
-    },
-    {
-        "label": "canonicalize_name",
-        "importPath": "packaging.utils",
-        "description": "packaging.utils",
-        "isExtraImport": true,
-        "detail": "packaging.utils",
-        "documentation": {}
-    },
-    {
-        "label": "GroupCommand",
-        "importPath": "poetry.console.commands.group_command",
-        "description": "poetry.console.commands.group_command",
-        "isExtraImport": true,
-        "detail": "poetry.console.commands.group_command",
-        "documentation": {}
-    },
-    {
-        "label": "MAIN_GROUP",
-        "importPath": "poetry.core.packages.dependency_group",
-        "description": "poetry.core.packages.dependency_group",
-        "isExtraImport": true,
-        "detail": "poetry.core.packages.dependency_group",
-        "documentation": {}
-    },
-    {
-        "label": "MAIN_GROUP",
-        "importPath": "poetry.core.packages.dependency_group",
-        "description": "poetry.core.packages.dependency_group",
-        "isExtraImport": true,
-        "detail": "poetry.core.packages.dependency_group",
-        "documentation": {}
-    },
-    {
-        "label": "Exporter",
-        "importPath": "poetry_plugin_export.exporter",
-        "description": "poetry_plugin_export.exporter",
-        "isExtraImport": true,
-        "detail": "poetry_plugin_export.exporter",
-        "documentation": {}
-    },
-    {
-        "label": "urllib.parse",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "urllib.parse",
-        "description": "urllib.parse",
-        "detail": "urllib.parse",
-        "documentation": {}
-    },
-    {
-        "label": "partialmethod",
-        "importPath": "functools",
-        "description": "functools",
-        "isExtraImport": true,
-        "detail": "functools",
-        "documentation": {}
-    },
-    {
-        "label": "IO",
-        "importPath": "cleo.io.io",
-        "description": "cleo.io.io",
-        "isExtraImport": true,
-        "detail": "cleo.io.io",
-        "documentation": {}
-    },
-    {
-        "label": "create_nested_marker",
-        "importPath": "poetry.core.packages.utils.utils",
-        "description": "poetry.core.packages.utils.utils",
-        "isExtraImport": true,
-        "detail": "poetry.core.packages.utils.utils",
-        "documentation": {}
-    },
-    {
-        "label": "parse_marker",
-        "importPath": "poetry.core.version.markers",
-        "description": "poetry.core.version.markers",
-        "isExtraImport": true,
-        "detail": "poetry.core.version.markers",
-        "documentation": {}
-    },
-    {
-        "label": "AnyMarker",
-        "importPath": "poetry.core.version.markers",
-        "description": "poetry.core.version.markers",
-        "isExtraImport": true,
-        "detail": "poetry.core.version.markers",
-        "documentation": {}
-    },
-    {
-        "label": "SingleMarker",
-        "importPath": "poetry.core.version.markers",
-        "description": "poetry.core.version.markers",
-        "isExtraImport": true,
-        "detail": "poetry.core.version.markers",
-        "documentation": {}
-    },
-    {
-        "label": "HTTPRepository",
-        "importPath": "poetry.repositories.http_repository",
-        "description": "poetry.repositories.http_repository",
-        "isExtraImport": true,
-        "detail": "poetry.repositories.http_repository",
-        "documentation": {}
-    },
-    {
-        "label": "get_project_dependency_packages",
-        "importPath": "poetry_plugin_export.walker",
-        "description": "poetry_plugin_export.walker",
-        "isExtraImport": true,
-        "detail": "poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "get_project_dependency_packages2",
-        "importPath": "poetry_plugin_export.walker",
-        "description": "poetry_plugin_export.walker",
-        "isExtraImport": true,
-        "detail": "poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "ApplicationPlugin",
-        "importPath": "poetry.plugins.application_plugin",
-        "description": "poetry.plugins.application_plugin",
-        "isExtraImport": true,
-        "detail": "poetry.plugins.application_plugin",
-        "documentation": {}
-    },
-    {
-        "label": "ExportCommand",
-        "importPath": "poetry_plugin_export.command",
-        "description": "poetry_plugin_export.command",
-        "isExtraImport": true,
-        "detail": "poetry_plugin_export.command",
-        "documentation": {}
-    },
-    {
-        "label": "constraint_regions",
-        "importPath": "poetry.core.constraints.version.util",
-        "description": "poetry.core.constraints.version.util",
-        "isExtraImport": true,
-        "detail": "poetry.core.constraints.version.util",
-        "documentation": {}
-    },
-    {
-        "label": "DependencyPackage",
-        "importPath": "poetry.packages",
-        "description": "poetry.packages",
-        "isExtraImport": true,
-        "detail": "poetry.packages",
-        "documentation": {}
-    },
-    {
-        "label": "get_extra_package_names",
-        "importPath": "poetry.utils.extras",
-        "description": "poetry.utils.extras",
-        "isExtraImport": true,
-        "detail": "poetry.utils.extras",
-        "documentation": {}
-    },
-    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -640,6 +343,14 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
+        "documentation": {}
+    },
+    {
         "label": "ValidationError",
         "importPath": "django.core.exceptions",
         "description": "django.core.exceptions",
@@ -750,6 +461,38 @@
         "description": "datetime",
         "isExtraImport": true,
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -1145,6 +888,23 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "environ",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1402,27 +1162,10 @@
     },
     {
         "label": "endpoints",
-        "importPath": "resturant",
-        "description": "resturant",
+        "importPath": "applications.resturant",
+        "description": "applications.resturant",
         "isExtraImport": true,
-        "detail": "resturant",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "environ",
-        "importPath": "os",
-        "description": "os",
-        "isExtraImport": true,
-        "detail": "os",
+        "detail": "applications.resturant",
         "documentation": {}
     },
     {
@@ -1434,11 +1177,28 @@
         "documentation": {}
     },
     {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
         "label": "Configuration",
         "importPath": "configurations",
         "description": "configurations",
         "isExtraImport": true,
         "detail": "configurations",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
         "documentation": {}
     },
     {
@@ -1459,18 +1219,26 @@
     },
     {
         "label": "Index",
-        "importPath": "resturant.endpoints",
-        "description": "resturant.endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "isExtraImport": true,
-        "detail": "resturant.endpoints",
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
         "label": "handler_page_not_found_404",
-        "importPath": "resturant.endpoints",
-        "description": "resturant.endpoints",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
         "isExtraImport": true,
-        "detail": "resturant.endpoints",
+        "detail": "applications.resturant.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "handler_server_error_500",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
+        "isExtraImport": true,
+        "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
     {
@@ -1547,96 +1315,6 @@
         "documentation": {}
     },
     {
-        "label": "ExportCommand",
-        "kind": 6,
-        "importPath": ".poetry.plugins.poetry_plugin_export.command",
-        "description": ".poetry.plugins.poetry_plugin_export.command",
-        "peekOfCode": "class ExportCommand(GroupCommand):\n    name = \"export\"\n    description = \"Exports the lock file to alternative formats.\"\n    options = [  # noqa: RUF012\n        option(\n            \"format\",\n            \"f\",\n            \"Format to export to. Currently, only constraints.txt and\"\n            \" requirements.txt are supported.\",\n            flag=False,",
-        "detail": ".poetry.plugins.poetry_plugin_export.command",
-        "documentation": {}
-    },
-    {
-        "label": "Exporter",
-        "kind": 6,
-        "importPath": ".poetry.plugins.poetry_plugin_export.exporter",
-        "description": ".poetry.plugins.poetry_plugin_export.exporter",
-        "peekOfCode": "class Exporter:\n    \"\"\"\n    Exporter class to export a lock file to alternative formats.\n    \"\"\"\n    FORMAT_CONSTRAINTS_TXT = \"constraints.txt\"\n    FORMAT_REQUIREMENTS_TXT = \"requirements.txt\"\n    ALLOWED_HASH_ALGORITHMS = (\"sha256\", \"sha384\", \"sha512\")\n    EXPORT_METHODS: ClassVar[dict[str, str]] = {\n        FORMAT_CONSTRAINTS_TXT: \"_export_constraints_txt\",\n        FORMAT_REQUIREMENTS_TXT: \"_export_requirements_txt\",",
-        "detail": ".poetry.plugins.poetry_plugin_export.exporter",
-        "documentation": {}
-    },
-    {
-        "label": "ExportApplicationPlugin",
-        "kind": 6,
-        "importPath": ".poetry.plugins.poetry_plugin_export.plugins",
-        "description": ".poetry.plugins.poetry_plugin_export.plugins",
-        "peekOfCode": "class ExportApplicationPlugin(ApplicationPlugin):\n    @property\n    def commands(self) -> list[type[Command]]:\n        return [ExportCommand]\n    def activate(self, application: Application) -> None:\n        # Removing the existing export command to avoid an error\n        # until Poetry removes the export command\n        # and uses this plugin instead.\n        # If you're checking this code out to get inspiration\n        # for your own plugins: DON'T DO THIS!",
-        "detail": ".poetry.plugins.poetry_plugin_export.plugins",
-        "documentation": {}
-    },
-    {
-        "label": "DependencyWalkerError",
-        "kind": 6,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "class DependencyWalkerError(Exception):\n    pass",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "get_python_version_region_markers",
-        "kind": 2,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "def get_python_version_region_markers(packages: list[Package]) -> list[BaseMarker]:\n    markers = []\n    regions = constraint_regions([package.python_constraint for package in packages])\n    for region in regions:\n        marker: BaseMarker = AnyMarker()\n        if region.min is not None:\n            min_operator = \">=\" if region.include_min else \">\"\n            marker_name = (\n                \"python_full_version\" if region.min.precision > 2 else \"python_version\"\n            )",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "get_project_dependency_packages",
-        "kind": 2,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "def get_project_dependency_packages(\n    locker: Locker,\n    project_requires: list[Dependency],\n    root_package_name: NormalizedName,\n    project_python_marker: BaseMarker | None = None,\n    extras: Collection[NormalizedName] = (),\n) -> Iterator[DependencyPackage]:\n    # Apply the project python marker to all requirements.\n    if project_python_marker is not None:\n        marked_requires: list[Dependency] = []",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "get_project_dependencies",
-        "kind": 2,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "def get_project_dependencies(\n    project_requires: list[Dependency],\n    locked_packages: list[Package],\n    root_package_name: NormalizedName,\n) -> Iterable[tuple[Package, Dependency]]:\n    # group packages entries by name, this is required because requirement might use\n    # different constraints.\n    packages_by_name: dict[str, list[Package]] = {}\n    for pkg in locked_packages:\n        if pkg.name not in packages_by_name:",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "walk_dependencies",
-        "kind": 2,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "def walk_dependencies(\n    dependencies: list[Dependency],\n    packages_by_name: dict[str, list[Package]],\n    root_package_name: NormalizedName,\n) -> dict[Package, Dependency]:\n    nested_dependencies: dict[Package, Dependency] = {}\n    visited: set[tuple[Dependency, BaseMarker]] = set()\n    while dependencies:\n        requirement = dependencies.pop(0)\n        if (requirement, requirement.marker) in visited:",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "get_locked_package",
-        "kind": 2,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "def get_locked_package(\n    dependency: Dependency,\n    packages_by_name: dict[str, list[Package]],\n    decided: dict[Package, Dependency] | None = None,\n) -> Package | None:\n    \"\"\"\n    Internal helper to identify corresponding locked package using dependency\n    version constraints.\n    \"\"\"\n    decided = decided or {}",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
-        "label": "get_project_dependency_packages2",
-        "kind": 2,
-        "importPath": ".poetry.plugins.poetry_plugin_export.walker",
-        "description": ".poetry.plugins.poetry_plugin_export.walker",
-        "peekOfCode": "def get_project_dependency_packages2(\n    locker: Locker,\n    project_python_marker: BaseMarker | None = None,\n    groups: Collection[str] = (),\n    extras: Collection[NormalizedName] = (),\n) -> Iterator[DependencyPackage]:\n    for package, info in locker.locked_packages().items():\n        if not info.groups.intersection(groups):\n            continue\n        marker = info.get_marker(groups)",
-        "detail": ".poetry.plugins.poetry_plugin_export.walker",
-        "documentation": {}
-    },
-    {
         "label": "main",
         "kind": 2,
         "importPath": ".venv.bin.jp",
@@ -1686,7 +1364,7 @@
         "kind": 6,
         "importPath": "applications.byte_patrol.apps",
         "description": "applications.byte_patrol.apps",
-        "peekOfCode": "class BytePatrolConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"byte_patrol\"\n    def ready(self):\n        # Import signal handlers\n        pass",
+        "peekOfCode": "class BytePatrolConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"applications.byte_patrol\"\n    def ready(self):\n        # Import signal handlers\n        pass",
         "detail": "applications.byte_patrol.apps",
         "documentation": {}
     },
@@ -1884,7 +1562,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\ndef handler_page_not_found_404(request, exception):\n    return render(request, \"404.html\", status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(",
+        "peekOfCode": "class Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\n# ----- BOOKING VIEWS -----\n@extend_schema(\n    summary=\"List All Current Bookings\",\n    description=\"Retrieve a list of all Little Lemon Bookings in the system. Authentication Token REQUIRED\",",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1947,7 +1625,25 @@
         "kind": 2,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    return render(request, \"404.html\", status=404)\n# ----- BOOKING VIEWS -----\n@extend_schema(\n    summary=\"List All Current Bookings\",\n    description=\"Retrieve a list of all Little Lemon Bookings in the system. Authentication Token REQUIRED\",\n    parameters=None,\n    tags=[\"Reservations\"],\n    # auth=[\"authToken\"],\n    filters=True,",
+        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    logger.warning(f\"Page Not Found: {request.path} - Error{exception}\")\n    return render(request, \"404.html\", status=404)\ndef handler_server_error_500(request):\n    logger.error(f\"Server Error: {request.path}\")\n    return render(request, \"500.html\", status=500)\nclass Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"",
+        "detail": "applications.resturant.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "handler_server_error_500",
+        "kind": 2,
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
+        "peekOfCode": "def handler_server_error_500(request):\n    logger.error(f\"Server Error: {request.path}\")\n    return render(request, \"500.html\", status=500)\nclass Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\n# ----- BOOKING VIEWS -----",
+        "detail": "applications.resturant.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "log_dir",
+        "kind": 5,
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
+        "peekOfCode": "log_dir = \"logs\"\nos.makedirs(log_dir, exist_ok=True)\n# Add a file handler\nlogger.add(\n    os.path.join(log_dir, \"info.log\"),\n    format=\"{time} {level} {message}\",\n    level=\"DEBUG\",\n    enqueue=True  # Good practice for multi-threaded/multi-process apps\n)\ndef handler_page_not_found_404(request, exception):",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -2037,7 +1733,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Grading(Base):\n    DEBUG = False\n    ALLOWED_HOSTS = [\"little-lemon.xyz\"]\n    CSRF_TRUSTED_ORIGINST = (\n        [\"https://localhost\", \"http://localhost\", \"https://little-lemon.xyz\"],\n    )\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",\n        \"django.contrib.auth\",\n        \"django.contrib.contenttypes\",",
+        "peekOfCode": "class Grading(Base):\n    DEBUG = False\n    ALLOWED_HOSTS = [\"little-lemon.xyz\"]\n    CSRF_TRUSTED_ORIGINS = (\n        \"https://localhost\",\n        \"http://localhost\",\n        \"https://little-lemon.xyz\",\n    )\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -2046,7 +1742,16 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Development(Base):\n    DEBUG = True\n    ALLOWED_HOSTS = [\"*\"]\n    CSRF_TRUSTED_ORIGINST = ([\"https://localhost \", \"http://localhost\"],)\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",\n        \"django.contrib.auth\",\n        \"django.contrib.contenttypes\",\n        \"django.contrib.sessions\",\n        \"django.contrib.messages\",",
+        "peekOfCode": "class Development(Base):\n    DEBUG = True\n    ALLOWED_HOSTS = [\"*\"]\n    CSRF_TRUSTED_ORIGINS = (\"https://localhost \",\"http://localhost\")\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",\n        \"django.contrib.auth\",\n        \"django.contrib.contenttypes\",\n        \"django.contrib.sessions\",\n        \"django.contrib.messages\",",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "get_django_forms_templates_path",
+        "kind": 2,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "def get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in site.getsitepackages() + site.getusersitepackages().__class__([site.getusersitepackages()]):\n        forms_templates = os.path.join(site_dir, \"django\", \"forms\", \"templates\")",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -2055,7 +1760,16 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nimport sys\nimport os\nimport site\ndef get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.",
+        "detail": "config.settings",
+        "documentation": {}
+    },
+    {
+        "label": "django_forms_templates_path",
+        "kind": 5,
+        "importPath": "config.settings",
+        "description": "config.settings",
+        "peekOfCode": "django_forms_templates_path = get_django_forms_templates_path()\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -2064,7 +1778,16 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "handler404 = handler_page_not_found_404\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()",
+        "peekOfCode": "handler404 = handler_page_not_found_404\nhandler500 = handler_server_error_500\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),",
+        "detail": "config.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler500",
+        "kind": 5,
+        "importPath": "config.urls",
+        "description": "config.urls",
+        "peekOfCode": "handler500 = handler_server_error_500\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -2073,7 +1796,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()\nif settings.DEBUG:",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()\nif settings.DEBUG:",
         "detail": "config.urls",
         "documentation": {}
     },

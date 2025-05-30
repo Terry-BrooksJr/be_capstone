@@ -1,9 +1,11 @@
-
+import sys
+import os
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import OpenApiExample, OpenApiParameter, extend_schema
+from loguru import logger
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -16,6 +18,34 @@ from applications.resturant.serializers.core import (
 )
 from utils.cache import CachedResponseMixin
 
+# Remove all existing handlers to avoid duplicate logs
+logger.remove()
+
+# Add a single stream handler (stdout)
+logger.add(sys.stdout, format="{time} {level} {message}", level="INFO")
+
+# Ensure the log directory exists
+log_dir = "logs"
+os.makedirs(log_dir, exist_ok=True)
+
+# Add a file handler
+logger.add(
+    os.path.join(log_dir, "info.log"),
+    format="{time} {level} {message}",
+    level="DEBUG",
+    enqueue=True  # Good practice for multi-threaded/multi-process apps
+)
+
+
+def handler_page_not_found_404(request, exception):
+    logger.warning(f"Page Not Found: {request.path} - Error{exception}")
+    return render(request, "404.html", status=404)
+
+
+def handler_server_error_500(request):
+    logger.error(f"Server Error: {request.path}")
+    return render(request, "500.html", status=500)
+
 
 class Index(CachedResponseMixin, TemplateView):
     """A view for rendering the index template.
@@ -25,10 +55,6 @@ class Index(CachedResponseMixin, TemplateView):
 
     primary_model = None
     template_name = "index.html"
-
-
-def handler_page_not_found_404(request, exception):
-    return render(request, "404.html", status=404)
 
 
 # ----- BOOKING VIEWS -----

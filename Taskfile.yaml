@@ -2,64 +2,67 @@ version: '3'
 
 env:
   vars:
-    - DJANGO_CONFIGURATION: Development
+  - DJANGO_CONFIGURATION: Development
 silent: true
 tasks:
   default:
     cmds:
-      - task -l
+    - task -l
     silent: true
 
   venv:
     desc: Make a new virtual environment
     cmds:
-      - python3 -m venv .venv --prompt="ACTIVE_VENV_DJANGO_CAPSTONE"
-      - source {{.TASKFILE_DIR}}/.venv/bin/activate
+    - python3 -m venv .venv --prompt="ACTIVE_VENV_DJANGO_CAPSTONE"
+    - source {{.TASKFILE_DIR}}/.venv/bin/activate
     internal: true
-  
+
   develop:
     desc: Starts the Django Application, and background workers in a debug state
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
-      - echo "Completing Pre-Start Environment Check For Development..."
-      - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver 
+    - echo "Completing Pre-Start Environment Check For Development..."
+    - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver
     interactive: false
     silent: false
 
-
   install:
-    deps: [venv]
+    deps: [ venv ]
     cmds:
-      - pip install poetry
-      - poetry lock
-      - poetry install --no-root
+    - cmd: pip install poetry
+      ignore_error: true
+    - cmd: poetry lock
+      ignore_error: true
+    - cmd: poetry install --no-root
+      ignore_error: true
+    - defer: "{{if .EXIT_CODE }} echo 'Unable to Install  Poetry Packages'; exit 1{{else}} echo 'Successfully Installed Dependencies' {{end}} "
     silent: false
 
   freeze:
     desc: Pin current dependencies
     cmds:
-      - doppler run  -- poetry export --without dev,test --without-hashes --without-urls > ./requirements/base.txt
-      - doppler run  -- poetry export  --without-hashes --without-urls > ./requirements/dev.txt
+    - doppler run  -- poetry export --without dev,test --without-hashes --without-urls > ./requirements/base.txt
+    - doppler run  -- poetry export  --without-hashes --without-urls > ./requirements/dev.txt
     generates:
-      - ./requirements/dev.txt
-      - ./requirements/base.txt
-      - ./poetry.lock
+    - ./requirements/dev.txt
+    - ./requirements/base.txt
+    - ./poetry.lock
     sources:
-      - ./poetry.lock
-      - ./requirements/dev.txt
-      - ./requirements/base.txt
+    - ./poetry.lock
+    - ./requirements/dev.txt
+    - ./requirements/base.txt
     silent: false
 
   db_sync:
     desc: Make and run migrations
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
-      - doppler run --  python run/manage.py makemigrations
-      - doppler run --  python run/manage.py migrate
+    - doppler run --  python run/manage.py makemigrations
+    - doppler run --  python run/manage.py migrate
     generates:
-      - ./applications/*/migrations/*.py
+    - ./applications/*/migrations/*.py
     sources:
-      - .applications/*/migrations/*.py
+    - .applications/*/migrations/*.py
     silent: false
 
   collect:
@@ -67,13 +70,13 @@ tasks:
 
     desc: Collect static files in to single directory for production
     cmds:
-      - doppler run --  python run/manage.py collectstatic --no-input
+    - doppler run --  python run/manage.py collectstatic --no-input
 
   test:
     dir: "{{ .TASKFILE_DIR }}"
     desc: Run tests
     cmds:
-      - doppler run --  .venv/bin/python run/manage.py test applications.resturant.tests --failfast --keepdb
+    - doppler run --  .venv/bin/python run/manage.py test applications.resturant.tests --failfast --keepdb
     silent: false
 
   run:
@@ -81,59 +84,69 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
 
     cmds:
-      - doppler run -- python run/manage.py runserver #--workers=2 --threads=2 core.wsgi:application -b :{{or .CLI_ARGS 8000}}
-
-
+    - doppler run -- python run/manage.py runserver #--workers=2 --threads=2 core.wsgi:application -b :{{or .CLI_ARGS 8000}}
 
   start:
     dir: "{{ .TASKFILE_DIR }}"
 
     desc: Command to Start Production Level Services including Install requirements, apply migrations, then start development server
     cmds:
-      - echo 'Starting Production Level Services...'
-      - echo 'Installing dependencies'
-      - task: install
+    - echo 'Starting Production Level Services...'
+    - echo 'Installing dependencies'
+    - task: install
 
-      - echo 'Applying migrations...'
-      - task: db_sync
+    - echo 'Applying migrations...'
+    - task: db_sync
 
-      - echo 'Starting server...'
-      - doppler run -- python -m gunicorn --workers=2 --threads=2 core.wsgi:application --bind 0.0.0.0:{{or .CLI_ARGS 8080}} --reload --sync
+    - echo 'Starting server...'
+    - doppler run -- python -m gunicorn  core.wsgi:application --bind 0.0.0.0:{{or .CLI_ARGS 8080}}
 
   schema-check:
     dir: "{{ .TASKFILE_DIR }}"
 
     desc: Check Models and Serializers for schema compliance with OpenAPI .0 Standards and fail on warnings
     cmds:
-      - doppler run --  python run/manage.py spectacular  --file schema/schema$(date +"%Y-%m-%d").yaml --validate
+    - doppler run --  python run/manage.py spectacular  --file schema/schema$(date +"%Y-%m-%d").yaml --validate
     internal: true
 
   schema:
-    deps: [schema-check]
+    deps: [ schema-check ]
     dir: "{{ .TASKFILE_DIR }}"
 
     desc: Generate OpenAPI 3.0 schema.yaml file from models and serializers
     cmds:
-      - doppler run --  python run/manage.py spectacular --file schema/schema$(date +"%Y-%m-%d_%H:%M:%S").yaml
+    - doppler run --  python run/manage.py spectacular --file schema/schema$(date +"%Y-%m-%d_%H:%M:%S").yaml
 
   build-image:
     desc: Build Docker Image
-    dir: "{{ .TASKFILE_DIR }}/.deploy"
+    dir: "{{ .TASKFILE_DIR }}"
     cmds:
-      - docker build buildx --platform --push linux/amd64,linux/arm64  --env DOPPLER_TOKEN=$DOPPLER_TOKEN -t capstone:latest .
+    - |
+      if ! docker buildx version > /dev/null 2>&1; then
+        echo "Error: Docker Buildx is not installed or not available in PATH."
+        echo "Please install Docker Buildx: https://docs.docker.com/buildx/working-with-buildx/"
+        exit 1
+      fi
+      docker buildx build --platform linux/amd64,linux/arm64 --push --build-arg DOPPLER_TOKEN=$DOPPLER_TOKEN -t terrybrooks/capstone:latest .
 
   lint:
     desc: Run linters
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
-      - python -m black .
-      - python -m isort --profile black .
-      - python -m autoflake --remove-all-unused-imports --recursive --remove-unused-variables --in-place .
+    - python -m black .
+    - python -m isort --profile black .
+    - python -m autoflake --remove-all-unused-imports --recursive --remove-unused-variables --in-place .
 
   django:
     desc: Run Django Management Commands
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
-      - doppler run -- python run/manage.py {{.CLI_ARGS}}
+    - doppler run -- python run/manage.py {{.CLI_ARGS}}
     silent: false
     interactive: true
+
+  serve:
+    desc: Production Run Command
+    dir: "{{ .TASKFILE_DIR }}"
+    cmds:
+    - export DOPPLER_CONFIGURATION=Grading && gunicorn --bind :{{or .CLI_ARGS 8000}} --workers=2 --threads=2 core.wsgi:application
