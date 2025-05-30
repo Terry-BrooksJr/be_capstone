@@ -2,6 +2,10 @@
 FROM python:3.13-slim-bookworm AS builder
 LABEL maintainer="Terry Brooks, Jr."
 
+# ----------- STAGE 1: Builder --------------------
+FROM python:3.13-slim-bookworm AS builder
+LABEL maintainer="Terry Brooks, Jr."
+
 ARG TOKEN
 
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -9,8 +13,10 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PATH="/app:${PATH}" \
-    DOPPLER_TOKEN=${TOKEN} \
     MYSQLCLIENT_LDFLAGS="" \
+    MYSQLCLIENT_CFLAGS=""
+
+# Install build dependencies
     MYSQLCLIENT_CFLAGS=""
 
 # Install build dependencies
@@ -21,6 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     default-libmysqlclient-dev \
     git \
     libbz2-dev \
+    libffi-dev \
     libffi-dev \
     liblzma-dev \
     libncurses5-dev \
@@ -37,10 +44,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --upgrade pip setuptools wheel
 
 # Install Python packages (including mysqlclient)
-COPY requirements/base.txt requirements/dev.txt /tmp/
+COPY requirements/dev.txt /tmp/
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --prefix=/install --no-cache-dir -r /tmp/base.txt \
-    && pip install --prefix=/install --no-cache-dir -r /tmp/dev.txt \
+    pip install --prefix=/install --no-cache-dir -r /tmp/dev.txt \
     && pip install --prefix=/install mysqlclient==2.2.7 --global-option=build_ext \
     --global-option="-I/usr/include/mysql" \
     --global-option="-L/usr/lib/x86_64-linux-gnu" \
@@ -57,7 +63,8 @@ ENV PATH="/install/bin:/app:${PATH}" \
     PYTHONUNBUFFERED=1 \
     DOPPLER_CONFIG=dev \
     DOPPLER_PROJECT=little_lemon \
-    DB_CERT_PATH=/app/AIVEN_SSL.pem
+    DB_CERT_PATH=/app/AIVEN_SSL.pem \
+    DOPPLER_TOKEN=${DOPPLER_TOKEN} 
 
 # Install minimal runtime deps
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -76,7 +83,7 @@ COPY --from=builder /install /usr/local
 
 # Copy app files and SSL cert
 WORKDIR /app
-COPY --chown=1000:1000 AIVIEN.pem /app/AIVEN_SSL.pem
+COPY --chown=1000:1000 AIVEN.pem /app/AIVEN_SSL.pem
 COPY --chown=1000:1000 . /app/
 
 
