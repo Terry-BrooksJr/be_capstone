@@ -29,7 +29,7 @@
           uses: actions/setup-python@v5
           with:
             python-version: '3.13t'
-            cache: 'poetry'
+            cache: 'pip'
         - name: Install Dependencies
           run: |
             pip install -r requirements/dev.txt
