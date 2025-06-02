@@ -5,9 +5,9 @@ from django.test import TestCase
 from loguru import logger
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient
-from resturant.serializers.core import BookingSerializer
 
 from applications.resturant.models import Booking
+from applications.resturant.serializers.core import BookingSerializer
 
 
 class BookingSerializerRepresentationTest(TestCase):

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 from debug_toolbar.toolbar import debug_toolbar_urls
 from django.conf import settings
 from django.conf.urls.static import static
@@ -22,9 +23,12 @@ urlpatterns = [
     path("auth/", include("djoser.urls")),
     path("auth/", include("djoser.urls.authtoken")),
     re_path(r"^checkup/", include("health_check.urls")),
+    path("byte_patrol/", include("applications.byte_patrol.urls")),
 ] + debug_toolbar_urls()
 
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# BytePatrol URLs are now included above for all environments

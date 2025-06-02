@@ -48,6 +48,24 @@ def party_size_validator(value: int) -> Union[None, serializers.ValidationError]
         raise serializers.ValidationError("Party size must be between 1 and 25.")
 
 
+def price_is_valid(value: float) -> Union[None, serializers.ValidationError]:
+    """Check if the price is a positive number.
+    Args:
+        value (float): The price of the menu item
+    """
+    if value <= 0:
+        raise serializers.ValidationError("Price must be a positive number.")
+
+
+def inventory_is_valid(value: int) -> Union[None, serializers.ValidationError]:
+    """Check if the inventory is a non-negative number.
+    Args:
+        value (int): The inventory quantity of the menu item
+    """
+    if value < 0:
+        raise serializers.ValidationError("Inventory must be a non-negative number.")
+
+
 class DateTimeParsingMixin:
     def parse_datetime_fields(self, data, request):
         """Parses and validates date and time fields from input data.
@@ -106,7 +124,6 @@ class DateTimeParsingMixin:
                     {"date": "Unsupported field type for 'date'."}
                 )
         else:
-            # Fallback: store the full datetime, but this may cause issues if the field expects a date
             data["date"] = combined
 
         data.pop("time", None)
@@ -230,10 +247,14 @@ class MenuSerializer(serializers.ModelSerializer):
     )
     title = serializers.CharField(max_length=255, help_text="Name of the menu item")
     price = serializers.DecimalField(
-        max_digits=6, decimal_places=2, help_text="Price of the menu item in USD"
+        max_digits=6,
+        decimal_places=2,
+        help_text="Price of the menu item in USD",
+        validators=[price_is_valid],
     )
     inventory = serializers.IntegerField(
-        help_text="Current available quantity of the item"
+        help_text="Current available quantity of the item",
+        validators=[inventory_is_valid],
     )
 
     class Meta:
@@ -291,7 +312,7 @@ class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
             )
         ]
 
-    @extend_schema_field(OpenApiTypes.TIME)
+    @extend_schema_field(OpenApiTypes.TIME,"time")
     def get_time(self, obj):
         """Returns the time portion of the date field in a human-readable 12-hour format.
 

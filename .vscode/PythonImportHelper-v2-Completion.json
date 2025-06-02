@@ -263,14 +263,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "cache",
         "importPath": "django.core.cache",
         "description": "django.core.cache",
@@ -295,7 +287,31 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "QueryDict",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseForbidden",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -308,6 +324,14 @@
         "description": "django.utils.deprecation",
         "isExtraImport": true,
         "detail": "django.utils.deprecation",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
         "documentation": {}
     },
     {
@@ -404,6 +428,134 @@
         "description": "django.dispatch",
         "isExtraImport": true,
         "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "override_settings",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "RequestFactory",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "re_path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "testing_protected",
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "isExtraImport": true,
+        "detail": "applications.byte_patrol.tests",
+        "documentation": {}
+    },
+    {
+        "label": "testing_unprotected",
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "isExtraImport": true,
+        "detail": "applications.byte_patrol.tests",
         "documentation": {}
     },
     {
@@ -744,62 +896,6 @@
         "documentation": {}
     },
     {
-        "label": "reverse",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "reverse",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "re_path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "include",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "re_path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
         "label": "Token",
         "importPath": "rest_framework.authtoken.models",
         "description": "rest_framework.authtoken.models",
@@ -869,39 +965,38 @@
         "description": "rest_framework.test",
         "isExtraImport": true,
         "detail": "rest_framework.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
         "documentation": {}
     },
     {
         "label": "BookingSerializer",
-        "importPath": "resturant.serializers.core",
-        "description": "resturant.serializers.core",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
-        "detail": "resturant.serializers.core",
+        "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
+        "label": "BookingSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
+        "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
     {
-        "label": "environ",
-        "importPath": "os",
-        "description": "os",
+        "label": "MenuSerializer",
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
         "isExtraImport": true,
-        "detail": "os",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "setup_loguru",
+        "importPath": "utils.logging",
+        "description": "utils.logging",
+        "isExtraImport": true,
+        "detail": "utils.logging",
         "documentation": {}
     },
     {
@@ -974,22 +1069,6 @@
         "description": "applications.resturant.filters",
         "isExtraImport": true,
         "detail": "applications.resturant.filters",
-        "documentation": {}
-    },
-    {
-        "label": "BookingSerializer",
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.core",
-        "documentation": {}
-    },
-    {
-        "label": "MenuSerializer",
-        "importPath": "applications.resturant.serializers.core",
-        "description": "applications.resturant.serializers.core",
-        "isExtraImport": true,
-        "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
     {
@@ -1169,11 +1248,37 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "environ",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
         "isExtraImport": true,
         "detail": "django.core.asgi",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
         "documentation": {}
     },
     {
@@ -1190,15 +1295,6 @@
         "description": "configurations",
         "isExtraImport": true,
         "detail": "configurations",
-        "documentation": {}
-    },
-    {
-        "label": "site",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "site",
-        "description": "site",
-        "detail": "site",
         "documentation": {}
     },
     {
@@ -1315,6 +1411,14 @@
         "documentation": {}
     },
     {
+        "label": "has",
+        "importPath": "zmq",
+        "description": "zmq",
+        "isExtraImport": true,
+        "detail": "zmq",
+        "documentation": {}
+    },
+    {
         "label": "main",
         "kind": 2,
         "importPath": ".venv.bin.jp",
@@ -1405,6 +1509,42 @@
         "documentation": {}
     },
     {
+        "label": "BytePatrolAccessTests",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "peekOfCode": "class BytePatrolAccessTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        # Example: set up allowed and disallowed IPs\n        self.allowed_ip = \"192.168.1.1\"\n        self.disallowed_ip = \"10.0.0.1\"\n        # Example protected and unprotected paths\n        self.protected_path = \"/byte_patrol/protected/\"\n        self.unprotected_path = \"/byte_patrol/public/\"\n    @override_settings(BYTE_PATROL_ALLOWED_IPS=[\"192.168.1.1\"])",
+        "detail": "applications.byte_patrol.tests",
+        "documentation": {}
+    },
+    {
+        "label": "testing_unprotected",
+        "kind": 2,
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "peekOfCode": "def testing_unprotected(request):\n    return HttpResponse(\"This is an unprotected view.\", status=200)\ndef testing_protected(request):\n    return HttpResponse(\"This is a protected view.\", status=200)\nclass BytePatrolAccessTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        # Example: set up allowed and disallowed IPs\n        self.allowed_ip = \"192.168.1.1\"\n        self.disallowed_ip = \"10.0.0.1\"",
+        "detail": "applications.byte_patrol.tests",
+        "documentation": {}
+    },
+    {
+        "label": "testing_protected",
+        "kind": 2,
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "peekOfCode": "def testing_protected(request):\n    return HttpResponse(\"This is a protected view.\", status=200)\nclass BytePatrolAccessTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        # Example: set up allowed and disallowed IPs\n        self.allowed_ip = \"192.168.1.1\"\n        self.disallowed_ip = \"10.0.0.1\"\n        # Example protected and unprotected paths\n        self.protected_path = \"/byte_patrol/protected/\"",
+        "detail": "applications.byte_patrol.tests",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "applications.byte_patrol.urls",
+        "description": "applications.byte_patrol.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"protected/\", testing_protected, name=\"byte_patrol_protected\"),\n    path(\"public/\", testing_unprotected, name=\"byte_patrol_public\"),\n]",
+        "detail": "applications.byte_patrol.urls",
+        "documentation": {}
+    },
+    {
         "label": "Command",
         "kind": 6,
         "importPath": "applications.resturant.management.commands.seed",
@@ -1490,7 +1630,7 @@
         "kind": 6,
         "importPath": "applications.resturant.serializers.core",
         "description": "applications.resturant.serializers.core",
-        "peekOfCode": "class MenuSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Menu objects.\n    Serializes and deserializes menu item data.\n    \"\"\"\n    item_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the menu item\"\n    )\n    title = serializers.CharField(max_length=255, help_text=\"Name of the menu item\")\n    price = serializers.DecimalField(\n        max_digits=6, decimal_places=2, help_text=\"Price of the menu item in USD\"",
+        "peekOfCode": "class MenuSerializer(serializers.ModelSerializer):\n    \"\"\"Serializer for Menu objects.\n    Serializes and deserializes menu item data.\n    \"\"\"\n    item_id = serializers.IntegerField(\n        read_only=True, help_text=\"Unique identifier for the menu item\"\n    )\n    title = serializers.CharField(max_length=255, help_text=\"Name of the menu item\")\n    price = serializers.DecimalField(\n        max_digits=6,",
         "detail": "applications.resturant.serializers.core",
         "documentation": {}
     },
@@ -1522,6 +1662,24 @@
         "documentation": {}
     },
     {
+        "label": "price_is_valid",
+        "kind": 2,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "def price_is_valid(value: float) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the price is a positive number.\n    Args:\n        value (float): The price of the menu item\n    \"\"\"\n    if value <= 0:\n        raise serializers.ValidationError(\"Price must be a positive number.\")\ndef inventory_is_valid(value: int) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the inventory is a non-negative number.\n    Args:",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
+        "label": "inventory_is_valid",
+        "kind": 2,
+        "importPath": "applications.resturant.serializers.core",
+        "description": "applications.resturant.serializers.core",
+        "peekOfCode": "def inventory_is_valid(value: int) -> Union[None, serializers.ValidationError]:\n    \"\"\"Check if the inventory is a non-negative number.\n    Args:\n        value (int): The inventory quantity of the menu item\n    \"\"\"\n    if value < 0:\n        raise serializers.ValidationError(\"Inventory must be a non-negative number.\")\nclass DateTimeParsingMixin:\n    def parse_datetime_fields(self, data, request):\n        \"\"\"Parses and validates date and time fields from input data.",
+        "detail": "applications.resturant.serializers.core",
+        "documentation": {}
+    },
+    {
         "label": "BookingsViewsetTestCase",
         "kind": 6,
         "importPath": "applications.resturant.tests.test_booking_endponts",
@@ -1549,11 +1707,29 @@
         "documentation": {}
     },
     {
+        "label": "SecureRequestTests",
+        "kind": 6,
+        "importPath": "applications.resturant.tests.test_ssl",
+        "description": "applications.resturant.tests.test_ssl",
+        "peekOfCode": "class SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def test_secure_proxy_ssl_header(self):\n        # Simulate a request with X-Forwarded-Proto set to 'https'\n        request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='https')\n        # Add wsgi.url_scheme manually (RequestFactory doesn't simulate full WSGI)\n        request.META['wsgi.url_scheme'] = 'http'  # Default scheme before proxy\n        # Now call the view\n        response = secure_check_view(request)",
+        "detail": "applications.resturant.tests.test_ssl",
+        "documentation": {}
+    },
+    {
+        "label": "secure_check_view",
+        "kind": 2,
+        "importPath": "applications.resturant.tests.test_ssl",
+        "description": "applications.resturant.tests.test_ssl",
+        "peekOfCode": "def secure_check_view(request):\n    return JsonResponse({\n        'is_secure': request.is_secure(),\n        'X-Forwarded-Proto': request.META.get('HTTP_X_FORWARDED_PROTO'),\n    })\nclass SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def test_secure_proxy_ssl_header(self):\n        # Simulate a request with X-Forwarded-Proto set to 'https'",
+        "detail": "applications.resturant.tests.test_ssl",
+        "documentation": {}
+    },
+    {
         "label": "ResturantConfig",
         "kind": 6,
         "importPath": "applications.resturant.apps",
         "description": "applications.resturant.apps",
-        "peekOfCode": "class ResturantConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"applications.resturant\"\n    def ready(self):\n        pass",
+        "peekOfCode": "class ResturantConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"applications.resturant\"\n    def ready(self):\n        setup_loguru()",
         "detail": "applications.resturant.apps",
         "documentation": {}
     },
@@ -1571,7 +1747,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class BookingListView(CachedResponseMixin, generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]\nclass BookingCreateView(CachedResponseMixin, generics.CreateAPIView):",
+        "peekOfCode": "class BookingListView(CachedResponseMixin, generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    primary_model = Booking\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"name\"]\n    filterset_class = BookingFilter\n    ordering_fields = [\"date\", \"no_of_guests\"]\n    permission_classes = [IsAuthenticated]",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1580,7 +1756,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating bookings.\"\"\"\n    queryset = Booking.objects.all()\n    serializer_class = BookingSerializer\n    permission_classes = [IsAuthenticated]\n    @extend_schema(\n        summary=\"Create a Booking\",\n        description=\"Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.\",\n        request=BookingSerializer,\n        tags=[\"Reservations\"],",
+        "peekOfCode": "class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating bookings.\"\"\"\n    queryset = Booking.objects.all()\n    primary_model = Booking\n    serializer_class = BookingSerializer\n    permission_classes = [IsAuthenticated]\n    def create(self, request, *args, **kwargs):\n        if request.user.is_authenticated:\n            serializer = self.get_serializer(data=request.data)\n            serializer.is_valid(raise_exception=True)",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1598,7 +1774,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuListView(CachedResponseMixin, generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    permission_classes = [IsAuthenticated]\n@extend_schema(\n    summary=\"Create a Menu Item\",",
+        "peekOfCode": "class MenuListView(CachedResponseMixin, generics.ListAPIView):\n    \"\"\"Provides endpoint for listing all menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    filter_backends = [DjangoFilterBackend]\n    search_fields = [\"title\"]\n    filterset_class = ProductFilter\n    primary_model = Menu\n    permission_classes = [IsAuthenticated]\n@extend_schema(",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1607,7 +1783,7 @@
         "kind": 6,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n# Combined view that supports multiple operations on a single endpoint\nclass MenuView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):\n    \"\"\"Provides endpoints for retrieving, updating, and deleting a specific menu item.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer",
+        "peekOfCode": "class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):\n    \"\"\"Provides endpoint for creating menu items.\"\"\"\n    queryset = Menu.objects.all()\n    serializer_class = MenuSerializer\n    permission_classes = [IsAuthenticated]\n    def post(self, request):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        self.perform_create(serializer)\n        headers = self.get_success_headers(serializer.data)",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1635,15 +1811,6 @@
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
         "peekOfCode": "def handler_server_error_500(request):\n    logger.error(f\"Server Error: {request.path}\")\n    return render(request, \"500.html\", status=500)\nclass Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\n# ----- BOOKING VIEWS -----",
-        "detail": "applications.resturant.endpoints",
-        "documentation": {}
-    },
-    {
-        "label": "log_dir",
-        "kind": 5,
-        "importPath": "applications.resturant.endpoints",
-        "description": "applications.resturant.endpoints",
-        "peekOfCode": "log_dir = \"logs\"\nos.makedirs(log_dir, exist_ok=True)\n# Add a file handler\nlogger.add(\n    os.path.join(log_dir, \"info.log\"),\n    format=\"{time} {level} {message}\",\n    level=\"DEBUG\",\n    enqueue=True  # Good practice for multi-threaded/multi-process apps\n)\ndef handler_page_not_found_404(request, exception):",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1724,7 +1891,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"",
+        "peekOfCode": "class Base(Configuration):\n    SECRET_KEY = environment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True\n    FORM_RENDERER = \"django.forms.renderers.TemplatesSetting\"",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1733,7 +1900,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Grading(Base):\n    DEBUG = False\n    ALLOWED_HOSTS = [\"little-lemon.xyz\"]\n    CSRF_TRUSTED_ORIGINS = (\n        \"https://localhost\",\n        \"http://localhost\",\n        \"https://little-lemon.xyz\",\n    )\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",",
+        "peekOfCode": "class Grading(Base):\n    DEBUG = False\n    ALLOWED_HOSTS = [\n        \"little-lemon.xyz\",\n        \"localhost\",\n        \"203.161.47.138\",\n        \"*\",\n        \"9skx15r9-7575.usw3.devtunnels.ms\",\n    ]\n    CSRF_TRUSTED_ORIGINS = [",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1742,7 +1909,7 @@
         "kind": 6,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "class Development(Base):\n    DEBUG = True\n    ALLOWED_HOSTS = [\"*\"]\n    CSRF_TRUSTED_ORIGINS = (\"https://localhost \",\"http://localhost\")\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",\n        \"django.contrib.auth\",\n        \"django.contrib.contenttypes\",\n        \"django.contrib.sessions\",\n        \"django.contrib.messages\",",
+        "peekOfCode": "class Development(Base):\n    DEBUG = True\n    ALLOWED_HOSTS = [\"*\"]\n    CSRF_TRUSTED_ORIGINS = (\"https://localhost \", \"http://localhost\")\n    INSTALLED_APPS = [\n        \"django.contrib.admin\",\n        \"django.contrib.auth\",\n        \"django.contrib.contenttypes\",\n        \"django.contrib.sessions\",\n        \"django.contrib.messages\",",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1751,7 +1918,7 @@
         "kind": 2,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "def get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in site.getsitepackages() + site.getusersitepackages().__class__([site.getusersitepackages()]):\n        forms_templates = os.path.join(site_dir, \"django\", \"forms\", \"templates\")",
+        "peekOfCode": "def get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in site.getsitepackages() + [site.getusersitepackages()]:\n        forms_templates = os.path.join(site_dir, \"django\", \"forms\", \"templates\")",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1760,7 +1927,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nimport sys\nimport os\nimport site\ndef get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\ndef get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in site.getsitepackages() + [site.getusersitepackages()]:",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1769,7 +1936,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "django_forms_templates_path = get_django_forms_templates_path()\nclass Base(Configuration):\n    SECRET_KEY = enviornment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
+        "peekOfCode": "django_forms_templates_path = get_django_forms_templates_path()\nclass Base(Configuration):\n    SECRET_KEY = environment_var[\"SECRET_KEY\"]\n    STATIC_URL = \"static/\"\n    ROOT_URLCONF = \"config.urls\"\n    # APPEND_SLASH=False\n    WSGI_APPLICATION = \"config.wsgi.application\"\n    LANGUAGE_CODE = \"en-us\"\n    TIME_ZONE = \"UTC\"\n    USE_I18N = True",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1787,7 +1954,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "handler500 = handler_server_error_500\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()",
+        "peekOfCode": "handler500 = handler_server_error_500\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n    path(\"byte_patrol/\", include(\"applications.byte_patrol.urls\")),",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -1796,7 +1963,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n] + debug_toolbar_urls()\nif settings.DEBUG:",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n    path(\"byte_patrol/\", include(\"applications.byte_patrol.urls\")),\n] + debug_toolbar_urls()",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -1846,11 +2013,11 @@
         "documentation": {}
     },
     {
-        "label": "DozensMetrics",
+        "label": "Metrics",
         "kind": 6,
         "importPath": "utils.cache",
         "description": "utils.cache",
-        "peekOfCode": "class DozensMetrics:\n    \"\"\"Manages metrics tracking for the NHHC web application.\n    This class provides a comprehensive metrics tracking system for monitoring various application events and performance indicators.\n    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions, and document processing metrics.\n    Attributes:\n        NAMESPACE (str): The base namespace for all metrics in the web application.\n    \"\"\"\n    NAMESPACE = \"dozens\"\n    def __init__(self):\n        self.cached_queryset_hit = Counter(",
+        "peekOfCode": "class Metrics:\n    \"\"\"Manages metrics tracking for the api.\n    This class provides a comprehensive metrics tracking system for monitoring various application events and performance indicators.\n    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions metrics.\n    Attributes:\n        NAMESPACE (str): The base namespace for all metrics in the web application.\n    \"\"\"\n    NAMESPACE = \"dozens\"\n    _instance = None\n    def __new__(cls):",
         "detail": "utils.cache",
         "documentation": {}
     },
@@ -1859,7 +2026,7 @@
         "kind": 6,
         "importPath": "utils.cache",
         "description": "utils.cache",
-        "peekOfCode": "class CachedTemplateView(TemplateView):\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(settings.CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):\n        return super(NeverCacheMixin, self).dispatch(*args, **kwargs)",
+        "peekOfCode": "class CachedTemplateView(TemplateView):\n    \"\"\"A TemplateView that caches its rendered output.\n    This class method wraps the standard Django TemplateView with caching, improving performance for repeated requests.\n    \"\"\"\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(VIEW_CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):",
         "detail": "utils.cache",
         "documentation": {}
     },
@@ -1886,7 +2053,16 @@
         "kind": 2,
         "importPath": "utils.cache",
         "description": "utils.cache",
-        "peekOfCode": "def invalidate_cache(sender, **kwargs):\n    model_name = sender.__name__\n    logger.debug(f\"Signal Received For {model_name}\")\n    # Pattern to match cache keys that include the model name as namespace\n    cache_key_pattern = f\"{model_name}:*\"\n    logger.debug(f'Searching For Cache Key Pattern\" {cache_key_pattern}')\n    if cache_keys := cache.keys(cache_key_pattern):\n        cache.delete_many(cache_keys)\n        metrics.increment_cache(model=model_name, type=\"eviction\")\n        logger.info(f\"Cache invalidated for model: {model_name}\")",
+        "peekOfCode": "def invalidate_cache(sender, **kwargs):\n    model_name = sender.__name__\n    logger.debug(f\"Signal Received For {model_name}\")\n    # Pattern to match cache keys that include the model name as namespace\n    cache_key_pattern = f\"{model_name}:*\"\n    logger.debug(f'Searching For Cache Key Pattern\" {cache_key_pattern}')\n    if cache_keys := cache.keys(cache_key_pattern):\n        cache.delete_many(cache_keys)\n        metrics.increment_cache(model=model_name, cache_event_type=\"eviction\")\n        logger.info(f\"Cache invalidated for model: {model_name}\")",
+        "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "VIEW_CACHE_TTL",
+        "kind": 5,
+        "importPath": "utils.cache",
+        "description": "utils.cache",
+        "peekOfCode": "VIEW_CACHE_TTL = int(os.environ[\"VIEW_CACHE_TTL\"])\nclass Metrics:\n    \"\"\"Manages metrics tracking for the api.\n    This class provides a comprehensive metrics tracking system for monitoring various application events and performance indicators.\n    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions metrics.\n    Attributes:\n        NAMESPACE (str): The base namespace for all metrics in the web application.\n    \"\"\"\n    NAMESPACE = \"dozens\"\n    _instance = None",
         "detail": "utils.cache",
         "documentation": {}
     },
@@ -1895,8 +2071,17 @@
         "kind": 5,
         "importPath": "utils.cache",
         "description": "utils.cache",
-        "peekOfCode": "metrics = DozensMetrics()\nclass CachedTemplateView(TemplateView):\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(settings.CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )\nclass NeverCacheMixin(object):\n    @method_decorator(never_cache)\n    def dispatch(self, *args, **kwargs):",
+        "peekOfCode": "metrics = Metrics()\nclass CachedTemplateView(TemplateView):\n    \"\"\"A TemplateView that caches its rendered output.\n    This class method wraps the standard Django TemplateView with caching, improving performance for repeated requests.\n    \"\"\"\n    @classmethod\n    def as_view(cls, **initkwargs):  # @NoSelf\n        return cache_page(VIEW_CACHE_TTL)(\n            super(CachedTemplateView, cls).as_view(**initkwargs)\n        )",
         "detail": "utils.cache",
+        "documentation": {}
+    },
+    {
+        "label": "setup_loguru",
+        "kind": 2,
+        "importPath": "utils.logging",
+        "description": "utils.logging",
+        "peekOfCode": "def setup_loguru(log_dir=\"logs\"):\n    \"\"\"Configures the Loguru logger for both console and file output.\n    This function sets up logging to display messages in the console and to write logs to a file in the specified directory.\n    Args:\n        log_dir (str): The directory where log files will be stored. Defaults to \"logs\".\n    Returns:\n        None\n    \"\"\"\n    logger.remove()\n    # Console",
+        "detail": "utils.logging",
         "documentation": {}
     }
 ]

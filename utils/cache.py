@@ -1,7 +1,7 @@
 import hashlib
+import os
 from typing import Union
 
-from django.conf import settings
 from django.core.cache import cache
 from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
@@ -15,21 +15,34 @@ from prometheus_client import Counter
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
+from zmq import has
+
+VIEW_CACHE_TTL = int(os.environ["VIEW_CACHE_TTL"])
 
 
-class DozensMetrics:
-    """Manages metrics tracking for the NHHC web application.
+class Metrics:
+    """Manages metrics tracking for the api.
 
     This class provides a comprehensive metrics tracking system for monitoring various application events and performance indicators.
-    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions, and document processing metrics.
+    It uses Prometheus-style counters and histograms to record submission attempts, cache interactions metrics.
 
     Attributes:
         NAMESPACE (str): The base namespace for all metrics in the web application.
     """
 
     NAMESPACE = "dozens"
+    _instance = None
 
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(Metrics, cls).__new__(cls)
+        return cls._instance
+    
+    
+    
     def __init__(self):
+        if hasattr(self, "initialized"):
+            return
         self.cached_queryset_hit = Counter(
             "cached_queryset_hit",
             "Number of requests served by a cached Queryset",
@@ -43,36 +56,43 @@ class DozensMetrics:
         self.cached_queryset_evicted = Counter(
             "cached_queryset_evicted", "Number of cached Querysets evicted", ["model"]
         )
+        self.initialized = True
 
-    def increment_cache(self, model: str, type: str) -> None:
+    def increment_cache(self, model: str, cache_event_type: str) -> None:
         """Tracks cache performance metrics for different database models.
 
         This method increments the appropriate counter based on the cache interaction type,
         providing insights into cache hit, miss, and eviction rates for specific models.
 
         Args:
-            model: The name of the database model being cached.
-            type: The type of cache interaction ('hit', 'miss', or 'eviction').
+            model(str): String representation of the name the database model being cached.
+            
+            cache_event_type(str: The type of cache interaction ('hit', 'miss', or 'eviction').
 
         Returns:
             None
         """
-        if type == "hit":
+        if cache_event_type == "hit":
             self.cached_queryset_hit.labels(model=model).inc()
-        elif type == "miss":
+        elif cache_event_type == "miss":
             self.cached_queryset_miss.labels(model=model).inc()
-        elif type == "eviction":
+        elif cache_event_type == "eviction":
             self.cached_queryset_evicted.labels(model=model).inc()
 
 
 # Create a singleton instance for global use
-metrics = DozensMetrics()
+metrics = Metrics()
 
 
 class CachedTemplateView(TemplateView):
+    """A TemplateView that caches its rendered output.
+
+    This class method wraps the standard Django TemplateView with caching, improving performance for repeated requests.
+    """
+
     @classmethod
     def as_view(cls, **initkwargs):  # @NoSelf
-        return cache_page(settings.CACHE_TTL)(
+        return cache_page(VIEW_CACHE_TTL)(
             super(CachedTemplateView, cls).as_view(**initkwargs)
         )
 
@@ -102,11 +122,12 @@ class CachedResponseMixin:
         Raises:
             AttributeError: If the view does not have a 'primary_model' attribute.
         """
-        if apiKey := self.request.request.META["HTTP_AUTHORIZATION"]:
-            user_id = Token.objects.get(key=apiKey).user.id
+        if api_request_key := self.request.META.get("HTTP_AUTHORIZATION"):
+            api_key = api_request_key.split(" ")[1]
+            user_id = Token.objects.get(key=api_key).user.id
         else:
             user_id = "anonymous"
-        query_params = self.request.GET.urlencode()
+        query_params = self.request.META["PATH_INFO"]
         query_params_hash = hashlib.md5(
             query_params.encode("utf-8"), usedforsecurity=False
         ).hexdigest()
@@ -146,13 +167,13 @@ class CachedResponseMixin:
             logger.debug(
                 f"Cache Hit for {self.primary_model.__name__} - Cache Key: {cache_key}"
             )
-            metrics.increment_cache(model=self.primary_model.__name__, type="hit")
+            metrics.increment_cache(model=self.primary_model.__name__, cache_event_type="hit")
             return Response(cached_data, status=status.HTTP_200_OK)
         else:
             logger.debug(
                 f"Cache Miss for {self.primary_model.__name__}  - Cache Key: {cache_key}"
             )
-            metrics.increment_cache(model=self.primary_model.__name__, type="miss")
+            metrics.increment_cache(model=self.primary_model.__name__, cache_event_type="miss")
             return None
 
     def cache_response(self, cache_key, data):
@@ -167,7 +188,7 @@ class CachedResponseMixin:
         if type(data) in [JsonResponse, TemplateResponse]:
             data = data.render()
         logger.debug(f"New Cache Set {cache_key}: {data}")
-        cache.set(cache_key, data, timeout=settings.VIEW_CACHE_TTL)
+        cache.set(cache_key, data, timeout=VIEW_CACHE_TTL)
 
     def list(self, request, *args, **kwargs) -> Response:
         """Handle GET requests for listing resources with caching.
@@ -238,7 +259,7 @@ def invalidate_cache(sender, **kwargs):
     logger.debug(f'Searching For Cache Key Pattern" {cache_key_pattern}')
     if cache_keys := cache.keys(cache_key_pattern):
         cache.delete_many(cache_keys)
-        metrics.increment_cache(model=model_name, type="eviction")
+        metrics.increment_cache(model=model_name, cache_event_type="eviction")
         logger.info(f"Cache invalidated for model: {model_name}")
     else:
         logger.debug(

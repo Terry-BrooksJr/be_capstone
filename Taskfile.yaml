@@ -1,8 +1,5 @@
 version: '3'
 
-env:
-  vars:
-  - DJANGO_CONFIGURATION: Development
 silent: true
 tasks:
   default:
@@ -22,7 +19,7 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
     - echo "Completing Pre-Start Environment Check For Development..."
-    - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver
+    - export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver
     interactive: false
     silent: false
 
@@ -76,7 +73,7 @@ tasks:
     dir: "{{ .TASKFILE_DIR }}"
     desc: Run tests
     cmds:
-    - doppler run --  .venv/bin/python run/manage.py test applications.resturant.tests --failfast --keepdb
+    - export DJANGO_CONFIGURATION=Grading && doppler run --  .venv/bin/python run/manage.py test # --keepdb
     silent: false
 
   run:
@@ -148,5 +145,11 @@ tasks:
   serve:
     desc: Production Run Command
     dir: "{{ .TASKFILE_DIR }}"
+    env:
+      vars:
+      DJANGO_CONFIGURATION: Grading
+      DJANGO_SETTINGS_MODULE: config.settings
+      PYTHONPATH: $PYTHONPATH
+
     cmds:
-    - export DOPPLER_CONFIGURATION=Grading && gunicorn --bind :{{or .CLI_ARGS 8000}} --workers=2 --threads=2 core.wsgi:application
+    - doppler run -- .venv/bin/gunicorn --bind 127.0.0.1:{{or .CLI_ARGS 8000}}  config.wsgi:application --reload

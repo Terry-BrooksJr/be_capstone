@@ -2,10 +2,6 @@
 FROM python:3.13-slim-bookworm AS builder
 LABEL maintainer="Terry Brooks, Jr."
 
-# ----------- STAGE 1: Builder --------------------
-FROM python:3.13-slim-bookworm AS builder
-LABEL maintainer="Terry Brooks, Jr."
-
 ARG TOKEN
 
 ENV DEBIAN_FRONTEND=noninteractive \
@@ -14,10 +10,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PATH="/app:${PATH}" \
     MYSQLCLIENT_LDFLAGS="" \
-    MYSQLCLIENT_CFLAGS=""
-
-# Install build dependencies
-    MYSQLCLIENT_CFLAGS=""
+    MYSQLCLIENT_CFLAGS=""  
 
 # Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -35,19 +28,34 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsqlite3-dev \
     libssl-dev \
     pkg-config \
+    ca-certificates \
     rustc \
     wget \
     zlib1g-dev \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install pip tools & dependencies
+# Install pip tools & Poetry
 RUN pip install --upgrade pip setuptools wheel
+RUN curl -sSL https://install.python-poetry.org | python3 - --version 1.8.2
+ENV PATH="/root/.local/bin:$PATH"
 
-# Install Python packages (including mysqlclient)
-COPY requirements/dev.txt /tmp/
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install --prefix=/install --no-cache-dir -r /tmp/dev.txt \
-    && pip install --prefix=/install mysqlclient==2.2.7 --global-option=build_ext \
+# Configure Poetry to not create a virtual environment
+RUN poetry config virtualenvs.create false
+
+# Copy only the dependency files first for better caching
+WORKDIR /app
+COPY pyproject.toml poetry.lock ./
+
+# Install Python packages
+RUN --mount=type=cache,target=/root/.cache/pypoetry \
+    # Export dependencies to requirements.txt using Poetry
+    poetry export --without-hashes -f requirements.txt > /tmp/requirements.txt && \
+    # Install pip/setuptools/wheel to ensure they're not removed
+    pip install --prefix=/install --no-cache-dir pip setuptools wheel && \
+    # Install the dependencies from the exported requirements file
+    pip install --prefix=/install --no-cache-dir -r /tmp/requirements.txt && \
+    # Install mysqlclient with the required build flags
+    pip install --prefix=/install mysqlclient==2.2.7 --global-option=build_ext \
     --global-option="-I/usr/include/mysql" \
     --global-option="-L/usr/lib/x86_64-linux-gnu" \
     --global-option="-lmysqlclient"
@@ -88,12 +96,13 @@ COPY --chown=1000:1000 . /app/
 
 
 # Copy Doppler CLI install script
-RUN curl -sLf --retry 3 --tlsv1.2 --proto "=https" https://packages.doppler.com/public/cli/install.sh | sh -s -- --no-install-cli-version-file --install-path /install/bin
+RUN (curl -sLf --retry 3 --tlsv1.2 --proto "=https" https://packages.doppler.com/public/cli/install.sh) | sh -s -- --no-install-cli-version-file --install-path /install/bin
 # Install Task binary
 RUN curl -sSL https://taskfile.dev/install.sh | sh -s -- -d -b /install/bin
 # Create non-root user
 RUN groupadd -r appuser && useradd -m -r -g appuser appuser
 USER appuser
 
-ENTRYPOINT ["/bin/bash"]
-CMD ["task", "serve"]
+# Set the entrypoint to run gunicorn directly (matching what task:serve does)
+ENTRYPOINT ["gunicorn"]
+CMD ["--bind", ":8000", "--workers=2", "--threads=2", "config.wsgi:application"]

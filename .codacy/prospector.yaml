@@ -1,25 +1,24 @@
 output-format: json
-
-strictness: medium
+strictness: high
 test-warnings: false
 doc-warnings: true
 member-warnings: false
 uses:
- - django
+- django
 autodetect: true
-max-line-length: 300
+max-line-length: 500
 ignore-paths:
-  - docs
+- docs
 
 ignore-patterns:
-  - .venv/*
-  - .*
+- .venv/*
+- .*
 vulture:
   run: false
 
 pylint:
-    load-plugins:
-      - pylint_django
+  load-plugins:
+  - pylint_django
 
 mypy:
   run: true

@@ -28,11 +28,12 @@ autoflake = "^2.3.1"
 django-storages = "^1.14.6"
 whitenoise = "^6.9.0"
 boto3 = "^1.38.15"
-kolo = "^2.40.0"
 django-redis = "^5.4.0"
 django-health-check = "^3.18.3"
 psutil = "^7.0.0"
 django-cors-headers = "^4.7.0"
+gunicorn = "^23.0.0"
+prospector = {extras = ["with-everything"], version = "^1.17.1"}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -49,5 +50,13 @@ pylint-django = "^2.6.1"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.requires-plugins]
-poetry-plugin-export = ">=1.8"
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "skip"
+disallow_any_generics = true
+disallow_untyped_defs = true
+implicit_optional = true
+force_uppercase_builtins = true
+
+[tool.pylint.MASTER]
+load-plugins = ["pylint_django"]
