@@ -55,6 +55,6 @@
           run: | 
                (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
 
-                export DJANGO_CONFIGURATION=Development && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
-                task test
+                export DJANGO_CONFIGURATION=Grading && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
+                doppler run -- python3 run/manage.py test 
   
