@@ -19,7 +19,6 @@ drf-redesign = "^0.5.0"
 mysqlclient = "^2.2.7"
 drf-spectacular = {extras = ["sidecar"], version = "^0.28.0"}
 djoser = "^2.3.1"
-pytest-django = "^4.11.1"
 django-crispy-forms = "^2.3"
 six = "^1.17.0"
 django-filter = "^25.1"
@@ -33,7 +32,6 @@ django-health-check = "^3.18.3"
 psutil = "^7.0.0"
 django-cors-headers = "^4.7.0"
 gunicorn = "^23.0.0"
-prospector = {extras = ["with-everything"], version = "^1.17.1"}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -45,6 +43,9 @@ astroid = "^3.3.9"
 doppler-env = "^0.3.1"
 pylint = "^3.3.7"
 pylint-django = "^2.6.1"
+prospector = {extras = ["with-everything"], version = "^1.17.1"}
+pytest-django = "^4.11.1"
+
 
 [build-system]
 requires = ["poetry-core"]

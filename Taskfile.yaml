@@ -38,8 +38,9 @@ tasks:
   freeze:
     desc: Pin current dependencies
     cmds:
-    - doppler run  -- poetry export --without dev,test --without-hashes --without-urls > ./requirements/base.txt
-    - doppler run  -- poetry export  --without-hashes --without-urls > ./requirements/dev.txt
+    - doppler run  -- poetry export --without dev --without-hashes --without-urls > ./requirements/base.txt
+    - doppler run  -- poetry export --only dev --without-hashes --without-urls > ./requirements/dev.txt
+    - defer: "{{if .EXIT_CODE}} echo 'Failed to Pin Dependencies' {{else}} echo 'Successfully Pinned Dependecies' {{end}}"
     generates:
     - ./requirements/dev.txt
     - ./requirements/base.txt
