@@ -1,4 +1,4 @@
--r requirements/base.txt
+-r base.txt
 asgiref==3.8.1 ; python_version >= "3.12" and python_version < "4.0"
 astroid==3.3.9 ; python_version >= "3.12" and python_version < "4.0"
 autoflake==2.3.1 ; python_version >= "3.12" and python_version < "4.0"
