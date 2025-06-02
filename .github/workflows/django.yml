@@ -25,10 +25,11 @@
             export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }}
 
 
-        - name: Set up Python ${{ matrix.python-version }}
+        - name: Set up Python 3.13
           uses: actions/setup-python@v5
           with:
-            python-version: ${{ matrix.python-version }}
+            python-version: '3.13t'
+            cache: 'poetry'
         - name: Install Dependencies
           run: |
             pip install -r requirements/dev.txt
