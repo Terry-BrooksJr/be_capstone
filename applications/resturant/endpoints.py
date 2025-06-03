@@ -458,13 +458,22 @@ class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):
     serializer_class = MenuSerializer
     permission_classes = [IsAuthenticated]
 
-    def post(self, request):
+class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):
+    """Provides endpoint for creating menu items."""
+
+    queryset = Menu.objects.all()
+    primary_model = Menu
+    serializer_class = MenuSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        """Create a new menu item."""
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(
-            serializer.data, status=status.HTTP_201_CREATED, headers=headers
+            serializer.data, status=status.HTTP_201_CREATED, headers=headers,
         )
 
 
