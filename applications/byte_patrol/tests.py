@@ -20,14 +20,13 @@ class CustomClientHandler(ClientHandler):
     Custom ClientHandler that ensures middleware is properly initialized and processed.
     """
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
         # Ensure middleware is loaded correctly
         logger.debug("CustomClientHandler initialized with middleware:")
         if self._middleware_chain:
             for middleware in self._middleware_chain:
                 logger.debug(f"  - {middleware.__class__.__name__}")
-
     def load_middleware(self):
         """Override load_middleware to ensure middleware is properly initialized"""
         super().load_middleware()
