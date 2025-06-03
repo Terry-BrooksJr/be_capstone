@@ -1,5 +1,9 @@
-name: Codacy Coverage Reporter\
+name: Codacy Coverage Reporter
 on: "push"
+
+permissions:
+  contents: read
+  pull-requests: write
 jobs:
   codacy-coverage-reporter:
     runs-on: ubuntu-latest
@@ -11,3 +15,4 @@ jobs:
         with:
           api-token: ${{ secrets.CODACY_API_TOKEN }}
           coverage-reports: coverage.xml
+          final: true
