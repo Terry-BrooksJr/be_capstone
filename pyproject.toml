@@ -62,3 +62,8 @@ force_uppercase_builtins = true
 
 [tool.pylint.MASTER]
 load-plugins = ["pylint_django"]
+
+
+[tool.pyrefly]
+replace_imports_with_any = ['*']
+follow_imports = "skip"

@@ -312,7 +312,7 @@ class BookingSerializer(DateTimeParsingMixin, serializers.ModelSerializer):
             )
         ]
 
-    @extend_schema_field(OpenApiTypes.TIME,"time")
+    @extend_schema_field(OpenApiTypes.TIME, "time")
     def get_time(self, obj):
         """Returns the time portion of the date field in a human-readable 12-hour format.
 

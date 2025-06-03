@@ -24,6 +24,23 @@ class IPRestrictionMiddleware(MiddlewareMixin):
         self.get_response = get_response
         super().__init__(get_response)
 
+    def __call__(self, request):
+        """
+        Custom __call__ implementation to ensure process_request responses are returned.
+        """
+        # Call process_request first
+        response = self.process_request(request)
+
+        # If process_request returned a response, return it directly
+        if response is not None:
+            logger.debug(
+                f"BytePatrol: Returning early response from process_request: {response.status_code}"
+            )
+            return response
+
+        # Otherwise, call the next middleware/view
+        return self.get_response(request) if self.get_response is not None else None
+
     def _get_client_ip(self, request):
         """
         Get the client's IP address from request headers or REMOTE_ADDR.
@@ -50,7 +67,7 @@ class IPRestrictionMiddleware(MiddlewareMixin):
         # If path doesn't start with '/', add it for matching
         normalized_path = path
         if not normalized_path.startswith("/"):
-            normalized_path = "/" + normalized_path
+            normalized_path = f"/{normalized_path}"
         logger.debug(f"BytePatrol: Normalized path: '{normalized_path}'")
 
         # Also try without the leading slash

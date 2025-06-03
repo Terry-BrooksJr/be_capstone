@@ -21,7 +21,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     libbz2-dev \
     libffi-dev \
-    libffi-dev \
     liblzma-dev \
     libncurses5-dev \
     libreadline-dev \
@@ -55,11 +54,9 @@ RUN --mount=type=cache,target=/root/.cache/pypoetry \
     # Install the dependencies from the exported requirements file
     pip install --prefix=/install --no-cache-dir -r /tmp/requirements.txt && \
     # Install mysqlclient with the required build flags
-    pip install --prefix=/install mysqlclient==2.2.7 --global-option=build_ext \
-    --global-option="-I/usr/include/mysql" \
-    --global-option="-L/usr/lib/x86_64-linux-gnu" \
-    --global-option="-lmysqlclient"
-
+    MYSQLCLIENT_CFLAGS="-I/usr/include/mysql" \
+    MYSQLCLIENT_LDFLAGS="-L/usr/lib/x86_64-linux-gnu -lmysqlclient" \
+    pip install --prefix=/install mysqlclient==2.2.7
 
 
 
@@ -94,15 +91,20 @@ WORKDIR /app
 COPY --chown=1000:1000 AIVEN.pem /app/AIVEN_SSL.pem
 COPY --chown=1000:1000 . /app/
 
+# Set shell options for safer execution  
+SHELL ["/bin/bash", "-o", "pipefail", "-c"] 
 
 # Copy Doppler CLI install script
 RUN (curl -sLf --retry 3 --tlsv1.2 --proto "=https" https://packages.doppler.com/public/cli/install.sh) | sh -s -- --no-install-cli-version-file --install-path /install/bin
 # Install Task binary
-RUN curl -sSL https://taskfile.dev/install.sh | sh -s -- -d -b /install/bin
+RUN RUN set -o pipefail && \ 
+    curl -sSL https://taskfile.dev/install.sh | sh -s -- -d -b /install/bin
+EXPOSE 7575
 # Create non-root user
 RUN groupadd -r appuser && useradd -m -r -g appuser appuser
 USER appuser
-
+HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \  
+    CMD curl -f http://localhost:7575/checkup || exit 1 
 # Set the entrypoint to run gunicorn directly (matching what task:serve does)
 ENTRYPOINT ["gunicorn"]
-CMD ["--bind", ":8000", "--workers=2", "--threads=2", "config.wsgi:application"]
+CMD ["--bind", ":7575", "--workers=2", "--threads=2", "config.wsgi:application"]

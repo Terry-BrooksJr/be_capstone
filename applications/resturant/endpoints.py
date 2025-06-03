@@ -18,13 +18,30 @@ from utils.cache import CachedResponseMixin
 
 
 def handler_page_not_found_404(request, exception):
+    """Handles 404 page not found errors.
+
+    Logs a warning and renders the custom 404 error page.
+    """
     logger.warning(f"Page Not Found: {request.path} - Error{exception}")
     return render(request, "404.html", status=404)
 
 
 def handler_server_error_500(request):
+    """Handles 500 internal server errors.
+
+    Logs an error and renders the custom 500 error page.
+    """
     logger.error(f"Server Error: {request.path}")
     return render(request, "500.html", status=500)
+
+
+def handle_unauthorized_error_403(request, exception):
+    """Handles 403 unauthorized access errors.
+
+    Logs a warning and renders the custom 403 error page.
+    """
+    logger.warning(f"Unauthorized Access: {request.path} - {exception}")
+    return render(request, "403.html", status=403)
 
 
 class Index(CachedResponseMixin, TemplateView):
@@ -84,45 +101,46 @@ class BookingListView(CachedResponseMixin, generics.ListAPIView):
     ordering_fields = ["date", "no_of_guests"]
     permission_classes = [IsAuthenticated]
 
+
 @extend_schema(
-        summary="Create a Booking",
-        tags=['Reservations'],
-        description="Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.",
-        request=BookingSerializer,
-        # auth=["TokenAuth"],
-        examples=[
-            OpenApiExample(
-                "Create Booking POST body Example",
-                description="Example POST Body  for creating a booking",
-                value={
-                    "name": "Sirus Black",
-                    "no_of_guests": 4,
-                    "date": "2025-04-03",
-                    "time": "11:00AM",
+    summary="Create a Booking",
+    tags=["Reservations"],
+    description="Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.",
+    request=BookingSerializer,
+    # auth=["TokenAuth"],
+    examples=[
+        OpenApiExample(
+            "Create Booking POST body Example",
+            description="Example POST Body  for creating a booking",
+            value={
+                "name": "Sirus Black",
+                "no_of_guests": 4,
+                "date": "2025-04-03",
+                "time": "11:00AM",
+            },
+            request_only=True,
+            response_only=False,
+            status_codes=[status.HTTP_201_CREATED],
+        ),
+        OpenApiExample(
+            "Create Booking Response Payload Example",
+            description="Example payload for creating a booking",
+            value={
+                "status": "booked",
+                "message": "We look forward to seeing your party of 7 on 05-11-2045 at 10:55 PM",
+                "details": {
+                    "booking_id": 69,
+                    "name": "Pacocha, Rhoda",
+                    "no_of_guests": 7,
+                    "date": "05-11-2045",
+                    "time": "10:55 PM",
                 },
-                request_only=True,
-                response_only=False,
-                status_codes=[status.HTTP_201_CREATED],
-            ),
-            OpenApiExample(
-                "Create Booking Response Payload Example",
-                description="Example payload for creating a booking",
-                value={
-                    "status": "booked",
-                    "message": "We look forward to seeing your party of 7 on 05-11-2045 at 10:55 PM",
-                    "details": {
-                        "booking_id": 69,
-                        "name": "Pacocha, Rhoda",
-                        "no_of_guests": 7,
-                        "date": "05-11-2045",
-                        "time": "10:55 PM",
-                    },
-                },
-                request_only=False,
-                response_only=True,
-            ),
-        ],
-    )
+            },
+            request_only=False,
+            response_only=True,
+        ),
+    ],
+)
 class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):
     """Provides endpoint for creating bookings."""
 
@@ -130,7 +148,6 @@ class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):
     primary_model = Booking
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
-
 
     def create(self, request, *args, **kwargs):
         if request.user.is_authenticated:

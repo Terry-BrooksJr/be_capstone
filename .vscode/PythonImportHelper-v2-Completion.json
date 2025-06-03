@@ -52,6 +52,24 @@
         "documentation": {}
     },
     {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
         "label": "IPRestrictionMiddleware",
         "importPath": "byte_patrol.middleware",
         "description": "byte_patrol.middleware",
@@ -238,12 +256,11 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -375,6 +392,14 @@
         "documentation": {}
     },
     {
+        "label": "logger",
+        "importPath": "loguru",
+        "description": "loguru",
+        "isExtraImport": true,
+        "detail": "loguru",
+        "documentation": {}
+    },
+    {
         "label": "ValidationError",
         "importPath": "django.core.exceptions",
         "description": "django.core.exceptions",
@@ -431,51 +456,11 @@
         "documentation": {}
     },
     {
-        "label": "Client",
-        "importPath": "django.test",
-        "description": "django.test",
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "override_settings",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "RequestFactory",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -540,6 +525,112 @@
         "description": "django.urls",
         "isExtraImport": true,
         "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "environ",
+        "importPath": "os",
+        "description": "os",
+        "isExtraImport": true,
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Client",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "override_settings",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "RequestFactory",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "ClientHandler",
+        "importPath": "django.test.client",
+        "description": "django.test.client",
+        "isExtraImport": true,
+        "detail": "django.test.client",
+        "documentation": {}
+    },
+    {
+        "label": "RequestFactory",
+        "importPath": "django.test.client",
+        "description": "django.test.client",
+        "isExtraImport": true,
+        "detail": "django.test.client",
+        "documentation": {}
+    },
+    {
+        "label": "testing_protected",
+        "importPath": "applications.byte_patrol.test_urls",
+        "description": "applications.byte_patrol.test_urls",
+        "isExtraImport": true,
+        "detail": "applications.byte_patrol.test_urls",
+        "documentation": {}
+    },
+    {
+        "label": "testing_unprotected",
+        "importPath": "applications.byte_patrol.test_urls",
+        "description": "applications.byte_patrol.test_urls",
+        "isExtraImport": true,
+        "detail": "applications.byte_patrol.test_urls",
         "documentation": {}
     },
     {
@@ -633,6 +724,14 @@
     },
     {
         "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
         "importPath": "typing",
         "description": "typing",
         "isExtraImport": true,
@@ -1248,23 +1347,6 @@
         "documentation": {}
     },
     {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "environ",
-        "importPath": "os",
-        "description": "os",
-        "isExtraImport": true,
-        "detail": "os",
-        "documentation": {}
-    },
-    {
         "label": "get_asgi_application",
         "importPath": "django.core.asgi",
         "description": "django.core.asgi",
@@ -1315,6 +1397,14 @@
     },
     {
         "label": "Index",
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
+        "isExtraImport": true,
+        "detail": "applications.resturant.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "handle_unauthorized_error_403",
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
         "isExtraImport": true,
@@ -1411,20 +1501,39 @@
         "documentation": {}
     },
     {
-        "label": "has",
-        "importPath": "zmq",
-        "description": "zmq",
-        "isExtraImport": true,
-        "detail": "zmq",
-        "documentation": {}
-    },
-    {
         "label": "main",
         "kind": 2,
         "importPath": ".venv.bin.jp",
         "description": ".venv.bin.jp",
         "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
         "detail": ".venv.bin.jp",
+        "documentation": {}
+    },
+    {
+        "label": "version_pattern",
+        "kind": 5,
+        "importPath": ".venv.bin.publish",
+        "description": ".venv.bin.publish",
+        "peekOfCode": "version_pattern = r'\\d\\.\\d\\.\\d'\nparser = argparse.ArgumentParser()\nparser.add_argument('version', help='a SEMVER string X.Y.Z')\nargs = parser.parse_args()\nif not re.match(version_pattern, args.version):\n    print('argument must be SEMVER string in format X.Y.Z')\nelse:\n    with open('setup.py') as fp:\n        old_setupfile = fp.read()\n    new_setupfile = re.sub(f\"version='{version_pattern}'\",",
+        "detail": ".venv.bin.publish",
+        "documentation": {}
+    },
+    {
+        "label": "parser",
+        "kind": 5,
+        "importPath": ".venv.bin.publish",
+        "description": ".venv.bin.publish",
+        "peekOfCode": "parser = argparse.ArgumentParser()\nparser.add_argument('version', help='a SEMVER string X.Y.Z')\nargs = parser.parse_args()\nif not re.match(version_pattern, args.version):\n    print('argument must be SEMVER string in format X.Y.Z')\nelse:\n    with open('setup.py') as fp:\n        old_setupfile = fp.read()\n    new_setupfile = re.sub(f\"version='{version_pattern}'\",\n                           f\"version='{args.version}'\", old_setupfile)",
+        "detail": ".venv.bin.publish",
+        "documentation": {}
+    },
+    {
+        "label": "args",
+        "kind": 5,
+        "importPath": ".venv.bin.publish",
+        "description": ".venv.bin.publish",
+        "peekOfCode": "args = parser.parse_args()\nif not re.match(version_pattern, args.version):\n    print('argument must be SEMVER string in format X.Y.Z')\nelse:\n    with open('setup.py') as fp:\n        old_setupfile = fp.read()\n    new_setupfile = re.sub(f\"version='{version_pattern}'\",\n                           f\"version='{args.version}'\", old_setupfile)\n    with open('setup.py', 'w') as fp:\n        print(new_setupfile, file=fp)",
+        "detail": ".venv.bin.publish",
         "documentation": {}
     },
     {
@@ -1509,29 +1618,56 @@
         "documentation": {}
     },
     {
-        "label": "BytePatrolAccessTests",
-        "kind": 6,
-        "importPath": "applications.byte_patrol.tests",
-        "description": "applications.byte_patrol.tests",
-        "peekOfCode": "class BytePatrolAccessTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        # Example: set up allowed and disallowed IPs\n        self.allowed_ip = \"192.168.1.1\"\n        self.disallowed_ip = \"10.0.0.1\"\n        # Example protected and unprotected paths\n        self.protected_path = \"/byte_patrol/protected/\"\n        self.unprotected_path = \"/byte_patrol/public/\"\n    @override_settings(BYTE_PATROL_ALLOWED_IPS=[\"192.168.1.1\"])",
-        "detail": "applications.byte_patrol.tests",
-        "documentation": {}
-    },
-    {
         "label": "testing_unprotected",
         "kind": 2,
-        "importPath": "applications.byte_patrol.tests",
-        "description": "applications.byte_patrol.tests",
-        "peekOfCode": "def testing_unprotected(request):\n    return HttpResponse(\"This is an unprotected view.\", status=200)\ndef testing_protected(request):\n    return HttpResponse(\"This is a protected view.\", status=200)\nclass BytePatrolAccessTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        # Example: set up allowed and disallowed IPs\n        self.allowed_ip = \"192.168.1.1\"\n        self.disallowed_ip = \"10.0.0.1\"",
-        "detail": "applications.byte_patrol.tests",
+        "importPath": "applications.byte_patrol.test_urls",
+        "description": "applications.byte_patrol.test_urls",
+        "peekOfCode": "def testing_unprotected(request):\n    return HttpResponse(\"This is an unprotected view.\", status=200)\ndef testing_protected(request):\n    return HttpResponse(\"This is a protected view.\", status=200)\n# Set up test URLs for BytePatrol tests\nurlpatterns = [\n    path(\"byte_patrol/protected/\", testing_protected, name=\"protected\"),\n    path(\"byte_patrol/public/\", testing_unprotected, name=\"unprotected\"),\n]",
+        "detail": "applications.byte_patrol.test_urls",
         "documentation": {}
     },
     {
         "label": "testing_protected",
         "kind": 2,
+        "importPath": "applications.byte_patrol.test_urls",
+        "description": "applications.byte_patrol.test_urls",
+        "peekOfCode": "def testing_protected(request):\n    return HttpResponse(\"This is a protected view.\", status=200)\n# Set up test URLs for BytePatrol tests\nurlpatterns = [\n    path(\"byte_patrol/protected/\", testing_protected, name=\"protected\"),\n    path(\"byte_patrol/public/\", testing_unprotected, name=\"unprotected\"),\n]",
+        "detail": "applications.byte_patrol.test_urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "applications.byte_patrol.test_urls",
+        "description": "applications.byte_patrol.test_urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"byte_patrol/protected/\", testing_protected, name=\"protected\"),\n    path(\"byte_patrol/public/\", testing_unprotected, name=\"unprotected\"),\n]",
+        "detail": "applications.byte_patrol.test_urls",
+        "documentation": {}
+    },
+    {
+        "label": "CustomClientHandler",
+        "kind": 6,
         "importPath": "applications.byte_patrol.tests",
         "description": "applications.byte_patrol.tests",
-        "peekOfCode": "def testing_protected(request):\n    return HttpResponse(\"This is a protected view.\", status=200)\nclass BytePatrolAccessTests(TestCase):\n    def setUp(self):\n        self.client = Client()\n        # Example: set up allowed and disallowed IPs\n        self.allowed_ip = \"192.168.1.1\"\n        self.disallowed_ip = \"10.0.0.1\"\n        # Example protected and unprotected paths\n        self.protected_path = \"/byte_patrol/protected/\"",
+        "peekOfCode": "class CustomClientHandler(ClientHandler):\n    \"\"\"\n    Custom ClientHandler that ensures middleware is properly initialized and processed.\n    \"\"\"\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        # Ensure middleware is loaded correctly\n        logger.debug(\"CustomClientHandler initialized with middleware:\")\n        if self._middleware_chain:\n            for middleware in self._middleware_chain:",
+        "detail": "applications.byte_patrol.tests",
+        "documentation": {}
+    },
+    {
+        "label": "CustomClient",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "peekOfCode": "class CustomClient(Client):\n    \"\"\"Custom test client that uses our CustomClientHandler\"\"\"\n    def __init__(self, *args, **kwargs):\n        handler = CustomClientHandler()\n        super().__init__(handler, *args, **kwargs)\nclass BytePatrolAccessTests(TestCase):\n    # Use our custom client\n    client_class = CustomClient\n    @classmethod\n    def setUpClass(cls):",
+        "detail": "applications.byte_patrol.tests",
+        "documentation": {}
+    },
+    {
+        "label": "BytePatrolAccessTests",
+        "kind": 6,
+        "importPath": "applications.byte_patrol.tests",
+        "description": "applications.byte_patrol.tests",
+        "peekOfCode": "class BytePatrolAccessTests(TestCase):\n    # Use our custom client\n    client_class = CustomClient\n    @classmethod\n    def setUpClass(cls):\n        super().setUpClass()\n        # Enable debug logging\n        logging.basicConfig(level=logging.DEBUG)\n    def setUp(self):\n        # Custom client is automatically created by TestCase due to client_class",
         "detail": "applications.byte_patrol.tests",
         "documentation": {}
     },
@@ -1711,7 +1847,7 @@
         "kind": 6,
         "importPath": "applications.resturant.tests.test_ssl",
         "description": "applications.resturant.tests.test_ssl",
-        "peekOfCode": "class SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def parse_json_response(self, response):\n        return json.loads(response.content.decode('utf-8'))\n    def test_is_secure_with_https_forwarded_proto(self):\n        request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='https')\n        request.META['wsgi.url_scheme'] = 'http'\n        response = secure_check_view(request)\n        data = self.parse_json_response(response)",
+        "peekOfCode": "class SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def parse_json_response(self, response):\n        return json.loads(response.content.decode(\"utf-8\"))\n    def test_is_secure_with_https_forwarded_proto(self):\n        request = self.factory.get(\"/\", HTTP_X_FORWARDED_PROTO=\"https\")\n        request.META[\"wsgi.url_scheme\"] = \"http\"\n        response = secure_check_view(request)\n        data = self.parse_json_response(response)",
         "detail": "applications.resturant.tests.test_ssl",
         "documentation": {}
     },
@@ -1720,7 +1856,7 @@
         "kind": 2,
         "importPath": "applications.resturant.tests.test_ssl",
         "description": "applications.resturant.tests.test_ssl",
-        "peekOfCode": "def secure_check_view(request):\n    return JsonResponse({\n        'is_secure': request.is_secure(),\n        'X-Forwarded-Proto': request.META.get('HTTP_X_FORWARDED_PROTO'),\n    })\nclass SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def parse_json_response(self, response):\n        return json.loads(response.content.decode('utf-8'))",
+        "peekOfCode": "def secure_check_view(request):\n    return JsonResponse(\n        {\n            \"is_secure\": request.is_secure(),\n            \"X-Forwarded-Proto\": request.META.get(\"HTTP_X_FORWARDED_PROTO\"),\n        }\n    )\nclass SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()",
         "detail": "applications.resturant.tests.test_ssl",
         "documentation": {}
     },
@@ -1801,7 +1937,7 @@
         "kind": 2,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    logger.warning(f\"Page Not Found: {request.path} - Error{exception}\")\n    return render(request, \"404.html\", status=404)\ndef handler_server_error_500(request):\n    logger.error(f\"Server Error: {request.path}\")\n    return render(request, \"500.html\", status=500)\nclass Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"",
+        "peekOfCode": "def handler_page_not_found_404(request, exception):\n    \"\"\"Handles 404 page not found errors.\n    Logs a warning and renders the custom 404 error page.\n    \"\"\"\n    logger.warning(f\"Page Not Found: {request.path} - Error{exception}\")\n    return render(request, \"404.html\", status=404)\ndef handler_server_error_500(request):\n    \"\"\"Handles 500 internal server errors.\n    Logs an error and renders the custom 500 error page.\n    \"\"\"",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1810,7 +1946,16 @@
         "kind": 2,
         "importPath": "applications.resturant.endpoints",
         "description": "applications.resturant.endpoints",
-        "peekOfCode": "def handler_server_error_500(request):\n    logger.error(f\"Server Error: {request.path}\")\n    return render(request, \"500.html\", status=500)\nclass Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"\n    primary_model = None\n    template_name = \"index.html\"\n# ----- BOOKING VIEWS -----",
+        "peekOfCode": "def handler_server_error_500(request):\n    \"\"\"Handles 500 internal server errors.\n    Logs an error and renders the custom 500 error page.\n    \"\"\"\n    logger.error(f\"Server Error: {request.path}\")\n    return render(request, \"500.html\", status=500)\ndef handle_unauthorized_error_403(request, exception):\n    \"\"\"Handles 403 unauthorized access errors.\n    Logs a warning and renders the custom 403 error page.\n    \"\"\"",
+        "detail": "applications.resturant.endpoints",
+        "documentation": {}
+    },
+    {
+        "label": "handle_unauthorized_error_403",
+        "kind": 2,
+        "importPath": "applications.resturant.endpoints",
+        "description": "applications.resturant.endpoints",
+        "peekOfCode": "def handle_unauthorized_error_403(request, exception):\n    \"\"\"Handles 403 unauthorized access errors.\n    Logs a warning and renders the custom 403 error page.\n    \"\"\"\n    logger.warning(f\"Unauthorized Access: {request.path} - {exception}\")\n    return render(request, \"403.html\", status=403)\nclass Index(CachedResponseMixin, TemplateView):\n    \"\"\"A view for rendering the index template.\n    This view simply renders the 'index.html' template.\n    \"\"\"",
         "detail": "applications.resturant.endpoints",
         "documentation": {}
     },
@@ -1918,7 +2063,7 @@
         "kind": 2,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "def get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in site.getsitepackages() + [site.getusersitepackages()]:\n        forms_templates = os.path.join(site_dir, \"django\", \"forms\", \"templates\")",
+        "peekOfCode": "def get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in (*site.getsitepackages(), site.getusersitepackages()):\n        forms_templates = os.path.join(site_dir, \"django\", \"forms\", \"templates\")",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1927,7 +2072,7 @@
         "kind": 5,
         "importPath": "config.settings",
         "description": "config.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\ndef get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in site.getsitepackages() + [site.getusersitepackages()]:",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\ndef get_django_forms_templates_path() -> str | None:\n    \"\"\"Finds the path to the Django forms templates directory in site-packages.\n    This function searches through all known site-packages directories to locate the directory containing Django's form templates.\n    Falls back to searching sys.path for site-packages if not found.\n    Returns:\n        str or None: The path to the forms templates directory if found, otherwise None.\n    \"\"\"\n    # Try all site-packages directories from the site module\n    for site_dir in (*site.getsitepackages(), site.getusersitepackages()):",
         "detail": "config.settings",
         "documentation": {}
     },
@@ -1945,7 +2090,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "handler404 = handler_page_not_found_404\nhandler500 = handler_server_error_500\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),",
+        "peekOfCode": "handler404 = handler_page_not_found_404\nhandler500 = handler_server_error_500\nhandler403 = handle_unauthorized_error_403\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -1954,7 +2099,16 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "handler500 = handler_server_error_500\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n    path(\"byte_patrol/\", include(\"applications.byte_patrol.urls\")),",
+        "peekOfCode": "handler500 = handler_server_error_500\nhandler403 = handle_unauthorized_error_403\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),",
+        "detail": "config.urls",
+        "documentation": {}
+    },
+    {
+        "label": "handler403",
+        "kind": 5,
+        "importPath": "config.urls",
+        "description": "config.urls",
+        "peekOfCode": "handler403 = handle_unauthorized_error_403\nurlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n    path(\"byte_patrol/\", include(\"applications.byte_patrol.urls\")),",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -1963,7 +2117,7 @@
         "kind": 5,
         "importPath": "config.urls",
         "description": "config.urls",
-        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n    path(\"byte_patrol/\", include(\"applications.byte_patrol.urls\")),\n] + debug_toolbar_urls()",
+        "peekOfCode": "urlpatterns = [\n    re_path(r\"^$\", Index.as_view(), name=\"index\"),\n    path(\"admin/\", admin.site.urls),\n    path(\"restaurant/\", include(\"applications.resturant.urls\")),\n    path(\"\", include(\"django_prometheus.urls\")),\n    path(\"auth/\", include(\"djoser.urls\")),\n    path(\"auth/\", include(\"djoser.urls.authtoken\")),\n    re_path(r\"^checkup/\", include(\"health_check.urls\")),\n    path(\"byte_patrol/\", include(\"applications.byte_patrol.urls\")),\n    *debug_toolbar_urls(),",
         "detail": "config.urls",
         "documentation": {}
     },
@@ -2000,6 +2154,15 @@
         "importPath": "run.manage",
         "description": "run.manage",
         "peekOfCode": "def main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"config.settings\")\n    os.environ.setdefault(\"DJANGO_CONFIGURATION\", \"Grading\")\n    from configurations.management import execute_from_command_line\n    try:\n        execute_from_command_line(sys.argv)\n    except ImportError as exc:\n        raise ImportError(\n            \"Couldn't import Django. Are you sure it's installed and \"",
+        "detail": "run.manage",
+        "documentation": {}
+    },
+    {
+        "label": "project_root",
+        "kind": 5,
+        "importPath": "run.manage",
+        "description": "run.manage",
+        "peekOfCode": "project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\nsys.path.insert(0, project_root)\ndef main():\n    \"\"\"Run administrative tasks.\"\"\"\n    os.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"config.settings\")\n    os.environ.setdefault(\"DJANGO_CONFIGURATION\", \"Grading\")\n    from configurations.management import execute_from_command_line\n    try:\n        execute_from_command_line(sys.argv)\n    except ImportError as exc:",
         "detail": "run.manage",
         "documentation": {}
     },

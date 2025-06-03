@@ -10,6 +10,7 @@ import site
 import sys
 from os import environ as environment_var
 from pathlib import Path
+from typing import List
 
 from configurations import Configuration
 from django.http import HttpResponseForbidden
@@ -27,7 +28,7 @@ def get_django_forms_templates_path() -> str | None:
         str or None: The path to the forms templates directory if found, otherwise None.
     """
     # Try all site-packages directories from the site module
-    for site_dir in site.getsitepackages() + [site.getusersitepackages()]:
+    for site_dir in (*site.getsitepackages(), site.getusersitepackages()):
         forms_templates = os.path.join(site_dir, "django", "forms", "templates")
         if os.path.isdir(forms_templates):
             return forms_templates
@@ -60,8 +61,6 @@ class Base(Configuration):
     ]
 
     CORS_ALLOW_ALL_ORIGINS = True
-
-    STATICFILES_STORAGE = "utils.backends.StaticStorage"
 
     TEMPLATES = [
         {
@@ -180,7 +179,7 @@ class Base(Configuration):
     }
 
     @staticmethod
-    def _get_env_list(var_name, default):
+    def _get_env_list(var_name: str, default: List[str] = []) -> List[str]:
         value = environment_var.get(var_name)
         if value is not None:
             return [item.strip() for item in value.split(",") if item.strip()]
@@ -188,7 +187,7 @@ class Base(Configuration):
 
     # BYTE_PATROL_ALLOWED_IPS = _get_env_list(
     #     "BYTE_PATROL_ALLOWED_IPS", ["127.0.0.1", "69.255.206.86"])
-    BYTE_PATROL_ALLOWED_IPS = []
+    BYTE_PATROL_ALLOWED_IPS = ["76.85.43.21"]
 
     BYTE_PATROL_PROTECTED_PATHS = _get_env_list(
         "BYTE_PATROL_PROTECTED_PATHS",

@@ -15,7 +15,6 @@ from prometheus_client import Counter
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
-from zmq import has
 
 VIEW_CACHE_TTL = int(os.environ["VIEW_CACHE_TTL"])
 
@@ -37,9 +36,7 @@ class Metrics:
         if cls._instance is None:
             cls._instance = super(Metrics, cls).__new__(cls)
         return cls._instance
-    
-    
-    
+
     def __init__(self):
         if hasattr(self, "initialized"):
             return
@@ -66,7 +63,7 @@ class Metrics:
 
         Args:
             model(str): String representation of the name the database model being cached.
-            
+
             cache_event_type(str: The type of cache interaction ('hit', 'miss', or 'eviction').
 
         Returns:
@@ -167,13 +164,17 @@ class CachedResponseMixin:
             logger.debug(
                 f"Cache Hit for {self.primary_model.__name__} - Cache Key: {cache_key}"
             )
-            metrics.increment_cache(model=self.primary_model.__name__, cache_event_type="hit")
+            metrics.increment_cache(
+                model=self.primary_model.__name__, cache_event_type="hit"
+            )
             return Response(cached_data, status=status.HTTP_200_OK)
         else:
             logger.debug(
                 f"Cache Miss for {self.primary_model.__name__}  - Cache Key: {cache_key}"
             )
-            metrics.increment_cache(model=self.primary_model.__name__, cache_event_type="miss")
+            metrics.increment_cache(
+                model=self.primary_model.__name__, cache_event_type="miss"
+            )
             return None
 
     def cache_response(self, cache_key, data):

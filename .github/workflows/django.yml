@@ -37,12 +37,15 @@
             doppler-config: "dev"
             doppler-project: "little_lemon"
             inject-env-vars: true
+        - name: Install Doppler CLI
+          run: |
+            (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
+        - name: Install Dependencies
+          run: |
+            python -m venv .venv
+            source .venv/bin/activate
+            pip install -r requirements/dev.txt
         - name: Run Tests
-          run: | 
-               (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
-
-                python -m venv .venv && source .venv/bin/activate && pip install -r requirements/dev.txt && 
-                
-                source .venv/bin/activate && doppler -t ${{ secrets.DOPPLER_TOKEN }} run -- python run/manage.py test 
-  
-  
+          run: |
+            source .venv/bin/activate
+            doppler -t ${{ secrets.DOPPLER_TOKEN }} run -- python run/manage.py test
