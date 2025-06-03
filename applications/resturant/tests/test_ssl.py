@@ -1,28 +1,55 @@
+import json
 from django.test import TestCase, RequestFactory
 from django.http import JsonResponse
 
-# Your view (can be removed if just used for testing)
+
+# Simple test-only view to check secure status
 def secure_check_view(request):
     return JsonResponse({
         'is_secure': request.is_secure(),
         'X-Forwarded-Proto': request.META.get('HTTP_X_FORWARDED_PROTO'),
     })
 
+
 class SecureRequestTests(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
 
-    def test_secure_proxy_ssl_header(self):
-        # Simulate a request with X-Forwarded-Proto set to 'https'
+    def parse_json_response(self, response):
+        return json.loads(response.content.decode('utf-8'))
+
+    def test_is_secure_with_https_forwarded_proto(self):
         request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='https')
-
-        # Add wsgi.url_scheme manually (RequestFactory doesn't simulate full WSGI)
-        request.META['wsgi.url_scheme'] = 'http'  # Default scheme before proxy
-
-        # Now call the view
+        request.META['wsgi.url_scheme'] = 'http'
         response = secure_check_view(request)
-        data = response.json()
+        data = self.parse_json_response(response)
 
-        # Assertions
-        assert data['X-Forwarded-Proto'] == 'https', "X-Forwarded-Proto header not set correctly"
-        assert data['is_secure'] is True, "Request not marked as secure despite header"
+        self.assertEqual(data['X-Forwarded-Proto'], 'https')
+        self.assertTrue(data['is_secure'], msg="Expected secure request with 'https' header")
+
+    def test_is_secure_with_no_forwarded_proto(self):
+        request = self.factory.get('/')
+        request.META['wsgi.url_scheme'] = 'http'
+        response = secure_check_view(request)
+        data = self.parse_json_response(response)
+
+        self.assertIsNone(data['X-Forwarded-Proto'])
+        self.assertFalse(data['is_secure'], msg="Expected insecure request without X-Forwarded-Proto header")
+
+    def test_is_secure_with_http_forwarded_proto(self):
+        request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='http')
+        request.META['wsgi.url_scheme'] = 'http'
+        response = secure_check_view(request)
+        data = self.parse_json_response(response)
+
+        self.assertEqual(data['X-Forwarded-Proto'], 'http')
+        self.assertFalse(data['is_secure'], msg="Expected insecure request with 'http' in X-Forwarded-Proto")
+
+    def test_is_secure_with_invalid_forwarded_proto(self):
+        request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='ftp')
+        request.META['wsgi.url_scheme'] = 'http'
+        response = secure_check_view(request)
+        data = self.parse_json_response(response)
+
+        self.assertEqual(data['X-Forwarded-Proto'], 'ftp')
+        self.assertFalse(data['is_secure'], msg="Expected insecure request with invalid scheme 'ftp'")

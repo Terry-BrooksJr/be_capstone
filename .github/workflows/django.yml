@@ -18,9 +18,8 @@
           run: |
             sudo echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
             export PATH_TO_DB_ROOT_CERT=$(pwd)/AIVEN_SSL.pem
-            export PYTHONPATH=$PYTHONPATH:$(pwd)/applications:$(pwd)/config:$(pwd)/run:$(pwd)/.venv/bin:$(pwd)/mock:
-            export DJANGO_SETTINGS_MODULE=config.settings
-            export DJANGO_CONFIGURATION=dev
+            export PYTHONPATH=$PYTHONPATH
+            export DJANGO_CONFIGURATION=Grading
             export DOPPLER_PROJECT=little_lemon
             export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }}
 
@@ -30,15 +29,6 @@
           with:
             python-version: '3.13'
             cache: 'pip'
-        - name: Install Dependencies
-          run: |
-            pip install -r requirements/dev.txt
-        - uses: actions/cache@v4
-          with:
-            path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-            restore-keys: |
-              ${{ runner.os }}-pip-
         - name: Fetch Env Vars from Doppler
           uses: dopplerhq/secrets-fetch-action@v1.3.0
           id: doppler
@@ -47,14 +37,12 @@
             doppler-config: "dev"
             doppler-project: "little_lemon"
             inject-env-vars: true
-        - name: Run Migrations
-          run: |
-            task db_sync
-
         - name: Run Tests
           run: | 
                (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
 
-                export DJANGO_CONFIGURATION=Grading && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
-                doppler run -- python3 run/manage.py test 
+                python -m venv .venv && source .venv/bin/activate && pip install -r requirements/dev.txt && 
+                
+                source .venv/bin/activate && doppler -t ${{ secrets.DOPPLER_TOKEN }} run -- python run/manage.py test 
+  
   

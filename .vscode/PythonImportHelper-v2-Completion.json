@@ -1711,7 +1711,7 @@
         "kind": 6,
         "importPath": "applications.resturant.tests.test_ssl",
         "description": "applications.resturant.tests.test_ssl",
-        "peekOfCode": "class SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def test_secure_proxy_ssl_header(self):\n        # Simulate a request with X-Forwarded-Proto set to 'https'\n        request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='https')\n        # Add wsgi.url_scheme manually (RequestFactory doesn't simulate full WSGI)\n        request.META['wsgi.url_scheme'] = 'http'  # Default scheme before proxy\n        # Now call the view\n        response = secure_check_view(request)",
+        "peekOfCode": "class SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def parse_json_response(self, response):\n        return json.loads(response.content.decode('utf-8'))\n    def test_is_secure_with_https_forwarded_proto(self):\n        request = self.factory.get('/', HTTP_X_FORWARDED_PROTO='https')\n        request.META['wsgi.url_scheme'] = 'http'\n        response = secure_check_view(request)\n        data = self.parse_json_response(response)",
         "detail": "applications.resturant.tests.test_ssl",
         "documentation": {}
     },
@@ -1720,7 +1720,7 @@
         "kind": 2,
         "importPath": "applications.resturant.tests.test_ssl",
         "description": "applications.resturant.tests.test_ssl",
-        "peekOfCode": "def secure_check_view(request):\n    return JsonResponse({\n        'is_secure': request.is_secure(),\n        'X-Forwarded-Proto': request.META.get('HTTP_X_FORWARDED_PROTO'),\n    })\nclass SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def test_secure_proxy_ssl_header(self):\n        # Simulate a request with X-Forwarded-Proto set to 'https'",
+        "peekOfCode": "def secure_check_view(request):\n    return JsonResponse({\n        'is_secure': request.is_secure(),\n        'X-Forwarded-Proto': request.META.get('HTTP_X_FORWARDED_PROTO'),\n    })\nclass SecureRequestTests(TestCase):\n    def setUp(self):\n        self.factory = RequestFactory()\n    def parse_json_response(self, response):\n        return json.loads(response.content.decode('utf-8'))",
         "detail": "applications.resturant.tests.test_ssl",
         "documentation": {}
     },
