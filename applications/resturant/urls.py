@@ -4,7 +4,8 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from resturant import endpoints
+
+from applications.resturant import endpoints
 
 urlpatterns = [
     # path("", include(router.urls)),

@@ -19,7 +19,6 @@ drf-redesign = "^0.5.0"
 mysqlclient = "^2.2.7"
 drf-spectacular = {extras = ["sidecar"], version = "^0.28.0"}
 djoser = "^2.3.1"
-pytest-django = "^4.11.1"
 django-crispy-forms = "^2.3"
 six = "^1.17.0"
 django-filter = "^25.1"
@@ -28,11 +27,12 @@ autoflake = "^2.3.1"
 django-storages = "^1.14.6"
 whitenoise = "^6.9.0"
 boto3 = "^1.38.15"
-kolo = "^2.40.0"
 django-redis = "^5.4.0"
 django-health-check = "^3.18.3"
 psutil = "^7.0.0"
 django-cors-headers = "^4.7.0"
+gunicorn = "^23.0.0"
+coverage = "^7.8.2"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -44,10 +44,26 @@ astroid = "^3.3.9"
 doppler-env = "^0.3.1"
 pylint = "^3.3.7"
 pylint-django = "^2.6.1"
+prospector = {extras = ["with-everything"], version = "^1.17.1"}
+pytest-django = "^4.11.1"
+
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.poetry.requires-plugins]
-poetry-plugin-export = ">=1.8"
+[tool.mypy]
+ignore_missing_imports = true
+follow_imports = "skip"
+disallow_any_generics = true
+disallow_untyped_defs = true
+implicit_optional = true
+force_uppercase_builtins = true
+
+[tool.pylint.MASTER]
+load-plugins = ["pylint_django"]
+
+
+[tool.pyrefly]
+replace_imports_with_any = ['*']
+follow_imports = "skip"

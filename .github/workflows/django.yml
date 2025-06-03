@@ -8,13 +8,6 @@
   jobs:
     setup-virtualenv:
       runs-on: ubuntu-latest
-      strategy:
-        max-parallel: 4
-        matrix:
-          python-version:
-            - "3.10"
-            - "3.11"
-            - "3.12"
       steps:
         - name: Checkout Code
           uses: actions/checkout@v3
@@ -25,26 +18,17 @@
           run: |
             sudo echo "${{ secrets.AIVEN_SSL }}" | base64 --decode > AIVEN_SSL.pem
             export PATH_TO_DB_ROOT_CERT=$(pwd)/AIVEN_SSL.pem
-            export PYTHONPATH=$PYTHONPATH:$(pwd)/applications:$(pwd)/config:$(pwd)/run:$(pwd)/.venv/bin:$(pwd)/mock:
-            export DJANGO_SETTINGS_MODULE=config.settings
-            export DJANGO_CONFIGURATION=dev
+            export PYTHONPATH=$PYTHONPATH
+            export DJANGO_CONFIGURATION=Grading
             export DOPPLER_PROJECT=little_lemon
             export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }}
 
 
-        - name: Set up Python ${{ matrix.python-version }}
+        - name: Set up Python 3.13
           uses: actions/setup-python@v5
           with:
-            python-version: ${{ matrix.python-version }}
-        - name: Install Dependencies
-          run: |
-            pip install -r requirements/dev.txt
-        - uses: actions/cache@v4
-          with:
-            path: ~/.cache/pip
-            key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-            restore-keys: |
-              ${{ runner.os }}-pip-
+            python-version: '3.13'
+            cache: 'pip'
         - name: Fetch Env Vars from Doppler
           uses: dopplerhq/secrets-fetch-action@v1.3.0
           id: doppler
@@ -53,12 +37,15 @@
             doppler-config: "dev"
             doppler-project: "little_lemon"
             inject-env-vars: true
-        - name: Run Migrations
+        - name: Install Doppler CLI
           run: |
-            task db_sync
-
+            (curl -Ls --tlsv1.2 --proto "=https" --retry 3 https://cli.doppler.com/install.sh || wget -t 3 -qO- https://cli.doppler.com/install.sh) | sudo sh
+        - name: Install Dependencies
+          run: |
+            python -m venv .venv
+            source .venv/bin/activate
+            pip install -r requirements/dev.txt
         - name: Run Tests
           run: |
-                export DJANGO_CONFIGURATION=Development && export DOPPLER_TOKEN=${{ secrets.DOPPLER_TOKEN }} 
-                task test
-  
+            source .venv/bin/activate
+            doppler -t ${{ secrets.DOPPLER_TOKEN }} run -- python run/manage.py test

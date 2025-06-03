@@ -1,8 +1,5 @@
 version: '3'
 
-env:
-  vars:
-    - DJANGO_CONFIGURATION: Development
 silent: true
 tasks:
   default:
@@ -16,30 +13,34 @@ tasks:
       - python3 -m venv .venv --prompt="ACTIVE_VENV_DJANGO_CAPSTONE"
       - source {{.TASKFILE_DIR}}/.venv/bin/activate
     internal: true
-  
+
   develop:
     desc: Starts the Django Application, and background workers in a debug state
     dir: "{{ .TASKFILE_DIR }}"
     cmds:
       - echo "Completing Pre-Start Environment Check For Development..."
-      - export DJANGO_CONFIGURATION=Development && export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver 
+      - export DJANGO_SETTINGS_MODULE=config.settings && doppler run  -- python3 run/manage.py runserver
     interactive: false
     silent: false
 
-
   install:
-    deps: [venv]
+    deps: [ venv ]
     cmds:
-      - pip install poetry
-      - poetry lock
-      - poetry install --no-root
+      - cmd: pip install poetry
+        ignore_error: true
+      - cmd: poetry lock
+        ignore_error: true
+      - cmd: poetry install --no-root
+        ignore_error: true
+      - defer: "{{if .EXIT_CODE }} echo 'Unable to Install  Poetry Packages'; exit 1{{else}} echo 'Successfully Installed Dependencies' {{end}} "
     silent: false
 
   freeze:
     desc: Pin current dependencies
     cmds:
-      - doppler run  -- poetry export --without dev,test --without-hashes --without-urls > ./requirements/base.txt
-      - doppler run  -- poetry export  --without-hashes --without-urls > ./requirements/dev.txt
+      - doppler run  -- poetry export --without dev --without-hashes --without-urls > ./requirements/base.txt
+      - doppler run  -- poetry export --only dev --without-hashes --without-urls > ./requirements/dev.txt
+      - defer: "{{if .EXIT_CODE}} echo 'Failed to Pin Dependencies' {{else}} echo 'Successfully Pinned Dependecies' {{end}}"
     generates:
       - ./requirements/dev.txt
       - ./requirements/base.txt
@@ -67,14 +68,17 @@ tasks:
 
     desc: Collect static files in to single directory for production
     cmds:
-      - doppler run --  python run/manage.py collectstatic --no-input
+      - doppler run --  .python run/manage.py collectstatic --no-input
 
   test:
     dir: "{{ .TASKFILE_DIR }}"
     desc: Run tests
+    env:
+      DJANGO_CONFIGURATION: "Grading"
     cmds:
-      - doppler run --  .venv/bin/python run/manage.py test applications.resturant.tests --failfast --keepdb
-    silent: false
+      - cmd: doppler run --  .venv/bin/python -m  coverage run --source=applications run/manage.py test --no-input
+      - cmd: coverage xml
+      - defer: echo '{{if .EXIT_CODE }} Unable to Run Tests - {{.EXIT_CODE}}; exit 1 {{else}} Successfully Ran Tests {{end}}'
 
   run:
     desc: Starts a Gunicorn Based Development Server that Reloads on Changes
@@ -82,8 +86,6 @@ tasks:
 
     cmds:
       - doppler run -- python run/manage.py runserver #--workers=2 --threads=2 core.wsgi:application -b :{{or .CLI_ARGS 8000}}
-
-
 
   start:
     dir: "{{ .TASKFILE_DIR }}"
@@ -98,7 +100,7 @@ tasks:
       - task: db_sync
 
       - echo 'Starting server...'
-      - doppler run -- python -m gunicorn --workers=2 --threads=2 core.wsgi:application --bind 0.0.0.0:{{or .CLI_ARGS 8080}} --reload --sync
+      - doppler run -- python -m gunicorn  core.wsgi:application --bind 0.0.0.0:{{or .CLI_ARGS 8080}}
 
   schema-check:
     dir: "{{ .TASKFILE_DIR }}"
@@ -109,7 +111,7 @@ tasks:
     internal: true
 
   schema:
-    deps: [schema-check]
+    deps: [ schema-check ]
     dir: "{{ .TASKFILE_DIR }}"
 
     desc: Generate OpenAPI 3.0 schema.yaml file from models and serializers
@@ -118,9 +120,15 @@ tasks:
 
   build-image:
     desc: Build Docker Image
-    dir: "{{ .TASKFILE_DIR }}/.deploy"
+    dir: "{{ .TASKFILE_DIR }}"
     cmds:
-      - docker build buildx --platform --push linux/amd64,linux/arm64  --env DOPPLER_TOKEN=$DOPPLER_TOKEN -t capstone:latest .
+      - |
+        if ! docker buildx version > /dev/null 2>&1; then
+          echo "Error: Docker Buildx is not installed or not available in PATH."
+          echo "Please install Docker Buildx: https://docs.docker.com/buildx/working-with-buildx/"
+          exit 1
+        fi
+        docker buildx build --platform linux/amd64,linux/arm64 --push --build-arg DOPPLER_TOKEN=$DOPPLER_TOKEN -t terrybrooks/capstone:latest .
 
   lint:
     desc: Run linters
@@ -133,7 +141,10 @@ tasks:
   django:
     desc: Run Django Management Commands
     dir: "{{ .TASKFILE_DIR }}"
+    env:
+      DJANGO_CONFIGURATION: Grading
+      DJANGO_SETTINGS_MODULE: config.settings
+      PYTHONPATH: "{{.PYTHONPATH}}"
+
     cmds:
-      - doppler run -- python run/manage.py {{.CLI_ARGS}}
-    silent: false
-    interactive: true
+      - doppler run -- .venv/bin/gunicorn --bind 127.0.0.1:{{or .CLI_ARGS 7575}}  config.wsgi:application --reload

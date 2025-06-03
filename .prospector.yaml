@@ -1,0 +1,18 @@
+output-format: json
+
+strictness: medium
+test-warnings: false
+doc-warnings: true
+member-warnings: false
+uses:
+- django
+autodetect: true
+max-line-length: 500
+ignore-paths:
+- docs
+
+ignore-patterns:
+- .venv/*
+- .*
+vulture:
+  run: false

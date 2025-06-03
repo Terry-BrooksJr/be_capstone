@@ -284,3 +284,5 @@ pyrightconfig.json
 .task/checksum/freeze
 .vscode/PythonImportHelper-v2-Completion.json
 .task
+traefik-public-certificates/acme.json
+traefik-public-certificates

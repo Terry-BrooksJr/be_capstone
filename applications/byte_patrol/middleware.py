@@ -24,6 +24,23 @@ class IPRestrictionMiddleware(MiddlewareMixin):
         self.get_response = get_response
         super().__init__(get_response)
 
+    def __call__(self, request):
+        """
+        Custom __call__ implementation to ensure process_request responses are returned.
+        """
+        # Call process_request first
+        response = self.process_request(request)
+
+        # If process_request returned a response, return it directly
+        if response is not None:
+            logger.debug(
+                f"BytePatrol: Returning early response from process_request: {response.status_code}"
+            )
+            return response
+
+        # Otherwise, call the next middleware/view
+        return self.get_response(request) if self.get_response is not None else None
+
     def _get_client_ip(self, request):
         """
         Get the client's IP address from request headers or REMOTE_ADDR.
@@ -43,7 +60,39 @@ class IPRestrictionMiddleware(MiddlewareMixin):
         # Get protected paths from cache or DB
         protected_paths = self._get_protected_paths()
 
-        return any(re.match(pattern, path) for pattern in protected_paths)
+        logger.debug(f"BytePatrol: Checking path: '{path}'")
+        logger.debug(f"BytePatrol: Protected paths: {protected_paths}")
+
+        # Normalize path for consistent matching
+        # If path doesn't start with '/', add it for matching
+        normalized_path = path
+        if not normalized_path.startswith("/"):
+            normalized_path = f"/{normalized_path}"
+        logger.debug(f"BytePatrol: Normalized path: '{normalized_path}'")
+
+        # Also try without the leading slash
+        path_without_slash = path
+        if path_without_slash.startswith("/"):
+            path_without_slash = path_without_slash[1:]
+        logger.debug(f"BytePatrol: Path without slash: '{path_without_slash}'")
+
+        # Check each pattern against each path variant
+        for pattern in protected_paths:
+            match1 = bool(re.match(pattern, normalized_path))
+            match2 = bool(re.match(pattern, path_without_slash))
+            match3 = bool(re.match(pattern, path))
+
+            logger.debug(f"BytePatrol: Pattern '{pattern}' matches:")
+            logger.debug(f"  - normalized_path: {match1}")
+            logger.debug(f"  - path_without_slash: {match2}")
+            logger.debug(f"  - original_path: {match3}")
+
+            if match1 or match2 or match3:
+                logger.debug(f"BytePatrol: Path '{path}' is restricted")
+                return True
+
+        logger.debug(f"BytePatrol: Path '{path}' is not restricted")
+        return False
 
     def _is_ip_allowed(self, ip):
         """
@@ -140,8 +189,26 @@ class IPRestrictionMiddleware(MiddlewareMixin):
         """
         Process each request to check if IP restriction should be applied.
         """
+        # Add detailed request logging
+        logger.debug(f"BytePatrol: Processing request for path: '{request.path}'")
+        logger.debug(f"BytePatrol: Request method: {request.method}")
+        logger.debug(
+            f"BytePatrol: Request path info: {request.META.get('PATH_INFO', 'N/A')}"
+        )
+        logger.debug(
+            f"BytePatrol: Request HTTP_HOST: {request.META.get('HTTP_HOST', 'N/A')}"
+        )
+        logger.debug(
+            f"BytePatrol: Request REMOTE_ADDR: {request.META.get('REMOTE_ADDR', 'N/A')}"
+        )
+
         # Skip IP check for paths that aren't restricted
-        if not self._is_path_restricted(request.path):
+        is_restricted = self._is_path_restricted(request.path)
+        logger.debug(
+            f"BytePatrol: Path '{request.path}' is restricted: {is_restricted}"
+        )
+
+        if not is_restricted:
             return None
 
         # Get client IP
@@ -153,7 +220,7 @@ class IPRestrictionMiddleware(MiddlewareMixin):
 
             return getattr(
                 settings,
-                "BYTE_PATROLFORBIDDEN_RESPONSE",
+                "BYTE_PATROL_FORBIDDEN_RESPONSE",
                 HttpResponseForbidden("Access Denied: Your IP address is not allowed."),
             )
         return None

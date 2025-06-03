@@ -1,9 +1,9 @@
-
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import OpenApiExample, OpenApiParameter, extend_schema
+from loguru import logger
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
@@ -17,6 +17,33 @@ from applications.resturant.serializers.core import (
 from utils.cache import CachedResponseMixin
 
 
+def handler_page_not_found_404(request, exception):
+    """Handles 404 page not found errors.
+
+    Logs a warning and renders the custom 404 error page.
+    """
+    logger.warning(f"Page Not Found: {request.path} - Error{exception}")
+    return render(request, "404.html", status=404)
+
+
+def handler_server_error_500(request):
+    """Handles 500 internal server errors.
+
+    Logs an error and renders the custom 500 error page.
+    """
+    logger.error(f"Server Error: {request.path}")
+    return render(request, "500.html", status=500)
+
+
+def handle_unauthorized_error_403(request, exception):
+    """Handles 403 unauthorized access errors.
+
+    Logs a warning and renders the custom 403 error page.
+    """
+    logger.warning(f"Unauthorized Access: {request.path} - {exception}")
+    return render(request, "403.html", status=403)
+
+
 class Index(CachedResponseMixin, TemplateView):
     """A view for rendering the index template.
 
@@ -25,10 +52,6 @@ class Index(CachedResponseMixin, TemplateView):
 
     primary_model = None
     template_name = "index.html"
-
-
-def handler_page_not_found_404(request, exception):
-    return render(request, "404.html", status=404)
 
 
 # ----- BOOKING VIEWS -----
@@ -71,6 +94,7 @@ class BookingListView(CachedResponseMixin, generics.ListAPIView):
 
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    primary_model = Booking
     filter_backends = [DjangoFilterBackend]
     search_fields = ["name"]
     filterset_class = BookingFilter
@@ -78,69 +102,62 @@ class BookingListView(CachedResponseMixin, generics.ListAPIView):
     permission_classes = [IsAuthenticated]
 
 
+@extend_schema(
+    summary="Create a Booking",
+    tags=["Reservations"],
+    description="Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.",
+    request=BookingSerializer,
+    # auth=["TokenAuth"],
+    examples=[
+        OpenApiExample(
+            "Create Booking POST body Example",
+            description="Example POST Body  for creating a booking",
+            value={
+                "name": "Sirus Black",
+                "no_of_guests": 4,
+                "date": "2025-04-03",
+                "time": "11:00AM",
+            },
+            request_only=True,
+            response_only=False,
+            status_codes=[status.HTTP_201_CREATED],
+        ),
+        OpenApiExample(
+            "Create Booking Response Payload Example",
+            description="Example payload for creating a booking",
+            value={
+                "status": "booked",
+                "message": "We look forward to seeing your party of 7 on 05-11-2045 at 10:55 PM",
+                "details": {
+                    "booking_id": 69,
+                    "name": "Pacocha, Rhoda",
+                    "no_of_guests": 7,
+                    "date": "05-11-2045",
+                    "time": "10:55 PM",
+                },
+            },
+            request_only=False,
+            response_only=True,
+        ),
+    ],
+)
 class BookingCreateView(CachedResponseMixin, generics.CreateAPIView):
     """Provides endpoint for creating bookings."""
 
     queryset = Booking.objects.all()
+    primary_model = Booking
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
 
-    @extend_schema(
-        summary="Create a Booking",
-        description="Create a new booking entry. All fields are required in the request payload. Authentication Token REQUIRED.",
-        request=BookingSerializer,
-        tags=["Reservations"],
-        # auth=["TokenAuth"],
-        examples=[
-            OpenApiExample(
-                "Create Booking POST body Example",
-                description="Example POST Body  for creating a booking",
-                value={
-                    "name": "Sirus Black",
-                    "no_of_guests": 4,
-                    "date": "2025-04-03",
-                    "time": "11:00AM",
-                },
-                request_only=True,
-                response_only=False,
-                status_codes=[status.HTTP_201_CREATED],
-            ),
-            OpenApiExample(
-                "Create Booking Response Payload Example",
-                description="Example payload for creating a booking",
-                value={
-                    "status": "booked",
-                    "message": "We look forward to seeing your party of 7 on 05-11-2045 at 10:55 PM",
-                    "details": {
-                        "booking_id": 69,
-                        "name": "Pacocha, Rhoda",
-                        "no_of_guests": 7,
-                        "date": "05-11-2045",
-                        "time": "10:55 PM",
-                    },
-                },
-                request_only=False,
-                response_only=True,
-            ),
-        ],
-    )
     def create(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
-            return {
-                "status": (
-                    "booked"
-                    if "booking_id" in serializer.validated_data.keys()
-                    else "not booked"
-                ),
-                "message": (
-                    f"We look forward to seeing your party of {serializer.validated_data["no_of_guests"]} on {representation["date"]} at {serializer.validated_data['time']}"
-                    if "booking_id" in serializer.validated_data.keys()
-                    else "Booking not created"
-                ),
-                "details": representation,
-            }
+            self.perform_create(serializer)
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                serializer.data, status=status.HTTP_201_CREATED, headers=headers
+            )
         return Response(
             data={"message": "Authentication credentials were not provided."},
             status=status.HTTP_401_UNAUTHORIZED,
@@ -358,6 +375,10 @@ class BookingView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):
         ],
     )
     def patch(self, request, *args, **kwargs):
+        """Partially updates one or more fields of a menu item.
+
+        Allows updating specific fields of an existing menu item by its ID.
+        """
         return super().patch(request, *args, **kwargs)
 
 
@@ -404,6 +425,7 @@ class MenuListView(CachedResponseMixin, generics.ListAPIView):
     filter_backends = [DjangoFilterBackend]
     search_fields = ["title"]
     filterset_class = ProductFilter
+    primary_model = Menu
     permission_classes = [IsAuthenticated]
 
 
@@ -435,6 +457,24 @@ class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
     permission_classes = [IsAuthenticated]
+
+class MenuCreateView(CachedResponseMixin, generics.CreateAPIView):
+    """Provides endpoint for creating menu items."""
+
+    queryset = Menu.objects.all()
+    primary_model = Menu
+    serializer_class = MenuSerializer
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        """Create a new menu item."""
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(
+            serializer.data, status=status.HTTP_201_CREATED, headers=headers,
+        )
 
 
 # Combined view that supports multiple operations on a single endpoint
@@ -496,6 +536,7 @@ class MenuView(CachedResponseMixin, generics.RetrieveUpdateDestroyAPIView):
     @extend_schema(
         summary="Delete a Menu Item",
         description="Remove a menu item from the system.",
+        tags=["Menu"],
         parameters=[
             OpenApiParameter(
                 name="item_id",
