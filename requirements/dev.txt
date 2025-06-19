@@ -169,7 +169,7 @@ trove-classifiers==2025.5.9.12
 typing_extensions==4.13.1
 ulid-py==1.1.0
 uritemplate==4.1.1
-urllib3==2.3.0
+urllib3==2.5.0
 virtualenv==20.31.2
 vulture==2.14
 wcwidth==0.2.13
